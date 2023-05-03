@@ -10,18 +10,40 @@ export const User = styled.div`
   height: 120px;
   width: 120px;
   border-radius: 60px;
+
+  background-color: white;
+
+  margin-right: 26px;
 `;
+
+export const TextWrapper = styled.div`
+  margin-bottom: 16px;
+`;
+
+export const Info = styled.div``;
 
 export const UserWrapper = styled.div`
   display: flex;
+
+  margin-top: 62px;
+
+  background-color: red;
+`;
+
+export const DatePickerWrapper = styled.div`
+  display: flex;
   align-items: center;
   justify-content: center;
+
+  margin-top: -150px;
 `;
 
 export const Cover = styled.div`
+  height: 50vh;
   background-color: ${({ theme }) => theme.Colors.vinho};
-  height: 50%;
-  width: 100vw;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 export const DatePicker = styled(DateRange).attrs(({ theme }) => ({
@@ -31,7 +53,7 @@ export const DatePicker = styled(DateRange).attrs(({ theme }) => ({
   font-family: ${({ theme }) => theme.Font.font_lato};
   font-size: 16px;
 
-  z-index: -1000;
-
   background-color: #f8fdff;
+
+  border-radius: 24px;
 `;
