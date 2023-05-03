@@ -8,7 +8,7 @@ export const Container = styled.button<IStyles>`
     padding: 12px 24px;
     border-radius: 15px;
     background-color: ${({theme,variant}) => variant === "primario" ? theme.Colors.vinho : "transparent"};
-    border: 2px solid ${({theme,variant}) => variant === "secundario" ?  theme.Colors.vinho : theme.Colors.branco};
+    border: 2px solid ${({theme,variant}) => variant === "secundario" ?  theme.Colors.vinho : theme.Colors.vinho};
 `;
 
 export const TitleButton = styled.span<IStyles>`
