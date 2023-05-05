@@ -6,6 +6,7 @@ export const theme = {
     laranja_medio: "#EF9305",
     laranja_escuro: "#E5E5E5",
     branco: "#fff",
+    preto: "#000000",
   },
 
   Font: {
