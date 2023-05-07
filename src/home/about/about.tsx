@@ -1,9 +1,9 @@
-import { Container } from "./sobre.styles";
-import Info from "../components/info/info";
+import { Container } from "./about.styles";
+import Info from "../components/cardInfo/cardInfo";
 import appleabout from "../../assets/appleabout.svg";
 import womenabout from "../../assets/womenabout.svg";
 
-const Sobre = () => {
+const About = () => {
   return (
     <Container>
       <Info
@@ -14,7 +14,7 @@ const Sobre = () => {
             comprometidos em oferecer um serviço acessível e de 
             qualidade para todos os nossos pacientes."
         direction="row"
-        image={{ alt: "", url: womenabout }}
+        image={{ alt: "Mulher com cesta de frutas", url: womenabout }}
       />
 
       <Info
@@ -26,10 +26,10 @@ const Sobre = () => {
         oferecer um atendimento personalizado, tudo a apenas 
         um clique de distância."
         direction="row-reverse"
-        image={{ alt: "", url: appleabout }}
+        image={{ alt: "Mão segurando uma maça", url: appleabout }}
       />
     </Container>
   );
 };
 
-export default Sobre;
+export default About;
