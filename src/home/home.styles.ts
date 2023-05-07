@@ -15,7 +15,7 @@ export const ImageWrapper = styled.div`
     background-image: url(${BackgroundImage});
 `
 
-export const Text = styled.div`
+export const DivText = styled.div`
     display: flex;
     text-align: start;
     align-items: center;
@@ -33,4 +33,16 @@ export const DivButton = styled.div`
 
 export const Button = styled.div`
     padding: 12px 24px;
+`;
+
+export const Partners = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: ${({theme}) => theme.Colors.cinza};
+`;
+
+export const LogoPartners = styled.div`
+    margin: 12px 24px;
 `;
