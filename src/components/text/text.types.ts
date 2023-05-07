@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 import { TColors } from "../../global/colorsMapping";
 
-type TSize = "2" | "4" | "8" | "16" | "24" | "32" | "36" | "64";
+type TSize = "2" | "4" | "8" | "12" | "16" | "20" | "24" | "28" | "32" | "36" | "42" | "48" | "64";
 
 export interface IText {
   size: TSize;
