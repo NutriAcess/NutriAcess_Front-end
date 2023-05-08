@@ -28,9 +28,7 @@ const Goals = () => {
           title="Invista no seu futuro"
           description="Passe em consultas com nutricionistas de forma prática e Invista em seu futuro de forma permanente a longo prazo."
         />
-      </SectionGoals>
 
-      <SectionGoals>
         <CardGoals
           image={{ url: IconTime, alt: "Icone de tempo" }}
           title="Gerenciamento de tempo"
