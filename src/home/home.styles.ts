@@ -13,6 +13,8 @@ export const ImageWrapper = styled.div`
     width: 100%;
     height: 600px;
     background-image: url(${BackgroundImage});
+    background-repeat: no-repeat;
+    background-size: cover;
 `
 
 export const DivText = styled.div`
