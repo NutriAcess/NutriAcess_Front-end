@@ -11,14 +11,14 @@ interface ICardData {
 const CardData = ({ title, description }: ICardData) => {
   return (
     <Container>
-      <Warning color="#FFF" />
+      <Warning size={32} color="#FFF" />
       <TitleData>
-        <Text weight={600} height={1.2} color="branco" size={"8"}>
+        <Text weight={600} height={1.2} color="branco" size={"20"}>
           {title}
         </Text>
       </TitleData>
       <TextData>
-        <Text weight={600} height={1.2} color="branco" size={"8"}>
+        <Text weight={300} height={1.7} color="branco" size={"16"}>
           {description}
         </Text>
       </TextData>
