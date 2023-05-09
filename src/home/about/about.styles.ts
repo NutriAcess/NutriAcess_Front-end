@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    margin: 0px 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px;
 `;
+
+
 
