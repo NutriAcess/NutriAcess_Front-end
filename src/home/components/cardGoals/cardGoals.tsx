@@ -18,19 +18,19 @@ interface IGoalsIcons {
 const CardGoals = ({ title, description, image }: IGoalsIcons) => {
   return (
     <Container>
-      <GoalsIcons>
-        <img src={image.url} alt={image.alt}></img>
-      </GoalsIcons>
-      <TitleIcons>
-        <Text weight={600} height={1.7} color="laranja_destaque" size="24">
-          {title}
-        </Text>
-      </TitleIcons>
-      <TextIcons>
-        <Text weight={600} height={1.7} color="preto" size="16">
-          {description}
-        </Text>
-      </TextIcons>
+        <GoalsIcons>
+          <img src={image.url} alt={image.alt}></img>
+        </GoalsIcons>
+        <TitleIcons>
+          <Text weight={600} height={1.7} color="laranja_destaque" size="24">
+            {title}
+          </Text>
+        </TitleIcons>
+        <TextIcons>
+          <Text weight={600} height={1.7} color="preto" size="16">
+            {description}
+          </Text>
+        </TextIcons>
     </Container>
   );
 };
