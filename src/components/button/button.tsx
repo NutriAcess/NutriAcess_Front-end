@@ -2,7 +2,7 @@ import { Container, TitleButton } from "./button.styles";
 
 interface IButton {
   title: string;
-  variant: "primario" | "secundario";
+  variant: "primario" | "secundario" | "terciario";
 }
 
 const Button = ({ title, variant }: IButton) => {
