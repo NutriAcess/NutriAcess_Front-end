@@ -18,6 +18,7 @@ import smartfit from "../assets/Smart-fit.svg";
 import prati from "../assets/Pratí.svg";
 import Feedback from "./feedback/feedback";
 import Plans from "./plans/plans";
+import Footer from "../components/footer/footer";
 
 const Home = () => {
   return (
@@ -57,7 +58,8 @@ const Home = () => {
 
       <Feedback />
 
-      <Plans />
+      <Plans/>
+      <Footer />
     </Container>
   );
 };
