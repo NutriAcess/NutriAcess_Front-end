@@ -27,7 +27,7 @@ const CardOperation = ({
     <Container direction={direction}>
       <CaretDoubleRight color="#FCD823" />
       <TextOperation>
-        <TitleOperation>
+        <TitleOperation color="#FCD823">
           <Text weight={600} height={1.7} color="preto" size="24">
             {title}
           </Text>
