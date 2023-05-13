@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    margin: 20px 40px;
+    margin: 30px 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -24,6 +24,6 @@ export const TitleIcons = styled.div`
 `;
 
 export const TextIcons = styled.div`
-    max-width: 300px;
+    max-width: 350px;
     text-align: center;
 `;

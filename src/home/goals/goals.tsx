@@ -26,7 +26,7 @@ const Goals = () => {
         <CardGoals
           image={{ url: IconFuture, alt: "Icone de visão futura" }}
           title="Invista no seu futuro"
-          description="Passe em consultas com nutricionistas de forma prática e Invista em seu futuro de forma permanente a longo prazo."
+          description="Invista em seu futuro com nossos nutricionistas e obtendo resultados a longo prazo."
         />
 
         <CardGoals
