@@ -5,7 +5,15 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    margin: 40px;
+    margin-bottom: 22px ;
+`;
+
+export const SectionInfo = styled.div`
+    
+`;
+
+export const SectionInfo2 = styled.div`
+ 
 `;
 
 

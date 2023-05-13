@@ -15,17 +15,18 @@ export const TextInfo = styled.div`
     width: 500px;
     align-items: center;
     justify-content: center;
-    margin-left: 0 auto;
+    margin: 0 60px;
 `;
 
 export const TextTitle = styled.div`
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 `;
 
 export const TextDescription = styled.div`
+    line-height: 1.7;
+    padding-left: 20px;
 `;
 
-
 export const ImageAbout = styled.div`
-
+    
 `;

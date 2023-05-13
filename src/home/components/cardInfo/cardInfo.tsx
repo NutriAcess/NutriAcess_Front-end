@@ -23,13 +23,13 @@ const Info = ({ title, image, direction, description }: IInfo) => {
     <Container direction={direction}>
       <TextInfo>
         <TextTitle>
-          <Text weight={600} height={1.7} color="vinho" size="24">
+          <Text weight={600} height={1.7} color="preto" size="28">
             {title}
           </Text>
         </TextTitle>
 
         <TextDescription>
-          <Text weight={600} height={1.7} color="preto" size="16">
+          <Text weight={400} height={1.7} color="preto" size="16">
             {description}
           </Text>
         </TextDescription>
