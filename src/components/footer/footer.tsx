@@ -4,10 +4,10 @@ import {
   Container,
   Content,
   FollowUp,
-  IconsContact,
   IconsFollowUp,
   MapSite,
   Rights,
+  TypeContact,
 } from "./footer.styles";
 import {
   Envelope,
@@ -27,17 +27,26 @@ const Footer = () => {
             Nossos Contatos
           </Text>
 
-          <Text weight={300} height={1.7} color={"branco"} size={"16"}>
-            <Envelope color="black" weight="bold" size={25}/> SuporteNutriAcess@gmail.com
-          </Text>
+          <TypeContact>
+            <Envelope color="black" size={25} />
+            <Text weight={300} height={1.7} color={"branco"} size={"16"}>
+              SuporteNutriAcess@gmail.com
+            </Text>
+          </TypeContact>
 
-          <Text weight={300} height={1.7} color={"branco"} size={"16"}>
-            <WhatsappLogo color="black" weight="bold" size={25}/> (11) 98858-5086
-          </Text>
+          <TypeContact>
+            <WhatsappLogo color="black" size={25} />
+            <Text weight={300} height={1.7} color={"branco"} size={"16"}>
+              (11) 98858-5086
+            </Text>
+          </TypeContact>
 
-          <Text weight={300} height={1.7} color={"branco"} size={"16"}>
-            <MapPin color="black" weight="bold" size={25}/> SmartFit: São Paulo, SP - o8180-000{" "}
-          </Text>
+          <TypeContact>
+            <MapPin color="black" size={25} />
+            <Text weight={300} height={1.7} color={"branco"} size={"16"}>
+              SmartFit: São Paulo, SP - o8180-000{" "}
+            </Text>
+          </TypeContact>
         </Contact>
 
         <FollowUp>
@@ -45,9 +54,9 @@ const Footer = () => {
             Siga-nos
           </Text>
           <IconsFollowUp>
-            <InstagramLogo color="black" weight="bold" size={25}/>
-            <FacebookLogo color="black" weight="bold" size={25}/>
-            <LinkedinLogo color="black" weight="bold" size={25}/>
+            <InstagramLogo color="black" size={25} />
+            <FacebookLogo color="black" size={25} />
+            <LinkedinLogo color="black" size={25} />
           </IconsFollowUp>
         </FollowUp>
 

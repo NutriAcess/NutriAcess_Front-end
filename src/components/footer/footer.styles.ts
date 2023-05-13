@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    
+
 `;
 
 export const Content = styled.div`
-    display: flex;
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
     background-color: ${({theme}) => theme.Colors.amarelo};
-    height: 200px;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
+    padding: 3rem 3.5rem;
+    justify-items: center;
 `;
 
 export const Contact = styled.div`
@@ -18,15 +18,18 @@ export const Contact = styled.div`
     flex-direction: column ;
     margin-right: 50px;
     gap:15px;
-    align-content: center;
-    justify-content: center;
+`;
+
+export const TypeContact = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px;
 `;
 
 export const FollowUp = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    margin-top:-70px;
+    gap: 10px;
 `;
 
 export const IconsFollowUp = styled.div`
@@ -34,12 +37,14 @@ export const IconsFollowUp = styled.div`
     gap:10px;
 `;
 
-export const IconsContact = styled.div``;
+export const IconsContact = styled.div`
+    
+`;
 
 export const MapSite = styled.div`
     display: flex;
     flex-direction:column;
-    gap:20px;
+    
 `;
 
 export const Rights = styled.div`
