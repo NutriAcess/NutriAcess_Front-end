@@ -10,31 +10,31 @@ export const Container = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
+    display: flex;
     width: 100%;
-    height: 600px;
+    height: 720px;
     background-image: url(${BackgroundImage});
     background-repeat: no-repeat;
     background-size: cover;
-`
+    gap:20px;
+    flex-direction: column;
+    justify-content: center;
+`;
 
 export const DivText = styled.div`
     display: flex;
     text-align: start;
     align-items: center;
+    width: 600px;
+    margin-left: 50px;
 `;
 
 export const DivButton = styled.div`
-    position: absolute;
-    left: 5%;
-    right: 0;
-    top: 85%;
+    display: flex;
     text-align: start;
     align-items: center;
+    margin-left: 50px;
     font-family: ${({theme}) => theme.Font.font_lato};
-`;
-
-export const Button = styled.div`
-    padding: 12px 24px;
 `;
 
 export const Partners = styled.div`

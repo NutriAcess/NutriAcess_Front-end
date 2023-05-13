@@ -27,12 +27,19 @@ const Home = () => {
 
       <ImageWrapper>
         <DivText>
-          <Text weight={600} height={1.7} color="vinho" size="64">
+          <Text weight={600} height={1.5} color="branco" size="64">
             Nutra sua saúde e bem estar com a NutriAcess
           </Text>
         </DivText>
         <DivButton>
-          <Button variant="primario" title="Conheça nossos planos" />
+          <Button
+            variant="primario"
+            title="Conheça nossos planos"
+            border={10}
+            padding={18}
+            width={250}
+            size={16}
+          />
         </DivButton>
       </ImageWrapper>
 
@@ -58,7 +65,7 @@ const Home = () => {
 
       <Feedback />
 
-      <Plans/>
+      <Plans />
       <Footer />
     </Container>
   );
