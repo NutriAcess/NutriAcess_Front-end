@@ -1,13 +1,13 @@
-import Button from "../../../components/button/button";
 import { Text } from "../../../components/text/text";
-import Topic from "../../../components/topic/topic";
 import { Check, X } from "@phosphor-icons/react";
 import {
+  Checked,
   Container,
   Description,
   Header,
   Price,
   TitleHeader,
+  Topico,
   Topics,
 } from "./cardPlan.styles";
 
@@ -61,19 +61,25 @@ const CardPlan = ({
         </Text>
       </Price>
       <Description>
-        <Text weight={300} height={1.2} color="preto" size="12">
+        <Text weight={300} height={1.2} color="preto" size="16">
           {description}
         </Text>
       </Description>
       <Topics>
-        <li>
-          {topics.map((item) => (
-            <ul>
-              {item.isChecked ? <Check color="green" weight="bold" size={25} /> : <X color="red" weight="bold" size={25}/> }
-            <span>{item.title}</span>
-            </ul>
-          ))}
-        </li>
+        {topics.map((item) => (
+          <Topico>
+            <Checked>
+              {item.isChecked ? (
+                <Check color="green" weight="bold" size={25} />
+              ) : (
+                <X color="red" weight="bold" size={25} />
+              )}
+            </Checked>
+            <Text weight={300} height={2} color="preto" size="16">
+              {item.title}
+            </Text>
+          </Topico>
+        ))}
       </Topics>
     </Container>
   );

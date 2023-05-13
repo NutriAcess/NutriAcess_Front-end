@@ -8,18 +8,13 @@ interface IContainer {
     shadow: "primario" | "secundario";
 }
 
-interface IButtonPlan {
-    variant: "primario" | "secundario" | "terciario";
-}
-
 export const Container = styled.div<IContainer>`
     display: flex;
     margin-top: -100px;
     background-color:${({theme}) => theme.Colors.branco} ;
     flex-direction: column;
-    width: 300px;
-    height: 400px;
-    box-shadow: ${({shadow}) => shadow === "primario" ? `0px 1px 20px 0px rgba(142, 150, 185, 0.25)` : `0px 1px 2px 0px rgba(142, 150, 185, 0.25)`} ;
+    width: 350px;
+    height: 350px;
     border-radius: 10px;
 `;
 
@@ -40,7 +35,9 @@ export const TitleHeader = styled.div`
 `;
 
 export const Price = styled.span`
-    margin: 30px;
+    display: flex;
+    justify-content: center;
+    margin: 24px 0;
 `;
 
 export const Description = styled.div`
@@ -49,28 +46,21 @@ export const Description = styled.div`
     margin: 24px 0;
 `;
 
-export const Topics = styled.div`
-    margin-right: 10px;
-    display : flex;
-    justify-content : center;
-    align-items : center;
-    gap: .5rem;
-    font-size : 14px;
-    text-decoration: none;
+export const Topics = styled.li`
     list-style-type: none;
-    margin-bottom: 10px;
-    line-height: 40px;
 `;
 
-export const ul = styled.div`
+export const Topico = styled.ul`
+    display: flex;
+    gap: 20px;
+    margin-left: 50px;
+`;
+
+export const Checked = styled.ul`
     display: flex;
     align-items: center;
 `;
 
-export const span = styled.div`
-    margin-left: '1.2rem';
-`;
 
-export const ButtonPlan = styled.div``;
 
 

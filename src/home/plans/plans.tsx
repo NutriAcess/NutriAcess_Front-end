@@ -4,6 +4,7 @@ import CardPlan from "../components/cardPlan/cardPlan";
 import {
   CardPlanGlobal,
   Container,
+  DivButton,
   Header,
   Plan,
   SubTitle,
@@ -77,14 +78,14 @@ const Plans = () => {
           </Text>
         </Title>
         <SubTitle>
-          <Text weight={400} height={1.7} color="branco" size="16">
+          <Text weight={400} height={1.7} color="branco" size="20">
             Experimente nossas soluções e escolha o plano ideal para o seu
             próximo projeto.
           </Text>
         </SubTitle>
       </Header>
       <Plan>
-        <CardPlanGlobal>
+        <CardPlanGlobal shadow="secundario">
           <CardPlan
             destaque="secundario"
             shadow="secundario"
@@ -96,10 +97,19 @@ const Plans = () => {
             }}
             topics={TopicsPlus}
           />
-          <Button variant="primario" title="Assinar"></Button>
+          <DivButton>
+            <Button
+              variant="primario"
+              title="Assinar"
+              border={10}
+              padding={12}
+              width={250}
+              size={14}
+            ></Button>
+          </DivButton>
         </CardPlanGlobal>
 
-        <CardPlanGlobal>
+        <CardPlanGlobal shadow="primario">
           <CardPlan
             destaque="primario"
             shadow="primario"
@@ -111,10 +121,19 @@ const Plans = () => {
             }}
             topics={TopicsFamilia}
           />
-          <Button variant="terciario" title="Assinar"></Button>
+          <DivButton>
+            <Button
+              variant="terciario"
+              title="Assinar"
+              border={10}
+              padding={12}
+              width={250}
+              size={14}
+            ></Button>
+          </DivButton>
         </CardPlanGlobal>
 
-        <CardPlanGlobal>
+        <CardPlanGlobal shadow="secundario">
           <CardPlan
             destaque="secundario"
             shadow="secundario"
@@ -126,7 +145,16 @@ const Plans = () => {
             }}
             topics={TopicsPremium}
           />
-          <Button variant="primario" title="Assinar"></Button>
+          <DivButton>
+            <Button
+              variant="primario"
+              title="Assinar"
+              border={10}
+              padding={12}
+              width={250}
+              size={14}
+            ></Button>
+          </DivButton>
         </CardPlanGlobal>
       </Plan>
     </Container>
