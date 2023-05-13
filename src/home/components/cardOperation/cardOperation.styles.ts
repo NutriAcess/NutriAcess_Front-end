@@ -4,26 +4,42 @@ interface ITextOperation {
     direction: "row" | "row-reverse",
 }
 
+interface IIcon {
+    icon: boolean;
+}
+
 export const Container = styled.div<ITextOperation>`
     display: flex;
     flex-direction: ${({direction}) => direction};
     align-items: center;
     justify-content: center;
-    padding: 50px;
-    margin: 20px 20px;
+    margin: 30px;
 `;
 
 export const Content = styled.div``;
 
+export const Icon = styled.div<IIcon>`
+    color: ${({theme}) => theme.Colors.amarelo};
+    margin-bottom: 100px;
+    margin-right: 10px;
+`;
+
 export const TitleOperation = styled.div`
-    max-width: 400px;
-    color: ${({theme}) => theme.Colors.laranja_medio};
+    display: flex;
+    flex-direction: column;
 `;
 
 export const TextOperation = styled.div`
-    max-width: 500px;
+    max-width: 400px;
+    margin-bottom: 20px;
+`;
+
+export const TextDescription = styled.div`
+    margin-top: 20px;
 `;
 
 export const ImageOperation = styled.div`
     margin: 20px 100px;
 `;
+
+export const Text = styled.div``;

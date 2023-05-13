@@ -1,16 +1,20 @@
-import { CaretDoubleRight } from "@phosphor-icons/react";
+import { CaretDoubleRight, CaretDoubleLeft } from "@phosphor-icons/react";
 import {
   Container,
+  Icon,
   ImageOperation,
+  TextDescription,
   TextOperation,
   TitleOperation,
 } from "./cardOperation.styles";
 import { Text } from "../../../components/text/text";
 
 interface ICardOperation {
+  number_title: string;
   title: string;
   description: string;
   direction: "row" | "row-reverse";
+  icon: boolean;
   image: {
     url: string;
     alt: string;
@@ -18,24 +22,35 @@ interface ICardOperation {
 }
 
 const CardOperation = ({
+  number_title,
   title,
   description,
   direction,
   image,
+  icon,
 }: ICardOperation) => {
   return (
     <Container direction={direction}>
-      <CaretDoubleRight color="#FCD823" />
+      <Icon icon={icon}>
+        {icon ? <CaretDoubleRight size="50" /> : <CaretDoubleLeft size="50" />}
+      </Icon>
       <TextOperation>
-        <TitleOperation color="#FCD823">
-          <Text weight={600} height={1.7} color="preto" size="24">
+        <TitleOperation>
+          <Text weight={600} height={1.7} color="laranja_destaque" size="24">
+            {number_title}
+          </Text>
+        </TitleOperation>
+        <TitleOperation>
+          <Text weight={600} height={1.5} color="laranja_destaque" size="24">
             {title}
           </Text>
         </TitleOperation>
 
-        <Text weight={600} height={1.7} color="preto" size="16">
-          {description}
-        </Text>
+        <TextDescription>
+          <Text weight={400} height={1.7} color="preto" size="16">
+            {description}
+          </Text>
+        </TextDescription>
       </TextOperation>
 
       <ImageOperation>
