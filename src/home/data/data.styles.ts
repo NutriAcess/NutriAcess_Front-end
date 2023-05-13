@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     background-color: ${({theme}) => theme.Colors.laranja_claro};
-    height: 400px;
+    height: 550px;
 `;
 
 export const TitleDestaqueData = styled.div`
@@ -16,5 +16,6 @@ export const CardsData = styled.div`
     margin-top: 70px;
     flex-direction: row;
     justify-content: center;
+    gap: 30px;
 `;
 
