@@ -11,26 +11,38 @@ export const Container = styled.div`
 
 `;
 
-export const NavLinks = styled.a.attrs({
-    target:"_blank",
-    rel: "noreferrer",
-})`
-
-    
-`;
-
-export const TextLinks = styled.span`
+export const NavLinks = styled.a`
     color: ${({theme}) => theme.Colors.vinho};
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
+    position: relative;
+    padding: 0 10px;
+
+    &:after {
+        content: " ";
+        position: absolute;
+        background-color: ${({theme}) => theme.Colors.laranja_destaque};
+        height: 4px;
+        border-radius: 10px;
+        width: 0;
+        left: 50%;
+        bottom: -10px;
+        transition: 0.6s;
+    }
+
+    &:hover::after{
+        width: 100%;
+        left: 0;
+        transform: none;
+    }
 `;
+
 
 export const LinkContainer = styled.div`
-    padding: 16px;
-
-    &:hover {
-        border-bottom: 8px solid red;
-    };
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 800px;
 `;
 
 
