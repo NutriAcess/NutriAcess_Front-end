@@ -22,12 +22,12 @@ const CardFeedback = ({ name, description, image }: ICardFeedback) => {
         <img src={image.url} alt={image.alt}></img>
       </PhotoUser>
       <NameUser>
-        <Text weight={600} height={1.7} color="preto" size="16">
+        <Text weight={600} height={1.7} color="preto" size="20">
           {name}
         </Text>
       </NameUser>
       <DescriptionUser>
-        <Text weight={600} height={1.7} color="preto" size="8">
+        <Text weight={400} height={1.7} color="preto" size="16">
           {description}
         </Text>
       </DescriptionUser>
