@@ -6,7 +6,7 @@ import { MagnifyingGlass } from "@phosphor-icons/react";
 const Input = () => {
   return (
     <Container>
-      
+    
       <InputStyled placeholder="Digite o nome do seu especialista!" size={30}/>
       
       <Button>

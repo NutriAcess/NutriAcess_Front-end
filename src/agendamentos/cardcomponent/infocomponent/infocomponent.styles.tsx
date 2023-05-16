@@ -19,6 +19,9 @@ export const Container = styled.div`
     margin-top: 30px;
 
     gap: 50px;
+    box-shadow: 5px 5px 3px lightgray;
+
+    margin-bottom: 80px;
 `;
 
 export const ImageDoctor = styled.div`

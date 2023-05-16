@@ -7,6 +7,7 @@ import ftprofissional from "../assets/ft-profissional.svg"
 import ftprofissional2 from "../assets/ft-profissional-2.svg"
 import ftprofissional3 from "../assets/ft-profissional-3.svg"
 import ftprofissional4 from "../assets/ft-profissional-4.svg"
+import Footer from "../components/footer/footer";
 
 const Agendamentos = () => {
   return (
@@ -64,14 +65,16 @@ const Agendamentos = () => {
          />
 
         <InfoComponent
-          title="Luciano Barbosa"
+          title="Luiza Silva"
   
-          socialmedia="lucianobarbosa-nutri"
+          socialmedia="Luizasilva-nutrition"
   
           description="Seja bem vindo(a)!   Sou nutricionista especialista em nutrição esportiva e familiar. Posso te ajudar a viver bem e conquistar mais qualidade de vida. Ficou curioso? Então marque uma consulta e inicie agora o seu processo de autoconhecimento!"
   
           image={{ alt: "", url: ftprofissional4 }}
          />
+
+         <Footer />
     </Container>
   )
 };
