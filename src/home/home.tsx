@@ -1,4 +1,14 @@
+import growth from "../assets/Growth.svg";
+import prati from "../assets/Pratí.svg";
+import smartfit from "../assets/Smart-fit.svg";
+import Button from "../components/button/button";
+import Footer from "../components/footer/footer";
 import Header from "../components/header/header";
+import { Text } from "../components/text/text";
+import About from "./about/about";
+import Data from "./data/data";
+import Feedback from "./feedback/feedback";
+import Goals from "./goals/goals";
 import {
   Container,
   DivButton,
@@ -7,18 +17,8 @@ import {
   LogoPartners,
   Partners,
 } from "./home.styles";
-import Button from "../components/button/button";
-import { Text } from "../components/text/text";
-import About from "./about/about";
-import Goals from "./goals/goals";
 import Operation from "./operation/operation";
-import Data from "./data/data";
-import growth from "../assets/Growth.svg";
-import smartfit from "../assets/Smart-fit.svg";
-import prati from "../assets/Pratí.svg";
-import Feedback from "./feedback/feedback";
 import Plans from "./plans/plans";
-import Footer from "../components/footer/footer";
 
 const Home = () => {
   return (
@@ -35,10 +35,6 @@ const Home = () => {
           <Button
             variant="primario"
             title="Conheça nossos planos"
-            border={10}
-            padding={18}
-            width={250}
-            size={16}
           />
         </DivButton>
       </ImageWrapper>

@@ -8,6 +8,7 @@ interface IContainer {
     shadow: "primario" | "secundario";
 }
 
+
 export const Container = styled.div<IContainer>`
     display: flex;
     margin-top: -100px;
@@ -61,6 +62,13 @@ export const Checked = styled.ul`
     align-items: center;
 `;
 
+export const Divbutton = styled.div`
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+`;
 
 
 

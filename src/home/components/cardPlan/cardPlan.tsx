@@ -1,9 +1,12 @@
-import { Text } from "../../../components/text/text";
 import { Check, X } from "@phosphor-icons/react";
+
+import Button from "../../../components/button/button";
+import { Text } from "../../../components/text/text";
 import {
   Checked,
   Container,
   Description,
+  Divbutton,
   Header,
   Price,
   TitleHeader,
@@ -12,6 +15,7 @@ import {
 } from "./cardPlan.styles";
 
 interface ICardPlan {
+  variant: "primario" | "secundario" | "terciario";
   titleplan: string;
   destaque: "primario" | "secundario";
   shadow: "primario" | "secundario";
@@ -27,6 +31,7 @@ interface ICardPlan {
 }
 
 const CardPlan = ({
+  variant,
   titleplan,
   destaque,
   shadow,
@@ -81,6 +86,9 @@ const CardPlan = ({
           </Topico>
         ))}
       </Topics>
+      <Divbutton >
+        <Button variant={variant} title="Assinar"></Button>
+      </Divbutton>
     </Container>
   );
 };
