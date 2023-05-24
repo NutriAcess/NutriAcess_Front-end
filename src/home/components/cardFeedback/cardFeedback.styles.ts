@@ -1,27 +1,31 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 12px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
 `;
 
 export const PhotoUser = styled.div`
-    display: flex;
-    justify-content: center;
+  display: flex;
+
+  width: 90px;
+  height: 90px;
+
+  border-radius: 45px;
+
+  align-items: center;
+  justify-content: center;
 `;
 
 export const NameUser = styled.div`
-    display: flex;
-    justify-content: center;
-    margin: 12px 0;
+  margin: 12px 0;
 `;
 
 export const DescriptionUser = styled.div`
-    display: flex;
-    justify-content: center;
-    margin: 24px 0;
-    width: 450px;
-    text-align: center;
+  margin: 24px 0;
+  width: 450px;
+  text-align: center;
 `;

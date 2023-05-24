@@ -1,12 +1,63 @@
 import { Text } from "../../components/text/text";
 import CardFeedback from "../components/cardFeedback/cardFeedback";
-import { CardFeedbackIcon, Container, Title } from "./feedback.styles";
-import userfeedbackgabs from "../../assets/UserFeedbackgabs.svg";
-import userfeedbackdavy from "../../assets/UserFeedbackdavy.svg";
-import userfeedbackalinny from "../../assets/UserFeedbackalinny.svg";
+import { Container, FeedbackContainer, Title } from "./feedback.styles";
+
 import { ArrowCircleLeft, ArrowCircleRight } from "@phosphor-icons/react";
+import { mockFeedback } from "./mock-feedback";
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useState } from "react";
+import { Swiper as SwiperType } from "swiper/types";
 
 const Feedback = () => {
+  const [swiperInstance, setSwiperInstance] = useState<SwiperType>();
+
+  function handleSwipeRight() {
+    swiperInstance?.slideNext();
+  }
+
+  function handleSwipeLeft() {
+    swiperInstance?.slidePrev();
+  }
+
+  function renderFeedbacks() {
+    return (
+      <FeedbackContainer>
+        <ArrowCircleLeft
+          size="150"
+          color="#000"
+          onClick={handleSwipeLeft}
+          style={{ cursor: "pointer" }}
+        />
+
+        <Swiper
+          spaceBetween={24}
+          slidesPerView={3}
+          onSwiper={(swiper) => setSwiperInstance(swiper)}
+        >
+          {mockFeedback.map((feedback) => {
+            return (
+              <SwiperSlide>
+                <CardFeedback
+                  description={feedback.description}
+                  image={feedback.image}
+                  name={feedback.name}
+                />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+
+        <ArrowCircleRight
+          size="150"
+          color="#000"
+          onClick={handleSwipeRight}
+          style={{ cursor: "pointer" }}
+        />
+      </FeedbackContainer>
+    );
+  }
+
   return (
     <Container>
       <Title>
@@ -14,27 +65,7 @@ const Feedback = () => {
           Feedback dos Usuários
         </Text>
       </Title>
-      <CardFeedbackIcon>
-        <ArrowCircleLeft color="#000" size="40" />
-        <CardFeedback
-          image={{ alt: "Usuário Gabriel Augusto", url: userfeedbackdavy }}
-          name="Davy Souza"
-          description="Antes de começar a utilizar a plataforma NutriAcess, minha alimentação era desequilibrada e eu sofria com problemas de saúde constantes. Desde que comecei a seguir as orientações do nutricionista Rogério, minha vida mudou completamente. "
-        />
-
-        <CardFeedback
-          image={{ alt: "Usuário Gabriel Augusto", url: userfeedbackgabs }}
-          name="Gabriel Augusto"
-          description="Comecei a mudar minha vida através da NutriAcess no início desse ano e já vejo resultados. A nutricionista Amanda vem me ajudando a melhorar minha saúde por meio da alimentação e estou cada dia mais feliz!"
-        />
-
-        <CardFeedback
-          image={{ alt: "Usuário Gabriel Augusto", url: userfeedbackalinny }}
-          name="Alinny Ribeiro"
-          description="A NutriAcess e a nutricionista Camilla foram uma verdadeira bênção em minha vida.Depois de me cadastrar na plataforma, recebi um plano alimentar personalizado e suporte contínuo da Camilla. Os resultados foram surpreendentes!"
-        />
-        <ArrowCircleRight color="#000" size="40" />
-      </CardFeedbackIcon>
+      {renderFeedbacks()}
     </Container>
   );
 };
