@@ -1,9 +1,22 @@
 import { CustomSpan } from "./text.styles";
 import { IText } from "./text.types";
 
-export const Text = ({ size, weight, height, color, children }: IText) => {
+export const Text = ({
+  size,
+  weight,
+  height,
+  color,
+  children,
+  transitionTiming,
+}: IText) => {
   return (
-    <CustomSpan weight={weight} height={height} color={color} size={size}>
+    <CustomSpan
+      transitionTiming={transitionTiming}
+      weight={weight}
+      height={height}
+      color={color}
+      size={size}
+    >
       {children}
     </CustomSpan>
   );
