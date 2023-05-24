@@ -86,7 +86,7 @@ const CardPlan = ({
           </Topico>
         ))}
       </Topics>
-      <Divbutton >
+      <Divbutton>
         <Button variant={variant} title="Assinar"></Button>
       </Divbutton>
     </Container>
