@@ -1,7 +1,22 @@
 import { ReactNode } from "react";
 import { TColors } from "../../global/colorsMapping";
 
-type TSize = "2" | "4" | "8" | "16" | "22" | "24" | "32" | "36" | "64";
+type TSize =
+  | "2"
+  | "4"
+  | "8"
+  | "12"
+  | "14"
+  | "16"
+  | "18"
+  | "20"
+  | "24"
+  | "28"
+  | "32"
+  | "36"
+  | "42"
+  | "48"
+  | "64";
 
 export interface IText {
   size: TSize;
@@ -9,6 +24,7 @@ export interface IText {
   height: number;
   color: TColors;
   children: ReactNode;
+  transitionTiming?: number;
 }
 
 export interface IStylesProps {
@@ -16,4 +32,5 @@ export interface IStylesProps {
   weight: number;
   height: number;
   color: TColors;
+  transitionTiming?: number;
 }

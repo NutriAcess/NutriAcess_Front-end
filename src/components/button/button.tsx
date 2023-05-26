@@ -7,8 +7,12 @@ interface IButton {
 
 const Button = ({ title, variant }: IButton) => {
   return (
-    <Container variant={variant}>
-      <TitleButton variant={variant}>{title}</TitleButton>
+    <Container
+      variant={variant}
+    >
+      <TitleButton variant={variant}>
+        {title}
+      </TitleButton>
     </Container>
   );
 };
