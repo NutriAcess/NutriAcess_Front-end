@@ -7,7 +7,7 @@ import { NutriDashboard } from "./pages/nutri-dashboard/nutri-dasboard";
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <NutriDashboard />
+      <Home />
     </ThemeProvider>
   );
 }

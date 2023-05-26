@@ -7,28 +7,14 @@ import {
   Container,
   Description,
   Divbutton,
+  Divider,
   Header,
   Price,
   TitleHeader,
   Topico,
   Topics,
 } from "./cardPlan.styles";
-
-interface ICardPlan {
-  variant: "primario" | "secundario" | "terciario";
-  titleplan: string;
-  destaque: "primario" | "secundario";
-  shadow: "primario" | "secundario";
-  description: string;
-  plan: {
-    value: number;
-    duration: string;
-  };
-  topics: {
-    isChecked: boolean;
-    title: string;
-  }[];
-}
+import { ICardPlan } from "./cardPlan.types";
 
 const CardPlan = ({
   variant,
@@ -52,42 +38,50 @@ const CardPlan = ({
   return (
     <Container shadow={shadow}>
       <Header destaque={destaque}>
-        <TitleHeader>{titleplan}</TitleHeader>
+        <Text
+          color={destaque === "primario" ? "branco" : "preto"}
+          height={26}
+          size="20"
+          weight={700}
+        >
+          {titleplan}
+        </Text>
       </Header>
       <Price>
-        <Text weight={600} height={1.2} color="preto" size="36">
+        <Text weight={600} height={49} color="preto" size="36">
           R$ {separateValues().inteiro}
-          <Text weight={600} height={1.2} color="preto" size="16">
+          <Text weight={600} height={49} color="preto" size="16">
             ,{separateValues().decimal}
           </Text>
-          <Text weight={600} height={1.2} color="cinza_escuro" size="16">
+          <Text weight={400} height={49} color="cinza_escuro" size="18">
             /{plan.duration}
           </Text>
         </Text>
       </Price>
       <Description>
-        <Text weight={300} height={1.2} color="preto" size="16">
+        <Text weight={400} height={19} color="cinza_escuro" size="14">
           {description}
         </Text>
       </Description>
+      <Divider />
       <Topics>
         {topics.map((item) => (
           <Topico>
             <Checked>
               {item.isChecked ? (
-                <Check color="green" weight="bold" size={25} />
+                <Check color="green" weight="bold" size={24} />
               ) : (
-                <X color="red" weight="bold" size={25} />
+                <X color="red" weight="bold" size={24} />
               )}
             </Checked>
-            <Text weight={300} height={2} color="preto" size="16">
+            <Text weight={300} height={19} color="preto" size="16">
               {item.title}
             </Text>
           </Topico>
         ))}
       </Topics>
       <Divbutton>
-        <Button variant={variant} title="Assinar"></Button>
+        <Button variant={variant} title="Assinar" />
       </Divbutton>
     </Container>
   );

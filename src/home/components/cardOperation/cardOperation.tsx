@@ -36,18 +36,18 @@ const CardOperation = ({
       </Icon>
       <TextOperation>
         <TitleOperation>
-          <Text weight={600} height={1.7} color="laranja_destaque" size="24">
+          <Text weight={700} height={42} color="laranja_destaque" size="24">
             {number_title}
           </Text>
         </TitleOperation>
         <TitleOperation>
-          <Text weight={600} height={1.5} color="laranja_destaque" size="24">
+          <Text weight={700} height={42} color="laranja_destaque" size="24">
             {title}
           </Text>
         </TitleOperation>
 
         <TextDescription>
-          <Text weight={400} height={1.7} color="preto" size="16">
+          <Text weight={300} height={24} color="preto" size="16">
             {description}
           </Text>
         </TextDescription>
