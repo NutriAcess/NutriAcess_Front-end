@@ -56,6 +56,10 @@ export const Cover = styled.div`
   flex-direction: column;
 `;
 
+export const CalendarWrapper = styled.div`
+  pointer-events: none;
+`;
+
 export const DatePicker = styled(DateRange).attrs(({ theme }) => ({
   color: theme.Colors.vinho,
   rangeColors: [theme.Colors.vinho],

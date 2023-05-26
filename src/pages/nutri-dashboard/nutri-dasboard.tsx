@@ -13,6 +13,7 @@ import {
   UserDetails,
   UserWrapper,
   DatePickerWrapper,
+  CalendarWrapper,
 } from "./nutri-dashboard.styles";
 import { mockRanges } from "./mock-ranges";
 import Header from "../../components/header/header";
@@ -50,15 +51,17 @@ export const NutriDashboard = () => {
           <Text color="branco" height={26} size="22" weight={500}>
             Agendamentos
           </Text>
-          <DatePicker
-            weekdayDisplayFormat="EEEEEE"
-            showDateDisplay={false}
-            direction="horizontal"
-            ranges={mockRanges}
-            onChange={() => {}}
-            locale={ptBR}
-            months={2}
-          />
+          <CalendarWrapper>
+            <DatePicker
+              weekdayDisplayFormat="EEEEEE"
+              showDateDisplay={false}
+              direction="horizontal"
+              ranges={mockRanges}
+              onChange={() => {}}
+              locale={ptBR}
+              months={2}
+            />
+          </CalendarWrapper>
         </DatePickerWrapper>
       </Scheduling>
     </Container>
