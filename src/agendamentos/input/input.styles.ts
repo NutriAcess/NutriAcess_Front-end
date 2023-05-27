@@ -9,7 +9,7 @@ export const Container = styled.div `
 export const InputStyled = styled.input `
   border-color: #731943;
 
-  border-radius: 5px;
+  border-radius: 6px;
 
   padding: 24px 200px;
   
@@ -23,7 +23,7 @@ export const InputStyled = styled.input `
 export const Button = styled.button `
 background-color: #731943;
 
-border-radius: 3px;
+border-radius: 6px;
 
 padding: 1.1rem 2rem;
 
