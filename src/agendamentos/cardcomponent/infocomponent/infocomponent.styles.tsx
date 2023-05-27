@@ -60,6 +60,7 @@ export const InfoSection = styled.div`
 `;
 
 export const ButtonDoctor = styled.div`
+    width: 30%;
 `;
 
 
