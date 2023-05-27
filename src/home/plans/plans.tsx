@@ -1,72 +1,14 @@
-import Button from "../../components/button/button";
 import { Text } from "../../components/text/text";
 import CardPlan from "../components/cardPlan/cardPlan";
+import { TopicsFamilia, TopicsPlus, TopicsPremium } from "./data";
 import {
   CardPlanGlobal,
   Container,
-  DivButton,
   Header,
   Plan,
   SubTitle,
   Title,
 } from "./plans.styles";
-
-const TopicsPlus = [
-  {
-    isChecked: true,
-    title: "1 consulta por mês",
-  },
-  {
-    isChecked: true,
-    title: "Suporte online",
-  },
-  {
-    isChecked: false,
-    title: "Notificação - Lembrete",
-  },
-  {
-    isChecked: false,
-    title: "Acompanhamento pessoal",
-  },
-];
-
-const TopicsFamilia = [
-  {
-    isChecked: true,
-    title: "1 consulta por mês",
-  },
-  {
-    isChecked: true,
-    title: "Suporte online",
-  },
-  {
-    isChecked: true,
-    title: "Notificação - Lembrete",
-  },
-  {
-    isChecked: true,
-    title: "Acompanhamento pessoal",
-  },
-];
-
-const TopicsPremium = [
-  {
-    isChecked: true,
-    title: "1 consulta por mês",
-  },
-  {
-    isChecked: true,
-    title: "Suporte online",
-  },
-  {
-    isChecked: true,
-    title: "Notificação - Lembrete",
-  },
-  {
-    isChecked: true,
-    title: "Acompanhamento pessoal",
-  },
-];
 
 const Plans = () => {
   return (
@@ -96,17 +38,8 @@ const Plans = () => {
               duration: "por mês",
             }}
             topics={TopicsPlus}
+            variant="primario"
           />
-          <DivButton>
-            <Button
-              variant="primario"
-              title="Assinar"
-              border={10}
-              padding={12}
-              width={250}
-              size={14}
-            ></Button>
-          </DivButton>
         </CardPlanGlobal>
 
         <CardPlanGlobal shadow="primario">
@@ -120,17 +53,8 @@ const Plans = () => {
               duration: "por mês",
             }}
             topics={TopicsFamilia}
+            variant="terciario"
           />
-          <DivButton>
-            <Button
-              variant="terciario"
-              title="Assinar"
-              border={10}
-              padding={12}
-              width={250}
-              size={14}
-            ></Button>
-          </DivButton>
         </CardPlanGlobal>
 
         <CardPlanGlobal shadow="secundario">
@@ -144,17 +68,8 @@ const Plans = () => {
               duration: "por 3 meses",
             }}
             topics={TopicsPremium}
+            variant="primario"
           />
-          <DivButton>
-            <Button
-              variant="primario"
-              title="Assinar"
-              border={10}
-              padding={12}
-              width={250}
-              size={14}
-            ></Button>
-          </DivButton>
         </CardPlanGlobal>
       </Plan>
     </Container>

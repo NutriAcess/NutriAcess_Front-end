@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { IStylesProps } from "./text.types";
 import { colorsMapping } from "../../global/colorsMapping";
 
@@ -8,4 +8,10 @@ export const CustomSpan = styled.span<IStylesProps>`
   line-height: ${({ height }) => height};
   font-size: ${({ size }) => size}px;
   font-family: ${({ theme }) => theme.Font.font_lato};
+
+  ${({ transitionTiming }) =>
+    transitionTiming &&
+    css`
+      transition: ${transitionTiming}s;
+    `}
 `;

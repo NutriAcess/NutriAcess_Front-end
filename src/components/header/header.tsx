@@ -1,7 +1,7 @@
 import Button from "../button/button";
-import Navbar from "../navbar/navbar";
-import { Container, ButtonContent } from "./header.styles";
 import Logo from "../logo/logo";
+import Navbar from "../navbar/navbar";
+import { ButtonContent, Container } from "./header.styles";
 
 const Header = () => {
   return (
@@ -9,22 +9,8 @@ const Header = () => {
       <Logo />
       <Navbar />
       <ButtonContent>
-        <Button
-          title="Login"
-          variant="primario"
-          border={10}
-          padding={12}
-          width={100}
-          size={14}
-        />
-        <Button
-          title="Cadastre-se"
-          variant="secundario"
-          border={10}
-          padding={12}
-          width={150}
-          size={14}
-        />
+        <Button title="Login" variant="primario" />
+        <Button title="Cadastre-se" variant="secundario" />
       </ButtonContent>
     </Container>
   );
