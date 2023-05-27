@@ -50,7 +50,7 @@ const InfoComponent = ({title, socialmedia, description, image, verify}: IInfoCo
       </DescriptionDoctor>
 
       <ButtonDoctor>
-        <Button title="Marcar consulta" variant="primario" width={220} padding={12} border={10} size={15}/>
+        <Button title="Marcar consulta" variant="primario" />
       </ButtonDoctor>
       
       </InfoSection>
