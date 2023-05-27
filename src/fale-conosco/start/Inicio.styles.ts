@@ -30,5 +30,5 @@ margin-top:100px;
 export const ImgStyled = styled.img`
 width: 360px;
 height: 300px;
-margin-top:114px;
+margin-top: 70px;
 `;

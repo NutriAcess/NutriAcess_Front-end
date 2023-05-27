@@ -20,8 +20,6 @@ const Inicio = () => {
       <ImgStyled src={img_inicio} alt="fale conosco"/>
       </DivSubImg>
     </Container>
-    
-   
   );
 };
 
