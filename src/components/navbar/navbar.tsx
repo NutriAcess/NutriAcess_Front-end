@@ -1,41 +1,21 @@
-import { Container, LinkContainer, NavLinks, TextLinks } from './navbar-styles'
+import { Container, LinkContainer, NavLinks } from "./navbar-styles";
 
 const Navbar = () => {
-  return( 
+  return (
     <Container>
-      
       <LinkContainer>
-        <NavLinks href="#" >
-          <TextLinks>Início</TextLinks>
-        </NavLinks> 
-      </LinkContainer>
+        <NavLinks href="#">Início</NavLinks>
 
-      <LinkContainer>
-        <NavLinks href="#">
-          <TextLinks>Agendamentos</TextLinks>
-          </NavLinks>
-      </LinkContainer> 
-      
-      <LinkContainer>
-        <NavLinks href="#" >
-          <TextLinks>Sobre nós</TextLinks>
-          </NavLinks> 
-      </LinkContainer>
+        <NavLinks href="#">Agendamentos</NavLinks>
 
-      <LinkContainer>
-        <NavLinks href="#" >
-          <TextLinks>Planos</TextLinks>
-          </NavLinks> 
+        <NavLinks href="#">Sobre nós</NavLinks>
+
+        <NavLinks href="#">Planos</NavLinks>
+
+        <NavLinks href="#">Fale Conosco</NavLinks>
       </LinkContainer>
-      
-      <LinkContainer>
-        <NavLinks href="#">
-          <TextLinks>Fale Conosco</TextLinks>
-          </NavLinks> 
-      </LinkContainer>
-      
     </Container>
-  )
-}
+  );
+};
 
 export default Navbar;
