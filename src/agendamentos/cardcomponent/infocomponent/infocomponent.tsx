@@ -8,6 +8,10 @@ interface IInfoComponent {
   title: string;
   socialmedia: string;
   description: string;
+  verify: {
+    url: string;
+    alt: string;
+  },
   image: {
     url: string;
     alt: string;
@@ -15,7 +19,7 @@ interface IInfoComponent {
 }
     /* Passei as props abaixo*/
 
-const InfoComponent = ({title, socialmedia, description, image}: IInfoComponent) => {
+const InfoComponent = ({title, socialmedia, description, image, verify}: IInfoComponent) => {
   return (
     <Container>
       <ImageDoctor>
@@ -28,6 +32,8 @@ const InfoComponent = ({title, socialmedia, description, image}: IInfoComponent)
         <Text weight={600} height={1.7} color="preto" size="32">
           {title}
         </Text>
+        <img src={verify.url} alt={verify.alt} />
+
       </TextTitle>
       
       <TextSocial>

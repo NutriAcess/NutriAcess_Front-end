@@ -18,7 +18,7 @@ export const Container = styled.div`
 
     margin-top: 30px;
 
-    gap: 50px;
+    gap: 20px;
     box-shadow: 5px 5px 3px lightgray;
 
     margin-bottom: 80px;
@@ -26,14 +26,21 @@ export const Container = styled.div`
 
 export const ImageDoctor = styled.div`
     padding-left: 180px;
+    cursor: pointer;
 `;
 
 export const TextTitle = styled.div`
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    img{
+        cursor: pointer;
+    }
 `;
 
 export const TextSocial = styled.div`
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 
     display: flex;
 
@@ -45,7 +52,7 @@ export const TextSocial = styled.div`
 
 
 export const DescriptionDoctor = styled.div`
-margin-bottom: 20px;
+margin-bottom: 15px;
 `;
 
 export const InfoSection = styled.div`
