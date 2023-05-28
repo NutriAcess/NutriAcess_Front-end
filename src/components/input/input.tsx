@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from "react";
-import { InputWrapper, Label, StyledInput } from "./input.styles";
+import { InputWrapper, StyledInput } from "./input.styles";
+import { Text } from "../text/text";
 
 interface InputProps {
   label: string;
@@ -22,7 +23,9 @@ export const Input: React.FC<InputProps> = ({
 
   return (
     <InputWrapper>
-      <Label>{label}</Label>
+      <Text color="vinho" size="20" weight={600} height={22}>
+        {label}
+      </Text>
       <StyledInput
         type={type}
         value={value}
