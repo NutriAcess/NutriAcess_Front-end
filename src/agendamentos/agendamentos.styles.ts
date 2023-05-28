@@ -12,10 +12,9 @@ export const Content = styled.div `
   align-items: center;
   justify-content: center;
 
-  background-color: #f2c438;
+  background-color: ${({theme}) => theme.Colors.amarelo};
 
   height: 22rem;
-  
 `;
 
 export const Title = styled.span`
