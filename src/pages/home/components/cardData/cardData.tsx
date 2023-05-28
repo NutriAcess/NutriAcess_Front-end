@@ -1,9 +1,9 @@
 import { Warning } from "@phosphor-icons/react";
 import { Container, TitleData } from "./cardData.styles";
 
-import { Text } from "../../../components/text/text";
+import { Text } from "../../../../components/text/text";
 import { useState } from "react";
-import { theme } from "../../../global/theme";
+import { theme } from "../../../../global/theme";
 
 interface ICardData {
   title: string;

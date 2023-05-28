@@ -1,4 +1,4 @@
-import { Text } from "../../components/text/text";
+import { Text } from "../../../components/text/text";
 import CardPlan from "../components/cardPlan/cardPlan";
 import { TopicsFamilia, TopicsPlus, TopicsPremium } from "./data";
 import {

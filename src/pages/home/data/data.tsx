@@ -1,4 +1,4 @@
-import { Text } from "../../components/text/text";
+import { Text } from "../../../components/text/text";
 import CardData from "../components/cardData/cardData";
 import { CardsData, Container, TitleDestaqueData } from "./data.styles";
 

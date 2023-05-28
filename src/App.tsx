@@ -1,13 +1,11 @@
-import React from "react";
-import Home from "./home/home";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./global/theme";
-import { NutriDashboard } from "./pages/nutri-dashboard/nutri-dasboard";
+import Singin from "./pages/signInEsp/signInEsp";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Home />
+      <Singin />
     </ThemeProvider>
   );
 }
