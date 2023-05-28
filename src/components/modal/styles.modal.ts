@@ -1,5 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
-import { IContainer } from "./modal.types";
+import { IContainer, IHeader } from "./modal.types";
 
 const slideIn = keyframes`
   from {
@@ -55,4 +55,26 @@ export const Content = styled.div`
   height: 100%;
 
   background-color: ${({ theme }) => theme.Colors.branco};
+
+  padding: 32px;
+`;
+
+export const Header = styled.div<IHeader>`
+  display: flex;
+  align-items: center;
+
+  ${({ title }) =>
+    title
+      ? css`
+          justify-content: space-between;
+        `
+      : css`
+          justify-content: flex-end;
+        `}
+
+  margin-bottom: 36px;
+`;
+
+export const CloseButton = styled.div`
+  cursor: pointer;
 `;
