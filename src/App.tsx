@@ -1,14 +1,14 @@
-import React from 'react';
-import Fale_conosco from './fale-conosco/fale_conosco';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './global/theme';
+import { ThemeProvider } from "styled-components";
+import { theme } from "./global/theme";
+import { AppRoutes } from "./routes/routes";
 
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>< Fale_conosco /></ThemeProvider>
- 
-    );
+    <ThemeProvider theme={theme}>
+      <AppRoutes />
+    </ThemeProvider>
+  );
 }
 
 export default App;
