@@ -15,12 +15,12 @@ const Plans = () => {
     <Container>
       <Header>
         <Title>
-          <Text weight={600} height={1.7} color="branco" size="32">
+          <Text weight={700} height={48} color="branco" size="32">
             Conheça nossos planos
           </Text>
         </Title>
         <SubTitle>
-          <Text weight={400} height={1.7} color="branco" size="20">
+          <Text weight={400} height={22} color="branco" size="18">
             Experimente nossas soluções e escolha o plano ideal para o seu
             próximo projeto.
           </Text>
@@ -38,7 +38,7 @@ const Plans = () => {
               duration: "por mês",
             }}
             topics={TopicsPlus}
-            variant="primario"
+            variant="terciario"
           />
         </CardPlanGlobal>
 
@@ -53,7 +53,7 @@ const Plans = () => {
               duration: "por mês",
             }}
             topics={TopicsFamilia}
-            variant="terciario"
+            variant="primario"
           />
         </CardPlanGlobal>
 
@@ -65,10 +65,10 @@ const Plans = () => {
             description="Venha conhecer as vantagens do plano Premium!"
             plan={{
               value: 100,
-              duration: "por 3 meses",
+              duration: "3 meses",
             }}
             topics={TopicsPremium}
-            variant="primario"
+            variant="terciario"
           />
         </CardPlanGlobal>
       </Plan>

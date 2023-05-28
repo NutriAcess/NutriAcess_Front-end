@@ -14,17 +14,16 @@ export const ImageWrapper = styled.div`
   background-image: url(${BackgroundImage});
   background-repeat: no-repeat;
   background-size: cover;
-  gap: 20px;
   flex-direction: column;
   justify-content: center;
 `;
 
 export const DivText = styled.div`
   display: flex;
+  flex-direction: column;
   text-align: start;
-  align-items: center;
-  width: 600px;
   margin-left: 50px;
+  margin-bottom: 32px;
 `;
 
 export const DivButton = styled.div`

@@ -28,8 +28,14 @@ const Home = () => {
 
       <ImageWrapper>
         <DivText>
-          <Text weight={600} height={1.5} color="branco" size="64">
-            Nutra sua saúde e bem estar com a NutriAcess
+          <Text weight={600} height={94} color="branco" size="64">
+            Nutra sua saúde
+          </Text>
+          <Text weight={600} height={94} color="branco" size="64">
+            e bem estar com
+          </Text>
+          <Text weight={600} height={94} color="branco" size="64">
+            a NutriAcess
           </Text>
         </DivText>
         <DivButton>
