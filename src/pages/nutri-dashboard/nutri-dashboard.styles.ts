@@ -71,6 +71,40 @@ export const SchedulingCardsWrapper = styled.div`
   flex-direction: column;
 `;
 
+export const ButtonContent = styled.div`
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 8px;
+
+  margin-top: 32px;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+
+  width: 20%;
+`;
+
+export const Form = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  margin-bottom: 16px;
+`;
+
+export const InputWrapper = styled.div`
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+`;
+
 export const DatePicker = styled(DateRange).attrs(({ theme }) => ({
   color: theme.Colors.vinho,
   rangeColors: [theme.Colors.vinho],
