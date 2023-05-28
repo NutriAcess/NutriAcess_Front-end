@@ -1,93 +1,90 @@
 import React, { useState } from "react";
 
-import Logo from "../assets/logo.svg";
-
-import { Config, Container, Texto1, Texto2 } from "./signUpUser.styles";
+import {
+  ButtonWrapper,
+  Container,
+  Form,
+  InputWrapper,
+} from "./signUpUser.styles";
+import Logo from "../../components/logo/logo";
 import { Text } from "../../components/text/text";
 import { Input } from "../../components/input/input";
+import Button from "../../components/button/button";
 
-const Singin: React.FC = () => {
+const SignUpUser: React.FC = () => {
   const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-  const [nome, setNome] = useState("");
-  const [nomesocial, setNomesocial] = useState("");
-  const [crn, setCrn] = useState("");
+  const [password, setPassword] = useState("");
 
-  const handleEmailChange = (value: string) => {
-    setEmail(value);
-  };
-
-  const handleSenhaChange = (value: string) => {
-    setSenha(value);
-  };
-
-  const handleNomeChange = (value: string) => {
-    setNome(value);
-  };
-
-  const handleNomesocialChange = (value: string) => {
-    setNomesocial(value);
-  };
-
-  const handleCrnChange = (value: string) => {
-    setCrn(value);
-  };
+  const [name, setName] = useState("");
+  const [socialName, setSocialName] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
   return (
     <Container>
-      <Logo></Logo>
+      <Logo />
 
-      <Texto1>
-        <Text height={1.7} weight={600} size="28" color="vinho">
-          Cadastro Especialista
+      <Form>
+        <Text height={21} weight={700} size="28" color="vinho">
+          Login Usuário
         </Text>
-      </Texto1>
 
-      <Input
-        label="Nome:"
-        value={nome}
-        placeholder="Nome"
-        type="text"
-        onChange={handleNomeChange}
-      />
-      <Config>
-        <Input
-          label="Nome Social"
-          value={nomesocial}
-          placeholder="Nome social"
-          type="text"
-          onChange={handleNomesocialChange}
-        />
-      </Config>
-      <Input
-        label="E-mail:"
-        value={email}
-        placeholder=" e-mail"
-        type="email"
-        onChange={handleEmailChange}
-      />
-      <Input
-        label="Senha:"
-        value={senha}
-        placeholder=" senha"
-        type="password"
-        onChange={handleSenhaChange}
-      />
-      <Input
-        label="CRN:"
-        value={crn}
-        placeholder="0000000-0"
-        type="number"
-        onChange={handleCrnChange}
-      />
+        <InputWrapper>
+          <Input
+            label="Nome"
+            value={name}
+            placeholder="Digite seu Nome"
+            onChange={(e) => setName(e)}
+          />
+        </InputWrapper>
 
-      <Texto2>
-        <Text height={1.7} weight={600} size="16" color="vinho">
-          Não tem cadastro? Faça agora mesmo!
+        <InputWrapper>
+          <Input
+            label="Nome social"
+            value={socialName}
+            placeholder="Digite seu Nome social"
+            onChange={(e) => setSocialName(e)}
+          />
+        </InputWrapper>
+
+        <InputWrapper>
+          <Input
+            label="Email"
+            value={email}
+            type="email"
+            placeholder="Digite seu E-mail"
+            onChange={(e) => setEmail(e)}
+          />
+        </InputWrapper>
+        <InputWrapper>
+          <Input
+            label="Senha:"
+            value={password}
+            placeholder="Digite sua senha"
+            type="password"
+            onChange={(e) => setPassword(e)}
+          />
+        </InputWrapper>
+
+        <InputWrapper>
+          <Input
+            label="Confirme sua senha:"
+            value={passwordConfirmation}
+            placeholder="Confirme sua senha"
+            type="password"
+            onChange={(e) => setPasswordConfirmation(e)}
+          />
+        </InputWrapper>
+
+        <ButtonWrapper>
+          <Button title="Cadastrar" variant="primario" xs />
+        </ButtonWrapper>
+
+        <Text height={21} weight={400} size="16" color="vinho">
+          Já é cadastrado? Faça login!
         </Text>
-      </Texto2>
+      </Form>
     </Container>
   );
 };
 
-export default Singin;
+export default SignUpUser;
