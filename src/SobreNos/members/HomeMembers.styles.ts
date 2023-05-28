@@ -9,7 +9,7 @@ justify-content: center;
 export const ImageMember = styled.div`
 
   img{
-  border: 10px solid #ed6f0d;
+  border: 10px solid ${({theme}) => theme.Colors.laranja_destaque};
   border-radius: 50%;
   }
 `;
