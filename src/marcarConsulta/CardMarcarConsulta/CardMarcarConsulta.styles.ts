@@ -2,23 +2,36 @@ import { DateRange } from 'react-date-range';
 import styled from "styled-components";
 
 export const Container = styled.div`
+    display: flex;
     background-color: ${({theme}) => theme.Colors.amarelo};
-    width: 1100px;
-    height: 664px;
+    /*width: 1100px;
+    height: 664px;*/
     align-items: center;
+    justify-content: center;
+    margin: 0px 250px;
+
+    flex-direction: column;
+
+    border-radius: 10px;
 `;
 
 export const Content = styled.div`
     display: flex;
     flex-direction: row;
-`;
-
-export const Consulta = styled.div`
+    gap: 120px;
     
+    margin-top: 80px;
 `;
 
 export const Image = styled.div`
+    margin-bottom: 50px;
+`;
 
+export const SocialMedia = styled.div`
+    display: flex;
+    gap: 5px;
+    margin-top: 18px;
+    align-items: center;
 `;
 
 export const Infos = styled.div`
@@ -28,16 +41,21 @@ export const Infos = styled.div`
 
 export const ButtonConfirm = styled.div`
     width: 50%;
+    margin-top: 20px;
 `;
 
 export const ButtonPlans = styled.div`
     width: 20%;
     align-items: center;
+    justify-content: center;
+    margin: 48px 0px;
 `;
 
 export const ContentCalender = styled.div`
     display: flex;
     flex-direction: column;
+
+    align-items: center;
 `;
 
 export const CalendarWrapper = styled.div`
