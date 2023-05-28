@@ -1,9 +1,10 @@
+import { ThemeProvider } from 'styled-components';
+import { theme } from './global/theme';
+import Singin from './signInEsp/signInEsp';
 
 function App() {
   return (
-    <div className="App">
-      <Signin/>
-    </div>
+    <ThemeProvider theme={theme}><Singin /></ThemeProvider>
   );
 }
 
