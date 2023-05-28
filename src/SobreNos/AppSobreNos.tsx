@@ -89,7 +89,7 @@ function SobreNos() {
 
       hrefpessoalhub="https://github.com/Luisjunior119/demoday-nutriacess"
 
-      hrefpessoallink="https://www.linkedin.com/company/nutriacess/about/?viewAsMember=true"
+      hrefpessoallink="https://linktr.ee/_nutriacess"
 
       social_media = {{alt: "", url: LogoLinktree}}
       social_mediaa = {{alt: "", url: LogoGithub}}
@@ -123,7 +123,7 @@ function SobreNos() {
 
       hrefpessoalhub="https://github.com/EricaInaciadeLima"
 
-      hrefpessoallink="https://www.linkedin.com/in/erica-inacia-de-lima-82b7b7206/"
+      hrefpessoallink="https://www.linkedin.com/in/erica-inacia-82b7b7206/"
 
       social_media = {{alt: "", url: LogoLinkedin}}
       social_mediaa = {{alt: "", url: LogoGithub}}
@@ -174,7 +174,7 @@ function SobreNos() {
 
       title="Henrique"
 
-      stack="Front-end"
+      stack="Back-end"
 
       hrefpessoalhub="https://github.com/Henriquesantos12"
 
