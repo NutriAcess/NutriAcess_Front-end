@@ -14,13 +14,19 @@ import {
   UserWrapper,
   DatePickerWrapper,
   CalendarWrapper,
+  SchedulingCardsWrapper,
 } from "./nutri-dashboard.styles";
 import { mockRanges } from "./mock-ranges";
 import Header from "../../components/header/header";
 import { Text } from "../../components/text/text";
 import Button from "../../components/button/button";
+import { SchedulingCard } from "./components/schedulignCard/schedulingCard";
+import { Modal } from "../../components/modal/modal";
+import { useState } from "react";
 
 export const NutriDashboard = () => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <Container>
       <Header />
@@ -40,7 +46,11 @@ export const NutriDashboard = () => {
                   Meu perfil
                 </Text>
               </TextWrapper>
-              <Button title="Visualizar perfil" variant="terciario" />
+              <Button
+                onClick={() => setShowModal(true)}
+                title="Visualizar perfil"
+                variant="terciario"
+              />
             </Info>
           </UserWrapper>
         </UserDetails>
@@ -59,11 +69,22 @@ export const NutriDashboard = () => {
               ranges={mockRanges}
               onChange={() => {}}
               locale={ptBR}
-              months={2}
+              months={3}
             />
           </CalendarWrapper>
         </DatePickerWrapper>
       </Scheduling>
+
+      <SchedulingCardsWrapper>
+        <SchedulingCard />
+        <SchedulingCard />
+        <SchedulingCard />
+        <SchedulingCard />
+      </SchedulingCardsWrapper>
+
+      <Modal isVisible={showModal} onClose={() => setShowModal(false)}>
+        <div />
+      </Modal>
     </Container>
   );
 };

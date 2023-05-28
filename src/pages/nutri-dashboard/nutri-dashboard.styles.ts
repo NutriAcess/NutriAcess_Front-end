@@ -35,6 +35,10 @@ export const Scheduling = styled.div`
   margin-top: -160px;
 
   padding: 24px;
+
+  justify-content: center;
+
+  margin-bottom: 32px;
 `;
 
 export const DatePickerWrapper = styled.div`
@@ -60,6 +64,13 @@ export const CalendarWrapper = styled.div`
   pointer-events: none;
 `;
 
+export const SchedulingCardsWrapper = styled.div`
+  margin: 32px;
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+`;
+
 export const DatePicker = styled(DateRange).attrs(({ theme }) => ({
   color: theme.Colors.vinho,
   rangeColors: [theme.Colors.vinho],
@@ -69,7 +80,7 @@ export const DatePicker = styled(DateRange).attrs(({ theme }) => ({
 
   background-color: #f8fdff;
 
-  border-radius: 24px;
+  border-radius: 8px;
 
   margin-top: 8px;
 `;
