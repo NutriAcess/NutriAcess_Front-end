@@ -1,7 +1,7 @@
 import { Check, X } from "@phosphor-icons/react";
 
-import Button from "../../../components/button/button";
-import { Text } from "../../../components/text/text";
+import Button from "../../../../components/button/button";
+import { Text } from "../../../../components/text/text";
 import {
   Checked,
   Container,

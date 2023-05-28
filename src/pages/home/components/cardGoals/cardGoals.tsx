@@ -4,7 +4,7 @@ import {
   TextIcons,
   TitleIcons,
 } from "./cardGoals.styles";
-import { Text } from "../../../components/text/text";
+import { Text } from "../../../../components/text/text";
 
 interface IGoalsIcons {
   title: string;

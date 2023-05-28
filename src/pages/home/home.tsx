@@ -1,10 +1,10 @@
 import growth from "../assets/Growth.svg";
 import prati from "../assets/Pratí.svg";
 import smartfit from "../assets/Smart-fit.svg";
-import Button from "../components/button/button";
-import Footer from "../components/footer/footer";
-import Header from "../components/header/header";
-import { Text } from "../components/text/text";
+import Button from "../../components/button/button";
+import Footer from "../../components/footer/footer";
+import Header from "../../components/header/header";
+import { Text } from "../../components/text/text";
 import About from "./about/about";
 import Data from "./data/data";
 import Feedback from "./feedback/feedback";

@@ -1,4 +1,4 @@
-import { Text } from "../../components/text/text";
+import { Text } from "../../../components/text/text";
 import CardFeedback from "../components/cardFeedback/cardFeedback";
 import { Container, FeedbackContainer, Title } from "./feedback.styles";
 
