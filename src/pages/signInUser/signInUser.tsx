@@ -1,14 +1,22 @@
 import React, { useState } from "react";
-import Logo from "../assets/logo.svg";
-import { Container, Texto1, Texto2 } from "../signInEsp/signInEsp.styles";
+
+import {
+  ButtonWrapper,
+  Container,
+  Form,
+  Header,
+  InputWrapper,
+} from "./signInUser.styles";
+import Logo from "../../components/logo/logo";
 import { Text } from "../../components/text/text";
 import { Input } from "../../components/input/input";
+import Button from "../../components/button/button";
 
-const Singin: React.FC = () => {
+const SignInUser: React.FC = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleEmailChange = (value: string) => {
+  const handleChangeEmail = (value: string) => {
     setEmail(value);
   };
 
@@ -18,36 +26,44 @@ const Singin: React.FC = () => {
 
   return (
     <Container>
-      <Logo></Logo>
+      <Header>
+        <Logo />
+      </Header>
 
-      <Texto1>
-        <Text height={1.7} weight={700} size="28" color="vinho">
-          Nutrição acessível, saúde imbatível!
+      <Form>
+        <Text height={21} weight={700} size="28" color="vinho">
+          Login Usuário
         </Text>
-      </Texto1>
 
-      <Input
-        label="E-mail:"
-        value={email}
-        placeholder="Digite seu e-mail"
-        type="email"
-        onChange={handleEmailChange}
-      />
-      <Input
-        label="Senha:"
-        value={senha}
-        placeholder="Digite sua senha"
-        type="password"
-        onChange={handleSenhaChange}
-      />
+        <InputWrapper>
+          <Input
+            label="Email"
+            value={email}
+            type="email"
+            placeholder="Digite seu E-mail"
+            onChange={handleChangeEmail}
+          />
+        </InputWrapper>
+        <InputWrapper>
+          <Input
+            label="Senha:"
+            value={senha}
+            placeholder="Digite sua senha"
+            type="password"
+            onChange={handleSenhaChange}
+          />
+        </InputWrapper>
 
-      <Texto2>
-        <Text height={1.7} weight={700} size="16" color="vinho">
+        <ButtonWrapper>
+          <Button title="Entrar" variant="primario" xs />
+        </ButtonWrapper>
+
+        <Text height={21} weight={400} size="16" color="vinho">
           Não tem cadastro? Faça agora mesmo!
         </Text>
-      </Texto2>
+      </Form>
     </Container>
   );
 };
 
-export default Singin;
+export default SignInUser;
