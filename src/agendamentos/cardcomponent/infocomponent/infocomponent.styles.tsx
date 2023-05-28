@@ -30,10 +30,14 @@ export const ImageDoctor = styled.div`
 `;
 
 export const TextTitle = styled.div`
-    margin-bottom: 10px;
     display: flex;
+    
+    margin-bottom: 10px;
+    
     align-items: center;
+    
     gap: 5px;
+    
     img{
         cursor: pointer;
     }
@@ -60,7 +64,7 @@ export const InfoSection = styled.div`
 `;
 
 export const ButtonDoctor = styled.div`
-    width: 30%;
+    width: 25%;
 `;
 
 

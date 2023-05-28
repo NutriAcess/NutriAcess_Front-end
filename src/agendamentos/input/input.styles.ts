@@ -7,7 +7,7 @@ export const Container = styled.div `
 `;
 
 export const InputStyled = styled.input `
-  border-color: #731943;
+  border-color: ${({theme}) => theme.Colors.vinho};
 
   border-radius: 6px;
 
@@ -21,14 +21,14 @@ export const InputStyled = styled.input `
 `;
 
 export const Button = styled.button `
-background-color: #731943;
+background-color: ${({theme}) => theme.Colors.vinho};
 
 border-radius: 6px;
 
 padding: 1.1rem 2rem;
 
 border-bottom-left-radius: 0; 
-  border-top-left-radius: 0;
+border-top-left-radius: 0;
 `;
 
 
