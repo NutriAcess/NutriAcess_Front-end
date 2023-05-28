@@ -1,11 +1,17 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 interface IContainer {
+  xs?: boolean;
   variant: "primario" | "secundario" | "terciario";
+  icon?: React.ReactNode;
 }
 
 export const Container = styled.button<IContainer>`
-  width: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
   padding: 12px 24px;
   border-radius: 15px;
   background-color: ${({ theme, variant }) =>
@@ -17,10 +23,21 @@ export const Container = styled.button<IContainer>`
         : variant === "terciario"
         ? theme.Colors.laranja_destaque
         : "transparent"};
+
+  ${({ xs }) =>
+    xs &&
+    css`
+      width: 100%;
+    `}
+
+  &:hover {
+    opacity: 0.8;
+    transition: 1s;
+  }
 `;
 
 export const TitleButton = styled.span<IContainer>`
-  font-weight: bold;
+  font-weight: 700;
   font-family: ${({ theme }) => theme.Font.font_lato};
   color: ${({ theme, variant }) =>
     variant === "primario"
@@ -28,4 +45,10 @@ export const TitleButton = styled.span<IContainer>`
       : variant === "secundario"
       ? theme.Colors.vinho
       : theme.Colors.laranja_destaque};
+
+  ${({ icon }) =>
+    icon &&
+    css`
+      margin-right: 16px;
+    `}
 `;
