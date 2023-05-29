@@ -18,7 +18,7 @@ const Assessment = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
-
+  const novoArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   return (
     <Container>
       <Title>
@@ -28,39 +28,11 @@ const Assessment = () => {
       </Title>
 
       <Feedback>
-        <DivNumber>
-          <Number> 0 </Number>
-        </DivNumber>
-        <DivNumber>
-          <Number> 1 </Number>
-        </DivNumber>
-        <DivNumber>
-          <Number> 2 </Number>
-        </DivNumber>
-        <DivNumber>
-          <Number> 3 </Number>
-        </DivNumber>
-        <DivNumber>
-          <Number> 4 </Number>
-        </DivNumber>
-        <DivNumber>
-          <Number> 5 </Number>
-        </DivNumber>
-        <DivNumber>
-          <Number> 6 </Number>
-        </DivNumber>
-        <DivNumber>
-          <Number> 7 </Number>
-        </DivNumber>
-        <DivNumber>
-          <Number> 8 </Number>
-        </DivNumber>
-        <DivNumber>
-          <Number> 9 </Number>
-        </DivNumber>
-        <DivNumber>
-          <Number> 10 </Number>
-        </DivNumber>
+        {novoArray.map((num) => (
+          <DivNumber>
+            <Number> {num} </Number>
+          </DivNumber>
+        ))}
       </Feedback>
 
       <Title>
@@ -96,13 +68,13 @@ const Assessment = () => {
             onChange={(e) => setDescription(e)}
           />
         </DivInput>
-      
-          
-          <ButtonDiv>
-            <Button variant="primario" title="Enviar" xs/>
-          </ButtonDiv>
-        </ContainerInput>
-    
+
+
+        <ButtonDiv>
+          <Button variant="primario" title="Enviar" xs />
+        </ButtonDiv>
+      </ContainerInput>
+
     </Container>
   );
 };
