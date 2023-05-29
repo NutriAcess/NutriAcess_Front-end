@@ -10,16 +10,16 @@ export const Container = styled.div`
     width: 1100px;
     height: 320px;
 
-    background-color: #fff;
+    background-color: ${({theme}) => theme.Colors.branco};
 
-    border: 1px solid #000000;
+    border: 1px solid ${({theme}) => theme.Colors.preto};
 
     border-radius: 20px;
 
     margin-top: 30px;
 
     gap: 20px;
-    box-shadow: 5px 5px 3px lightgray;
+    box-shadow: 5px 5px 3px ${({theme}) => theme.Colors.cinza};
 
     margin-bottom: 80px;
 `;
