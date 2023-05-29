@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-background-color: #F2C438;
+background-color: ${({theme}) => theme.Colors.amarelo};
 width: 100%;
 height: 50vh;
 padding: 30px;
@@ -30,5 +30,6 @@ margin-top:100px;
 export const ImgStyled = styled.img`
 width: 360px;
 height: 300px;
-margin-top: 70px;
+margin-top: 7rem;
+
 `;
