@@ -29,7 +29,7 @@ const InfoComponent = ({title, socialmedia, description, image, verify}: IInfoCo
       <InfoSection>
 
       <TextTitle>
-        <Text weight={600} height={1.7} color="preto" size="32">
+        <Text weight={600} height={47} color="preto" size="32">
           {title}
         </Text>
         <img src={verify.url} alt={verify.alt} />
@@ -38,13 +38,13 @@ const InfoComponent = ({title, socialmedia, description, image, verify}: IInfoCo
       
       <TextSocial>
       <InstagramLogo size={28}/>
-        <Text weight={600} height={1.7} color="preto" size="16">
+        <Text weight={600} height={16} color="preto" size="16">
           {socialmedia}
         </Text>
       </TextSocial>
 
       <DescriptionDoctor>
-        <Text weight={400} height={1.7} color="preto" size="16">
+        <Text weight={400} height={16} color="preto" size="16">
           {description}
         </Text>
       </DescriptionDoctor>
