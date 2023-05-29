@@ -11,6 +11,11 @@ export const ImageMember = styled.div`
   img{
   border: 10px solid ${({theme}) => theme.Colors.laranja_destaque};
   border-radius: 50%;
+  cursor: pointer;
+  }
+  img:hover{
+    transition: all 1s;
+    opacity: 90%;
   }
 `;
 
