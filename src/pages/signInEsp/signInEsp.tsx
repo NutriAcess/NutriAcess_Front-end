@@ -1,16 +1,22 @@
 import React, { useState } from "react";
 
-import { Container, Texto1, Texto2 } from "./signInEsp.styles";
+import {
+  ButtonWrapper,
+  Container,
+  Form,
+  InputWrapper,
+} from "./signInEsp.styles";
 import Logo from "../../components/logo/logo";
 import { Text } from "../../components/text/text";
 import { Input } from "../../components/input/input";
+import Button from "../../components/button/button";
 
-const Singin: React.FC = () => {
-  const [email, setEmail] = useState("");
+const SignInSpecialist: React.FC = () => {
+  const [crn, setCRN] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleEmailChange = (value: string) => {
-    setEmail(value);
+  const handleChangeCRN = (value: string) => {
+    setCRN(value);
   };
 
   const handleSenhaChange = (value: string) => {
@@ -20,34 +26,40 @@ const Singin: React.FC = () => {
   return (
     <Container>
       <Logo />
-      <Texto1>
+
+      <Form>
         <Text height={21} weight={700} size="28" color="vinho">
           Login Especialista
         </Text>
-      </Texto1>
 
-      <Input
-        label="E-mail:"
-        value={email}
-        placeholder="Digite seu e-mail"
-        type="email"
-        onChange={handleEmailChange}
-      />
-      <Input
-        label="Senha:"
-        value={senha}
-        placeholder="Digite sua senha"
-        type="password"
-        onChange={handleSenhaChange}
-      />
+        <InputWrapper>
+          <Input
+            label="CRN:"
+            value={crn}
+            placeholder="Digite seu CRN"
+            onChange={handleChangeCRN}
+          />
+        </InputWrapper>
+        <InputWrapper>
+          <Input
+            label="Senha:"
+            value={senha}
+            placeholder="Digite sua senha"
+            type="password"
+            onChange={handleSenhaChange}
+          />
+        </InputWrapper>
 
-      <Texto2>
-        <Text height={21} weight={700} size="16" color="vinho">
+        <ButtonWrapper>
+          <Button title="Entrar" variant="primario" xs />
+        </ButtonWrapper>
+
+        <Text height={21} weight={400} size="16" color="vinho">
           Não tem cadastro? Faça agora mesmo!
         </Text>
-      </Texto2>
+      </Form>
     </Container>
   );
 };
 
-export default Singin;
+export default SignInSpecialist;

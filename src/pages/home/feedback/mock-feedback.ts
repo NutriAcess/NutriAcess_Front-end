@@ -1,6 +1,6 @@
-import userfeedbackgabs from "../../assets/UserFeedbackgabs.svg";
-import userfeedbackdavy from "../../assets/UserFeedbackdavy.svg";
-import userfeedbackalinny from "../../assets/UserFeedbackalinny.svg";
+import userfeedbackgabs from "../../../assets/UserFeedbackgabs.svg";
+import userfeedbackdavy from "../../../assets/UserFeedbackdavy.svg";
+import userfeedbackalinny from "../../../assets/UserFeedbackalinny.svg";
 
 export const mockFeedback = [
   {

@@ -1,11 +1,11 @@
 import { ThemeProvider } from "styled-components";
 import { theme } from "./global/theme";
-import { ProfileUser } from "./pages/profile-user/profile-user";
+import { AppRoutes } from "./routes/routes";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <ProfileUser />
+      <AppRoutes />
     </ThemeProvider>
   );
 }

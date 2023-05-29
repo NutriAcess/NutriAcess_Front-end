@@ -1,9 +1,9 @@
-import IconAcessible from "../../assets/IconeAcessivel.svg";
-import IconAccompaniment from "../../assets/IconeAcompanhamento.svg";
-import IconFuture from "../../assets/IconeFuturo.svg";
-import IconTime from "../../assets/IconeTempo.svg";
-import IconMark from "../../assets/IconeMeta.svg";
-import IconFamily from "../../assets/IconeFamilia.svg";
+import IconAcessible from "../../../assets/IconeAcessivel.svg";
+import IconAccompaniment from "../../../assets/IconeAcompanhamento.svg";
+import IconFuture from "../../../assets/IconeFuturo.svg";
+import IconTime from "../../../assets/IconeTempo.svg";
+import IconMark from "../../../assets/IconeMeta.svg";
+import IconFamily from "../../../assets/IconeFamilia.svg";
 
 export const goalsData = [
   {
