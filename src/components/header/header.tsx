@@ -9,8 +9,8 @@ const Header = () => {
       <Logo />
       <Navbar />
       <ButtonContent>
-        <Button title="Login" variant="primario" />
-        <Button title="Cadastre-se" variant="secundario" />
+        <Button title="Login" variant="primario" xs />
+        <Button title="Cadastre-se" variant="secundario" xs />
       </ButtonContent>
     </Container>
   );
