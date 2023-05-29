@@ -1,7 +1,7 @@
 
 import Header from "../components/header/header"
 import { Text } from "../components/text/text"
-import Plans from "../home/plans/plans"
+import Plans from "../pages/home/plans/plans"
 import { Container, Emphasis, SectionPlan } from "./planos.styles"
 
 export const Planos = () => {
