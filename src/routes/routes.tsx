@@ -1,8 +1,9 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "../pages/home/home";
-import SignInUser from "../pages/signInUser/signInUser";
-import SignInSpecialist from "../pages/signInEsp/signInEsp";
 import { NutriDashboard } from "../pages/nutri-dashboard/nutri-dasboard";
+import { Planos } from "../pages/planos/planos";
+import SignInSpecialist from "../pages/signInEsp/signInEsp";
+import SignInUser from "../pages/signInUser/signInUser";
 import SignUpUser from "../pages/signUpUser/signUpUser";
 
 export const AppRoutes = () => {
@@ -14,6 +15,7 @@ export const AppRoutes = () => {
         <Route path="/sign-in-esp" element={<SignInSpecialist />} />
         <Route path="/sign-up-user" element={<SignUpUser />} />
         <Route path="/dashboard-nutri" element={<NutriDashboard />} />
+        <Route path="/planos" element={<Planos />} />
       </Routes>
     </Router>
   );
