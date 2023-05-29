@@ -17,9 +17,9 @@ align-items:center;
 
 export const Title = styled.h1`
 text-align:center;
-border-bottom: 3px #731943 solid;
 max-width: 220px;
 margin: 0 auto;
+margin-top: 43px;
 `;
 
 export const SubTitle = styled.div`
@@ -28,8 +28,6 @@ margin-top:100px;
 `;
 
 export const ImgStyled = styled.img`
-width: 360px;
-height: 300px;
-margin-top: 7rem;
-
+display: flex;
+margin-top: 196px;
 `;

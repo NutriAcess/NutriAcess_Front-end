@@ -1,17 +1,17 @@
+import { useState } from "react";
+import Button from "../../components/button/button";
 import { Input } from "../../components/input/input";
 import { Text } from "../../components/text/text";
-import Button from "../../components/button/button";
-import { useState } from "react";
 
 import {
-  Container,
-  Title,
-  DivNumber,
-  Number,
-  Feedback,
-  DivInput,
-  ContainerInput,
   ButtonDiv,
+  Container,
+  ContainerInput,
+  DivInput,
+  DivNumber,
+  Feedback,
+  Number,
+  Title,
 } from "./assessment.styled";
 
 const Assessment = () => {
@@ -22,7 +22,7 @@ const Assessment = () => {
   return (
     <Container>
       <Title>
-        <Text weight={600} height={1.7} color="preto" size="24">
+        <Text weight={600} height={36} color="preto" size="24">
           Sua avaliação é muito importante para nós!
         </Text>
       </Title>
@@ -96,11 +96,12 @@ const Assessment = () => {
             onChange={(e) => setDescription(e)}
           />
         </DivInput>
-      </ContainerInput>
+      
           
           <ButtonDiv>
-            <Button variant="primario" title="Enviar" />
+            <Button variant="primario" title="Enviar" xs/>
           </ButtonDiv>
+        </ContainerInput>
     
     </Container>
   );

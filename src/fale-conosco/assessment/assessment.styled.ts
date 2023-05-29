@@ -16,6 +16,7 @@ export const Feedback = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 45px;
+  cursor: pointer;
 `;
 
 export const DivNumber = styled.div`
@@ -44,9 +45,9 @@ export const ContainerInput = styled.div`
 
 export const ButtonDiv = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin-bottom: 40px;
+  width: 15%;
+  margin-top: 34px;
 `;
 
 export const Number = styled.div`
