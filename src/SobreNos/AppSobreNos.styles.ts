@@ -11,7 +11,7 @@ export const BigTitle = styled.div`
   justify-content: center;
 
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 `;
 
 export const Content = styled.div`
@@ -19,12 +19,13 @@ export const Content = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
 
-  gap: 90px;
+  gap: 68px;
 
   align-items: center;
   justify-content: center;
 
-  margin-top: 30px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 `;
 
 export const Contenter = styled.div `
@@ -32,13 +33,13 @@ export const Contenter = styled.div `
   flex-direction: row;
   flex-wrap: wrap;
 
-  gap: 90px;
+  gap: 68px;
 
   align-items: center;
   justify-content: center;
   
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 40px;
+  margin-bottom: 66px;
 `;
 
 
