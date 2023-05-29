@@ -103,7 +103,7 @@ const SignInSpecialist: React.FC = () => {
         </ButtonWrapper>
 
         <Text height={21} weight={400} size="16" color="vinho">
-          Não tem cadastro? Faça agora mesmo!
+         Já é cadastrado? Faça login!
         </Text>
       </Form>
     </Container>
