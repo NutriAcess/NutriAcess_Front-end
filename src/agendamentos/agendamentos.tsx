@@ -30,8 +30,8 @@ const Agendamentos = () => {
         </ContentButton>
 
         </Content>
-        
 
+        
         {data.map((item) => {
           return(<InfoComponent
             title={item.title}
