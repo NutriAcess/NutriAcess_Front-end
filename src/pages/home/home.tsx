@@ -5,6 +5,7 @@ import Button from "../../components/button/button";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import { Text } from "../../components/text/text";
+import { Plans } from "../home/plans/plans";
 import About from "./about/about";
 import Data from "./data/data";
 import Feedback from "./feedback/feedback";
@@ -19,7 +20,7 @@ import {
   Partners,
 } from "./home.styles";
 import Operation from "./operation/operation";
-import Plans from "./plans/plans";
+
 
 const Home = () => {
   return (

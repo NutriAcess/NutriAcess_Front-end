@@ -1,19 +1,12 @@
 import { Text } from "../../../components/text/text";
-import CardPlan from "../components/cardPlan/cardPlan";
-import { TopicsFamilia, TopicsPlus, TopicsPremium } from "./data";
-import {
-  CardPlanGlobal,
-  Container,
-  Header,
-  Plan,
-  SubTitle,
-  Title,
-} from "./plans.styles";
+import { CardPlans } from "./cardplans";
 
-const Plans = () => {
+import { Header, SubTitle, Title } from "./cardplans.styles";
+
+export const Plans = () => {
   return (
-    <Container>
-      <Header>
+    <div>
+    <Header>
         <Title>
           <Text weight={700} height={48} color="branco" size="32">
             Conheça nossos planos
@@ -26,54 +19,8 @@ const Plans = () => {
           </Text>
         </SubTitle>
       </Header>
-      <Plan>
-        <CardPlanGlobal shadow="secundario">
-          <CardPlan
-            destaque="secundario"
-            shadow="secundario"
-            titleplan="Plus"
-            description="Venha conhecer as vantagens do plano Plus!"
-            plan={{
-              value: 50,
-              duration: "por mês",
-            }}
-            topics={TopicsPlus}
-            variant="terciario"
-          />
-        </CardPlanGlobal>
-
-        <CardPlanGlobal shadow="primario">
-          <CardPlan
-            destaque="primario"
-            shadow="primario"
-            titleplan="Plano Família"
-            description="Venha conhecer as vantagens do plano Família!"
-            plan={{
-              value: 120,
-              duration: "por mês",
-            }}
-            topics={TopicsFamilia}
-            variant="primario"
-          />
-        </CardPlanGlobal>
-
-        <CardPlanGlobal shadow="secundario">
-          <CardPlan
-            destaque="secundario"
-            shadow="secundario"
-            titleplan="Plano Premium"
-            description="Venha conhecer as vantagens do plano Premium!"
-            plan={{
-              value: 100,
-              duration: "3 meses",
-            }}
-            topics={TopicsPremium}
-            variant="terciario"
-          />
-        </CardPlanGlobal>
-      </Plan>
-    </Container>
-  );
+      <CardPlans/>
+      </div>
+      )
 };
 
-export default Plans;
