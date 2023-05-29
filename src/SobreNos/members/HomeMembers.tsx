@@ -10,6 +10,7 @@ interface IHomeMembers {
   stack: string;
   hrefpessoalhub: string;
   hrefpessoallink: string;
+  ancor_linktree: string;
   social_media: {
     url: string;
     alt: string;
@@ -21,13 +22,15 @@ interface IHomeMembers {
 }
 
 
-const HomeMembers = ({ title, stack, hrefpessoalhub, hrefpessoallink, social_media, social_mediaa, image}: IHomeMembers)  => {
+const HomeMembers = ({ title, stack, hrefpessoalhub, hrefpessoallink, social_media, ancor_linktree, social_mediaa, image}: IHomeMembers)  => {
   return (
     <Container>
       
 
       <ImageMember>
+        <a href={ancor_linktree} target={ancor_linktree}>
         <img src={image.url} alt={image.alt} />
+        </a>
       </ImageMember>
 
       <Information>
@@ -54,9 +57,6 @@ const HomeMembers = ({ title, stack, hrefpessoalhub, hrefpessoallink, social_med
       </SocialMedia>
 
       </Information>
-      
-
-      
 
     </Container>
   )
