@@ -1,9 +1,12 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "../pages/home/home";
 import Fale_conosco from "../fale-conosco/fale_conosco";
 import SignInUser from "../pages/signInUser/signInUser";
 import SignInSpecialist from "../pages/signInEsp/signInEsp";
 import { NutriDashboard } from "../pages/nutri-dashboard/nutri-dasboard";
+import { ProfileUser } from "../pages/profile-user/profile-user";
+import SignInSpecialist from "../pages/signInEsp/signInEsp";
+import SignInUser from "../pages/signInUser/signInUser";
 import SignUpUser from "../pages/signUpUser/signUpUser";
 import SobreNos from "../SobreNos/AppSobreNos";
 import Agendamentos from "../agendamentos/agendamentos";
@@ -14,6 +17,7 @@ export const AppRoutes = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/profile-user" element={<ProfileUser/>} />
         <Route path="/fale-conosco" element={<Fale_conosco />} />
         <Route path="/sobre-nos" element={<SobreNos />} />
         <Route path="/agendamentos" element={<Agendamentos />} />
