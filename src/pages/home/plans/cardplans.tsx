@@ -1,15 +1,12 @@
 import CardPlan from "../components/cardPlan/cardPlan";
 import {
   CardPlanGlobal,
-  Container,
-  Plan,
+  Plan
 } from "./cardplans.styles";
 import { TopicsFamilia, TopicsPlus, TopicsPremium } from "./data";
 
-
-export const Plans = () => {
+export const CardPlans = () => {
   return (
-    <Container>
       <Plan>
         <CardPlanGlobal shadow="secundario">
           <CardPlan
@@ -56,7 +53,6 @@ export const Plans = () => {
           />
         </CardPlanGlobal>
       </Plan>
-    </Container>
   );
 };
 

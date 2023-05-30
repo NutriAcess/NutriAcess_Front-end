@@ -32,7 +32,7 @@ export const TopicsFamilia = [
   },
   {
     isChecked: true,
-    title: "Acompanhamento pessoal",
+    title: "Acompanhamento familiar",
   },
 ];
 
