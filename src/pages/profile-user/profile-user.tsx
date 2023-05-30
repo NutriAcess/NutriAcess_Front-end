@@ -101,9 +101,6 @@ export const ProfileUser = () => {
 
             <SchedulingCardsPlan>
                 <SchedulingPlan/>
-                <SchedulingPlan/>
-                <SchedulingPlan/>
-                <SchedulingPlan/>
             </SchedulingCardsPlan>
 
             <Modal
