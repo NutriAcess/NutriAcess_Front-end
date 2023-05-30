@@ -1,40 +1,26 @@
 
 import { Text } from "../../../../components/text/text";
+import { mocksSchedulingPlan } from "./mock-schedulingPlan";
 import { Container } from "./schedulingPlan.styles";
 
 export const SchedulingPlan = () => {
 
   return (
-    <Container>
-        <div>
-          <Text color="preto" height={26} size="22" weight={500}>
-          Nome: Marcos
-          </Text>
-        </div>
-        <div>
-          <Text color="preto" height={26} size="22" weight={500}>
-          Idade: 30 anos
-          </Text>
-        </div>
+    <>
+      {mocksSchedulingPlan.map((item) => {
+        return (
+          <Container>
+              <Text color="preto" height={30} size="20" weight={400}>
+                <div>Nome={item.name}</div>
+                <div>Idade= {item.age}</div>
+                <div>Sexo= {item.sex}</div>
+                <div>Altura= {item.height}</div>
+                <div>Peso= {item.weight}</div>
+              </Text>
+          </Container>
+        );
+      })}
+    </>
 
-        <div>
-          <Text color="preto" height={26} size="22" weight={500}>
-          Sexo: Masculino 
-          </Text>
-        </div>
-
-        <div>
-          <Text color="preto" height={26} size="22" weight={500}>
-          Altura: 1,70
-          </Text>
-        </div>
-
-        <div>
-          <Text color="preto" height={26} size="22" weight={500}>
-          Peso: 70kg
-          </Text>
-        </div>
-
-    </Container>
   );
 };
