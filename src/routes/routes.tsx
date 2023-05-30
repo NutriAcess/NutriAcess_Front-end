@@ -1,9 +1,8 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import { MarcarConsulta } from "../marcarConsulta/marcarConsulta";
+import { NutriDashboard } from "../pages/nutri-dashboard/nutri-dasboard";
 import Home from "../pages/home/home";
 import Fale_conosco from "../fale-conosco/fale_conosco";
-import SignInUser from "../pages/signInUser/signInUser";
-import SignInSpecialist from "../pages/signInEsp/signInEsp";
-import { NutriDashboard } from "../pages/nutri-dashboard/nutri-dasboard";
 import { ProfileUser } from "../pages/profile-user/profile-user";
 import SignInSpecialist from "../pages/signInEsp/signInEsp";
 import SignInUser from "../pages/signInUser/signInUser";
@@ -25,6 +24,7 @@ export const AppRoutes = () => {
         <Route path="/sign-in-esp" element={<SignInSpecialist />}/>
         <Route path="/sign-up-user" element={<SignUpUser />} />
         <Route path="/dashboard-nutri" element={<NutriDashboard />} />
+        <Route path="/marcar-consulta" element={<MarcarConsulta />} />
       </Routes>
     </Router>
   );
