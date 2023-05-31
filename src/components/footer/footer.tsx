@@ -1,3 +1,11 @@
+import {
+  Envelope,
+  FacebookLogo,
+  InstagramLogo,
+  LinkedinLogo,
+  MapPin,
+  WhatsappLogo,
+} from "@phosphor-icons/react";
 import { Text } from "../text/text";
 import {
   Contact,
@@ -9,14 +17,6 @@ import {
   Rights,
   TypeContact,
 } from "./footer.styles";
-import {
-  Envelope,
-  WhatsappLogo,
-  MapPin,
-  InstagramLogo,
-  FacebookLogo,
-  LinkedinLogo,
-} from "@phosphor-icons/react";
 
 const Footer = () => {
   return (
@@ -27,24 +27,25 @@ const Footer = () => {
             Nossos Contatos
           </Text>
 
-          <TypeContact>
+          <TypeContact href="mailto:contatonutriacess@gmail.com" target="_blank">
             <Envelope color="black" size={24} />
             <Text weight={600} height={19} color="branco" size="14">
-              SuporteNutriAcess@gmail.com
+              contatonutriacess@gmail.com
             </Text>
           </TypeContact>
 
-          <TypeContact>
+          <TypeContact href="https://linktr.ee/nutriacess_" target="_blank">
             <WhatsappLogo color="black" size={24} />
             <Text weight={600} height={19} color="branco" size="14">
-              (11) 98858-5086
+              (11) 98864-7358
+              
             </Text>
           </TypeContact>
 
-          <TypeContact>
+          <TypeContact href="https://goo.gl/maps/zxhAdAgNgqKgrvKb7" target="_blank">
             <MapPin color="black" size={24} />
             <Text weight={600} height={19} color="branco" size="14">
-              SmartFit: São Paulo, SP - o8180-000
+              Rua Tito 54 - São Paulo - 05051-000
             </Text>
           </TypeContact>
         </Contact>
@@ -54,9 +55,9 @@ const Footer = () => {
             Siga-nos
           </Text>
           <IconsFollowUp>
-            <InstagramLogo color="black" size={24} />
-            <FacebookLogo color="black" size={24} />
-            <LinkedinLogo color="black" size={24} />
+            <a href="https://www.instagram.com/_nutriacess/" target="_blank" rel="noreferrer"><InstagramLogo color="black" size={24} /></a>
+            <a href="https://web.facebook.com/instituto.proa" target="_blank" rel="noreferrer"><FacebookLogo color="black" size={24} /></a>
+            <a href="https://linktr.ee/nutriacess_" target="_blank" rel="noreferrer"><LinkedinLogo color="black" size={24} /></a>
           </IconsFollowUp>
         </FollowUp>
 
@@ -65,19 +66,19 @@ const Footer = () => {
             Mapa do Site
           </Text>
           <Text weight={600} height={19} color="branco" size="14">
-            Home
+            <a href="/">Home</a>
           </Text>
           <Text weight={600} height={19} color="branco" size="14">
-            Agendar Consulta
+            <a href="/agendamentos" >Agendamentos</a>
           </Text>
           <Text weight={600} height={19} color="branco" size="14">
-            Planos
+            <a href="/planos">Planos</a>
           </Text>
           <Text weight={600} height={19} color="branco" size="14">
-            Minha Área
+            <a href="/profile-user">Minha Área</a>
           </Text>
           <Text weight={600} height={19} color="branco" size="14">
-            Nossa Equipe
+            <a href="/sobre-nos">Nossa Equipe</a>
           </Text>
         </MapSite>
       </Content>
