@@ -1,18 +1,22 @@
-import Header from "../components/header/header";
-import { Container, Content, ContentButton, Description, Title } from "./agendamentos.styles";
+import Header from "../../components/header/header";
+import {
+  Container,
+  Content,
+  ContentButton,
+  Description,
+  Title,
+} from "./agendamentos.styles";
 import Input from "./input/input";
-import { Text } from "../components/text/text";
+import { Text } from "../../components/text/text";
 import InfoComponent from "./cardcomponent/infocomponent/infocomponent";
-import Footer from "../components/footer/footer";
+import Footer from "../../components/footer/footer";
 import { data } from "./data";
-
 
 const Agendamentos = () => {
   return (
     <Container>
       <Header />
       <Content>
-
         <Title>
           <Text height={47} weight={700} color="branco" size="32">
             Encontre o seu especialista aqui
@@ -28,28 +32,23 @@ const Agendamentos = () => {
         <ContentButton>
           <Input />
         </ContentButton>
+      </Content>
 
-        </Content>
-
-        
-        {data.map((item) => {
-          return(<InfoComponent
+      {data.map((item) => {
+        return (
+          <InfoComponent
             title={item.title}
-            verify= {item.verify}
-    
+            verify={item.verify}
             socialmedia={item.socialmedia}
-    
             description={item.description}
-    
             image={item.image}
-           />)
-        })}
+          />
+        );
+      })}
 
-         
-
-         <Footer />
+      <Footer />
     </Container>
-  )
+  );
 };
 
 export default Agendamentos;
