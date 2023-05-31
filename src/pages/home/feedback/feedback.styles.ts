@@ -20,8 +20,6 @@ export const FeedbackContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  padding-left: 150px;
-  padding-right: 150px;
-
-  gap: 24px;
+  padding-left: 30px;
+  padding-right: 30px;
 `;
