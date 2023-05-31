@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Button from "../../components/button/button";
-import { Input } from "../../components/input/input";
-import { Text } from "../../components/text/text";
+import Button from "../../../components/button/button";
+import { Input } from "../../../components/input/input";
+import { Text } from "../../../components/text/text";
 
 import {
   ButtonDiv,
@@ -18,7 +18,7 @@ const Assessment = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [description, setDescription] = useState("");
-  const novoArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  const novoArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   return (
     <Container>
       <Title>
@@ -69,12 +69,10 @@ const Assessment = () => {
           />
         </DivInput>
 
-
         <ButtonDiv>
           <Button variant="primario" title="Enviar" xs />
         </ButtonDiv>
       </ContainerInput>
-
     </Container>
   );
 };
