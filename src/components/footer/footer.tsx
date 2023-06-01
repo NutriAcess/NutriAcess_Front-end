@@ -6,8 +6,10 @@ import {
   MapPin,
   WhatsappLogo,
 } from "@phosphor-icons/react";
+import { useNavigate } from "react-router-dom";
 import { Text } from "../text/text";
 import {
+  ButtonMapSite,
   Contact,
   Container,
   Content,
@@ -19,6 +21,8 @@ import {
 } from "./footer.styles";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Content>
@@ -38,7 +42,7 @@ const Footer = () => {
             <WhatsappLogo color="black" size={24} />
             <Text weight={600} height={19} color="branco" size="14">
               (11) 98864-7358
-              
+
             </Text>
           </TypeContact>
 
@@ -65,21 +69,35 @@ const Footer = () => {
           <Text weight={600} height={26} color="branco" size="20">
             Mapa do Site
           </Text>
-          <Text weight={600} height={19} color="branco" size="14">
-            <a href="/">Home</a>
-          </Text>
-          <Text weight={600} height={19} color="branco" size="14">
-            <a href="/agendamentos" >Agendamentos</a>
-          </Text>
-          <Text weight={600} height={19} color="branco" size="14">
-            <a href="/planos">Planos</a>
-          </Text>
-          <Text weight={600} height={19} color="branco" size="14">
-            <a href="/profile-user">Minha Área</a>
-          </Text>
-          <Text weight={600} height={19} color="branco" size="14">
-            <a href="/sobre-nos">Nossa Equipe</a>
-          </Text>
+
+          <ButtonMapSite onClick={() => navigate("/")}>
+            <Text weight={600} height={19} color="branco" size="14">
+              Home
+            </Text>
+          </ButtonMapSite>
+
+          <ButtonMapSite onClick={() => navigate("/agendamentos")}>
+            <Text weight={600} height={19} color="branco" size="14">
+              Agendamentos
+            </Text>
+          </ButtonMapSite>
+          <ButtonMapSite onClick={() => navigate("/planos")}>
+            <Text weight={600} height={19} color="branco" size="14">
+              Planos
+            </Text>
+          </ButtonMapSite>
+
+          <ButtonMapSite onClick={() => navigate("/profile-user")}>
+            <Text weight={600} height={19} color="branco" size="14">
+              Minha Área
+            </Text>
+          </ButtonMapSite>
+
+          <ButtonMapSite onClick={() => navigate("/sobre-nos")}>
+            <Text weight={600} height={19} color="branco" size="14">
+              Nossa Equipe
+            </Text>
+          </ButtonMapSite>
         </MapSite>
       </Content>
 

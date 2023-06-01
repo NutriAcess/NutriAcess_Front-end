@@ -58,3 +58,6 @@ export const Rights = styled.div`
 `;
 
 
+export const ButtonMapSite = styled.div`
+  cursor:pointer;
+`;
