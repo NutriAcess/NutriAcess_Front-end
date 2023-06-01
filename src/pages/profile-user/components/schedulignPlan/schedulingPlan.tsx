@@ -11,11 +11,11 @@ export const SchedulingPlan = () => {
         return (
           <Container>
               <Text color="preto" height={30} size="20" weight={400}>
-                <div>Nome={item.name}</div>
-                <div>Idade= {item.age}</div>
-                <div>Sexo= {item.sex}</div>
-                <div>Altura= {item.height}</div>
-                <div>Peso= {item.weight}</div>
+                <div>Nome: {item.name}</div>
+                <div>Idade: {item.age}</div>
+                <div>Sexo: {item.sex}</div>
+                <div>Altura: {item.height}</div>
+                <div>Peso: {item.weight}</div>
               </Text>
           </Container>
         );
