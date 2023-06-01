@@ -1,4 +1,5 @@
 import { VideoCamera } from "@phosphor-icons/react";
+import { useState } from "react";
 import { useTheme } from "styled-components";
 import Button from "../../../../components/button/button";
 import { Text } from "../../../../components/text/text";
@@ -6,6 +7,7 @@ import { Container, PatientInfo } from "./schedulingCard.styles";
 
 export const SchedulingCard = () => {
   const theme = useTheme();
+  const [isHover, setIsHover] = useState(false);
 
   return (
     <Container>
@@ -27,13 +29,18 @@ export const SchedulingCard = () => {
           </Text>
         </div>
       </PatientInfo>
-      <Button
-        icon={
-          <VideoCamera color={theme.Colors.branco} weight="regular" size={24} />
-        }
-        title="Entrar na chamada"
-        variant="primario"
-      />
+      <div
+        onMouseEnter={() => setIsHover(true)}
+        onMouseLeave={() => setIsHover(false)}
+      >
+        <Button
+          icon={
+            <VideoCamera weight="regular" size={24} color={isHover ? theme.Colors.laranja_destaque : theme.Colors.branco} />
+          }
+          title="Entrar na chamada"
+          variant="primario"
+        />
+      </div>
     </Container>
   );
 };
