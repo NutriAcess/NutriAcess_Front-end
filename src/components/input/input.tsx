@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from "react";
-import { InputWrapper, StyledInput } from "./input.styles";
 import { Text } from "../text/text";
+import { InputWrapper, StyledInput } from "./input.styles";
 
 interface InputProps {
   label: string;
@@ -8,6 +8,7 @@ interface InputProps {
   placeholder?: string;
   type?: string;
   onChange: (value: string) => void;
+  height?: string;
 }
 
 export const Input: React.FC<InputProps> = ({
@@ -16,6 +17,7 @@ export const Input: React.FC<InputProps> = ({
   placeholder,
   type = "text",
   onChange,
+  height,
 }) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
@@ -31,6 +33,7 @@ export const Input: React.FC<InputProps> = ({
         value={value}
         placeholder={placeholder}
         onChange={handleChange}
+        height={height}
       />
     </InputWrapper>
   );
