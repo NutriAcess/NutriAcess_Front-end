@@ -7,9 +7,16 @@ export type TUser = {
   socialName: string;
 };
 
+export type TEsp = {
+  crn: string;
+  password: string;
+};
+
 export interface IAuthContext {
   user: TUser;
+  useresp: TEsp;
   isLogged: boolean;
+  signInEsp: (useresp: TEsp) => void;
   signUpUser: (user: TUser) => void;
 }
 
