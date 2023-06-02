@@ -15,7 +15,7 @@ const Header = () => {
       <Navbar />
       {!isLogged && (
         <ButtonContent>
-          <Button title="Login" variant="primario" xs />
+          <Button title="Login" variant="primario" xs onClick={() => navigate("/sign-in-esp")} />
           <Button
             xs
             title="Cadastre-se"
