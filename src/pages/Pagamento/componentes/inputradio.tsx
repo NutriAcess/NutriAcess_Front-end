@@ -15,7 +15,7 @@ const StyledRadioInput = styled.input`
   display:flex;
   width: 17px;
   height: 16px;
-  border: 2px solid yellow;
+  border: 2px solid ${({ theme }) => theme.Colors.amarelo};
   border-radius: 50%;
   margin-right: 8px;
   cursor: pointer;
@@ -28,7 +28,7 @@ const StyledRadioInput = styled.input`
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: yellow;
+    background-color: ${({ theme }) => theme.Colors.amarelo};
   }
 `;
 

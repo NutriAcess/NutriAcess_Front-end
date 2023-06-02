@@ -6,9 +6,7 @@ export const Container = styled.div`
  
 `;
 
-export const Cont = styled.div`
-  
-   
+export const Content = styled.div`
   margin-left: 1px;
 `;
 
@@ -39,9 +37,6 @@ export const Textstyle1 = styled.div`
 `;
 
 export const Textstyle2 = styled.div`
-  display: flex;
-  margin-left: 2%;
-  
 `;
 
 export const Form = styled.div`
@@ -56,17 +51,12 @@ export const Inputradio = styled.div`
  margin-left: 2%;
  margin-top: 1%;
  font-size: 20px;
- 
-
-  
-
 `;
 
 
 export const Inputstyle1 = styled.div`
   width: 250px;
   display: flex;
-  
 `;
 
 
@@ -75,20 +65,19 @@ export const Inputstyle2 = styled.div`
   display: flex;
   margin-top: -3%;
   margin-left: 20%;
-  
 `;
 
- export const StyledCheckbox = styled.div`
-   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  text-align: justify;
-  margin-left:30px;
-
+export const StyledCheckbox = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: justify;
  `;
 
-
 export const Nutristyle = styled.div`
-  
-  
+`;
+
+export const SectionChekbox = styled.div`
+    margin-left: 2%;
+    margin-top: 25px;
 `;

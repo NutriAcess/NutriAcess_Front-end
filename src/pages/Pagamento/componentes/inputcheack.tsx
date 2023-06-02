@@ -13,11 +13,9 @@ const StyledCheckboxInput = styled.input`
   display:flex;
   width: 50px;
   height: 35px;
-  border: 2px solid #7419446a;
+  border: 2px solid ${({ theme }) => theme.Colors.vinho};
   margin-left: 2%;
   margin-top: 2%;
-  
-;
   border-radius: 10px;
   margin-right: 8px;
   cursor: pointer;
@@ -25,7 +23,7 @@ const StyledCheckboxInput = styled.input`
 
   &:checked::after {
     content: '\\2713';
-   display:flex;
+    display:flex;
     border-radius: 10px;
     
     height: 110%;
@@ -35,10 +33,7 @@ const StyledCheckboxInput = styled.input`
     font-size: 30px;
     margin-right:50%;
     padding-right:10px;
-    background-color: #F2C438
-
-     
-
+    background-color: ${({ theme }) => theme.Colors.amarelo}
   }
 `;
 

@@ -1,8 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
-import imagemNutri from "../img/ft-profissional.svg";
+import Textn from "../componentes/textnutri";
 import imagemEstrela from "../img/estrelas.svg";
-import Textn from "../componentes/textnutri"
+import imagemNutri from "../img/ft-profissional.svg";
 
 
 
@@ -10,7 +9,7 @@ const Container1 = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 50%;
-  margin-top: -25%;
+
   width: 8%;
 
 `;
