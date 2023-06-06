@@ -8,9 +8,8 @@ import imagemNutri from "../img/ft-profissional.svg";
 const Container1 = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 50%;
-
-  width: 8%;
+  margin-left: 860px;
+  width: 120px;
 
 `;
 
