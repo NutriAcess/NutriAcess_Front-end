@@ -6,37 +6,42 @@ import HorizontalBar from "./linha";
 const Container = styled.div`
   width: 60%;
   margin-left: 43%;
+  margin-top: 100px;
 `;
 
 
 const Styletext = styled.div`
   display: flex;
+  margin-top: 20px;
 `;
 
 
-const Styletext1 = styled.span`
+const Styletext1 = styled.div`
+
 `;
 
-const Styletext2 = styled.span`
-
+const Styletext2 = styled.div`
+display: flex;
+margin-right: 320px;
 `;
 
 const Button1 = styled.div`
   display: flex;
   margin-bottom: 40px;
-  margin-left: 17%;
-  width: 50%;
-  margin-top: 34px;
+  margin-left: 140px;
+  width: 500px;
+  margin-top: 55px;
 `;
 
 const Hbarstyle = styled.div`
   display: flex;
-  margin-right: 15%;
+  margin-right: 310px;
 `;
 
 const SectionValuePlan = styled.div`
     display: flex;
-    padding: 20px 0px;
+    margin-top: 100px ;
+    
     justify-content: space-between;
 `;
 
@@ -49,9 +54,7 @@ const Nutri = () => {
       <Styletext>
         <Text color='preto' height={20} size='28' weight={600} > Resumo do pagamento  </Text>
       </Styletext>
-      <Hbarstyle>
-        <HorizontalBar width="1500px" height="1px" color="black" />
-      </Hbarstyle>
+      
       <SectionValuePlan>
       <Styletext1>
         <Text color='preto' height={10} size='24' weight={400} > Valor Plano </Text>
