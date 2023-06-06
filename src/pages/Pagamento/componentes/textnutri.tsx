@@ -6,31 +6,31 @@ import { Text } from '../../../components/text/text';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 60%;
-  margin-top: -8%;
+  margin-left: 1020px;
+  margin-top: -130px;
 
 `;
 
 const Style = styled.div`
   display: flex;
-  margin-top: 2%;
+  margin-top: 15px;
 
 `;
 
 const Stylefamily = styled.div`
   display: flex;
   
-  margin-left: 60%;
-  margin-top: -23%;
+  margin-left: 425px;
+  margin-top: -150px;
 
 `;
 
 const Stylefamily1 = styled.div`
   display: flex;
   
-  margin-left: 64%;
-  margin-top: 5%;
-  margin-bottom: px;
+  margin-left: 460px;
+  margin-top: 45px;
+ 
   background-color:#FCB823;
   height: 45px;
   width: 105px;
@@ -41,8 +41,7 @@ const Stylefamily1 = styled.div`
 
 const Stylespan = styled.span`
   display: flex;
-  margin-top: -2.8%;
-  margin-left: 33%;
+ 
 
 `;
 
