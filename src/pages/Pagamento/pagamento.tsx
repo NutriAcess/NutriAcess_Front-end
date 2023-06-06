@@ -4,6 +4,7 @@ import { Text } from '../../components/text/text';
 import Checkbox from './componentes/inputcheack';
 import Nutri from "./componentes/nutricionista";
 import Pagamento from "./componentes/resumepag";
+import Radiotext from "./componentes/inputradio"
 
 import React, { useState } from "react";
 
@@ -48,8 +49,8 @@ const Formasdepagamento = () => {
   const [cods, setCods] = useState("");
 
 
-  const handleCartaoChange = (value: string) => {
-    setCartao(value);
+  const handleSelectedOptionChange = (value: string) => {
+    setSelectedOption(value);
   };
 
   const handleNometitularChange = (value: string) => {
@@ -77,7 +78,11 @@ const Formasdepagamento = () => {
           <Text color='preto' size='24' height={50} weight={600}>Método de Pagamento</Text>
         </Textstyle1>
         <Inputradio>
-          <Text color='preto' size='20' height={31} weight={600}>Cartão de Crédito</Text>
+       
+         <Radiotext>  
+         <Text color='preto' size='20' height={200} weight={600}>Cartão de Crédito</Text>
+         </Radiotext>
+        
         </Inputradio>
         <Form>
           <Inputstyle>
@@ -104,13 +109,17 @@ const Formasdepagamento = () => {
             <Checkbox name="myCheckbox" checked={isChecked2} onChange={handleCheckbox2Change} text=' Plano Família' />
           </StyledCheckbox>
         </SectionChekbox>
-
+       
 
       </Content>
-      <Nutristyle> <Nutri /> </Nutristyle>
       <VerticalBar />
-      <Pagamento />
-
+    <Nutristyle>
+      <Nutri/>
+    </Nutristyle>
+    <Pagamento/>
+      
+      
+    
     </Container>
   );
 };
