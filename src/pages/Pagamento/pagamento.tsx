@@ -2,25 +2,22 @@ import Header from '../../components/header/header';
 import { Input } from "../../components/input/input";
 import { Text } from '../../components/text/text';
 import Checkbox from './componentes/inputcheack';
-import Nutri from "./componentes/nutricionista";
-import Pagamento from "./componentes/resumepag";
 
 import React, { useState } from "react";
 
+import Button from '../../components/button/button';
+import { InfoNutri } from './componentes/infonutri/infonutri';
+import { ResumePag } from './componentes/resumepag/resumepag';
 import {
+  ButtonConfirm,
   Container,
   Content,
-  Form,
-  Inputradio,
+  ContentInput,
   Inputstyle,
-  Inputstyle1,
-  Inputstyle2,
-  Nutristyle,
   SectionChekbox,
-  StyledCheckbox,
-  Textstyle1,
-  Textstyle2,
-  VerticalBar,
+  SideLeft,
+  SideRight,
+  StyledCheckbox
 } from "./pagamento.styles";
 
 const Formasdepagamento = () => {
@@ -40,17 +37,10 @@ const Formasdepagamento = () => {
     setIsChecked2(e.target.checked);
   };
 
-  const [selectedOption, setSelectedOption] = useState('');
-  const [cartao, setCartao] = useState("");
   const [nometitular, setNometitular] = useState("");
   const [ncartao, setNcartao] = useState("");
   const [validade, setValidade] = useState("");
   const [cods, setCods] = useState("");
-
-
-  const handleCartaoChange = (value: string) => {
-    setCartao(value);
-  };
 
   const handleNometitularChange = (value: string) => {
     setNometitular(value);
@@ -68,49 +58,50 @@ const Formasdepagamento = () => {
     setCods(value);
   };
 
-
   return (
     <Container>
       <Header />
       <Content>
-        <Textstyle1>
+        <SideLeft>
           <Text color='preto' size='24' height={50} weight={600}>Método de Pagamento</Text>
-        </Textstyle1>
-        <Inputradio>
+
           <Text color='preto' size='20' height={31} weight={600}>Cartão de Crédito</Text>
-        </Inputradio>
-        <Form>
+
           <Inputstyle>
             <Input label='' onChange={handleNometitularChange} placeholder='Nome do titular do cartão' value={nometitular} type='text'></Input>
           </Inputstyle>
           <Inputstyle>
-            <Input label='' onChange={handleNcartaoChange} placeholder='Número do cartão ' value={ncartao} type='number'></Input>
+            <Input label='' onChange={handleNcartaoChange} placeholder='Número do cartão ' value={ncartao} ></Input>
           </Inputstyle>
-          <Inputstyle1>
-            <Input label='' onChange={handleValidadeChange} placeholder='Validade' value={validade} type='number'></Input>
-          </Inputstyle1>
-          <Inputstyle2>
-            <Input label='' onChange={handleCodsChange} placeholder='Cód. de segurança' value={cods} type='number'></Input>
-          </Inputstyle2>
-        </Form>
 
-        <SectionChekbox>
-          <Textstyle2>
+          <ContentInput>
+            <Inputstyle>
+              <Input label='' onChange={handleValidadeChange} placeholder='Validade' value={validade} />
+            </Inputstyle>
+            <Inputstyle>
+              <Input label='' onChange={handleCodsChange} placeholder='Cód. de segurança' value={cods} />
+            </Inputstyle>
+          </ContentInput>
+
+
+          <SectionChekbox>
             <Text color='preto' size='20' height={50} weight={200}>Qual plano você deseja?</Text>
-          </Textstyle2>
-          <StyledCheckbox>
-            <Checkbox name="myCheckbox" checked={isChecked} onChange={handleCheckboxChange} text=' Plano Plus' />
-            <Checkbox name="myCheckbox" checked={isChecked1} onChange={handleCheckbox1Change} text=' Plano Premium' />
-            <Checkbox name="myCheckbox" checked={isChecked2} onChange={handleCheckbox2Change} text=' Plano Família' />
-          </StyledCheckbox>
-        </SectionChekbox>
+            <StyledCheckbox>
+              <Checkbox name="myCheckbox" checked={isChecked} onChange={handleCheckboxChange} text=' Plano Plus' />
+              <Checkbox name="myCheckbox" checked={isChecked1} onChange={handleCheckbox1Change} text=' Plano Premium' />
+              <Checkbox name="myCheckbox" checked={isChecked2} onChange={handleCheckbox2Change} text=' Plano Família' />
+            </StyledCheckbox>
+          </SectionChekbox>
+        </SideLeft>
 
-
+        <SideRight>
+          <InfoNutri />
+          <ResumePag/>
+          <ButtonConfirm>
+            <Button title='Confirmar pagamento' variant='primario' xs />
+          </ButtonConfirm>
+        </SideRight>
       </Content>
-      <Nutristyle> <Nutri /> </Nutristyle>
-      <VerticalBar />
-      <Pagamento />
-
     </Container>
   );
 };
