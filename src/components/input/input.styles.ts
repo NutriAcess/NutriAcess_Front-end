@@ -15,3 +15,7 @@ export const StyledInput = styled.input`
 
   margin-top: 8px;
 `;
+
+export const OptionsContainer = styled.div``;
+
+export const Option = styled.div``;

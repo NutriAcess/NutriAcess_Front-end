@@ -1,12 +1,13 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Text } from "../text/text";
-import { InputWrapper, StyledInput } from "./input.styles";
+import { InputWrapper, Option, OptionsContainer, StyledInput } from "./input.styles";
 
 interface InputProps {
   label: string;
   value: string;
   placeholder?: string;
   type?: string;
+  options?: string[];
   onChange: (value: string) => void;
   height?: string;
 }
@@ -18,9 +19,21 @@ export const Input: React.FC<InputProps> = ({
   type = "text",
   onChange,
   height,
+  options = [], 
 }) => {
+  const [showOptions, setShowOptions] = useState(false);
+
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
+  };
+
+  const handleOptionSelect = (option: string) => {
+    onChange(option);
+    setShowOptions(false); // Fechar as opções depois de selecionar
+  };
+
+  const toggleOptions = () => {
+    setShowOptions(!showOptions);
   };
 
   return (
@@ -35,6 +48,15 @@ export const Input: React.FC<InputProps> = ({
         onChange={handleChange}
         height={height}
       />
+      {showOptions && (
+        <OptionsContainer>
+          {options.map((option) => (
+            <Option key={option} onClick={() => handleOptionSelect(option)}>
+              {option}
+            </Option>
+          ))}
+        </OptionsContainer>
+      )}
     </InputWrapper>
   );
 };
