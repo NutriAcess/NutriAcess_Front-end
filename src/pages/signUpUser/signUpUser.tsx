@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import _ from "validator";
 
+import { useNavigate } from "react-router-dom";
+import Button from "../../components/button/button";
+import { Input } from "../../components/input/input";
+import Logo from "../../components/logo/logo";
+import { Text } from "../../components/text/text";
+import { TUser } from "../../contexts/authContext/authContext.types";
+import { useAuth } from "../../hooks/useAuth";
 import {
   ButtonWrapper,
   Container,
   Form,
   InputWrapper,
 } from "./signUpUser.styles";
-import Logo from "../../components/logo/logo";
-import { Text } from "../../components/text/text";
-import { Input } from "../../components/input/input";
-import Button from "../../components/button/button";
-import { TUser } from "../../contexts/authContext/authContext.types";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
 
 const SignUpUser: React.FC = () => {
   const { signUpUser } = useAuth();
@@ -69,7 +69,7 @@ const SignUpUser: React.FC = () => {
 
       <Form>
         <Text height={21} weight={700} size="28" color="vinho">
-          Login Usuário
+          Cadastro Usuário
         </Text>
 
         <InputWrapper>

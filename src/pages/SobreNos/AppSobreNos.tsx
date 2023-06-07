@@ -1,6 +1,6 @@
+import Header from "../../components/header/header";
 import { BigTitle, Container, Content, Contenter } from "./AppSobreNos.styles";
 import HomeMembers from "./members/HomeMembers";
-import Header from "../../components/header/header";
 
 import Footer from "../../components/footer/footer";
 import { Text } from "../../components/text/text";
@@ -14,7 +14,7 @@ function SobreNos() {
 
       <BigTitle>
         <Text color="preto" height={65} weight={700} size="42">
-          Sobre Nós
+          Nossa Equipe
         </Text>
       </BigTitle>
 

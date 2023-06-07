@@ -1,5 +1,15 @@
+import {
+  Envelope,
+  FacebookLogo,
+  InstagramLogo,
+  LinkedinLogo,
+  MapPin,
+  WhatsappLogo,
+} from "@phosphor-icons/react";
+import { useNavigate } from "react-router-dom";
 import { Text } from "../text/text";
 import {
+  ButtonMapSite,
   Contact,
   Container,
   Content,
@@ -9,16 +19,10 @@ import {
   Rights,
   TypeContact,
 } from "./footer.styles";
-import {
-  Envelope,
-  WhatsappLogo,
-  MapPin,
-  InstagramLogo,
-  FacebookLogo,
-  LinkedinLogo,
-} from "@phosphor-icons/react";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Content>
@@ -27,24 +31,25 @@ const Footer = () => {
             Nossos Contatos
           </Text>
 
-          <TypeContact>
+          <TypeContact href="mailto:contatonutriacess@gmail.com" target="_blank">
             <Envelope color="black" size={24} />
             <Text weight={600} height={19} color="branco" size="14">
-              SuporteNutriAcess@gmail.com
+              contatonutriacess@gmail.com
             </Text>
           </TypeContact>
 
-          <TypeContact>
+          <TypeContact href="https://linktr.ee/nutriacess_" target="_blank">
             <WhatsappLogo color="black" size={24} />
             <Text weight={600} height={19} color="branco" size="14">
-              (11) 98858-5086
+              (11) 98864-7358
+
             </Text>
           </TypeContact>
 
-          <TypeContact>
+          <TypeContact href="https://goo.gl/maps/zxhAdAgNgqKgrvKb7" target="_blank">
             <MapPin color="black" size={24} />
             <Text weight={600} height={19} color="branco" size="14">
-              SmartFit: São Paulo, SP - o8180-000
+              Rua Tito 54 - São Paulo - 05051-000
             </Text>
           </TypeContact>
         </Contact>
@@ -54,9 +59,9 @@ const Footer = () => {
             Siga-nos
           </Text>
           <IconsFollowUp>
-            <InstagramLogo color="black" size={24} />
-            <FacebookLogo color="black" size={24} />
-            <LinkedinLogo color="black" size={24} />
+            <a href="https://www.instagram.com/_nutriacess/" target="_blank" rel="noreferrer"><InstagramLogo color="black" size={24} /></a>
+            <a href="https://web.facebook.com/instituto.proa" target="_blank" rel="noreferrer"><FacebookLogo color="black" size={24} /></a>
+            <a href="https://linktr.ee/nutriacess_" target="_blank" rel="noreferrer"><LinkedinLogo color="black" size={24} /></a>
           </IconsFollowUp>
         </FollowUp>
 
@@ -64,21 +69,35 @@ const Footer = () => {
           <Text weight={600} height={26} color="branco" size="20">
             Mapa do Site
           </Text>
-          <Text weight={600} height={19} color="branco" size="14">
-            Home
-          </Text>
-          <Text weight={600} height={19} color="branco" size="14">
-            Agendar Consulta
-          </Text>
-          <Text weight={600} height={19} color="branco" size="14">
-            Planos
-          </Text>
-          <Text weight={600} height={19} color="branco" size="14">
-            Minha Área
-          </Text>
-          <Text weight={600} height={19} color="branco" size="14">
-            Nossa Equipe
-          </Text>
+
+          <ButtonMapSite onClick={() => navigate("/")}>
+            <Text weight={600} height={19} color="branco" size="14">
+              Home
+            </Text>
+          </ButtonMapSite>
+
+          <ButtonMapSite onClick={() => navigate("/agendamentos")}>
+            <Text weight={600} height={19} color="branco" size="14">
+              Agendamentos
+            </Text>
+          </ButtonMapSite>
+          <ButtonMapSite onClick={() => navigate("/planos")}>
+            <Text weight={600} height={19} color="branco" size="14">
+              Planos
+            </Text>
+          </ButtonMapSite>
+
+          <ButtonMapSite onClick={() => navigate("/profile-user")}>
+            <Text weight={600} height={19} color="branco" size="14">
+              Minha Área
+            </Text>
+          </ButtonMapSite>
+
+          <ButtonMapSite onClick={() => navigate("/sobre-nos")}>
+            <Text weight={600} height={19} color="branco" size="14">
+              Nossa Equipe
+            </Text>
+          </ButtonMapSite>
         </MapSite>
       </Content>
 
