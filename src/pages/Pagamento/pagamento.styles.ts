@@ -18,10 +18,6 @@ export const HeaderPayment = styled.div`
     justify-content: space-between;
 `;
 
-
-
-
-
 export const ButtonConfirm = styled.div`
     display: flex;
     margin: 10px 30px;

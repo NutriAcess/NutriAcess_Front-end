@@ -1,7 +1,7 @@
+import Button from '../../components/button/button';
 import Header from '../../components/header/header';
 
 
-import Button from '../../components/button/button';
 import { InfoNutri } from './componentes/infonutri/infonutri';
 import { ResumePag } from './componentes/resumepag/resumepag';
 import { SideLeft } from './componentes/sideLeft/sideLeft';
