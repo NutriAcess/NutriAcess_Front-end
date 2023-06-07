@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Select from "react-select";
-import { Input } from "../../../components/input/input";
-import { Text } from "../../../components/text/text";
-import { useAuth } from "../../../hooks/useAuth";
-import InputCheck from "../components/InputCheck";
-import { Container } from "../formulario.styles";
+import { Input } from "../../../../components/input/input";
+import { Text } from "../../../../components/text/text";
+import { useAuth } from "../../../../hooks/useAuth";
+import { Container } from "../../formulario.styles";
+
+import InputCheck from "../InputCheck/InputCheck";
 import { Section, SectionGlobalInputs, SectionIam, SectionSex, TitleStap } from "./firsStap.styles";
 
 export const FirstStap = () => {

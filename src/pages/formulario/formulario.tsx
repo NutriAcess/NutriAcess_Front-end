@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../../components/button/button";
-import { FirstStap } from "./firstStap/firstStap";
+import { FirstStap } from "./components/firstStap/firstStap";
 import { Box, ButtonStep, Container, Content } from "./formulario.styles";
 import { SecondStap } from "./secondStap/secondStap";
 import Step from "./step/step";
