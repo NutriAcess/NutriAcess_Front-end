@@ -1,8 +1,7 @@
 import { useState } from "react"
 import Select from "react-select"
-import { Text } from "../../../components/text/text"
-import InputCheck from "../components/InputCheck"
-
+import { Text } from "../../../../components/text/text"
+import InputCheck from "../InputCheck/InputCheck"
 import { Container, Section, SectionEat, TitleStap } from "./secondStap.styles"
 
 export const SecondStap = () => {

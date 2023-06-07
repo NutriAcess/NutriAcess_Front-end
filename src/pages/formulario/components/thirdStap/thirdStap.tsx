@@ -1,7 +1,8 @@
 import { UserFocus } from "@phosphor-icons/react";
 import { useState } from "react";
-import { Input } from "../../../components/input/input";
-import { Text } from "../../../components/text/text";
+
+import { Input } from "../../../../components/input/input";
+import { Text } from "../../../../components/text/text";
 import { Container, Photo, Section, TitleStap } from "./thirdStap.styles";
 
 export const ThirdStap = () => {
