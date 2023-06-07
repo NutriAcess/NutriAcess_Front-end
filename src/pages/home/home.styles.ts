@@ -16,6 +16,12 @@ export const ImageWrapper = styled.div`
   background-size: cover;
   flex-direction: column;
   justify-content: center;
+
+  @media screen and (max-width: 1290px){
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `;
 
 export const DivText = styled.div`
@@ -24,6 +30,10 @@ export const DivText = styled.div`
   text-align: start;
   margin-left: 50px;
   margin-bottom: 32px;
+
+  @media screen and (max-width: 1290px){
+   max-width: 700px;
+  }
 `;
 
 export const DivButton = styled.div`
