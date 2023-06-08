@@ -11,7 +11,7 @@ import {
 interface IInfo {
   title: string;
   description: string;
-  direction: "row" | "row-reverse";
+  direction: "row" | "row-reverse" ;
   image: {
     url: string;
     alt: string;

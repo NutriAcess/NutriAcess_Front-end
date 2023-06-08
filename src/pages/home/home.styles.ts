@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import BackgroundImage from "../../assets/background.svg";
+import media from "styled-media-query";
 
 export const Container = styled.div`
   display: flex;
@@ -17,11 +18,12 @@ export const ImageWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
 
-  @media screen and (max-width: 1290px){
-    background-position: center;
+  ${media.lessThan("medium")`
+  background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
+  `}
+
 `;
 
 export const DivText = styled.div`
@@ -31,9 +33,9 @@ export const DivText = styled.div`
   margin-left: 50px;
   margin-bottom: 32px;
 
-  @media screen and (max-width: 1290px){
-   max-width: 700px;
-  }
+  ${media.lessThan("medium")`
+  font-size: 30px;
+  `}
 `;
 
 export const DivButton = styled.div`

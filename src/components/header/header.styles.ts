@@ -9,6 +9,10 @@ export const Container = styled.header`
 
   align-items: center;
 
+  @media screen and (max-width: 300px){
+    display: none;
+  }
+
   > img {
     width: 180px;
     margin-left: 10px;

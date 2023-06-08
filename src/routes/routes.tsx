@@ -8,6 +8,7 @@ import SignInSpecialist from "../pages/signInEsp/signInEsp";
 import SignInUser from "../pages/signInUser/signInUser";
 import SignUpUser from "../pages/signUpUser/signUpUser";
 import SignUpEsp from "../pages/signUpEsp/signUpEsp";
+import { MarcarConsulta } from "../pages/marcarConsulta/marcarConsulta";
 
 export const AppRoutes = () => {
   return (
