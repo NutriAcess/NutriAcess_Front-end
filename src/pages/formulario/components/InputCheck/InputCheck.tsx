@@ -9,6 +9,7 @@ interface IInputCheck {
   onChange: (value: string) => void;
   type?: string;
   height?: string;
+  name?: string;
 }
 
 const InputCheck = ({
@@ -18,6 +19,7 @@ const InputCheck = ({
   type = "text",
   onChange,
   height,
+  name,
 }: IInputCheck) => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     onChange(event.target.value);
@@ -30,6 +32,7 @@ const InputCheck = ({
         placeholder={placeholder}
         onChange={handleChange}
         height={height}
+        name={name}
       />
       <Text color="preto" size="18" weight={400} height={22}>
         {label}
