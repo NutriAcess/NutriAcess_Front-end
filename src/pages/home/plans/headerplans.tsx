@@ -2,7 +2,7 @@
 import { Text } from '../../../components/text/text'
 import { Header, SubTitle, Title } from './headerplans.styles'
 
-export const headerplans = () => {
+export const Headerplans = () => {
   return (
     <Header>
         <Title>

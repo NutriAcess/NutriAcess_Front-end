@@ -17,10 +17,11 @@ export const Contact = styled.div`
   gap: 16px;
 `;
 
-export const TypeContact = styled.div`
+export const TypeContact = styled.a`
   display: flex;
   align-items: center;
   gap: 12px;
+  text-decoration: none;
 `;
 
 export const FollowUp = styled.div`
@@ -39,6 +40,13 @@ export const IconsContact = styled.div``;
 export const MapSite = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 10px;
+
+  a {
+    text-decoration: none;
+    color: ${({theme})=> theme.Colors.branco}
+  }
+  
 `;
 
 export const Rights = styled.div`
@@ -47,4 +55,9 @@ export const Rights = styled.div`
   padding: 12px 0;
   align-items: center;
   justify-content: center;
+`;
+
+
+export const ButtonMapSite = styled.div`
+  cursor:pointer;
 `;

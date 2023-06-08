@@ -5,11 +5,13 @@ import {
   Plan,
 } from "./cardplans.styles";
 import { TopicsFamilia, TopicsPlus, TopicsPremium } from "./data";
+import { Headerplans } from "./headerplans";
 
 
 export const Plans = () => {
   return (
     <Container>
+      <Headerplans/>
       <Plan>
         <CardPlanGlobal shadow="secundario">
           <CardPlan

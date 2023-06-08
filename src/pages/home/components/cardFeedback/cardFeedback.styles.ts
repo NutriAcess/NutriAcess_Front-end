@@ -26,6 +26,6 @@ export const NameUser = styled.div`
 
 export const DescriptionUser = styled.div`
   margin: 24px 0;
-  width: 450px;
+  width: 400px;
   text-align: center;
 `;

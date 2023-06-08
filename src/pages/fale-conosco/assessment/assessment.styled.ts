@@ -15,7 +15,7 @@ export const Feedback = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 45px;
+  margin: 45px;
   cursor: pointer;
 `;
 
@@ -56,4 +56,9 @@ export const Number = styled.div`
 
 export const Input = styled.div`
   color: ${({ theme }) => theme.Colors.branco};
+  
+`;
+
+export const InfoEvaluation = styled.div`
+  
 `;
