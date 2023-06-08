@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const Inputstyle = styled.div`
   width: 80%;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 
 export const StyledCheckbox = styled.div`
@@ -22,14 +22,25 @@ export const StyledCheckbox = styled.div`
     text-align: justify;
  `;
 
-export const SectionChekbox = styled.div`
-    margin-left: 2%;
-    margin-top: 25px;
-`;
-
 export const ContentInput = styled.div`
     display: flex;
     width: 80%;
     justify-content: space-between;
     gap: 20px;
+`;
+
+export const DivRadioPlan = styled.div`
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+`;
+
+export const SectionPlan = styled.label`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+`;
+
+export const DivTypePlan = styled.div`
+    margin-top: 10px;
 `;
