@@ -11,7 +11,7 @@ export const ThirdStap = () => {
     return (
         <Container>
             <TitleStap>
-                <Text weight={600} height={16} size="20" color="vinho">Etapa 1</Text>
+                <Text weight={600} height={16} size="20" color="vinho">Etapa 3</Text>
             </TitleStap>
 
             <TitleStap>

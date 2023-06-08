@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 
 export const TitleStap = styled.div`
-    margin: 10px 0px;
+    margin-top: 20px;
 `;
 
 export const Section = styled.div`
