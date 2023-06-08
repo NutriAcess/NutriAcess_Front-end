@@ -1,14 +1,18 @@
 import { useState } from "react";
 import Button from "../../components/button/button";
 import { FirstStap } from "./components/firstStap/firstStap";
-import { Box, ButtonStep, Container, Content } from "./formulario.styles";
-import { SecondStap } from "./secondStap/secondStap";
-import Step from "./step/step";
-import { ThirdStap } from "./thirdStap/thirdStap";
+import { Box, ButtonStep, Container, Content, DivCircle, DivStep } from "./formulario.styles";
+import { SecondStap } from "./components/secondStap/secondStap";
+import Step from "./components/step/step";
+import { ThirdStap } from "./components/thirdStap/thirdStap";
+import { XCircle } from "@phosphor-icons/react";
+import { useNavigate } from "react-router-dom";
 
 export const Formulario = () => {
   const [step, setStep] = useState(1);
   const Steps = [1, 2, 3];
+  const navigate = useNavigate();
+
 
   const getCompStep = () => {
     switch (step) {
@@ -26,9 +30,17 @@ export const Formulario = () => {
   return (
     <Container>
       <Content>
-        {Steps.map((item) => (
-          <Step key={item} index={item} active={step === item} />
-        ))}
+      
+        <DivStep>
+          {Steps.map((item) => (
+            <Step key={item} index={item} active={step === item} />
+          ))}
+        </DivStep>
+        <DivCircle onClick={() => navigate("/profile-user")}>
+
+        <XCircle size={32} color="#000000" />
+
+        </DivCircle>
       </Content>
       
       <Box>
