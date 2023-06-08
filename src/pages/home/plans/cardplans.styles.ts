@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query"
 
 interface IContainer {
     shadow: "primario" | "secundario";
@@ -18,11 +19,10 @@ export const Plan = styled.span`
     justify-content: center;
     gap: 30px;
     margin-bottom: 50px;
-
-    @media screen and (max-width: 300px){
-  flex-direction: column;
-
-  }
+   
+    ${media.lessThan("medium")`
+    flex-direction: column;
+  `}
 `;
 
 export const CardPlanGlobal = styled.div<IContainer>`
@@ -34,9 +34,11 @@ export const CardPlanGlobal = styled.div<IContainer>`
     box-shadow: ${({shadow}) => shadow === "primario" ? `0px 1px 20px 0px rgba(142, 150, 185, 0.25)` : `0px 1px 2px 0px rgba(142, 150, 185, 0.25)`} ;
     border-radius: 10px;
 
-    @media screen and (max-width: 300px){
- margin: 60px;
-    }
+    ${media.lessThan("medium")`
+    margin: 60px;
+    margin-right: 20px;
+  `}
+
 `;
 
 export const DivButton = styled.div`
