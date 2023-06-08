@@ -5,14 +5,14 @@ import { Text } from "../../../../components/text/text";
 import { useAuth } from "../../../../hooks/useAuth";
 import { Container } from "../../formulario.styles";
 
-import InputCheck from "../InputCheck/InputCheck";
-import { Section, SectionGlobalInputs, SectionIam, SectionSex, TitleStap } from "./firsStap.styles";
+import { DivGender, Section, SectionGlobalInputs, SectionIam, SectionSex, TitleStap } from "./firsStap.styles";
+import { StyledInput } from "../InputCheck/InputCheck.styles";
 
 export const FirstStap = () => {
   const { user } = useAuth();
 
   const [desire, setDesire] = useState("");
-  const [sex, setSex] = useState("");
+  const [gender, setGender] = useState("");
   const [height, setHeight] = useState("");
   const [age, setAge] = useState("");
   const [weight, setWeight] = useState("");
@@ -35,27 +35,64 @@ export const FirstStap = () => {
 
       <SectionGlobalInputs>
         <Section>
-          <Text weight={600} height={20} size="18" color="preto">Eu desejo:</Text>
-          <InputCheck label="Perder peso" onChange={(e) => setDesire(e)} value={desire} type="checkbox" />
-          <InputCheck label="Manter meu peso atual" onChange={(e) => setDesire(e)} value={desire} type="checkbox" />
-          <InputCheck label="Ganhar massa muscular" onChange={(e) => setDesire(e)} value={desire} type="checkbox" />
+
+          <DivGender>
+            <Text weight={600} height={20} size="18" color="preto">Eu desejo:</Text>
+          </DivGender>
+
+          <SectionIam>
+            <StyledInput name="desire" onChange={(e) => setDesire(e.target.value)} value={desire} type="radio" />
+            Perder Peso.
+          </SectionIam>
+          <SectionIam>
+          <StyledInput name="desire" onChange={(e) => setDesire(e.target.value)} value={desire} type="radio" />
+          Manter meu peso atual.
+          </SectionIam>
+          <SectionIam>
+          <StyledInput name="desire" onChange={(e) => setDesire(e.target.value)} value={desire} type="radio" />
+          Ganhar massa muscular.
+          </SectionIam>
         </Section>
 
-        <Text weight={600} height={20} size="18" color="preto">Eu sou:</Text>
+        <DivGender>
+        <Text weight={600} height={20} size="18" color="preto">Gênero</Text>
+        </DivGender>
+
         <SectionSex>
           <SectionIam>
-            <InputCheck label="Feminino" onChange={(e) => setSex(e)} value={sex} type="checkbox" />
-            <InputCheck label="Masculino" onChange={(e) => setSex(e)} value={sex} type="checkbox" />
-            <InputCheck label="Não binário" onChange={(e) => setSex(e)} value={sex} type="checkbox" />
-            <InputCheck label="Homem Trans" onChange={(e) => setSex(e)} value={sex} type="checkbox" />
-
+            <StyledInput name="gender"  onChange={(e) => setGender(e.target.value)} value={gender} type="radio" />
+            Masculino
           </SectionIam>
           <SectionIam>
-            <InputCheck label="Mulher Trans" onChange={(e) => setSex(e)} value={sex} type="checkbox" />
-            <InputCheck label="Fluido" onChange={(e) => setSex(e)} value={sex} type="checkbox" />
-            <InputCheck label="Outro" onChange={(e) => setSex(e)} value={sex} type="checkbox" />
-            <InputCheck label="Prefiro não responder" onChange={(e) => setSex(e)} value={sex} type="checkbox" />
+            <StyledInput name="gender"  onChange={(e) => setGender(e.target.value)} value={gender} type="radio" />
+            Feminino
           </SectionIam>
+          <SectionIam>
+            <StyledInput name="gender"  onChange={(e) => setGender(e.target.value)} value={gender} type="radio" />
+            Não binário
+          </SectionIam>
+          <SectionIam>
+            <StyledInput name="gender"  onChange={(e) => setGender(e.target.value)} value={gender} type="radio" />
+            Homem Trans
+          </SectionIam>
+
+          <SectionIam>
+            <StyledInput name="gender"  onChange={(e) => setGender(e.target.value)} value={gender} type="radio" />
+            Mulher Trans
+          </SectionIam>
+          <SectionIam>
+            <StyledInput name="gender"  onChange={(e) => setGender(e.target.value)} value={gender} type="radio" />
+            Fluido
+          </SectionIam>  
+          <SectionIam>
+            <StyledInput name="gender"  onChange={(e) => setGender(e.target.value)} value={gender} type="radio" />
+            Outro
+          </SectionIam>
+          <SectionIam>
+            <StyledInput name="gender"  onChange={(e) => setGender(e.target.value)} value={gender} type="radio" />
+            Prefiro não responder
+          </SectionIam>
+
         </SectionSex>
 
         <Section>
