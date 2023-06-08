@@ -1,26 +1,14 @@
 import { useState } from 'react'
 import { Input } from '../../../../components/input/input'
 import { Text } from '../../../../components/text/text'
-import Checkbox from '../inputcheack'
-import { Container, ContentInput, Inputstyle, SectionChekbox, StyledCheckbox } from './sideLeft.styles'
+import { Container, ContentInput, DivRadioPlan, DivTypePlan, Inputstyle, SectionPlan} from './sideLeft.styles'
+import { StyledInput } from '../../../formulario/components/InputCheck/InputCheck.styles'
 
 export const SideLeft = () => {
-    const [isChecked, setIsChecked] = useState(false);
-    const [isChecked1, setIsChecked1] = useState(false);
-    const [isChecked2, setIsChecked2] = useState(false);
 
-    const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setIsChecked(e.target.checked);
-    };
 
-    const handleCheckbox1Change = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setIsChecked1(e.target.checked);
-    };
 
-    const handleCheckbox2Change = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setIsChecked2(e.target.checked);
-    };
-
+    const [plan, setPlan] = useState("");
     const [nometitular, setNometitular] = useState("");
     const [ncartao, setNcartao] = useState("");
     const [validade, setValidade] = useState("");
@@ -64,15 +52,34 @@ export const SideLeft = () => {
                 </Inputstyle>
             </ContentInput>
 
+            <DivTypePlan>
+                <Text color='preto' size='20' height={30} weight={200}>Qual plano você deseja?</Text>
+            </DivTypePlan>
 
-            <SectionChekbox>
-                <Text color='preto' size='20' height={50} weight={200}>Qual plano você deseja?</Text>
-                <StyledCheckbox>
-                    <Checkbox name="myCheckbox" checked={isChecked} onChange={handleCheckboxChange} text=' Plano Plus' />
-                    <Checkbox name="myCheckbox" checked={isChecked1} onChange={handleCheckbox1Change} text=' Plano Premium' />
-                    <Checkbox name="myCheckbox" checked={isChecked2} onChange={handleCheckbox2Change} text=' Plano Família' />
-                </StyledCheckbox>
-            </SectionChekbox>
+            
+
+            <DivRadioPlan>
+                <SectionPlan>
+                    <StyledInput name="myCheckbox"  onChange={(e) => setPlan(e.target.value)} value={plan} type='radio' />
+                        <Text color='preto' size='18' height={30} weight={300}>
+                        Plano Plus </Text>
+                </SectionPlan>
+
+                <SectionPlan>
+                    <StyledInput name="myCheckbox"  onChange={(e) => setPlan(e.target.value)} value={plan} type="radio" />
+                        <Text color='preto' size='18' height={30} weight={300}>
+                        Plano Premium </Text>
+                </SectionPlan>
+
+                <SectionPlan>
+                    <StyledInput name="myCheckbox"  onChange={(e) => setPlan(e.target.value)} value={plan} type='radio' />
+                        <Text color='preto' size='18' height={30} weight={300}>
+                        Plano Família
+                        </Text>
+                </SectionPlan>
+
+            </DivRadioPlan>
+
         </Container>
     )
 }
