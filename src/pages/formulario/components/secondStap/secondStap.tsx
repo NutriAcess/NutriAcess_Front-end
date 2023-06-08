@@ -3,6 +3,8 @@ import Select from "react-select"
 import { Text } from "../../../../components/text/text"
 import InputCheck from "../InputCheck/InputCheck"
 import { Container, Section, SectionEat, TitleStap } from "./secondStap.styles"
+import { DivGender, SectionIam } from "../firstStap/firsStap.styles"
+import { StyledInput } from "../InputCheck/InputCheck.styles"
 
 export const SecondStap = () => {
     const options = [
@@ -28,10 +30,26 @@ export const SecondStap = () => {
             </TitleStap>
 
             <Section>
-                <Text weight={600} height={21} size="18" color="preto">Como funciona a sua alimentação no dia a dia?</Text>
-                <InputCheck label="Qualquer coisa" onChange={(e) => setFood(e)} value={food} type="checkbox" />
-                <InputCheck label="Sou vegetariano(a)" onChange={(e) => setFood(e)} value={food} type="checkbox" />
-                <InputCheck label="Sou vegano(a)" onChange={(e) => setFood(e)} value={food} type="checkbox" />
+                <DivGender>
+                    <Text weight={600} height={21} size="18" color="preto">Como funciona a sua alimentação no dia a dia?</Text>
+                </DivGender>
+
+                <SectionIam>
+                    <StyledInput name="food" onChange={(e) => setFood(e.target.value)} value={food} type="radio" />
+                        Como qualquer coisa
+                </SectionIam>
+
+                <SectionIam>                
+                    <StyledInput name="food" onChange={(e) => setFood(e.target.value)} value={food} type="radio" />
+                    Sou vegetariano(a)
+                </SectionIam>
+
+                <SectionIam>                
+                    <StyledInput name="food" onChange={(e) => setFood(e.target.value)} value={food} type="radio" />
+                        Sou vegano(a)
+                </SectionIam>
+
+                
             </Section>
 
             <Section>
@@ -43,8 +61,15 @@ export const SecondStap = () => {
                 <SectionEat>
                     <Text weight={600} height={21} size="18" color="preto">Você costuma ter tempo para preparar suas refeições?</Text>
                     <div>
-                        <InputCheck label="Sim" onChange={(e) => setEat(e)} value={eat} type="checkbox" />
-                        <InputCheck label="Não" onChange={(e) => setEat(e)} value={eat} type="checkbox" />
+                
+                        <SectionIam>                
+                            <StyledInput  name="timeat" onChange={(e) => setEat(e.target.value)} value={eat} type="radio" />
+                            Sim
+                        </SectionIam>
+                        <SectionIam>
+                            <StyledInput name="timeat" onChange={(e) => setEat(e.target.value)} value={eat} type="radio" />
+                                Não
+                        </SectionIam>
                     </div>
                 </SectionEat>
             </Section>
