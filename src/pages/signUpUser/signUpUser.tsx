@@ -1,17 +1,24 @@
 import React, { useState } from "react";
+import _ from "validator";
 
+import { useNavigate } from "react-router-dom";
+import Button from "../../components/button/button";
+import { Input } from "../../components/input/input";
+import Logo from "../../components/logo/logo";
+import { Text } from "../../components/text/text";
+import { TUser } from "../../contexts/authContext/authContext.types";
+import { useAuth } from "../../hooks/useAuth";
 import {
   ButtonWrapper,
   Container,
   Form,
   InputWrapper,
 } from "./signUpUser.styles";
-import Logo from "../../components/logo/logo";
-import { Text } from "../../components/text/text";
-import { Input } from "../../components/input/input";
-import Button from "../../components/button/button";
 
 const SignUpUser: React.FC = () => {
+  const { signUpUser } = useAuth();
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,13 +26,50 @@ const SignUpUser: React.FC = () => {
   const [socialName, setSocialName] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
+  function validateFields() {
+    if (
+      _.isEmpty(name) ||
+      _.isEmpty(email) ||
+      _.isEmpty(password) ||
+      _.isEmpty(socialName) ||
+      _.isEmpty(passwordConfirmation)
+    ) {
+      return false;
+    }
+
+    if (!_.isEmail(email)) return false;
+
+    if (!_.equals(password, passwordConfirmation)) return false;
+
+    return true;
+  }
+
+  function handleRegisterUser() {
+    const isValidated = validateFields();
+
+    if (isValidated) {
+      const user: TUser = {
+        email,
+        name,
+        password,
+        socialName,
+      };
+
+      signUpUser(user);
+
+      navigate("/formulario");
+    } else {
+      alert("Campos incorretos");
+    }
+  }
+
   return (
     <Container>
       <Logo />
 
       <Form>
         <Text height={21} weight={700} size="28" color="vinho">
-          Login Usuário
+          Cadastro Usuário
         </Text>
 
         <InputWrapper>
@@ -76,7 +120,12 @@ const SignUpUser: React.FC = () => {
         </InputWrapper>
 
         <ButtonWrapper>
-          <Button title="Cadastrar" variant="primario" xs />
+          <Button
+            xs
+            title="Cadastrar"
+            variant="primario"
+            onClick={() => handleRegisterUser()}
+          />
         </ButtonWrapper>
 
         <Text height={21} weight={400} size="16" color="vinho">
