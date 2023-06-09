@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import media from "styled-media-query"
+import media from "styled-media-query";
 
 interface IContainer {
     shadow: "primario" | "secundario";
@@ -35,8 +35,7 @@ export const CardPlanGlobal = styled.div<IContainer>`
     border-radius: 10px;
 
     ${media.lessThan("medium")`
-    margin: 60px;
-    margin-right: 20px;
+    margin-bottom: 100px;
   `}
 
 `;

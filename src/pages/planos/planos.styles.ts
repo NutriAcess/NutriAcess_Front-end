@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import media from "styled-media-query";
 
-
 export const Container = styled.div``;
 
 export const HeaderPlans = styled.div`
@@ -16,7 +15,7 @@ export const HeaderPlans = styled.div`
 
     ${media.lessThan("medium")`
    font-size: 10%;
-   width: 350px;
+   width: 100%;
    text-align: center;
 `}
 `;
@@ -25,8 +24,8 @@ export const Imagem = styled.div`
     margin-top: -100px;
 
     ${media.lessThan("medium")`
-   
-   display: none;
+        display: none;
+        margin-top: -170px ;
 `}
 `;
 
@@ -58,7 +57,7 @@ export const SectionText = styled.div`
 
     ${media.lessThan("medium")`
     width: 300px;
-    margin-top: 24px;
+    margin-top: 70px;
 `}
 `;
 
