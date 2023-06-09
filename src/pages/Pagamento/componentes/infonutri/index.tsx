@@ -1,13 +1,13 @@
-import imagemNutri from "../../../../assets/ft-profissional.svg";
+import React from "react";
 import { Text } from "../../../../components/text/text";
-import { Container, Imagem, InformationNutri } from "./infonutri.styles";
+import { Container, Imagem, InformationNutri } from "./styles";
 
 export const InfoNutri = () => {
   return (
 
     <Container>
       <Imagem>
-        <img src={imagemNutri} alt="Imagem Nutricionista" />
+        <img src="../../../../assets/ft-profissional.svg" alt="Imagem Nutricionista" />
       </Imagem>
       <InformationNutri>
         <Text color='preto' height={30} size='28' weight={600} > Camila Gabriela  </Text>

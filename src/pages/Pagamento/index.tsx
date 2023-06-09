@@ -1,8 +1,8 @@
+import React from 'react';
 import Button from '../../components/button/button';
 import Header from '../../components/header/header';
 
 
-import { InfoNutri } from './componentes/infonutri/infonutri';
 import { ResumePag } from './componentes/resumepag/resumepag';
 import { SideLeft } from './componentes/sideLeft/sideLeft';
 import Typeplan from './componentes/typeplan/typeplan';
@@ -13,6 +13,7 @@ import {
   HeaderPayment,
   SideRight
 } from "./pagamento.styles";
+import { InfoNutri } from './componentes/infonutri';
 
 const Formasdepagamento = () => {
 

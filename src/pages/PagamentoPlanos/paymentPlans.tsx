@@ -1,10 +1,11 @@
+import React from "react"
 import Button from "../../components/button/button"
 import Header from "../../components/header/header"
 import { Text } from "../../components/text/text"
-import { ResumePag } from "../Pagamento/componentes/resumepag/resumepag"
-import { SideLeft } from "../Pagamento/componentes/sideLeft/sideLeft"
-import { ButtonConfirm, Content, HeaderPayment, SideRight } from "../Pagamento/pagamento.styles"
 import { Container, Type } from "./paymentPlans.styles"
+import { ResumePag } from "../pagamento/componentes/resumepag/resumepag"
+import { SideLeft } from "../pagamento/componentes/sideLeft/sideLeft"
+import { Content, SideRight, HeaderPayment, ButtonConfirm } from "../pagamento/pagamento.styles"
 
 export const PaymentPlans = () => {
   return (
