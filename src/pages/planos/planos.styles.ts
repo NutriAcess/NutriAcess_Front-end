@@ -19,10 +19,9 @@ export const Imagem = styled.div`
 
 export const SectionMeet = styled.div`
     display: flex;
-
     align-items: center;
-    justify-content: center;
-    gap:100px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 `;
 
 export const SectionText = styled.div`
@@ -40,7 +39,8 @@ export const SectionText = styled.div`
 
 export const SectionPlans = styled.div`
     display: flex;
-    margin-top: 200px;
     align-items: center;
     justify-content: center;
+    
+    margin-top: 200px;
 `;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const Container = styled.div`
   display: flex;
@@ -37,6 +38,9 @@ export const Scheduling = styled.div`
 
   justify-content: center;
 
+  ${media.lessThan("medium")`
+    margin-top: -70px;
+  `}
 `;
 
 export const UserDetails = styled.div`
@@ -49,6 +53,7 @@ export const Cover = styled.div`
 
   display: flex;
   flex-direction: column;
+  margin-bottom: 3px;
 `;
 
 export const SchedulingCardsWrapper = styled.div`
@@ -56,6 +61,7 @@ export const SchedulingCardsWrapper = styled.div`
   gap: 16px;
   display: flex;
   flex-direction: column;
+
 `;
 
 export const SchedulingCardsPlan = styled.div`
@@ -65,6 +71,7 @@ export const SchedulingCardsPlan = styled.div`
     justify-content: center;
     gap: 40px;
     margin: 26px 0px;
+    flex-wrap: wrap;
 
 `;
 
@@ -84,8 +91,7 @@ export const ButtonContent = styled.div`
   justify-content: flex-end;
 
   gap: 8px;
-
-  margin-top: 32px;
+  margin-bottom: 12px;
 `;
 
 export const ButtonWrapper = styled.div`
@@ -118,7 +124,6 @@ export const InputPlan = styled.div`
 export const ButtonPlan = styled.div`
     display: flex;
     margin-top: 30px;
-
 `;
 
 export const PlanWrapper = styled.div`
@@ -126,7 +131,6 @@ export const PlanWrapper = styled.div`
     justify-content: space-between;
     gap: 30px;
     align-items: flex-end;
-    margin-top: 30px;
 `;
 
 export const SectionPlan = styled.div`
