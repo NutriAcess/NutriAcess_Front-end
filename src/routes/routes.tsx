@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { PaymentPlans } from "../pages/PagamentoPlanos/paymentPlans";
 import Home from "../pages/home/home";
@@ -14,13 +13,13 @@ import { MarcarConsulta } from "../pages/marcarConsulta/marcarConsulta";
 import { Planos } from "../pages/planos/planos";
 import { ProfileUser } from "../pages/profile-user/profile-user";
 import SignUpUser from "../pages/signUpUser/signUpUser";
-import Pagamento from "../pages/pagamento";
+import Pagamento from "../pages/Pagamento";
 
 export const AppRoutes = () => {
   return (
     <Router>
       <Routes>
-      <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/pagamento-planos" element={<PaymentPlans />} />
         <Route path="/pagamento-nutri" element={<Pagamento />} />
         <Route path="/sign-up-esp" element={<SignUpEsp />} />

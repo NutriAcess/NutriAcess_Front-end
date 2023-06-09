@@ -1,7 +1,14 @@
 import { useState } from "react";
 import Button from "../../components/button/button";
 import { FirstStap } from "./components/firstStap/firstStap";
-import { Box, ButtonStep, Container, Content, DivCircle, DivStep } from "./formulario.styles";
+import {
+  Box,
+  ButtonStep,
+  Container,
+  Content,
+  DivCircle,
+  DivStep,
+} from "./formulario.styles";
 import { SecondStap } from "./components/secondStap/secondStap";
 import Step from "./components/step/step";
 import { ThirdStap } from "./components/thirdStap/thirdStap";
@@ -13,39 +20,31 @@ export const Formulario = () => {
   const Steps = [1, 2, 3];
   const navigate = useNavigate();
 
-
   const getCompStep = () => {
     switch (step) {
       case 1:
         return <FirstStap />;
       case 2:
         return <SecondStap />;
-      case 3:
-        return <ThirdStap />;
       default:
-        return <FirstStap />;
+        return <ThirdStap />;
     }
   };
 
   return (
     <Container>
       <Content>
-      
         <DivStep>
           {Steps.map((item) => (
             <Step key={item} index={item} active={step === item} />
           ))}
         </DivStep>
         <DivCircle onClick={() => navigate("/profile-user")}>
-
-        <XCircle size={32} color="#000000" />
-
+          <XCircle size={32} color="#000000" />
         </DivCircle>
       </Content>
-      
-      <Box>
-      {getCompStep()}
-      </Box>
+
+      <Box>{getCompStep()}</Box>
       <ButtonStep>
         <Button
           title="Voltar"
@@ -60,5 +59,5 @@ export const Formulario = () => {
         />
       </ButtonStep>
     </Container>
-  )
-}
+  );
+};
