@@ -27,7 +27,8 @@ export const Container = styled.button<IContainer>`
   ${({ xs }) =>
     xs &&
     css`
-      width: 100%;
+      width: 90%;
+      font-size: 110%;
     `}
 
     &:hover {
@@ -86,6 +87,7 @@ export const TitleButton = styled.span<IContainer>`
     icon &&
     css`
       margin-right: 16px;
+      
     `}
 
     
