@@ -36,6 +36,8 @@ export const Container = styled.div<IContainer>`
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 0.3s;
 
+  
+
   animation: ${({ isVisible }) =>
     isVisible
       ? css`
@@ -58,6 +60,8 @@ export const Content = styled.div`
   background-color: ${({ theme }) => theme.Colors.branco};
 
   padding: 32px;
+
+  overflow-y: scroll;
 `;
 
 export const Header = styled.div<IHeader>`
