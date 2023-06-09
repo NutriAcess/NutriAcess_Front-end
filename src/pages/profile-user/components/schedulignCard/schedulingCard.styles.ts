@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import media from "styled-media-query";
 
 export const Container = styled.div`
   display: flex;
@@ -15,14 +14,6 @@ export const Container = styled.div`
   background-color: ${({ theme }) => theme.Colors.branco};
 
   margin-inline: 200px;
-
-  ${media.lessThan("medium")`
-    margin-inline: 0;
-    display: flex;
-    flex-wrap: wrap;
-
-    gap: 20px;
-  `}
 `;
 
 export const PatientInfo = styled.div`

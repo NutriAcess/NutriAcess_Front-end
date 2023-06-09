@@ -1,6 +1,5 @@
 import styled, { css, keyframes } from "styled-components";
 import { IContainer, IHeader } from "./modal.types";
-import media from "styled-media-query";
 
 const slideIn = keyframes`
   from {
@@ -73,7 +72,7 @@ export const Header = styled.div<IHeader>`
           justify-content: flex-end;
         `}
 
-  margin-bottom: 20px;
+  margin-bottom: 36px;
 `;
 
 export const CloseButton = styled.div`
