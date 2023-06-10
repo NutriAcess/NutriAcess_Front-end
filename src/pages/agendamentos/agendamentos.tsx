@@ -6,11 +6,11 @@ import {
   Description,
   Title,
 } from "./agendamentos.styles";
-import Input from "./input/input";
 import { Text } from "../../components/text/text";
 import InfoComponent from "./cardcomponent/infocomponent/infocomponent";
 import Footer from "../../components/footer/footer";
 import { data } from "./data";
+import Input from "./input/input";
 
 const Agendamentos = () => {
   return (
