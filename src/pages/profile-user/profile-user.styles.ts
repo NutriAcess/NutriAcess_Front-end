@@ -37,6 +37,10 @@ export const Scheduling = styled.div`
   padding: 12px;
 
   justify-content: center;
+
+  ${media.lessThan("medium")`
+    margin-top: -70px;
+  `}
 `;
 
 export const UserDetails = styled.div`
@@ -49,6 +53,7 @@ export const Cover = styled.div`
 
   display: flex;
   flex-direction: column;
+  margin-bottom: 3px;
 `;
 
 export const SchedulingCardsWrapper = styled.div`
@@ -56,23 +61,27 @@ export const SchedulingCardsWrapper = styled.div`
   gap: 16px;
   display: flex;
   flex-direction: column;
+
 `;
 
 export const SchedulingCardsPlan = styled.div`
-  display: flex;
+    display: flex;
 
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  margin: 26px 0px;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin: 26px 0px;
+    flex-wrap: wrap;
+
 `;
 
-export const TitlePlan = styled.div`
-  display: flex;
+export const TitlePlan= styled.div`
+    display: flex;
 
-  align-items: center;
+    align-items: center;
 
-  flex-direction: column;
+    flex-direction: column;
+
 `;
 
 export const ButtonContent = styled.div`
@@ -131,21 +140,22 @@ export const InputPlan = styled.div`
 `;
 
 export const ButtonPlan = styled.div`
-  display: flex;
-  margin-top: 30px;
+    display: flex;
+    margin-top: 30px;
 
-  ${media.lessThan("medium")`
+    ${media.lessThan("medium")`
       width: 100%;
   `}
+
 `;
 
 export const PlanWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 30px;
-  align-items: flex-end;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    align-items: flex-end;
 
-  ${media.lessThan("medium")`
+    ${media.lessThan("medium")`
       display: flex;
       flex-direction: column;
       align-items: center; 
@@ -155,23 +165,23 @@ export const PlanWrapper = styled.div`
 `;
 
 export const SectionPlan = styled.div`
-  display: flex;
+    display: flex;
 
-  flex-direction: column;
+    flex-direction: column;
 
-  width: 50%;
+    width: 50%;
 
-  ${media.lessThan("medium")`
+    ${media.lessThan("medium")`
       width: 100%;
   `}
 `;
 
 export const SectionDiet = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 export const QrCode = styled.div`
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 `;
