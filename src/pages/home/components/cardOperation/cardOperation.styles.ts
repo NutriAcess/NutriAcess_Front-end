@@ -40,6 +40,8 @@ export const TextDescription = styled.div`
 
 export const ImageOperation = styled.div`
     margin: 20px 100px;
+
+    
 `;
 
 export const Text = styled.div``;

@@ -1,14 +1,29 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+ 
+`;
 
 export const Content = styled.div`
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
   background-color: ${({ theme }) => theme.Colors.amarelo};
   padding: 3rem 3.5rem;
   justify-items: center;
+
+  ${media.lessThan("medium")`
+   
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  `}
+
+  ${media.lessThan("small")`
+  
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  `}
 `;
 
 export const Contact = styled.div`
@@ -17,11 +32,10 @@ export const Contact = styled.div`
   gap: 16px;
 `;
 
-export const TypeContact = styled.a`
+export const TypeContact = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
-  text-decoration: none;
 `;
 
 export const FollowUp = styled.div`
@@ -40,13 +54,6 @@ export const IconsContact = styled.div``;
 export const MapSite = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-
-  a {
-    text-decoration: none;
-    color: ${({theme})=> theme.Colors.branco}
-  }
-  
 `;
 
 export const Rights = styled.div`
@@ -55,9 +62,4 @@ export const Rights = styled.div`
   padding: 12px 0;
   align-items: center;
   justify-content: center;
-`;
-
-
-export const ButtonMapSite = styled.div`
-  cursor:pointer;
 `;

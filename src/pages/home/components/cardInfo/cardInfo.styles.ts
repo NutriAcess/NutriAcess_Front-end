@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 interface ITextInfo {
     direction: "row" | "row-reverse",
@@ -28,5 +29,9 @@ export const TextDescription = styled.div`
 `;
 
 export const ImageAbout = styled.div`
-    
+     ${media.lessThan("medium")`
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+`}
 `;

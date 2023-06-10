@@ -6,6 +6,7 @@ import { CardPlans } from "../home/plans/cardplans"
 
 import { Container, HeaderPlans, Imagem, SectionMeet, SectionPlans, SectionText } from "./planos.styles"
 
+
 export const Planos = () => {
     return (
         <Container>
