@@ -3,6 +3,10 @@ import media from "styled-media-query";
 
 export const Container = styled.div`
   width: 100%;
+
+  ${media.lessThan("medium")`
+    padding:10px;
+  `}
 `;
 
 export const Title = styled.div`
@@ -12,8 +16,11 @@ export const Title = styled.div`
   align-items: center;
 
   ${media.lessThan("medium")`
-    font-size: 1.5rem;
     margin-top: 30px;
+
+    span {
+      font-size: 18px;
+    }
   `}
 `;
 

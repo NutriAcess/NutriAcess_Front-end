@@ -12,7 +12,10 @@ export const Title = styled.div`
 
   ${media.lessThan("medium")`
     padding-left: 50px;
-   font-size: 250%;
+    span {
+      font-size: 36px;
+      text-align: center;
+    }
   `}
 `;
 

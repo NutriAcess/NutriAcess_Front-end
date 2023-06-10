@@ -1,28 +1,28 @@
+import Email from "../../../assets/foto email.png";
+import Tel from "../../../assets/fundo telefone.png";
+import Insta from "../../../assets/logo do insta.png";
+import Linkedin from "../../../assets/logo linkedln.png";
+import Redes from "../../../assets/redes_sociais.png";
 import { Text } from "../../../components/text/text";
 import {
   Container,
-  DivNumber,
   DivGeneral,
-  Title,
+  DivNumber,
+  DivRedes,
+  DivTeste,
+  ImgRedes,
   ImgTel,
   POne,
   TelephoneLink,
   TelephoneLink1,
-  DivRedes,
-  DivTeste,
-  ImgRedes,
+  Title,
 } from "./service.styles";
-import Tel from "../../../assets/fundo telefone.png";
-import Email from "../../../assets/foto email.png";
-import Redes from "../../../assets/redes_sociais.png";
-import Insta from "../../../assets/logo do insta.png";
-import Linkedin from "../../../assets/logo linkedln.png";
 
 const Service = () => {
   return (
     <Container>
       <Title>
-        <Text weight={600} height={1.7} color="preto" size="36">
+        <Text weight={600} height={32} color="preto" size="36">
           Canais de Atendimento
         </Text>
       </Title>
