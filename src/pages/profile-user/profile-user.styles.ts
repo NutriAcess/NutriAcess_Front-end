@@ -36,7 +36,6 @@ export const Scheduling = styled.div`
   padding: 12px;
 
   justify-content: center;
-
 `;
 
 export const UserDetails = styled.div`
@@ -59,22 +58,20 @@ export const SchedulingCardsWrapper = styled.div`
 `;
 
 export const SchedulingCardsPlan = styled.div`
-    display: flex;
+  display: flex;
 
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    margin: 26px 0px;
-
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 26px 0px;
 `;
 
-export const TitlePlan= styled.div`
-    display: flex;
+export const TitlePlan = styled.div`
+  display: flex;
 
-    align-items: center;
+  align-items: center;
 
-    flex-direction: column;
-
+  flex-direction: column;
 `;
 
 export const ButtonContent = styled.div`
@@ -84,22 +81,31 @@ export const ButtonContent = styled.div`
   justify-content: flex-end;
 
   gap: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
 
-  margin-top: 32px;
+  ${media.lessThan("medium")`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  `}
 `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
 
   width: 20%;
+
+  ${media.lessThan("medium")`
+    width: 100%;
+  `}
 `;
 
 export const Form = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-
-  margin-bottom: 16px;
 `;
 
 export const InputWrapper = styled.div`
@@ -109,40 +115,62 @@ export const InputWrapper = styled.div`
   justify-content: center;
 
   gap: 16px;
+
+  ${media.lessThan("medium")`
+    flex-wrap: wrap;
+  `}
 `;
 
 export const InputPlan = styled.div`
+  font-size: 16px;
 
+  ${media.lessThan("medium")`
+      width: 100%;
+  `}
 `;
 
 export const ButtonPlan = styled.div`
-    display: flex;
-    margin-top: 30px;
+  display: flex;
+  margin-top: 30px;
 
+  ${media.lessThan("medium")`
+      width: 100%;
+  `}
 `;
 
 export const PlanWrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
-    gap: 30px;
-    align-items: flex-end;
-    margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: flex-end;
+
+  ${media.lessThan("medium")`
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+
+      margin-top: 28px;
+  `}
 `;
 
 export const SectionPlan = styled.div`
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    width: 50%;
+  width: 50%;
+
+  ${media.lessThan("medium")`
+      width: 100%;
+  `}
 `;
 
 export const SectionDiet = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const QrCode = styled.div`
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 `;
