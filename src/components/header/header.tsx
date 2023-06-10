@@ -4,23 +4,25 @@ import Logo from "../logo/logo";
 import { ButtonContent } from "./header.styles";
 import { useNavigate } from "react-router-dom";
 
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import "bootstrap/dist/css/bootstrap.min.css"
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Header() {
-
-const { isLogged } = useAuth();
-const navigate = useNavigate();
+  const { isLogged } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <Navbar collapseOnSelect expand="lg">
       <Container>
         <Logo />
-        
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end justify-content-xl-around align-items-center">
+        <Navbar.Collapse
+          id="responsive-navbar-nav"
+          className="justify-content-end justify-content-xl-around align-items-center"
+        >
           <Nav>
             <div onClick={() => navigate("/")} className="mx-3">
               <Nav.Link href="#">Início</Nav.Link>
@@ -39,16 +41,19 @@ const navigate = useNavigate();
             </div>
           </Nav>
           {!isLogged && (
-        <ButtonContent >
-          <Button title="Login" variant="primario" xs onClick={() => navigate("/sign-in-esp")} />
-          <Button
-            xs
-            title="Cadastre-se"
-            variant="secundario"
-            onClick={() => navigate("/sign-up-user")}
-          />
-        </ButtonContent>
-      )}
+            <ButtonContent>
+              <Button
+                title="Login"
+                variant="primario"
+                onClick={() => navigate("/sign-in-esp")}
+              />
+              <Button
+                title="Cadastre-se"
+                variant="secundario"
+                onClick={() => navigate("/sign-up-user")}
+              />
+            </ButtonContent>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
