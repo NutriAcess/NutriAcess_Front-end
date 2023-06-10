@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import BackgroundImage from "../../assets/background.svg";
 import media from "styled-media-query";
+import BackgroundImage from "../../assets/background.svg";
 
 export const Container = styled.div`
   display: flex;
@@ -19,9 +19,10 @@ export const ImageWrapper = styled.div`
   justify-content: center;
 
   ${media.lessThan("medium")`
-  background-position: center;
+    background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 600px;
   `}
 
 `;
@@ -34,7 +35,11 @@ export const DivText = styled.div`
   margin-bottom: 32px;
 
   ${media.lessThan("medium")`
-  font-size: 30px;
+    span {
+      font-size: 32px;
+      line-height: 50px;
+      margin-left: -20px;
+    }
   `}
 `;
 
@@ -44,6 +49,11 @@ export const DivButton = styled.div`
   align-items: center;
   margin-left: 50px;
   font-family: ${({ theme }) => theme.Font.font_lato};
+
+  
+  ${media.lessThan("medium")`
+      margin-left: 30px;
+    `}
 `;
 
 export const Partners = styled.div`
@@ -56,4 +66,8 @@ export const Partners = styled.div`
 
 export const LogoPartners = styled.div`
   margin: 12px 24px;
+
+  ${media.lessThan("small")`
+    margin: 0; 
+  `}
 `;

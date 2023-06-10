@@ -1,6 +1,8 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+`;
 
 export const Content = styled.div`
   display: grid;
@@ -9,6 +11,13 @@ export const Content = styled.div`
   background-color: ${({ theme }) => theme.Colors.amarelo};
   padding: 3rem 3.5rem;
   justify-items: center;
+  
+
+  ${media.lessThan("medium")`
+        display: flex;
+        flex-diretion:column;
+        flex-wrap: wrap;
+    `}
 `;
 
 export const Contact = styled.div`

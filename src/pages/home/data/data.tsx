@@ -6,7 +6,7 @@ const Data = () => {
   return (
     <Container>
       <TitleDestaqueData>
-        <Text weight={700} height={1.7} size="32" color="branco">
+        <Text weight={700} height={42} size="32" color="branco">
           Dados da Pesquisa Nacional de Saúde (PNS)
         </Text>
       </TitleDestaqueData>

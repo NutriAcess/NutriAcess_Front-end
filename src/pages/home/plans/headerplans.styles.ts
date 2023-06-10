@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from 'styled-media-query';
 
 export const Header = styled.div`
     display: flex;
@@ -9,6 +10,10 @@ export const Header = styled.div`
     padding-top: 30px;
     margin-bottom: 62px;
     gap: 16px;
+
+    ${media.lessThan("small")`
+        margin-bottom: -20px;
+    `}
 `;
 
 export const Title = styled.span`
@@ -16,4 +21,7 @@ export const Title = styled.span`
 `;
 
 export const SubTitle = styled.span`
+    ${media.lessThan("small")`
+        text-align: center;
+    `}
 `;

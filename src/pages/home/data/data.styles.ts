@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const Container = styled.div`
   background-color: ${({ theme }) => theme.Colors.laranja_claro};
@@ -10,6 +11,10 @@ export const Container = styled.div`
 export const TitleDestaqueData = styled.div`
   display: flex;
   justify-content: center;
+
+  ${media.lessThan("small")`
+    text-align: center;
+  `}
 `;
 
 export const CardsData = styled.div`
@@ -18,4 +23,6 @@ export const CardsData = styled.div`
   align-items: center;
   margin-top: 86px;
   gap: 30px;
+  flex-wrap: wrap;
+
 `;

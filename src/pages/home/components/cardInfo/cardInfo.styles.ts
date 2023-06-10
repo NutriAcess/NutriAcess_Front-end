@@ -8,6 +8,11 @@ interface ITextInfo {
 export const Container = styled.div<ITextInfo>`
     display: flex;
     flex-direction: ${({direction}) => direction};
+
+    ${media.lessThan("medium")`
+        display: flex;
+        flex-direction:column;
+    `}
 `;
 
 export const TextInfo = styled.div`
@@ -17,6 +22,15 @@ export const TextInfo = styled.div`
     align-items: center;
     justify-content: center;
     margin: 0 60px;
+
+    ${media.lessThan("small")`
+        margin: 0px;
+        align-items: justify;
+        width: 375px;
+        text-align: center;
+        padding:10px;
+        margin-top:20px;
+    `}
 `;
 
 export const TextTitle = styled.div`
@@ -24,14 +38,24 @@ export const TextTitle = styled.div`
 `;
 
 export const TextDescription = styled.div`
-    line-height: 1.7;
     padding-left: 20px;
+
+    ${media.lessThan("medium")`
+        padding: 0px;
+    `}
 `;
 
 export const ImageAbout = styled.div`
-     ${media.lessThan("medium")`
-    width: 100px;
-    height: 100px;
-    background-color: blue;
+    
+    ${media.lessThan("medium")`
 `}
+
+    ${media.lessThan("small")`
+
+    img {
+        width: 375px;
+    }
+    
+`}
+
 `;

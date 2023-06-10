@@ -7,21 +7,18 @@ export const Container = styled.div`
     justify-content: space-around;
     align-items: center;
     margin-bottom: 22px ;
+    
+    ${media.lessThan("medium")`
+
+    `}
 `;
 
 export const SectionInfo = styled.div`
   
   ${media.lessThan("medium")`
-  display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
+   display: flex;
    justify-content: center;
    align-items: center;
-   background-color: blue;
-
-   > image {
-width: 100px;
-   }
 
 `}
   
@@ -34,12 +31,7 @@ export const SectionInfo2 = styled.div`
    flex-wrap: wrap;
    justify-content: center;
    align-items: center;
-   background-color: blue;
-
-   > image {
-width: 100px;
-   }
-   
+   margin-top: 10px;
 `}
 `;
 
