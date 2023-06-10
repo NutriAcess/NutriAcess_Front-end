@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const Container = styled.div`
   display: flex;
@@ -37,6 +38,9 @@ export const Scheduling = styled.div`
 
   justify-content: center;
 
+  ${media.lessThan("medium")`
+    margin-top: -70px;
+  `}
 `;
 
 export const UserDetails = styled.div`
@@ -49,6 +53,7 @@ export const Cover = styled.div`
 
   display: flex;
   flex-direction: column;
+  margin-bottom: 3px;
 `;
 
 export const SchedulingCardsWrapper = styled.div`
@@ -56,6 +61,7 @@ export const SchedulingCardsWrapper = styled.div`
   gap: 16px;
   display: flex;
   flex-direction: column;
+
 `;
 
 export const SchedulingCardsPlan = styled.div`
@@ -65,6 +71,7 @@ export const SchedulingCardsPlan = styled.div`
     justify-content: center;
     gap: 40px;
     margin: 26px 0px;
+    flex-wrap: wrap;
 
 `;
 
@@ -84,22 +91,31 @@ export const ButtonContent = styled.div`
   justify-content: flex-end;
 
   gap: 8px;
+  margin-bottom: 8px;
+  margin-top: 8px;
 
-  margin-top: 32px;
+  ${media.lessThan("medium")`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  `}
 `;
 
 export const ButtonWrapper = styled.div`
   display: flex;
 
   width: 20%;
+
+  ${media.lessThan("medium")`
+    width: 100%;
+  `}
 `;
 
 export const Form = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
-
-  margin-bottom: 16px;
 `;
 
 export const InputWrapper = styled.div`
@@ -109,15 +125,27 @@ export const InputWrapper = styled.div`
   justify-content: center;
 
   gap: 16px;
+
+  ${media.lessThan("medium")`
+    flex-wrap: wrap;
+  `}
 `;
 
 export const InputPlan = styled.div`
+  font-size: 16px;
 
+  ${media.lessThan("medium")`
+      width: 100%;
+  `}
 `;
 
 export const ButtonPlan = styled.div`
     display: flex;
     margin-top: 30px;
+
+    ${media.lessThan("medium")`
+      width: 100%;
+  `}
 
 `;
 
@@ -126,7 +154,14 @@ export const PlanWrapper = styled.div`
     justify-content: space-between;
     gap: 30px;
     align-items: flex-end;
-    margin-top: 30px;
+
+    ${media.lessThan("medium")`
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+
+      margin-top: 28px;
+  `}
 `;
 
 export const SectionPlan = styled.div`
@@ -135,6 +170,10 @@ export const SectionPlan = styled.div`
     flex-direction: column;
 
     width: 50%;
+
+    ${media.lessThan("medium")`
+      width: 100%;
+  `}
 `;
 
 export const SectionDiet = styled.div`
