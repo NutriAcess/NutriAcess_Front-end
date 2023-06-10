@@ -18,7 +18,7 @@ export const Form = styled.div`
   gap: 24px;
 
   ${media.lessThan("medium")`
-    padding: 0 16px;
+    padding: 0 32px;
   `}
 `;
 
@@ -39,3 +39,14 @@ export const ButtonWrapper = styled.div`
     width: 100%;
   `}
 `;
+
+export const DivLogo = styled.div`
+  margin-top: 100px;
+  ${media.lessThan("medium")`
+      margin-top: 120px;
+  `}
+`
+
+export const DivCadastrar = styled.div`
+    margin-bottom: 20px;
+`

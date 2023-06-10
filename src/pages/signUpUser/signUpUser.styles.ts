@@ -37,3 +37,14 @@ export const ButtonWrapper = styled.div`
     width: 100%;
   `}
 `;
+
+export const DivLogo = styled.div`
+  margin-top: 100px;
+  ${media.lessThan("medium")`
+      margin-top: 120px;
+  `}
+`
+
+export const DivCadastrar = styled.div`
+    margin-bottom: 20px;
+`
