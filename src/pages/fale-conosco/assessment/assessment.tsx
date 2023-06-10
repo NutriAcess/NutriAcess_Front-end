@@ -10,10 +10,9 @@ import {
   DivInput,
   DivNumber,
   Feedback,
-  InfoEvaluation,
   Number,
-  Title
-} from "./assessment.styled";
+  Title,
+} from "./assessment.styles";
 
 const Assessment = () => {
   const [name, setName] = useState("");
@@ -29,61 +28,59 @@ const Assessment = () => {
           Sua avaliação é muito importante para nós!
         </Text>
       </Title>
-
       <Feedback>
         {novoArray.map((num) => (
           <DivNumber>
-            <Number
-            onClick={() => setShowInfoEvaluation(!showInfoEvaluation)}
-            > {num} </Number>
+            <Number onClick={() => setShowInfoEvaluation(!showInfoEvaluation)}>
+              {num}
+            </Number>
           </DivNumber>
         ))}
       </Feedback>
-      
-      {showInfoEvaluation && (<InfoEvaluation>
-        <Title>
-          <Text weight={600} height={36} color="preto" size="24">
-            Como podemos te ajudar?
-          </Text>
-        </Title>
+      {showInfoEvaluation && (
+        <>
+          <Title>
+            <Text weight={600} height={36} color="preto" size="24">
+              Como podemos te ajudar?
+            </Text>
+          </Title>
 
-        <ContainerInput>
-          <DivInput>
-            <Input
-              label="Nome"
-              placeholder="Digite seu nome..."
-              value={name}
-              onChange={(e) => setName(e)}
-            />
-          </DivInput>
+          <ContainerInput>
+            <DivInput>
+              <Input
+                label="Nome"
+                placeholder="Digite seu nome..."
+                value={name}
+                onChange={(e) => setName(e)}
+              />
+            </DivInput>
 
-          <DivInput>
-            <Input
-              label="Email"
-              placeholder="Digite seu email..."
-              value={email}
-              onChange={(e) => setEmail(e)}
-            />
-          </DivInput>
+            <DivInput>
+              <Input
+                label="Email"
+                placeholder="Digite seu email..."
+                value={email}
+                onChange={(e) => setEmail(e)}
+              />
+            </DivInput>
 
+            <DivInput>
+              <Input
+                label="Mensagem"
+                placeholder="Digite sua mensagem..."
+                value={description}
+                onChange={(e) => setDescription(e)}
+                height="100"
+              />
+            </DivInput>
 
-          <DivInput>
-            <Input
-              label="Mensagem"
-              placeholder="Digite sua mensagem..."
-              value={description}
-              onChange={(e) => setDescription(e)}
-              height="100"
-            />
-          </DivInput>
-
-
-          <ButtonDiv>
-            <Button variant="primario" title="Enviar" xs />
-          </ButtonDiv>
-        </ContainerInput>
-      </InfoEvaluation>
-      )};
+            <ButtonDiv>
+              <Button variant="primario" title="Enviar" xs />
+            </ButtonDiv>
+          </ContainerInput>
+        </>
+      )}
+      ;
     </Container>
   );
 };
