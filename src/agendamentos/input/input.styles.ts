@@ -26,7 +26,7 @@ export const InputStyled = styled.input`
   ${media.lessThan("small")`
    
     width: 290px;
-    margin-left: -45px;
+    margin-left: -2px;
   `}
 `;
 

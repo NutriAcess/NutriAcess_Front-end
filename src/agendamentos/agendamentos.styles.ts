@@ -14,14 +14,14 @@ export const Content = styled.div`
   height: 22rem;
 
   ${media.lessThan("medium")`
-    width: 420px;
-    height: auto;
-    padding: 2rem;
+    margin-bottom: 20px;
   `}
 `;
 
 export const Title = styled.span`
-  
+  ${media.lessThan("medium")`
+      text-align: center;
+  `}
 `;
 
 export const Description = styled.p`
