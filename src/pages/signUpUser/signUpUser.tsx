@@ -57,7 +57,7 @@ const SignUpUser: React.FC = () => {
 
       signUpUser(user);
 
-      navigate("/profile-user");
+      navigate("/formulario");
     } else {
       alert("Campos incorretos");
     }

@@ -12,7 +12,6 @@ import Data from "./data/data";
 import Feedback from "./feedback/feedback";
 import Goals from "./goals/goals";
 import {
-  ButtonWrapper,
   Container,
   DivButton,
   DivText,
@@ -40,9 +39,7 @@ const Home = () => {
           </Text>
         </DivText>
         <DivButton>
-          <ButtonWrapper>
-            <Button variant="primario" title="Conheça nossos planos" />
-          </ButtonWrapper>
+          <Button variant="primario" title="Conheça nossos planos" />
         </DivButton>
       </ImageWrapper>
 

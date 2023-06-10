@@ -57,7 +57,3 @@ export const Partners = styled.div`
 export const LogoPartners = styled.div`
   margin: 12px 24px;
 `;
-
-export const ButtonWrapper = styled.div`
-  width: 200px;
-`;

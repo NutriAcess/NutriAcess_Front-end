@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const InputWrapper = styled.div`
   display: flex;
@@ -14,4 +15,12 @@ export const StyledInput = styled.input`
   border: ${({ theme }) => theme.Colors.vinho} solid 2px;
 
   margin-top: 8px;
+
+  ${media.lessThan("medium")`
+    padding: 7px;
+  `}
 `;
+
+export const OptionsContainer = styled.div``;
+
+export const Option = styled.div``;

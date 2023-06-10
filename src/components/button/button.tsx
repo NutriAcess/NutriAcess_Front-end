@@ -5,6 +5,7 @@ interface IButton {
   onClick?: () => void;
   icon?: React.ReactNode;
   variant: "primario" | "secundario" | "terciario";
+  disable ?: boolean;
 }
 
 const Button = ({ title, variant, icon, xs, onClick }: IButton) => {

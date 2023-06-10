@@ -18,36 +18,40 @@ export const Container = styled.button<IContainer>`
     variant === "primario" ? theme.Colors.vinho : "transparent"};
   border: 2px solid
     ${({ theme, variant }) =>
-    variant === "secundario"
-      ? theme.Colors.vinho
-      : variant === "terciario"
+      variant === "secundario"
+        ? theme.Colors.vinho
+        : variant === "terciario"
         ? theme.Colors.laranja_destaque
         : "transparent"};
 
   ${({ xs }) =>
     xs &&
     css`
-      width: 90%;
-      font-size: 110%;
+      width: 100%;
     `}
 
-    &:hover {
-      ${({ theme, variant }) => variant === "primario" && css`
-          background-color: ${theme.Colors.branco};
-          border-color: ${theme.Colors.laranja_destaque};
-          transition: 1s;
-          
+  &:hover {
+    ${({ theme, variant }) =>
+      variant === "primario" &&
+      css`
+        background-color: ${theme.Colors.branco};
+        border-color: ${theme.Colors.laranja_destaque};
+        transition: 1s;
 
-          ${TitleButton} { /* Adicione essa parte para aplicar o estilo no TitleButton */
+        ${TitleButton} {
+          /* Adicione essa parte para aplicar o estilo no TitleButton */
           color: ${theme.Colors.laranja_destaque};
         }
 
-        > *:nth-child(2) { /* Seleciona o segundo filho do Container (o ícone) */
+        > *:nth-child(2) {
+          /* Seleciona o segundo filho do Container (o ícone) */
           color: ${theme.Colors.laranja_destaque};
         }
       `}
 
-      ${({ theme, variant }) => variant === "secundario" && css`
+    ${({ theme, variant }) =>
+      variant === "secundario" &&
+      css`
       background-color: ${theme.Colors.branco};
           border-color: ${theme.Colors.laranja_destaque};
           transition: 1s;
@@ -60,17 +64,19 @@ export const Container = styled.button<IContainer>`
       `}
       
 
-      ${({ theme, variant }) => variant === "terciario" && css`
-          background-color: ${theme.Colors.amarelo};
-          border-color: ${theme.Colors.amarelo};
-          transition: 1s;
-          
+      ${({ theme, variant }) =>
+      variant === "terciario" &&
+      css`
+        background-color: ${theme.Colors.amarelo};
+        border-color: ${theme.Colors.amarelo};
+        transition: 1s;
 
-          ${TitleButton} { /* Adicione essa parte para aplicar o estilo no TitleButton */
+        ${TitleButton} {
+          /* Adicione essa parte para aplicar o estilo no TitleButton */
           color: ${theme.Colors.branco};
         }
       `}
-    }
+  }
 `;
 
 export const TitleButton = styled.span<IContainer>`
@@ -80,15 +86,12 @@ export const TitleButton = styled.span<IContainer>`
     variant === "primario"
       ? theme.Colors.branco
       : variant === "secundario"
-        ? theme.Colors.vinho
-        : theme.Colors.laranja_destaque};
+      ? theme.Colors.vinho
+      : theme.Colors.laranja_destaque};
 
   ${({ icon }) =>
     icon &&
     css`
       margin-right: 16px;
-      
     `}
-
-    
 `;
