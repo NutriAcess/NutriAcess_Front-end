@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 
+import Button from "../../components/button/button";
+import { Input } from "../../components/input/input";
+import Logo from "../../components/logo/logo";
+import { Text } from "../../components/text/text";
 import {
   ButtonWrapper,
   Container,
+  DivCadastrar,
+  DivLogo,
   Form,
   InputWrapper,
 } from "./signUpEsp.styles";
-import Logo from "../../components/logo/logo";
-import { Text } from "../../components/text/text";
-import { Input } from "../../components/input/input";
-import Button from "../../components/button/button";
 
 const SignInSpecialist: React.FC = () => {
   const [crn, setCRN] = useState("");
@@ -42,8 +44,9 @@ const SignInSpecialist: React.FC = () => {
 
   return (
     <Container>
-      <Logo />
-
+      <DivLogo>
+        <Logo />
+      </DivLogo>
       <Form>
         <Text height={21} weight={700} size="28" color="vinho">
           Cadastro Especialista
@@ -102,9 +105,12 @@ const SignInSpecialist: React.FC = () => {
           <Button title="Entrar" variant="primario" xs />
         </ButtonWrapper>
 
+        <DivCadastrar
+        >
         <Text height={21} weight={400} size="16" color="vinho">
          Já é cadastrado? Faça login!
         </Text>
+        </DivCadastrar>
       </Form>
     </Container>
   );

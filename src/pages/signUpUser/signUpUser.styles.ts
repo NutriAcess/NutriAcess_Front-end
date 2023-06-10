@@ -1,31 +1,50 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-direction: column;
-
   height: 100%;
 `;
 
 export const Form = styled.div`
   margin-top: 36px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-direction: column;
-
   gap: 24px;
+
+  ${media.lessThan("medium")`
+    padding: 0 16px;
+  `}
 `;
 
 export const InputWrapper = styled.div`
   width: 600px;
+
+  ${media.lessThan("medium")`
+    width: 100%;
+  `}
 `;
 
 export const ButtonWrapper = styled.div`
   width: 200px;
+
+  ${media.lessThan("medium")`
+    width: 100%;
+  `}
 `;
+
+export const DivLogo = styled.div`
+  margin-top: 100px;
+  ${media.lessThan("medium")`
+      margin-top: 120px;
+  `}
+`
+
+export const DivCadastrar = styled.div`
+    margin-bottom: 20px;
+`

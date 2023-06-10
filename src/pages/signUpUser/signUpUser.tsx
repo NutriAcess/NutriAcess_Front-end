@@ -11,6 +11,8 @@ import { useAuth } from "../../hooks/useAuth";
 import {
   ButtonWrapper,
   Container,
+  DivCadastrar,
+  DivLogo,
   Form,
   InputWrapper,
 } from "./signUpUser.styles";
@@ -65,7 +67,9 @@ const SignUpUser: React.FC = () => {
 
   return (
     <Container>
-      <Logo />
+      <DivLogo>
+        <Logo />
+      </DivLogo>
 
       <Form>
         <Text height={21} weight={700} size="28" color="vinho">
@@ -127,10 +131,11 @@ const SignUpUser: React.FC = () => {
             onClick={() => handleRegisterUser()}
           />
         </ButtonWrapper>
-
-        <Text height={21} weight={400} size="16" color="vinho">
-          Já é cadastrado? Faça login!
-        </Text>
+        <DivCadastrar>
+          <Text height={21} weight={400} size="16" color="vinho">
+            Já é cadastrado? Faça login!
+          </Text>
+        </DivCadastrar>
       </Form>
     </Container>
   );
