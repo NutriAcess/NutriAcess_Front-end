@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 interface ITextOperation {
     direction: "row" | "row-reverse",
@@ -14,6 +15,10 @@ export const Container = styled.div<ITextOperation>`
     align-items: center;
     justify-content: center;
     margin: 30px;
+
+    ${media.lessThan("small")`
+        display: inline-block;
+    `}
 `;
 
 export const Content = styled.div``;
@@ -22,6 +27,10 @@ export const Icon = styled.div<IIcon>`
     color: ${({theme}) => theme.Colors.amarelo};
     margin-bottom: 100px;
     margin-right: 10px;
+
+    ${media.lessThan("small")`
+        display: none;
+    `}
 `;
 
 export const TitleOperation = styled.div`
@@ -40,8 +49,12 @@ export const TextDescription = styled.div`
 
 export const ImageOperation = styled.div`
     margin: 20px 100px;
-
     
+    ${media.lessThan("small")`
+        img {
+            display: none;
+        }
+    `}
 `;
 
 export const Text = styled.div``;
