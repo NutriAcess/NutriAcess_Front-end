@@ -1,4 +1,4 @@
-import ftprofissional from "../../assets/ft-profissional.svg";
+import ftprofissional from "../../assets/ft-profissional-1.jpg";
 import ftprofissional2 from "../../assets/ft-profissional-2.svg";
 import ftprofissional3 from "../../assets/ft-profissional-3.svg";
 import ftprofissional4 from "../../assets/ft-profissional-4.svg";
