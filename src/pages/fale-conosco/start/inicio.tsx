@@ -2,6 +2,7 @@ import { Text } from "../../../components/text/text";
 import img_inicio from "../../../assets/img_inicio.svg";
 import {
   Container,
+  DivImage,
   DivSubImg,
   ImgStyled,
   SubTitle,
@@ -23,7 +24,9 @@ const Inicio = () => {
             sempre que quiser!
           </Text>
         </SubTitle>
-        <ImgStyled src={img_inicio} alt="fale conosco" />
+        <DivImage>
+          <ImgStyled src={img_inicio} alt="fale conosco" />
+        </DivImage>
       </DivSubImg>
     </Container>
   );
