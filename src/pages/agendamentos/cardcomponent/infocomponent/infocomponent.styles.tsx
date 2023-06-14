@@ -74,7 +74,7 @@ export const InfoSection = styled.div`
 `;
 
 export const ButtonDoctor = styled.div`
-  width: 25%;
+  width: 40%;
 
   ${media.lessThan('medium')`
     width: 100%;
