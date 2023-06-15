@@ -154,6 +154,7 @@ export const PlanWrapper = styled.div`
     justify-content: space-between;
     gap: 30px;
     align-items: flex-end;
+    margin-top: 20px;
 
     ${media.lessThan("medium")`
       display: flex;
@@ -179,9 +180,21 @@ export const SectionPlan = styled.div`
 export const SectionDiet = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
+    justify-content: end;
 `;
 
 export const QrCode = styled.div`
-    margin-bottom: 30px;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: end;
+    align-items: center;
+    
+
+    img {
+      width: 25%;
+    }
+`;
+
+export const ButtonDieta = styled.a`
 `;

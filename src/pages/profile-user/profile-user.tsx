@@ -2,16 +2,18 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
 import { useState } from "react";
-import QRCODE from "../../assets/qrcode.svg";
+import QRCODE from "../../assets/QRCODE.png";
 import Button from "../../components/button/button";
 import Header from "../../components/header/header";
 import { Input } from "../../components/input/input";
 import { Modal } from "../../components/modal/modal";
 import { Text } from "../../components/text/text";
+import { useAuth } from "../../hooks/useAuth";
 import { SchedulingCard } from "../profile-user/components/schedulignCard/schedulingCard";
 import { SchedulingPlan } from "./components/schedulignPlan/schedulingPlan";
 import {
   ButtonContent,
+  ButtonDieta,
   ButtonPlan,
   ButtonWrapper,
   Container,
@@ -33,7 +35,6 @@ import {
   UserDetails,
   UserWrapper,
 } from "./profile-user.styles";
-import { useAuth } from "../../hooks/useAuth";
 
 export const ProfileUser = () => {
   const { user } = useAuth();
@@ -182,7 +183,9 @@ export const ProfileUser = () => {
             <QrCode>
               <img src={QRCODE} alt="QR-CODE"></img>
             </QrCode>
-            <Button title="Acesse sua dieta" variant="primario" />
+            <ButtonDieta href="https://drive.google.com/file/d/1-E5ScDseLMthc-EDT5TI408-mAvLbps6/view?usp=sharing" target="_blank">
+              <Button title="Acesse sua dieta" variant="primario"/>
+            </ButtonDieta>
           </SectionDiet>
         </PlanWrapper>
       </Modal>
