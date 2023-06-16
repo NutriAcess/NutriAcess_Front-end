@@ -1,57 +1,24 @@
 import React, { useState } from "react";
-import _ from "validator";
 
+import { useNavigate } from "react-router-dom";
+import Button from "../../components/button/button";
+import { Input } from "../../components/input/input";
+import Logo from "../../components/logo/logo";
+import { Text } from "../../components/text/text";
+import { useAuth } from "../../hooks/useAuth";
 import {
   ButtonWrapper,
   Container,
   Form,
   InputWrapper,
 } from "./signInEsp.styles";
-import Logo from "../../components/logo/logo";
-import { Text } from "../../components/text/text";
-import { Input } from "../../components/input/input";
-import Button from "../../components/button/button";
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
-import { TEsp } from "../../contexts/authContext/authContext.types";
 
 const SignInSpecialist: React.FC = () => {
   const { signInEsp } = useAuth();
   const navigate = useNavigate();
 
   const [crn, setCrn] = useState("");
-  const [password, setPassword] = useState("");
-
-  function validateFields() {
-    if (
-      _.isEmpty(crn) ||
-      _.isEmpty(password)
-    ) {
-      return false;
-    }
-
-    if (!_.isNumeric(crn)) return false;
-    if (!_.isAlphanumeric(password)) return false;
-
-    return true;
-  }
-
-  function handleLoginEsp() {
-    const isValidated = validateFields();
-
-    if (isValidated) {
-      const useresp: TEsp = {
-        crn,
-        password,
-      };
-
-      signInEsp(useresp);
-
-      navigate("/dashboard-nutri");
-    } else {
-      alert("Campos incorretos");
-    }
-  }
+  const [senha, setSenha] = useState("");
   
   return (
     <Container>
@@ -73,15 +40,15 @@ const SignInSpecialist: React.FC = () => {
         <InputWrapper>
           <Input
             label="Senha:"
-            value={password}
+            value={senha}
             placeholder="Digite sua senha"
             type="password"
-            onChange={(e) => setPassword(e)}
+            onChange={(e) => setSenha(e)}
           />
         </InputWrapper>
 
         <ButtonWrapper>
-          <Button title="Entrar" variant="primario" xs onClick={() => handleLoginEsp()} />
+          <Button title="Entrar" variant="primario" xs/>
         </ButtonWrapper>
 
         <Text height={21} weight={400} size="16" color="vinho">

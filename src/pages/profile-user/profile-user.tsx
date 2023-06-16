@@ -8,6 +8,7 @@ import Header from "../../components/header/header";
 import { Input } from "../../components/input/input";
 import { Modal } from "../../components/modal/modal";
 import { Text } from "../../components/text/text";
+import { useAuth } from "../../hooks/useAuth";
 import { SchedulingCard } from "../profile-user/components/schedulignCard/schedulingCard";
 import { SchedulingPlan } from "./components/schedulignPlan/schedulingPlan";
 import {
@@ -33,17 +34,16 @@ import {
   UserDetails,
   UserWrapper,
 } from "./profile-user.styles";
-import { useAuth } from "../../hooks/useAuth";
 
 export const ProfileUser = () => {
   const { user } = useAuth();
 
   const [showModal, setShowModal] = useState(false);
 
-  const [name, setName] = useState(user.name);
+  const [name, setName] = useState(user.nome_completo);
   const [email, setEmail] = useState(user.email);
-  const [password, setPassword] = useState(user.password);
-  const [socialName, setSocialName] = useState(user.socialName);
+  const [senha, setSenha] = useState(user.senha);
+  const [nome_social, setNome_social] = useState(user.nome_social);
   const [age, setAge] = useState("");
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
@@ -57,7 +57,7 @@ export const ProfileUser = () => {
       <Cover>
         <UserDetails>
           <Text color="branco" height={42} size="36" weight={500}>
-            Dashboard - olá {user.socialName}
+            Dashboard - olá {user.nome_social}
           </Text>
           <UserWrapper>
             <User
@@ -115,16 +115,16 @@ export const ProfileUser = () => {
             <Input label="Nome" onChange={(e) => setName(e)} value={name} />
             <Input
               label="Nome social"
-              onChange={(e) => setSocialName(e)}
-              value={socialName}
+              onChange={(e) => setNome_social(e)}
+              value={nome_social}
             />
           </InputWrapper>
           <InputWrapper>
             <Input label="Email" onChange={(e) => setEmail(e)} value={email} />
             <Input
               label="Senha"
-              onChange={(e) => setPassword(e)}
-              value={password}
+              onChange={(e) => setSenha(e)}
+              value={senha}
               type="password"
             />
           </InputWrapper>

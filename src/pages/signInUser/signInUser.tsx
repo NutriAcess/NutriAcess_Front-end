@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+import Button from "../../components/button/button";
+import { Input } from "../../components/input/input";
+import Logo from "../../components/logo/logo";
+import { Text } from "../../components/text/text";
 import {
   ButtonWrapper,
   Container,
@@ -7,22 +11,10 @@ import {
   Header,
   InputWrapper,
 } from "./signInUser.styles";
-import Logo from "../../components/logo/logo";
-import { Text } from "../../components/text/text";
-import { Input } from "../../components/input/input";
-import Button from "../../components/button/button";
 
 const SignInUser: React.FC = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
-
-  const handleChangeEmail = (value: string) => {
-    setEmail(value);
-  };
-
-  const handleSenhaChange = (value: string) => {
-    setSenha(value);
-  };
 
   return (
     <Container>
@@ -41,7 +33,7 @@ const SignInUser: React.FC = () => {
             value={email}
             type="email"
             placeholder="Digite seu E-mail"
-            onChange={handleChangeEmail}
+            onChange={(e) => setEmail(e)}
           />
         </InputWrapper>
         <InputWrapper>
@@ -50,7 +42,7 @@ const SignInUser: React.FC = () => {
             value={senha}
             placeholder="Digite sua senha"
             type="password"
-            onChange={handleSenhaChange}
+            onChange={(e) => setSenha(e)}
           />
         </InputWrapper>
 

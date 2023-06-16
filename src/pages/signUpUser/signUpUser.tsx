@@ -1,39 +1,35 @@
+import axios from "axios";
 import React, { useState } from "react";
-import _ from "validator";
-
 import { useNavigate } from "react-router-dom";
+import _ from "validator";
 import Button from "../../components/button/button";
 import { Input } from "../../components/input/input";
 import Logo from "../../components/logo/logo";
 import { Text } from "../../components/text/text";
 import { TUser } from "../../contexts/authContext/authContext.types";
-import { useAuth } from "../../hooks/useAuth";
 import {
   ButtonWrapper,
   Container,
-  DivCadastrar,
-  DivLogo,
   Form,
   InputWrapper,
 } from "./signUpUser.styles";
 
 const SignUpUser: React.FC = () => {
-  const { signUpUser } = useAuth();
+  
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const [name, setName] = useState("");
-  const [socialName, setSocialName] = useState("");
+  const [senha, setSenha] = useState("");
+  const [nome_completo, setNomeCompleto] = useState("");
+  const [nome_social, setNomeSocial] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
   function validateFields() {
     if (
-      _.isEmpty(name) ||
+      _.isEmpty(nome_completo) ||
       _.isEmpty(email) ||
-      _.isEmpty(password) ||
-      _.isEmpty(socialName) ||
+      _.isEmpty(senha) ||
+      _.isEmpty(nome_social) ||
       _.isEmpty(passwordConfirmation)
     ) {
       return false;
@@ -41,25 +37,36 @@ const SignUpUser: React.FC = () => {
 
     if (!_.isEmail(email)) return false;
 
-    if (!_.equals(password, passwordConfirmation)) return false;
+    if (!_.equals(senha, passwordConfirmation)) return false;
 
     return true;
   }
 
-  function handleRegisterUser() {
+  async function handleRegisterUser() {
     const isValidated = validateFields();
 
     if (isValidated) {
       const user: TUser = {
         email,
-        name,
-        password,
-        socialName,
+        senha,
+        nome_completo,
+        nome_social,
       };
+      console.log(user);
+      try {
+        const response = await axios.post(
+          "http://localhost:3003/cliente/cadastrar",
+          user
+        );
 
-      signUpUser(user);
+        const token = response.data.result;
 
-      navigate("/formulario");
+        localStorage.setItem("token", token);
+
+        navigate("/profile-user");
+      } catch (error) {
+        console.error(error);
+      }
     } else {
       alert("Campos incorretos");
     }
@@ -67,9 +74,7 @@ const SignUpUser: React.FC = () => {
 
   return (
     <Container>
-      <DivLogo>
-        <Logo />
-      </DivLogo>
+      <Logo />
 
       <Form>
         <Text height={21} weight={700} size="28" color="vinho">
@@ -79,18 +84,18 @@ const SignUpUser: React.FC = () => {
         <InputWrapper>
           <Input
             label="Nome"
-            value={name}
+            value={nome_completo}
             placeholder="Digite seu Nome"
-            onChange={(e) => setName(e)}
+            onChange={(value: string) => setNomeCompleto(value)}
           />
         </InputWrapper>
 
         <InputWrapper>
           <Input
             label="Nome social"
-            value={socialName}
+            value={nome_social}
             placeholder="Digite seu Nome social"
-            onChange={(e) => setSocialName(e)}
+            onChange={(value: string) => setNomeSocial(value)}
           />
         </InputWrapper>
 
@@ -100,16 +105,17 @@ const SignUpUser: React.FC = () => {
             value={email}
             type="email"
             placeholder="Digite seu E-mail"
-            onChange={(e) => setEmail(e)}
+            onChange={(value: string) => setEmail(value)}
           />
         </InputWrapper>
+
         <InputWrapper>
           <Input
             label="Senha:"
-            value={password}
+            value={senha}
             placeholder="Digite sua senha"
             type="password"
-            onChange={(e) => setPassword(e)}
+            onChange={(value: string) => setSenha(value)}
           />
         </InputWrapper>
 
@@ -119,7 +125,7 @@ const SignUpUser: React.FC = () => {
             value={passwordConfirmation}
             placeholder="Confirme sua senha"
             type="password"
-            onChange={(e) => setPasswordConfirmation(e)}
+            onChange={(value: string) => setPasswordConfirmation(value)}
           />
         </InputWrapper>
 
@@ -131,11 +137,10 @@ const SignUpUser: React.FC = () => {
             onClick={() => handleRegisterUser()}
           />
         </ButtonWrapper>
-        <DivCadastrar>
-          <Text height={21} weight={400} size="16" color="vinho">
-            Já é cadastrado? Faça login!
-          </Text>
-        </DivCadastrar>
+
+        <Text height={21} weight={400} size="16" color="vinho">
+          Já é cadastrado? Faça login!
+        </Text>
       </Form>
     </Container>
   );
