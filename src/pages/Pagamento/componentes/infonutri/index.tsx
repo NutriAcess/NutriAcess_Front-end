@@ -1,6 +1,6 @@
 import { Text } from "../../../../components/text/text";
 import { Container, Imagem, InformationNutri } from "./styles";
-import InfoNutriImage from "../../../../assets/ft-profissional.svg";
+import InfoNutriImage from "../../../../assets/nutri_Camila.jpg";
 
 export const InfoNutri = () => {
   return (
