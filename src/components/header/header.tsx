@@ -8,8 +8,13 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
+import { PopUp } from "../popupcadastro/popup";
+import { PopUpLogin } from "../popuplogin/popuplogin";
 
 function Header() {
+  const [openPopupRegister, setOpenPopupRegister] = useState(false);
+  const [openPopupLogin, setOpenPopupLogin] = useState(false);
   const { isLogged } = useAuth();
   const navigate = useNavigate();
 
@@ -45,12 +50,20 @@ function Header() {
               <Button
                 title="Login"
                 variant="primario"
-                onClick={() => navigate("/sign-in-esp")}
+                onClick={() => setOpenPopupLogin(true)}
+              />
+              <PopUpLogin
+                open={openPopupLogin} 
+                onClose={() => setOpenPopupLogin(false)} 
               />
               <Button
                 title="Cadastre-se"
                 variant="secundario"
-                onClick={() => navigate("/sign-up-user")}
+                onClick={() => setOpenPopupRegister(true)}
+              />
+              <PopUp
+                open={openPopupRegister} 
+                onClose={() => setOpenPopupRegister(false)} 
               />
             </ButtonContent>
           )}
