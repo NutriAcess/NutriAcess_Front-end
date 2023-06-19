@@ -47,7 +47,6 @@ export const ProfileUser = () => {
   const [age, setAge] = useState("");
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
-  const [imc, setImc] = useState("");
   const [sex, setSex] = useState("");
   const [plan, setPlan] = useState("");
 
@@ -141,7 +140,6 @@ export const ProfileUser = () => {
             <Input label="Peso" onChange={(e) => setWeight(e)} value={weight} />
           </InputWrapper>
           <InputWrapper>
-            <Input label="IMC" onChange={(e) => setImc(e)} value={imc} />
             <Input label="Sexo" onChange={(e) => setSex(e)} value={sex} />
           </InputWrapper>
         </Form>

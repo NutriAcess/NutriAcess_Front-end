@@ -17,8 +17,8 @@ export const Plans = () => {
           <CardPlan
             destaque="secundario"
             shadow="secundario"
-            titleplan="Plus"
-            description="Venha conhecer as vantagens do plano Plus!"
+            titleplan="Plus 1"
+            description="Venha conhecer as vantagens do plano Plus 1!"
             plan={{
               value: 50,
               duration: "por mês",
@@ -47,8 +47,8 @@ export const Plans = () => {
           <CardPlan
             destaque="secundario"
             shadow="secundario"
-            titleplan="Plano Premium"
-            description="Venha conhecer as vantagens do plano Premium!"
+            titleplan="Plus 2"
+            description="Venha conhecer as vantagens do plano Plus 2!"
             plan={{
               value: 100,
               duration: "3 meses",

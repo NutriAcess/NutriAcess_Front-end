@@ -1,10 +1,10 @@
 import ftprofissional from "../../assets/nutri_Camila.jpg";
-import ftprofissional2 from "../../assets/nutri_Rogério.svg";
 import ftprofissional3 from "../../assets/nutri_Luciano.jpg";
 import ftprofissional4 from "../../assets/nutri_Luiza.jpg";
-import ftprofissional5 from "../../assets/nutri_Tiago.jpg";
 import ftprofissional6 from "../../assets/nutri_Maria.jpg";
 import ftprofissional7 from "../../assets/nutri_Paula.jpg";
+import ftprofissional2 from "../../assets/nutri_Rogério.svg";
+import ftprofissional5 from "../../assets/nutri_Tiago.jpg";
 import LogoVerify from "../../assets/verify.svg";
 
 export const data = [
