@@ -1,6 +1,7 @@
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
+import { UserFocus } from "@phosphor-icons/react";
 import { useState } from "react";
 import QRCODE from "../../assets/qrcode.svg";
 import Button from "../../components/button/button";
@@ -8,6 +9,7 @@ import Header from "../../components/header/header";
 import { Input } from "../../components/input/input";
 import { Modal } from "../../components/modal/modal";
 import { Text } from "../../components/text/text";
+import { useAuth } from "../../hooks/useAuth";
 import { SchedulingCard } from "../profile-user/components/schedulignCard/schedulingCard";
 import { SchedulingPlan } from "./components/schedulignPlan/schedulingPlan";
 import {
@@ -17,9 +19,11 @@ import {
   Container,
   Cover,
   Form,
+  IconPhoto,
   Info,
   InputPlan,
   InputWrapper,
+  PhotoUser,
   PlanWrapper,
   QrCode,
   Scheduling,
@@ -31,9 +35,8 @@ import {
   TitlePlan,
   User,
   UserDetails,
-  UserWrapper,
+  UserWrapper
 } from "./profile-user.styles";
-import { useAuth } from "../../hooks/useAuth";
 
 export const ProfileUser = () => {
   const { user } = useAuth();
@@ -42,7 +45,7 @@ export const ProfileUser = () => {
 
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
-  const [password, setPassword] = useState(user.password);
+  const [senha, setSenha] = useState(user.password);
   const [socialName, setSocialName] = useState(user.socialName);
   const [age, setAge] = useState("");
   const [height, setHeight] = useState("");
@@ -59,10 +62,15 @@ export const ProfileUser = () => {
             Dashboard - olá {user.socialName}
           </Text>
           <UserWrapper>
+            <PhotoUser>
             <User
               src="https://github.com/Luisjunior119.png"
               alt="Foto do usuário"
             />
+            <IconPhoto>
+              <UserFocus size="40" color="white"/>
+            </IconPhoto>
+            </PhotoUser>
             <Info>
               <TextWrapper>
                 <Text color="branco" height={29} size="24" weight={500}>
@@ -111,7 +119,7 @@ export const ProfileUser = () => {
       >
         <Form>
           <InputWrapper>
-            <Input label="Nome" onChange={(e) => setName(e)} value={name} />
+            <Input label="Nome completo" onChange={(e) => setName(e)} value={name} />
             <Input
               label="Nome social"
               onChange={(e) => setSocialName(e)}
@@ -122,8 +130,8 @@ export const ProfileUser = () => {
             <Input label="Email" onChange={(e) => setEmail(e)} value={email} />
             <Input
               label="Senha"
-              onChange={(e) => setPassword(e)}
-              value={password}
+              onChange={(e) => setSenha(e)}
+              value={senha}
               type="password"
             />
           </InputWrapper>
@@ -140,14 +148,22 @@ export const ProfileUser = () => {
             <Input label="Peso" onChange={(e) => setWeight(e)} value={weight} />
           </InputWrapper>
           <InputWrapper>
-            <Input label="Sexo" onChange={(e) => setSex(e)} value={sex} />
+            <Input label="Gênero" onChange={(e) => setSex(e)} value={sex} />
+            <Input label="Objetivo" onChange={(e) => setSex(e)} value={sex} />
+          </InputWrapper>
+          <InputWrapper>
+            <Input label="Nível de atividade física" onChange={(e) => setSex(e)} value={sex} />
+            <Input label="Tem tempo para refeição" onChange={(e) => setSex(e)} value={sex} />
+          </InputWrapper>
+          <InputWrapper>
+          <Input label="Alergia" onChange={(e) => setSex(e)} value={sex} />
           </InputWrapper>
         </Form>
         <ButtonContent>
           <ButtonWrapper>
             <Button
               xs
-              title="Cancelar"
+              title="Editar"
               variant="secundario"
               onClick={() => setShowModal(false)}
             />
