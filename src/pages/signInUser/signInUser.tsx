@@ -11,10 +11,29 @@ import {
   Header,
   InputWrapper,
 } from "./signInUser.styles";
+import { signInUser } from "../../services/authService/authService";
+import { useNavigate } from "react-router-dom";
 
 const SignInUser: React.FC = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
+
+  async function handleSignUser() {
+    try {
+      const response = await signInUser({
+        email,
+        senha,
+      });
+
+      if (response.form) {
+        navigate("/profile-user");
+      } else {
+        navigate("/formulario");
+      }
+    } catch (error) {}
+  }
 
   return (
     <Container>
@@ -47,7 +66,12 @@ const SignInUser: React.FC = () => {
         </InputWrapper>
 
         <ButtonWrapper>
-          <Button title="Entrar" variant="primario" xs />
+          <Button
+            title="Entrar"
+            variant="primario"
+            xs
+            onClick={handleSignUser}
+          />
         </ButtonWrapper>
 
         <Text height={21} weight={400} size="16" color="vinho">

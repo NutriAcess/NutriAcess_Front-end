@@ -13,9 +13,9 @@ import {
   Form,
   InputWrapper,
 } from "./signUpUser.styles";
+import { signUpUser } from "../../services/authService/authService";
 
 const SignUpUser: React.FC = () => {
-  
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");
@@ -52,20 +52,12 @@ const SignUpUser: React.FC = () => {
         nome_completo,
         nome_social,
       };
-      console.log(user);
+
       try {
-        const response = await axios.post(
-          "http://localhost:3003/cliente/cadastrar",
-          user
-        );
-
-        const token = response.data.result;
-
-        localStorage.setItem("token", token);
-
-        navigate("/profile-user");
+        await signUpUser(user);
+        navigate("/sign-in-user");
       } catch (error) {
-        console.error(error);
+        alert("sign up fails");
       }
     } else {
       alert("Campos incorretos");
