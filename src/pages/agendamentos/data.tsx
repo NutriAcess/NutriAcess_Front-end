@@ -1,10 +1,10 @@
-import ftprofissional from "../../assets/ft-profissional.svg";
-import ftprofissional2 from "../../assets/ft-profissional-2.svg";
-import ftprofissional3 from "../../assets/ft-profissional-3.svg";
-import ftprofissional4 from "../../assets/ft-profissional-4.svg";
-import ftprofissional5 from "../../assets/ft-profissional-5.svg";
-import ftprofissional6 from "../../assets/ft-profissional-6.svg";
-import ftprofissional7 from "../../assets/ft-profissional-7.svg";
+import ftprofissional from "../../assets/nutri_Camila.jpg";
+import ftprofissional3 from "../../assets/nutri_Luciano.jpg";
+import ftprofissional4 from "../../assets/nutri_Luiza.jpg";
+import ftprofissional6 from "../../assets/nutri_Maria.jpg";
+import ftprofissional7 from "../../assets/nutri_Paula.jpg";
+import ftprofissional2 from "../../assets/nutri_Rogério.svg";
+import ftprofissional5 from "../../assets/nutri_Tiago.jpg";
 import LogoVerify from "../../assets/verify.svg";
 
 export const data = [
@@ -52,23 +52,23 @@ export const data = [
 
     verify: { alt: "", url: "" },
 
-    socialmedia: "luciano-barbosa-nutri",
+    socialmedia: "lulu_silva",
 
     description:
-      "Seja bem vindo(a)! Sou nutricionista especialista em nutrição esportiva e familiar. Posso te ajudar a viver bem e conquistar mais qualidade de vida. Ficou curioso? Então me siga e marque uma consulta e inicie agora o seu processo de autoconhecimento!",
+      "Uma nutricionista apaixonada pela conexão entre alimentação e bem-estar. Com meu conhecimento em nutrição funcional, posso te ajudar a alcançar equilíbrio, energia e uma relação saudável com a comida. Vamos embarcar juntos nessa jornada rumo a uma vida mais saudável e feliz? ",
 
     image: { alt: "", url: ftprofissional4 },
   },
 
   {
-    title: "Julia Barsalobre",
+    title: "Anthony Barsalobre",
 
     verify: { alt: "", url: LogoVerify },
 
-    socialmedia: "Julhina-nutrition",
+    socialmedia: "barsalobre_",
 
     description:
-      "Seja bem vindo(a)! Sou nutricionista especialista em nutrição esportiva e familiar. Posso te ajudar a viver bem e conquistar mais qualidade de vida. Ficou curioso? Então me siga e marque uma consulta e inicie agora o seu processo de autoconhecimento!",
+      "Nutricionista dedicado a promover uma alimentação consciente e prazerosa. Acredito que cada pessoa é única, e meu objetivo é auxiliar você a encontrar o equilíbrio nutricional ideal para o seu corpo e estilo de vida. Juntos, vamos desvendar os segredos de uma alimentação saudável, saborosa e sustentável!",
 
     image: { alt: "", url: ftprofissional5 },
   },
@@ -81,20 +81,20 @@ export const data = [
     socialmedia: "Mariaa-nutrition",
 
     description:
-      "Seja bem vindo(a)! Sou nutricionista especialista em nutrição esportiva e familiar. Posso te ajudar a viver bem e conquistar mais qualidade de vida. Ficou curioso? Então me siga e marque uma consulta e inicie agora o seu processo de autoconhecimento!",
+      "Nutricionista apaixonada por desvendar o poder dos alimentos. Minha missão é te ajudar a alcançar uma saúde vibrante e duradoura através da alimentação. Com abordagem personalizada e baseada em evidências científicas, vamos construir uma relação positiva com a comida e conquistar seus objetivos de forma equilibrada!",
 
     image: { alt: "", url: ftprofissional6 },
   },
 
   {
-    title: "Silvana Medeiros",
+    title: "Paula Lima",
 
     verify: { alt: "", url: LogoVerify },
 
-    socialmedia: "Mariaa-nutrition",
+    socialmedia: "paula_nutri",
 
     description:
-      "Seja bem vindo(a)! Sou nutricionista especialista em nutrição esportiva e familiar. Posso te ajudar a viver bem e conquistar mais qualidade de vida. Ficou curioso? Então me siga e marque uma consulta e inicie agora o seu processo de autoconhecimento!",
+      "A nutricionista que vai te mostrar que comer bem não precisa ser chato! Vamos dar um up na sua alimentação e turbinar sua energia? Com dicas práticas, receitas deliciosas e um toque de bom humor, vamos desbravar o mundo da nutrição juntos. Chega de dietas mirabolantes, vamos construir um estilo de vida saudável e cheio de sabor!",
 
     image: { alt: "", url: ftprofissional7 },
   },

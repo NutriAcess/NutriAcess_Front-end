@@ -74,7 +74,7 @@ export const InfoSection = styled.div`
 `;
 
 export const ButtonDoctor = styled.div`
-  width: 25%;
+  width: 40%;
 
   ${media.lessThan('medium')`
     width: 100%;
@@ -86,3 +86,10 @@ export const ButtonDoctor = styled.div`
   
  
 `;
+
+export const StyledImage = styled.img`
+width: 200px;
+height: 200px;
+`;
+
+

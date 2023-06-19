@@ -14,7 +14,7 @@ export const data = [
 
     title: "Alan Gonçalves",
 
-    stack: "Full Stack",
+    stack: "Full-Stack",
 
     hrefpessoalhub: "https://github.com/lanDev01",
 
@@ -32,7 +32,7 @@ export const data = [
 
     title: "Luis Santana",
 
-    stack: "Full Stack",
+    stack: "Full-Stack",
 
     hrefpessoalhub: "https://github.com/Luisjunior119",
 
@@ -66,7 +66,7 @@ export const data = [
 
     title: "Gustavo Senise",
 
-    stack: "Back-end",
+    stack: "Back-End",
 
     hrefpessoalhub: "https://github.com/gussenise",
 
@@ -83,7 +83,7 @@ export const data = [
 
     title: "Erica Inacia",
 
-    stack: "Back-end",
+    stack: "Full-Stack",
 
     hrefpessoalhub: "https://github.com/EricaInaciadeLima",
 

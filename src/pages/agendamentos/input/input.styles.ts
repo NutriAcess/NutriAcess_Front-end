@@ -33,7 +33,7 @@ export const InputStyled = styled.input`
 export const Button = styled.button`
   background-color: ${({ theme }) => theme.Colors.vinho};
   border-radius: 6px;
-  padding: 1.1rem 2rem;
+  padding: 1.4rem 2.5rem;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 

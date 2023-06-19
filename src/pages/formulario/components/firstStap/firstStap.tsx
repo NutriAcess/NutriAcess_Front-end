@@ -3,6 +3,13 @@ import { Input } from "../../../../components/input/input";
 import { Text } from "../../../../components/text/text";
 import { Container } from "../../formulario.styles";
 
+import { useForm } from "../../../../hooks/useForm";
+import {
+  FeedingEnum,
+  GenderEnum,
+  ObjectiveEnum,
+} from "../../../../services/authService/authService.types";
+import { StyledInput } from "../InputCheck/InputCheck.styles";
 import {
   DivGender,
   Section,
@@ -11,13 +18,6 @@ import {
   SectionSex,
   TitleStap,
 } from "./firsStap.styles";
-import { StyledInput } from "../InputCheck/InputCheck.styles";
-import { useForm } from "../../../../hooks/useForm";
-import {
-  FeedingEnum,
-  GenderEnum,
-  ObjectiveEnum,
-} from "../../../../services/authService/authService.types";
 
 export const FirstStap = () => {
   const { setForm, form } = useForm();
@@ -96,9 +96,7 @@ export const FirstStap = () => {
       <SectionGlobalInputs>
         <Section>
           <DivGender>
-            <Text weight={600} height={20} size="18" color="preto">
-              Eu desejo:
-            </Text>
+            <Text weight={600} height={20} size="18" color="preto">Objetivo:</Text>
           </DivGender>
 
           <SectionIam>

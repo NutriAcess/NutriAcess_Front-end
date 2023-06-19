@@ -9,14 +9,14 @@ export const Container = styled.div`
 
   ${media.lessThan("medium")`
     height: auto;
-    padding: 15px;
+    padding: 15px 15px 0 15px;
   `}
 `;
 
 export const DivSubImg = styled.div`
   display: flex;
   justify-content: space-around;
-  height: 190px;
+  height: 418px;
   width: 100%;
   align-items: center;
 
@@ -36,7 +36,6 @@ export const Title = styled.h1`
 
 export const SubTitle = styled.div`
   width: 673px;
-  margin-top: 100px;
 
   ${media.lessThan("medium")`
     width: 100%;
@@ -46,9 +45,13 @@ export const SubTitle = styled.div`
 
 export const ImgStyled = styled.img`
   display: flex;
-  margin-top: 196px;
 
   ${media.lessThan("medium")`
     margin-top: 40px;
   `}
+`;
+
+export const DivImage = styled.div`
+  display: flex;
+  align-self: flex-end;
 `;

@@ -1,6 +1,7 @@
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
+import { UserFocus } from "@phosphor-icons/react";
 import { useState } from "react";
 import QRCODE from "../../assets/qrcode.svg";
 import Button from "../../components/button/button";
@@ -18,9 +19,11 @@ import {
   Container,
   Cover,
   Form,
+  IconPhoto,
   Info,
   InputPlan,
   InputWrapper,
+  PhotoUser,
   PlanWrapper,
   QrCode,
   Scheduling,
@@ -32,7 +35,7 @@ import {
   TitlePlan,
   User,
   UserDetails,
-  UserWrapper,
+  UserWrapper
 } from "./profile-user.styles";
 
 export const ProfileUser = () => {
@@ -47,7 +50,6 @@ export const ProfileUser = () => {
   const [age, setAge] = useState("");
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
-  const [imc, setImc] = useState("");
   const [sex, setSex] = useState("");
   const [plan, setPlan] = useState("");
 
@@ -60,10 +62,15 @@ export const ProfileUser = () => {
             Dashboard - olá {user.nome_social}
           </Text>
           <UserWrapper>
+            <PhotoUser>
             <User
               src="https://github.com/Luisjunior119.png"
               alt="Foto do usuário"
             />
+            <IconPhoto>
+              <UserFocus size="40" color="white"/>
+            </IconPhoto>
+            </PhotoUser>
             <Info>
               <TextWrapper>
                 <Text color="branco" height={29} size="24" weight={500}>
@@ -112,7 +119,7 @@ export const ProfileUser = () => {
       >
         <Form>
           <InputWrapper>
-            <Input label="Nome" onChange={(e) => setName(e)} value={name} />
+            <Input label="Nome completo" onChange={(e) => setName(e)} value={name} />
             <Input
               label="Nome social"
               onChange={(e) => setNome_social(e)}
@@ -141,15 +148,22 @@ export const ProfileUser = () => {
             <Input label="Peso" onChange={(e) => setWeight(e)} value={weight} />
           </InputWrapper>
           <InputWrapper>
-            <Input label="IMC" onChange={(e) => setImc(e)} value={imc} />
-            <Input label="Sexo" onChange={(e) => setSex(e)} value={sex} />
+            <Input label="Gênero" onChange={(e) => setSex(e)} value={sex} />
+            <Input label="Objetivo" onChange={(e) => setSex(e)} value={sex} />
+          </InputWrapper>
+          <InputWrapper>
+            <Input label="Nível de atividade física" onChange={(e) => setSex(e)} value={sex} />
+            <Input label="Tem tempo para refeição" onChange={(e) => setSex(e)} value={sex} />
+          </InputWrapper>
+          <InputWrapper>
+          <Input label="Alergia" onChange={(e) => setSex(e)} value={sex} />
           </InputWrapper>
         </Form>
         <ButtonContent>
           <ButtonWrapper>
             <Button
               xs
-              title="Cancelar"
+              title="Editar"
               variant="secundario"
               onClick={() => setShowModal(false)}
             />
