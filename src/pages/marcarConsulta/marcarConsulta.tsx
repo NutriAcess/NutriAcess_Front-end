@@ -1,4 +1,4 @@
-import imageNutricionista from "../../assets/mulherMarcarConsulta.svg";
+import imageNutricionista from "../../assets/nutri_Camila.jpg";
 import Header from "../../components/header/header";
 import { CardMarcarConsulta } from "./CardMarcarConsulta/CardMarcarConsulta";
 import { Container } from "./marcarConsulta.styles";
