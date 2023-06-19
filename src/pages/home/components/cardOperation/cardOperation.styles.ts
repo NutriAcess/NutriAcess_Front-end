@@ -55,6 +55,11 @@ export const ImageOperation = styled.div`
             display: none;
         }
     `}
+
+    img {
+        width: 333px;
+        height: 349px;
+    }
 `;
 
 export const Text = styled.div``;

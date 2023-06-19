@@ -1,7 +1,7 @@
 import { Container, SectionInfo, SectionInfo2 } from "./about.styles";
 import Info from "../components/cardInfo/cardInfo";
-import appleabout from "../../../assets/appleabout.svg";
-import womenabout from "../../../assets/womenabout.svg";
+import appleabout from "../../../assets/destaque_texto2.jpg";
+import womenabout from "../../../assets/destaque_texto1.jpg";
 
 const About = () => {
   return (

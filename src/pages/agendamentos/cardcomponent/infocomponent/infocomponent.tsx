@@ -1,17 +1,16 @@
 import { InstagramLogo } from "@phosphor-icons/react";
 import { Text } from "../../../../components/text/text";
+import Button from "../../../../components/button/button";
 import {
   Container,
-  DescriptionDoctor,
   ImageDoctor,
   InfoSection,
   TextSocial,
-  TextTitle,
+  DescriptionDoctor,
   ButtonDoctor,
+  StyledImage,
 } from "./infocomponent.styles";
-import Button from "../../../../components/button/button";
 
-/* Criação de uma interface chamada IInfoComponent para a criação do card dos nutricionistas*/
 interface IInfoComponent {
   title: string;
   socialmedia: string;
@@ -25,7 +24,6 @@ interface IInfoComponent {
     alt: string;
   };
 }
-/* Passei as props abaixo*/
 
 const InfoComponent = ({
   title,
@@ -37,16 +35,13 @@ const InfoComponent = ({
   return (
     <Container>
       <ImageDoctor>
-        <img src={image.url} alt={image.alt}></img>
+        <StyledImage src={image.url} alt={image.alt} />
       </ImageDoctor>
 
       <InfoSection>
-        <TextTitle>
-          <Text weight={600} height={47} color="preto" size="32">
-            {title}
-          </Text>
-          <img src={verify.url} alt={verify.alt} />
-        </TextTitle>
+        <Text weight={600} height={47} color="preto" size="32">
+          {title}
+        </Text>
 
         <TextSocial>
           <InstagramLogo size={28} />
@@ -70,3 +65,4 @@ const InfoComponent = ({
 };
 
 export default InfoComponent;
+
