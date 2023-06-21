@@ -1,0 +1,120 @@
+@import '../../../assets/less/functions.less';
+@import '../../../assets/less/colors.less';
+@import '../../../assets/less/variables.less';
+
+.react-calendar__tile {
+	border: solid 2px @white !important;
+	.borderRadius(7px);
+
+	&:hover{
+		background-color: none !important;
+	}
+}
+
+body > #root {
+	> .container > main  .calendarBox {
+		padding: 0px 5px 15px 5px;
+		background-color: @white;
+		border: solid 1px @white-medium;
+		.borderRadius(10px);
+
+		* {
+			.noSelect();
+		}
+
+		> p {
+			margin: 10px 0 10px 0;
+			width: inherit;
+			font-weight: bold;
+			font-size: 1.4em;
+			text-align: center;
+		}
+
+		> hr {
+			margin: 0 0 10px 0;
+		}
+
+		> .react-calendar{
+			width: 100%;
+			border:none !important;
+		}
+
+		.react-calendar {
+			.hif, .he, .hcc, .dis {
+				color: @black-dark;
+				.transition();
+			}
+
+			.hif {
+				background-color: @alertRed;
+
+				&:hover{
+					background-color: darken(@alertRed, 5) !important;
+				}
+			}
+
+			.he {
+				background-color: @alertYellow;
+
+				&:hover{
+					background-color: darken(@alertYellow, 5) !important;
+				}
+			}
+
+			.hcc {
+				background-color: @alertGreen;
+
+				&:hover{
+					background-color: darken(@alertGreen, 5) !important;
+				}
+			}
+
+			.dis {
+				cursor: default;
+				background-color: @white-light;
+			}
+		}
+	}
+
+	> #modalBox .modalBody > .modalContent {
+		> .title, > .consBox {
+            .flex('row', 'between', 'center', 'stretch');
+            margin: 4px 0;
+			color: @black-medium;
+
+            > span {
+                .flex('row', 'start', 'center', 'stretch', 1);
+
+				&:first-child {
+                	width: 25%;
+				}
+
+				&:last-child {
+                	width: 15%;
+				}
+
+                &.status {
+                    width: 60%;
+                }
+
+                &.red {
+                    color: @red;
+                }
+
+                &.yellow {
+                    color: @yellow;
+                }
+
+                &.green {
+                    color: @green;
+                }
+            }
+        }
+
+        > .title {
+            font-family: @robotoCondensed;
+            font-size: 1.1em;
+            font-weight: bold;;
+        }
+    }
+}

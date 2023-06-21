@@ -4,19 +4,18 @@ import "react-date-range/dist/theme/default.css";
 import {
   ButtonConfirm,
   ButtonPlans,
-  CalendarWrapper,
   Container,
   Content,
   ContentCalender,
-  DatePicker,
   Image,
   Infos,
-  SocialMedia,
+  SocialMedia
 } from "./CardMarcarConsulta.styles";
 
-import { ptBR } from "date-fns/locale";
-import { Text } from "../../../components/text/text";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../components/button/button";
+import { Text } from "../../../components/text/text";
+import CalendarBox from "../Calendar";
 
 interface ICardMarcarConsulta {
   image: {
@@ -32,6 +31,8 @@ export const CardMarcarConsulta = ({
   nutricionist,
   socialMedia,
 }: ICardMarcarConsulta) => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Content>
@@ -51,7 +52,7 @@ export const CardMarcarConsulta = ({
         </Infos>
 
         <ContentCalender>
-          <CalendarWrapper>
+          {/* <CalendarWrapper>
             <DatePicker
               weekdayDisplayFormat="EEEEEE"
               showDateDisplay={false}
@@ -60,7 +61,8 @@ export const CardMarcarConsulta = ({
               locale={ptBR}
               months={1}
             />
-          </CalendarWrapper>
+          </CalendarWrapper> */}
+          <CalendarBox/>
 
           <ButtonConfirm>
             <Button variant="primario" title="Confirmar consulta" />
@@ -68,7 +70,9 @@ export const CardMarcarConsulta = ({
         </ContentCalender>
       </Content>
 
-      <ButtonPlans>
+      <ButtonPlans
+        onClick={() => navigate("/planos")}
+      >
         <Button variant="primario" title="Veja nossos planos" />
       </ButtonPlans>
     </Container>
