@@ -1,10 +1,9 @@
-
 body > #root .calendarBox {
   display: flex;
   flex-wrap: wrap;
   padding: 0px 5px 15px 5px;
-  background-color: #FFF;
-  border: solid 1px #D0D0D0;
+  background-color: #fff;
+  border: solid 1px #d0d0d0;
   border-radius: 10px;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -35,7 +34,6 @@ body > #root .calendarBox > hr {
   margin: 0 0 10px 0;
 }
 body > #root .calendarBox > .react-calendar {
-  width: 100%;
   border: none !important;
 }
 body > #root .calendarBox .react-calendar .hif,
@@ -50,7 +48,7 @@ body > #root .calendarBox .react-calendar .dis {
   transition: all 0.2s ease-in-out;
 }
 body > #root .calendarBox .react-calendar .hif {
-  background-color: #FFE6E6;
+  background-color: #ffe6e6;
 }
 body > #root .calendarBox .react-calendar .hif:hover {
   background-color: #ffcccc !important;
@@ -69,7 +67,7 @@ body > #root .calendarBox .react-calendar .hcc:hover {
 }
 body > #root .calendarBox .react-calendar .dis {
   cursor: default;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
 }
 body > #root > #modalBox .modalBody > .modalContent > .title,
 body > #root > #modalBox .modalBody > .modalContent > .consBox {
@@ -118,11 +116,23 @@ body > #root > #modalBox .modalBody > .modalContent > .consBox > span {
   }
 }
 body > #root > #modalBox .modalBody > .modalContent > .title > span:first-child,
-body > #root > #modalBox .modalBody > .modalContent > .consBox > span:first-child {
+body
+  > #root
+  > #modalBox
+  .modalBody
+  > .modalContent
+  > .consBox
+  > span:first-child {
   width: 25%;
 }
 body > #root > #modalBox .modalBody > .modalContent > .title > span:last-child,
-body > #root > #modalBox .modalBody > .modalContent > .consBox > span:last-child {
+body
+  > #root
+  > #modalBox
+  .modalBody
+  > .modalContent
+  > .consBox
+  > span:last-child {
   width: 15%;
 }
 body > #root > #modalBox .modalBody > .modalContent > .title > span.status,
@@ -131,18 +141,18 @@ body > #root > #modalBox .modalBody > .modalContent > .consBox > span.status {
 }
 body > #root > #modalBox .modalBody > .modalContent > .title > span.red,
 body > #root > #modalBox .modalBody > .modalContent > .consBox > span.red {
-  color: #EA4335;
+  color: #ea4335;
 }
 body > #root > #modalBox .modalBody > .modalContent > .title > span.yellow,
 body > #root > #modalBox .modalBody > .modalContent > .consBox > span.yellow {
-  color: #FBBC04;
+  color: #fbbc04;
 }
 body > #root > #modalBox .modalBody > .modalContent > .title > span.green,
 body > #root > #modalBox .modalBody > .modalContent > .consBox > span.green {
-  color: #22A822;
+  color: #22a822;
 }
 body > #root > #modalBox .modalBody > .modalContent > .title {
-  font-family: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
   font-size: 1.1em;
   font-weight: bold;
 }
