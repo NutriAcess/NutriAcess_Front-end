@@ -2,12 +2,19 @@ import { api } from "../../config/axios/axios";
 import { TUser } from "../../contexts/authContext/authContext.types";
 import {
   ISignInUser,
+  TEsp,
   TSignInUserResponse,
+  TSignUpEspResponse,
   TSignUpUserResponse,
 } from "./authService.types";
 
 export async function signUpUser(user: TUser): Promise<TSignUpUserResponse> {
   const response = await api.post("/cliente/cadastrar", user);
+  return response.data;
+}
+
+export async function signUpEsp(useresp: TEsp): Promise<TSignUpEspResponse> {
+  const response = await api.post("/nutricionista/cadastrar", useresp);
   return response.data;
 }
 

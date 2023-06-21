@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import _ from "validator";
@@ -6,7 +5,9 @@ import Button from "../../components/button/button";
 import { Input } from "../../components/input/input";
 import Logo from "../../components/logo/logo";
 import { Text } from "../../components/text/text";
+
 import { TEsp } from "../../contexts/authContext/authContext.types";
+import { signUpEsp } from "../../services/authService/authService";
 import {
   ButtonWrapper,
   Container,
@@ -45,27 +46,21 @@ const SignInSpecialist: React.FC = () => {
     const isValidated = validateFields();
     
     if (isValidated) {
-      const esp: TEsp = {
+      const useresp: TEsp = {
         email,
         senha,
         nome_completo,
         nome_social,
         crn,
       };
-      console.log(esp);
-      try {
-        const response = await axios.post(
-          "http://localhost:3003/nutricionista/cadastrar", esp
-        );
 
-        const token = response.data.result;
-
-        localStorage.setItem("token", token);
-
-        navigate("/dashboard-nutri");
-      } catch (error) {
-        console.log(error);
-      }
+        try {
+          await signUpEsp(useresp);
+          navigate("/sign-in-esp");
+        } catch (error) {
+          console.log(error);
+          alert("Não foi possível efetuar o login. Tente novamente!");
+        }
     } else {
       alert("Campos incorretos");
     }

@@ -19,7 +19,7 @@ export interface IAuthContext {
   user: TUser;
   useresp: TEsp;
   isLogged: boolean;
-  signInEsp: (useresp: TEsp) => void;
+  signUpEsp: (useresp: TEsp) => void;
   signUpUser: (user: TUser) => void;
 }
 

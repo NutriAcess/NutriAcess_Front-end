@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import _ from "validator";
@@ -7,13 +6,13 @@ import { Input } from "../../components/input/input";
 import Logo from "../../components/logo/logo";
 import { Text } from "../../components/text/text";
 import { TUser } from "../../contexts/authContext/authContext.types";
+import { signUpUser } from "../../services/authService/authService";
 import {
   ButtonWrapper,
   Container,
   Form,
   InputWrapper,
 } from "./signUpUser.styles";
-import { signUpUser } from "../../services/authService/authService";
 
 const SignUpUser: React.FC = () => {
   const navigate = useNavigate();
@@ -57,7 +56,7 @@ const SignUpUser: React.FC = () => {
         await signUpUser(user);
         navigate("/sign-in-user");
       } catch (error) {
-        alert("sign up fails");
+        alert("Não foi possível efetuar o login. Tente novamente!");
       }
     } else {
       alert("Campos incorretos");

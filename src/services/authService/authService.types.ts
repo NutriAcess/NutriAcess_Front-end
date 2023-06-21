@@ -72,6 +72,11 @@ export type TSignUpUserResponse = {
   message: string;
 };
 
+export type TSignUpEspResponse = {
+  token: string;
+  message: string;
+};
+
 export interface ISignInUser {
   email: string;
   senha: string;
@@ -83,6 +88,14 @@ export type TUser = {
   nome_completo: string;
   nome_social: string;
 };
+
+export type TEsp = {
+  email: string;
+  id_cliente?: string;
+  nome_completo: string;
+  nome_social: string;
+  crn: string;
+}
 
 export type TSignInUserResponse = {
   user: TUser;
