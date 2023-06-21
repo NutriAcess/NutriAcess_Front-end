@@ -33,7 +33,10 @@ export enum PreparationTimeEnum {
 }
 
 export enum AvatarsEnum {
-  generic = "generic",
+  avatarUva = "avatarUva",
+  avatarMaca = "avatarMaca",
+  avatarLaranja = "avatarLaranja",
+  avatarAbacaxi= "avatarAbacaxi",
 }
 
 export type TForm = {

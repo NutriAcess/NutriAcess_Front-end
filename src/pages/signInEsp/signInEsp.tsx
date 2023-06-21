@@ -5,7 +5,6 @@ import Button from "../../components/button/button";
 import { Input } from "../../components/input/input";
 import Logo from "../../components/logo/logo";
 import { Text } from "../../components/text/text";
-import { useAuth } from "../../hooks/useAuth";
 import {
   ButtonWrapper,
   Container,
@@ -14,7 +13,6 @@ import {
 } from "./signInEsp.styles";
 
 const SignInSpecialist: React.FC = () => {
-  const { signInEsp } = useAuth();
   const navigate = useNavigate();
 
   const [crn, setCrn] = useState("");
