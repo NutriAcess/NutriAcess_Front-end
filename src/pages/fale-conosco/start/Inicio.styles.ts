@@ -16,7 +16,7 @@ export const Container = styled.div`
 export const DivSubImg = styled.div`
   display: flex;
   justify-content: space-around;
-  height: 418px;
+  height: 364px;
   width: 100%;
   align-items: center;
 
