@@ -36,6 +36,11 @@ export const CardMarcarConsulta = ({
 }: ICardMarcarConsulta) => {
   const navigate = useNavigate();
 
+  function handleConfirmConsulta() {
+    alert("Consulta confirmada com sucesso! Você será redirecionado(a) para o pagamento.")
+    navigate("/pagamento-nutri")
+  }
+
   return (
     <ContainerGLobal>
       <DivFruit>
@@ -59,7 +64,7 @@ export const CardMarcarConsulta = ({
               <Text height={57} weight={700} color="branco" size="24"> Agende aqui sua consulta!</Text>
               <CalendarBox />
 
-              <ButtonConfirm onClick={() => navigate("/pagamento-nutri")} >
+              <ButtonConfirm onClick={() => handleConfirmConsulta()} >
                 <Button variant="primario" title="Confirmar consulta" />
               </ButtonConfirm>
             </ContentCalender>
