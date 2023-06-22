@@ -1,0 +1,158 @@
+body > #root .calendarBox {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 5px 15px 5px;
+  background-color: #fff;
+  border: solid 1px #d0d0d0;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+body > #root .calendarBox * {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
+}
+body > #root .calendarBox > p {
+  margin: 10px 0 10px 0;
+  width: inherit;
+  font-weight: bold;
+  font-size: 1.4em;
+  text-align: center;
+}
+body > #root .calendarBox > hr {
+  margin: 0 0 10px 0;
+}
+body > #root .calendarBox > .react-calendar {
+  border: none !important;
+}
+body > #root .calendarBox .react-calendar .hif,
+body > #root .calendarBox .react-calendar .he,
+body > #root .calendarBox .react-calendar .hcc,
+body > #root .calendarBox .react-calendar .dis {
+  color: #333;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+body > #root .calendarBox .react-calendar .hif {
+  background-color: #ffe6e6;
+}
+body > #root .calendarBox .react-calendar .hif:hover {
+  background-color: #ffcccc !important;
+}
+body > #root .calendarBox .react-calendar .he {
+  background-color: #f8f0d9;
+}
+body > #root .calendarBox .react-calendar .he:hover {
+  background-color: #f4e8c3 !important;
+}
+body > #root .calendarBox .react-calendar .hcc {
+  background-color: #ddf8e4;
+}
+body > #root .calendarBox .react-calendar .hcc:hover {
+  background-color: #c8f4d3 !important;
+}
+body > #root .calendarBox .react-calendar .dis {
+  cursor: default;
+  background-color: #f0f0f0;
+}
+body > #root > #modalBox .modalBody > .modalContent > .title,
+body > #root > #modalBox .modalBody > .modalContent > .consBox {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: justify !important;
+  -webkit-justify-content: space-between !important;
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important;
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+  -ms-flex-item-align: stretch !important;
+  align-self: stretch !important;
+  margin: 4px 0;
+  color: #666;
+}
+@media screen and (max-width: 767px) {
+  body > #root > #modalBox .modalBody > .modalContent > .title,
+  body > #root > #modalBox .modalBody > .modalContent > .consBox {
+    flex: 0 0 auto !important;
+  }
+}
+body > #root > #modalBox .modalBody > .modalContent > .title > span,
+body > #root > #modalBox .modalBody > .modalContent > .consBox > span {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: start !important;
+  -ms-flex-pack: start !important;
+  justify-content: flex-start !important;
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+  -ms-flex-item-align: stretch !important;
+  align-self: stretch !important;
+  -webkit-box-flex: 1 !important;
+  -ms-flex-positive: 1 !important;
+  flex-grow: 1 !important;
+}
+@media screen and (max-width: 767px) {
+  body > #root > #modalBox .modalBody > .modalContent > .title > span,
+  body > #root > #modalBox .modalBody > .modalContent > .consBox > span {
+    flex: 0 0 auto !important;
+  }
+}
+body > #root > #modalBox .modalBody > .modalContent > .title > span:first-child,
+body
+  > #root
+  > #modalBox
+  .modalBody
+  > .modalContent
+  > .consBox
+  > span:first-child {
+  width: 25%;
+}
+body > #root > #modalBox .modalBody > .modalContent > .title > span:last-child,
+body
+  > #root
+  > #modalBox
+  .modalBody
+  > .modalContent
+  > .consBox
+  > span:last-child {
+  width: 15%;
+}
+body > #root > #modalBox .modalBody > .modalContent > .title > span.status,
+body > #root > #modalBox .modalBody > .modalContent > .consBox > span.status {
+  width: 60%;
+}
+body > #root > #modalBox .modalBody > .modalContent > .title > span.red,
+body > #root > #modalBox .modalBody > .modalContent > .consBox > span.red {
+  color: #ea4335;
+}
+body > #root > #modalBox .modalBody > .modalContent > .title > span.yellow,
+body > #root > #modalBox .modalBody > .modalContent > .consBox > span.yellow {
+  color: #fbbc04;
+}
+body > #root > #modalBox .modalBody > .modalContent > .title > span.green,
+body > #root > #modalBox .modalBody > .modalContent > .consBox > span.green {
+  color: #22a822;
+}
+body > #root > #modalBox .modalBody > .modalContent > .title {
+  font-family: "Roboto Condensed", Arial, Helvetica, sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+}

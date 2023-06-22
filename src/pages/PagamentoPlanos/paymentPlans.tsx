@@ -1,18 +1,24 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/button/button";
 import Header from "../../components/header/header";
-import { Text } from "../../components/text/text";
-import { Container, Type } from "./paymentPlans.styles";
-import {
-  Content,
-  SideRight,
-  HeaderPayment,
-  ButtonConfirm,
-} from "../Pagamento/pagamento.styles";
 import { ResumePag } from "../Pagamento/componentes/resumepag/resumepag";
 import { SideLeft } from "../Pagamento/componentes/sideLeft/sideLeft";
+import {
+  ButtonConfirm,
+  Content,
+  HeaderPayment,
+  SideRight,
+} from "../Pagamento/pagamento.styles";
+import { Container } from "./paymentPlans.styles";
 
 export const PaymentPlans = () => {
+  const navigate = useNavigate();
+
+  function handleButton() {
+    alert("Pagamento confirmado com sucesso. Faça a escolha do seu nutricionista!")
+    navigate("/")
+  }
+
   return (
     <Container>
       <Header />
@@ -20,15 +26,9 @@ export const PaymentPlans = () => {
         <SideLeft />
         <SideRight>
           <HeaderPayment>
-            <Type>
-              <Text color="preto" height={20} size="18" weight={600}>
-                {" "}
-                Plano Família{" "}
-              </Text>
-            </Type>
           </HeaderPayment>
           <ResumePag />
-          <ButtonConfirm>
+          <ButtonConfirm onClick={() => handleButton()}>
             <Button title="Confirmar pagamento" variant="primario" xs />
           </ButtonConfirm>
         </SideRight>

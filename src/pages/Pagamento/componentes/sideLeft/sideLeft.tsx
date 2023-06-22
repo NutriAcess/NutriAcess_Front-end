@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Input } from '../../../../components/input/input'
 import { Text } from '../../../../components/text/text'
-import { Container, ContentInput, DivRadioPlan, DivTypePlan, Inputstyle, SectionPlan} from './sideLeft.styles'
 import { StyledInput } from '../../../formulario/components/InputCheck/InputCheck.styles'
+import { Container, ContentInput, DivRadioPlan, DivTypePlan, Inputstyle, SectionPlan } from './sideLeft.styles'
 
 export const SideLeft = () => {
 
@@ -62,13 +62,13 @@ export const SideLeft = () => {
                 <SectionPlan>
                     <StyledInput name="myCheckbox"  onChange={(e) => setPlan(e.target.value)} value={plan} type='radio' />
                         <Text color='preto' size='18' height={30} weight={300}>
-                        Plano Plus </Text>
+                        Plano Plus 1 </Text>
                 </SectionPlan>
 
                 <SectionPlan>
                     <StyledInput name="myCheckbox"  onChange={(e) => setPlan(e.target.value)} value={plan} type="radio" />
                         <Text color='preto' size='18' height={30} weight={300}>
-                        Plano Premium </Text>
+                        Plano Plus 2 </Text>
                 </SectionPlan>
 
                 <SectionPlan>

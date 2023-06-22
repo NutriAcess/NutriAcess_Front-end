@@ -1,22 +1,26 @@
-import { InstagramLogo } from "phosphor-react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import fotolaranja from "../../../assets/laranja.png";
+import fotomorango from "../../../assets/morango.png";
 import {
   ButtonConfirm,
   ButtonPlans,
-  CalendarWrapper,
   Container,
+  ContainerGLobal,
   Content,
   ContentCalender,
-  DatePicker,
+  DivFruit,
+  DivPlan,
   Image,
   Infos,
-  SocialMedia,
+  PhotoWithCalendar,
+  TitlePlan,
 } from "./CardMarcarConsulta.styles";
 
-import { ptBR } from "date-fns/locale";
-import { Text } from "../../../components/text/text";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../components/button/button";
+import { Text } from "../../../components/text/text";
+import CalendarBox from "../Calendar";
 
 interface ICardMarcarConsulta {
   image: {
@@ -24,53 +28,56 @@ interface ICardMarcarConsulta {
     alt: string;
   };
   nutricionist: string;
-  socialMedia: string;
 }
 
 export const CardMarcarConsulta = ({
   image,
   nutricionist,
-  socialMedia,
 }: ICardMarcarConsulta) => {
+  const navigate = useNavigate();
+
   return (
-    <Container>
-      <Content>
-        <Infos>
-          <Image>
-            <img src={image.url} alt={image.alt}></img>
-          </Image>
-          <Text height={47} weight={700} color="branco" size="32">
-            {nutricionist}
-          </Text>
-          <SocialMedia>
-            <InstagramLogo color="#731943" size="24" />
-            <Text height={16} weight={400} color="branco" size="18">
-              {socialMedia}
-            </Text>
-          </SocialMedia>
-        </Infos>
+    <ContainerGLobal>
+      <DivFruit>
+        <img src={fotolaranja} />
+      </DivFruit>
 
-        <ContentCalender>
-          <CalendarWrapper>
-            <DatePicker
-              weekdayDisplayFormat="EEEEEE"
-              showDateDisplay={false}
-              direction="horizontal"
-              onChange={() => {}}
-              locale={ptBR}
-              months={1}
-            />
-          </CalendarWrapper>
+      <Container>
+        <Content>
+          <PhotoWithCalendar>
+            <Infos>
+              <Image>
+                <img src={image.url} alt={image.alt}></img>
+              </Image>
+              <Text height={47} weight={700} color="branco" size="32">
+                {nutricionist}
+              </Text>
 
-          <ButtonConfirm>
-            <Button variant="primario" title="Confirmar consulta" />
-          </ButtonConfirm>
-        </ContentCalender>
-      </Content>
+            </Infos>
 
-      <ButtonPlans>
-        <Button variant="primario" title="Veja nossos planos" />
-      </ButtonPlans>
-    </Container>
+            <ContentCalender>
+              <Text height={57} weight={700} color="branco" size="24"> Agende aqui sua consulta!</Text>
+              <CalendarBox />
+
+              <ButtonConfirm onClick={() => navigate("/pagamento-nutri")} >
+                <Button variant="primario" title="Confirmar consulta" />
+              </ButtonConfirm>
+            </ContentCalender>
+          </PhotoWithCalendar>
+          <DivPlan>
+            <TitlePlan>
+              <Text height={57} weight={700} color="branco" size="24">Ainda não assinou um Plano?</Text>
+            </TitlePlan>
+            <ButtonPlans onClick={() => navigate("/planos")}>
+              <Button variant="secundario" title="Veja nossos planos" />
+            </ButtonPlans>
+          </DivPlan>
+        </Content>
+      </Container>
+
+      <DivFruit>
+        <img src={fotomorango} />
+      </DivFruit>
+    </ContainerGLobal >
   );
 };

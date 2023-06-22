@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import media from "styled-media-query";
 
 export const Container = styled.div``;
 
@@ -15,7 +16,14 @@ export const Content = styled.div`
   height: 22rem;
 `;
 
-export const Title = styled.span``;
+export const Title = styled.span`
+  span {
+    font-size: 36px;
+    ${media.lessThan("medium")`
+      font-size: 24px;
+  `}
+  }
+`;
 
 export const Description = styled.p``;
 

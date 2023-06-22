@@ -1,14 +1,15 @@
 import { InstagramLogo } from "@phosphor-icons/react";
-import { Text } from "../../../../components/text/text";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../../components/button/button";
+import { Text } from "../../../../components/text/text";
 import {
+  ButtonDoctor,
   Container,
+  DescriptionDoctor,
   ImageDoctor,
   InfoSection,
-  TextSocial,
-  DescriptionDoctor,
-  ButtonDoctor,
   StyledImage,
+  TextSocial,
 } from "./infocomponent.styles";
 
 interface IInfoComponent {
@@ -32,6 +33,8 @@ const InfoComponent = ({
   image,
   verify,
 }: IInfoComponent) => {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <ImageDoctor>
@@ -57,7 +60,7 @@ const InfoComponent = ({
         </DescriptionDoctor>
 
         <ButtonDoctor>
-          <Button title="Marcar consulta" variant="primario" />
+          <Button title="Marcar consulta" variant="primario" onClick={() => navigate("/marcar-consulta")}/>
         </ButtonDoctor>
       </InfoSection>
     </Container>
