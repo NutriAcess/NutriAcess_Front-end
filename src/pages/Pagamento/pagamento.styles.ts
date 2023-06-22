@@ -6,6 +6,7 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   margin-top: 100px;
+  flex-wrap: wrap;
 `;
 
 export const SideRight = styled.div`

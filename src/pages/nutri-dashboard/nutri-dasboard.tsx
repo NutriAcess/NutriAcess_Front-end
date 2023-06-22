@@ -2,32 +2,32 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
 import { ptBR } from "date-fns/locale";
+import { useState } from "react";
+import Button from "../../components/button/button";
+import Header from "../../components/header/header";
+import { Input } from "../../components/input/input";
+import { Modal } from "../../components/modal/modal";
+import { Text } from "../../components/text/text";
+import { SchedulingCard } from "./components/schedulignCard/schedulingCard";
+import { mockRanges } from "./mock-ranges";
 import {
+  ButtonContent,
+  ButtonWrapper,
+  CalendarWrapper,
   Container,
   Cover,
   DatePicker,
-  Scheduling,
+  DatePickerWrapper,
+  Form,
   Info,
+  InputWrapper,
+  Scheduling,
+  SchedulingCardsWrapper,
   TextWrapper,
   User,
   UserDetails,
   UserWrapper,
-  DatePickerWrapper,
-  CalendarWrapper,
-  SchedulingCardsWrapper,
-  ButtonWrapper,
-  Form,
-  InputWrapper,
-  ButtonContent,
 } from "./nutri-dashboard.styles";
-import { mockRanges } from "./mock-ranges";
-import Header from "../../components/header/header";
-import { Text } from "../../components/text/text";
-import Button from "../../components/button/button";
-import { SchedulingCard } from "./components/schedulignCard/schedulingCard";
-import { Modal } from "../../components/modal/modal";
-import { useState } from "react";
-import { Input } from "../../components/input/input";
 
 export const NutriDashboard = () => {
   const [showModal, setShowModal] = useState(false);
@@ -130,7 +130,7 @@ export const NutriDashboard = () => {
           <ButtonWrapper>
             <Button
               xs
-              title="Cancelar"
+              title="Editar"
               variant="secundario"
               onClick={() => setShowModal(false)}
             />

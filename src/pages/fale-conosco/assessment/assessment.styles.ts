@@ -14,6 +14,8 @@ export const Title = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap:50px;
 
   ${media.lessThan("medium")`
     margin-top: 30px;
@@ -28,7 +30,8 @@ export const Feedback = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 45px;
+  margin-top: 20px;
+  margin-bottom: 45px;
   cursor: pointer;
 
   ${media.lessThan("medium")`

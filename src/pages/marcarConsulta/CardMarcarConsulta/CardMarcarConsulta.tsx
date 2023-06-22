@@ -1,14 +1,20 @@
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import fotolaranja from "../../../assets/laranja.png";
+import fotomorango from "../../../assets/morango.png";
 import {
   ButtonConfirm,
   ButtonPlans,
   Container,
+  ContainerGLobal,
   Content,
   ContentCalender,
+  DivFruit,
+  DivPlan,
   Image,
   Infos,
   PhotoWithCalendar,
+  TitlePlan,
 } from "./CardMarcarConsulta.styles";
 
 import { useNavigate } from "react-router-dom";
@@ -31,33 +37,47 @@ export const CardMarcarConsulta = ({
   const navigate = useNavigate();
 
   return (
-    <Container>
-      <Content>
-        <PhotoWithCalendar>
-        <Infos>
-          <Image>
-            <img src={image.url} alt={image.alt}></img>
-          </Image>
-          <Text height={47} weight={700} color="branco" size="32">
-            {nutricionist}
-          </Text>
+    <ContainerGLobal>
+      <DivFruit>
+        <img src={fotolaranja} />
+      </DivFruit>
 
-        </Infos>
+      <Container>
+        <Content>
+          <PhotoWithCalendar>
+            <Infos>
+              <Image>
+                <img src={image.url} alt={image.alt}></img>
+              </Image>
+              <Text height={47} weight={700} color="branco" size="32">
+                {nutricionist}
+              </Text>
 
-        <ContentCalender>
-          <CalendarBox/>
+            </Infos>
 
-          <ButtonConfirm>
-            <Button variant="secundario" title="Confirmar consulta" />
-          </ButtonConfirm>
-        </ContentCalender>
-        </PhotoWithCalendar>
-        <ButtonPlans
-        onClick={() => navigate("/planos")}
-      >
-        <Button variant="primario" title="Veja nossos planos" />
-      </ButtonPlans>
-      </Content>
-    </Container>
+            <ContentCalender>
+              <Text height={57} weight={700} color="branco" size="24"> Agende aqui sua consulta!</Text>
+              <CalendarBox />
+
+              <ButtonConfirm onClick={() => navigate("/pagamento-nutri")} >
+                <Button variant="primario" title="Confirmar consulta" />
+              </ButtonConfirm>
+            </ContentCalender>
+          </PhotoWithCalendar>
+          <DivPlan>
+            <TitlePlan>
+              <Text height={57} weight={700} color="branco" size="24">Ainda não assinou um Plano?</Text>
+            </TitlePlan>
+            <ButtonPlans onClick={() => navigate("/planos")}>
+              <Button variant="secundario" title="Veja nossos planos" />
+            </ButtonPlans>
+          </DivPlan>
+        </Content>
+      </Container>
+
+      <DivFruit>
+        <img src={fotomorango} />
+      </DivFruit>
+    </ContainerGLobal >
   );
 };

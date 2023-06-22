@@ -1,10 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/button/button';
 import Header from '../../components/header/header';
 
 
+import { InfoNutri } from './componentes/infonutri';
 import { ResumePag } from './componentes/resumepag/resumepag';
 import { SideLeft } from './componentes/sideLeft/sideLeft';
-import Typeplan from './componentes/typeplan/typeplan';
 import {
   ButtonConfirm,
   Container,
@@ -12,10 +13,17 @@ import {
   HeaderPayment,
   SideRight
 } from "./pagamento.styles";
-import { InfoNutri } from './componentes/infonutri';
+
 
 const Formasdepagamento = () => {
+  const navigate = useNavigate();
 
+  
+  function handleButton() {
+    alert("Consulta confirmada com sucesso. Te desejamos uma boa consulta!")
+    navigate("/")
+  }
+  
   return (
     <Container>
       <Header />
@@ -25,11 +33,10 @@ const Formasdepagamento = () => {
         <SideRight>
           <HeaderPayment>
             <InfoNutri />
-            <Typeplan/>
           </HeaderPayment>
           <ResumePag/>
           <ButtonConfirm>
-            <Button title='Confirmar pagamento' variant='primario' xs />
+            <Button title='Confirmar pagamento' variant='primario' xs onClick={() => handleButton()}/>
           </ButtonConfirm>
         </SideRight>
       </Content>

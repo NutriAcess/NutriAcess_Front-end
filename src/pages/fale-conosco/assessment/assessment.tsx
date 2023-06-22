@@ -27,11 +27,14 @@ const Assessment = () => {
         <Text weight={600} height={36} color="preto" size="24">
           Sua avaliação é muito importante para nós!
         </Text>
+        <Text weight={600} height={36} color="preto" size="18">
+          Avalie nosso site abaixo:
+        </Text>
       </Title>
-      <Feedback>
+      <Feedback onClick={() => setShowInfoEvaluation(!showInfoEvaluation)}>
         {novoArray.map((num) => (
           <DivNumber>
-            <Number onClick={() => setShowInfoEvaluation(!showInfoEvaluation)}>
+            <Number >
               {num}
             </Number>
           </DivNumber>

@@ -1,5 +1,6 @@
 import { Check, X } from "@phosphor-icons/react";
 
+import { useNavigate } from "react-router-dom";
 import Button from "../../../../components/button/button";
 import { Text } from "../../../../components/text/text";
 import {
@@ -10,9 +11,8 @@ import {
   Divider,
   Header,
   Price,
-  TitleHeader,
   Topico,
-  Topics,
+  Topics
 } from "./cardPlan.styles";
 import { ICardPlan } from "./cardPlan.types";
 
@@ -25,6 +25,8 @@ const CardPlan = ({
   plan,
   topics,
 }: ICardPlan) => {
+  const navigate = useNavigate();
+
   function separateValues() {
     const inteiro = Math.floor(plan.value);
     const decimal = (plan.value - inteiro).toFixed(2).toString().slice(-2);
@@ -80,7 +82,7 @@ const CardPlan = ({
           </Topico>
         ))}
       </Topics>
-      <Divbutton>
+      <Divbutton onClick={()=> navigate("/pagamento-planos")}> 
         <Button variant={variant} title="Assinar" xs />
       </Divbutton>
     </Container>

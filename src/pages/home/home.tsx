@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import growth from "../../assets/Growth.svg";
 import prati from "../../assets/Pratí.svg";
 import smartfit from "../../assets/Smart-fit.svg";
@@ -5,7 +6,6 @@ import Button from "../../components/button/button";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
 import { Text } from "../../components/text/text";
-import { AuthContext } from "../../contexts/authContext/authContext";
 import { Plans } from "../home/plans/plans";
 import About from "./about/about";
 import Data from "./data/data";
@@ -22,6 +22,8 @@ import {
 import Operation from "./operation/operation";
 
 const Home = () => {
+  const navigate = useNavigate();
+  
   return (
     <Container>
       <Header />
@@ -38,7 +40,7 @@ const Home = () => {
             a NutriAcess
           </Text>
         </DivText>
-        <DivButton>
+        <DivButton onClick={() => navigate("/planos")}>
           <Button variant="primario" title="Conheça nossos planos" />
         </DivButton>
       </ImageWrapper>

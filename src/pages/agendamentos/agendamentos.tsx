@@ -1,4 +1,6 @@
+import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
+import { Text } from "../../components/text/text";
 import {
   Container,
   Content,
@@ -6,13 +8,12 @@ import {
   Description,
   Title,
 } from "./agendamentos.styles";
-import { Text } from "../../components/text/text";
 import InfoComponent from "./cardcomponent/infocomponent/infocomponent";
-import Footer from "../../components/footer/footer";
 import { data } from "./data";
 import Input from "./input/input";
 
 const Agendamentos = () => {
+  
   return (
     <Container>
       <Header />

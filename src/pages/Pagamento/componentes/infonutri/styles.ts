@@ -2,11 +2,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     display: flex;
-    margin: 20px;
+    gap:20px;
 `;
 
 export const Imagem = styled.div`
-  margin-right: 20px;
+  width: 150px;
+
+  img {
+    width: 100%;
+  }
 `;
 
 export const InformationNutri = styled.div`
