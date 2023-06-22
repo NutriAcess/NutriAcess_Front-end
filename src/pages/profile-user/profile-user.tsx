@@ -3,7 +3,7 @@ import "react-date-range/dist/theme/default.css";
 
 import { UserFocus } from "@phosphor-icons/react";
 import { useState } from "react";
-import QRCODE from "../../assets/qrcode.svg";
+import QRCODE from "../../assets/QRCODE.png";
 import Button from "../../components/button/button";
 import Header from "../../components/header/header";
 import { Input } from "../../components/input/input";
@@ -14,6 +14,7 @@ import { SchedulingCard } from "../profile-user/components/schedulignCard/schedu
 import { SchedulingPlan } from "./components/schedulignPlan/schedulingPlan";
 import {
   ButtonContent,
+  ButtonDieta,
   ButtonPlan,
   ButtonWrapper,
   Container,
@@ -196,7 +197,9 @@ export const ProfileUser = () => {
             <QrCode>
               <img src={QRCODE} alt="QR-CODE"></img>
             </QrCode>
-            <Button title="Acesse sua dieta" variant="primario" />
+            <ButtonDieta href="https://drive.google.com/file/d/1-E5ScDseLMthc-EDT5TI408-mAvLbps6/view?usp=sharing" target="_blank">
+              <Button title="Acesse sua dieta" variant="primario"/>
+            </ButtonDieta>
           </SectionDiet>
         </PlanWrapper>
       </Modal>
