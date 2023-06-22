@@ -80,7 +80,6 @@ const Assessment = () => {
           </ContainerInput>
         </>
       )}
-      ;
     </Container>
   );
 };

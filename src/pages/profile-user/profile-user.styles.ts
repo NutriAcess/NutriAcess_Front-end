@@ -6,6 +6,16 @@ export const Container = styled.div`
   flex-direction: column;
 `;
 
+export const PhotoUser = styled.div`
+    display: flex;
+`;
+
+export const IconPhoto = styled.div`
+  align-self: end ;
+  height: 40%;
+  margin-left: -50px;
+`
+
 export const User = styled.img`
   height: 120px;
   width: 120px;
@@ -22,7 +32,9 @@ export const TextWrapper = styled.div`
   margin-bottom: 16px;
 `;
 
-export const Info = styled.div``;
+export const Info = styled.div`
+  margin-left: 20px;
+`;
 
 export const UserWrapper = styled.div`
   display: flex;

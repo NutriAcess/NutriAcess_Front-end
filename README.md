@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+<h1>NutriAcess</h1>
+ 
+<div align="center">
+   <img width="550px" src="https://i.imgur.com/EFisXuC.png"/>
+</div>
+<br/>
+ 
+<div align="center">
+   <h2>🍎 Quem somos</h2>
+   
+   <p>
+      A NutriAcess é uma plataforma criada para democratizar o acesso a consultas nutricionais, com agilidade nos atendimentos, sem grandes filas de esperas       e com apenas um clique de distância. Com nossa plataforma conseguimos enfrentar os três impedimentos quando se busca uma nutrição saudável: o dinheiro,       a informação e o ambiente. Por meio dela, você encontra profissionais que se encaixe com seu perfil e objetivos.
+   </p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+   <h2>🍍 Entre em contato conosco</h2>
+   <a href="https://linktr.ee/nutriacess_" target="_blank"><img width="200px" src="https://i.imgur.com/i7OAzxg.png" /></a> <br>
+    <a href="https://linktr.ee/nutriacess_" target="_blank"><img width="24px" src="https://i.imgur.com/xgUMuX1.png"/>Clique para ir a nosso LinkTree </a>
+   
+   <h2>🍌 Integrantes</h2>
+   <a href="https://linktr.ee/nutriacess_" target="_blank"><img width="900px" src="https://i.imgur.com/zYjdT4U.png" /></a>
+    
+</div>
 
-## Available Scripts
+<div>
+    <h2>👩‍💻 Tecnologias usadas </h2>
+    <h3>Front-end</h3>
+ <ul>
+   <li><img  width="24px" src="https://cdn.discordapp.com/attachments/773372240686350356/1054550678493741146/figma.png" />  Figma</li>
+   <li><img  width="24px" src="https://cdn.discordapp.com/attachments/773372240686350356/1054550330467164261/science.png" />  React</li>
+   <li><img  width="24px" src="https://i.imgur.com/5HiFsW7.png" />  Typescript</li>
+   <li><img  width="24px" src="https://i.imgur.com/pOkkx8p.png" />  Styled-Components</li>
+ </ul>
+ 
+ <h3>Back-end</h3>
+ <ul>
+    <li><img  width="24px" src="https://cdn.discordapp.com/attachments/773372240686350356/1054552190854901780/java.png" />  Java</li>
+    <li><img  width="24px" src="https://cdn.discordapp.com/attachments/773372240686350356/1054552558745694228/mysql.png" />  MySQL</li>
+    <li><img  width="24px" src="https://i.imgur.com/vvwVa87.png"/> Node</li>
+ </ul>
+</div>
 
-In the project directory, you can run:
+<a href="" target="_blank">
+<img  width="24px" src="https://cdn.discordapp.com/attachments/773372240686350356/1054550330467164261/science.png" /> Visualizar o web site
+</a>
 
-### `npm start`
+## Instalação
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Instale nosso projeto com npm
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+  npm install
+  npm start
+```

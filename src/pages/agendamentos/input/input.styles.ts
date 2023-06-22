@@ -10,7 +10,9 @@ export const Container = styled.div`
 export const InputStyled = styled.input`
   border-color: ${({ theme }) => theme.Colors.vinho};
   border-radius: 6px;
-  padding: 24px 200px;
+  width: 700px;
+  height: 60px;
+  padding: 12px;
   font-size: 1rem;
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
@@ -24,8 +26,9 @@ export const InputStyled = styled.input`
   `}
 
   ${media.lessThan("small")`
-   
     width: 290px;
+    height: 60px;
+
     margin-left: -2px;
   `}
 `;
@@ -33,15 +36,24 @@ export const InputStyled = styled.input`
 export const Button = styled.button`
   background-color: ${({ theme }) => theme.Colors.vinho};
   border-radius: 6px;
-  padding: 1.1rem 2rem;
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 
+  width: 70px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   ${media.lessThan("medium")`
-    padding: 1.1rem 1.5rem;
+    display: flex;
+    align-items: center;
+
+    width: 70px;
+    height: 60px;
   `}
 
   ${media.lessThan("small")`
-    width: 100%;
+    
   `}
 `;

@@ -12,7 +12,7 @@ export const dataa = [
 
     title: "Claudia Lopes",
 
-    stack: "Front-end",
+    stack: "Full-Stack",
 
     hrefpessoalhub: "https://github.com/ClahLopes",
 
@@ -29,7 +29,7 @@ export const dataa = [
 
     title: "Samuel Allan",
 
-    stack: "Front-end",
+    stack: "Front-End",
 
     hrefpessoalhub: "https://github.com/SAMUKISZHSD",
 
@@ -46,7 +46,7 @@ export const dataa = [
 
     title: "Henrique Araújo",
 
-    stack: "Back-end",
+    stack: "Back-End",
 
     hrefpessoalhub: "https://github.com/Henriquesantos12",
 
@@ -64,7 +64,7 @@ export const dataa = [
 
     title: "Lais Carvalho",
 
-    stack: "Front-end",
+    stack: "Front-End",
 
     hrefpessoalhub: "https://github.com/Lais205",
 
@@ -81,11 +81,11 @@ export const dataa = [
 
     title: "Lilian Carvalho",
 
-    stack: "Front-end",
+    stack: "Front-End",
 
-    hrefpessoalhub: "https://github.com/Lais205",
+    hrefpessoalhub: "https://github.com/Lilian-Carvalho25",
 
-    hrefpessoallink: "https://github.com/Lilian-Carvalho25",
+    hrefpessoallink: "https://www.linkedin.com/in/lilian-carvalho-7581a8265/",
 
     ancor_linktree: "https://linktr.ee/lilian.csribeiro",
 

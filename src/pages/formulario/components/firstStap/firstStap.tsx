@@ -5,8 +5,8 @@ import { Text } from "../../../../components/text/text";
 import { useAuth } from "../../../../hooks/useAuth";
 import { Container } from "../../formulario.styles";
 
-import { DivGender, Section, SectionGlobalInputs, SectionIam, SectionSex, TitleStap } from "./firsStap.styles";
 import { StyledInput } from "../InputCheck/InputCheck.styles";
+import { DivGender, Section, SectionGlobalInputs, SectionIam, SectionSex, TitleStap } from "./firsStap.styles";
 
 export const FirstStap = () => {
   const { user } = useAuth();
@@ -37,7 +37,7 @@ export const FirstStap = () => {
         <Section>
 
           <DivGender>
-            <Text weight={600} height={20} size="18" color="preto">Eu desejo:</Text>
+            <Text weight={600} height={20} size="18" color="preto">Objetivo:</Text>
           </DivGender>
 
           <SectionIam>

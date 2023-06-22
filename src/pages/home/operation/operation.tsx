@@ -1,8 +1,8 @@
 import CardOperation from "../components/cardOperation/cardOperation";
 import { Container } from "./operation.styles";
-import womenrunner from "../../../assets/ImagemMulherCorrendo.svg";
-import imagemertilo from "../../../assets/ImagemMertilo.svg";
-import womencomputer from "../../../assets/ImagemMulherNoComputador.svg";
+import womenrunner from "../../../assets/passo_1.svg";
+import imagemertilo from "../../../assets/passo_2.jpg";
+import womencomputer from "../../../assets/passo_3.jpg";
 
 const Operation = () => {
   return (

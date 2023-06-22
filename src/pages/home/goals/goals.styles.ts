@@ -13,7 +13,6 @@ export const Container = styled.div`
    flex-wrap: wrap;
    justify-content: center;
    align-items: center;
-   max-width: 30%;
   `}
 `;
 
