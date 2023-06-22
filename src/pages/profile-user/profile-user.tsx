@@ -8,12 +8,14 @@ import Button from "../../components/button/button";
 import Header from "../../components/header/header";
 import { Input } from "../../components/input/input";
 import { Modal } from "../../components/modal/modal";
+import { PopUpPhoto } from "../../components/popupfotoperfil";
 import { Text } from "../../components/text/text";
 import { useAuth } from "../../hooks/useAuth";
 import { SchedulingCard } from "../profile-user/components/schedulignCard/schedulingCard";
 import { SchedulingPlan } from "./components/schedulignPlan/schedulingPlan";
 import {
   ButtonContent,
+  ButtonPhoto,
   ButtonDieta,
   ButtonPlan,
   ButtonWrapper,
@@ -43,11 +45,12 @@ export const ProfileUser = () => {
   const { user } = useAuth();
 
   const [showModal, setShowModal] = useState(false);
+  const [openPopupPhoto, setOpenPopupPhoto] = useState(false);
 
-  const [name, setName] = useState(user.name);
+  const [name, setName] = useState(user.nome_completo);
   const [email, setEmail] = useState(user.email);
-  const [senha, setSenha] = useState(user.password);
-  const [socialName, setSocialName] = useState(user.socialName);
+  const [senha, setSenha] = useState(user.senha);
+  const [nome_social, setNome_social] = useState(user.nome_social);
   const [age, setAge] = useState("");
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
@@ -60,18 +63,26 @@ export const ProfileUser = () => {
       <Cover>
         <UserDetails>
           <Text color="branco" height={42} size="36" weight={500}>
-            Dashboard - olá {user.socialName}
+            Dashboard - olá {user.nome_social}
           </Text>
+          
           <UserWrapper>
             <PhotoUser>
             <User
               src="https://github.com/Luisjunior119.png"
               alt="Foto do usuário"
             />
-            <IconPhoto>
+            </PhotoUser>
+            <ButtonPhoto>
+            <IconPhoto onClick={() => setOpenPopupPhoto(true)}>
               <UserFocus size="40" color="white"/>
             </IconPhoto>
-            </PhotoUser>
+            <PopUpPhoto
+                open={openPopupPhoto} 
+                onClose={() => setOpenPopupPhoto(false)} 
+              />
+            </ButtonPhoto>
+            
             <Info>
               <TextWrapper>
                 <Text color="branco" height={29} size="24" weight={500}>
@@ -123,8 +134,8 @@ export const ProfileUser = () => {
             <Input label="Nome completo" onChange={(e) => setName(e)} value={name} />
             <Input
               label="Nome social"
-              onChange={(e) => setSocialName(e)}
-              value={socialName}
+              onChange={(e) => setNome_social(e)}
+              value={nome_social}
             />
           </InputWrapper>
           <InputWrapper>

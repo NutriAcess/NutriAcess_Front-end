@@ -7,13 +7,16 @@ export const Container = styled.div`
 `;
 
 export const PhotoUser = styled.div`
-    display: flex;
 `;
 
-export const IconPhoto = styled.div`
-  align-self: end ;
-  height: 40%;
-  margin-left: -50px;
+export const IconPhoto = styled.button`
+  background-color: transparent;
+  align-self: end;
+`
+
+export const ButtonPhoto = styled.div`
+margin-top: 70px;
+margin-left: -50px;
 `
 
 export const User = styled.img`

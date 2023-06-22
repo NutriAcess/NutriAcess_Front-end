@@ -9,43 +9,49 @@ export enum ObjectiveEnum {
   gain_muscular_mass = "Ganhar massa muscular",
 }
 
-export enum Gender {
-  man = "Homem",
-  woman = "Mulher",
+export enum GenderEnum {
+  man = "Masculino",
+  woman = "Feminino",
   other = "Outro",
 }
 
-export enum Feeding {
+export enum FeedingEnum {
   sedentary = "Sedentarismo",
   moderate = "Atividade física moderada",
   intensive = "Atividade física intensiva",
 }
 
-export enum FoodRestriction {
+export enum FoodRestrictionEnum {
   any_thing = "Qualquer coisa",
   vegetarian = "Sou vegetariano(a)",
   vegan = "Sou vegano(a)",
 }
 
-export enum PreparationTime {
+export enum PreparationTimeEnum {
   yes = "Sim",
   not = "Não",
 }
 
+export enum AvatarsEnum {
+  avatarUva = "avatarUva",
+  avatarMaca = "avatarMaca",
+  avatarLaranja = "avatarLaranja",
+  avatarAbacaxi= "avatarAbacaxi",
+}
+
 export type TForm = {
-  id: number;
-  name: string;
+  id_formulario: string;
+  nome: string;
   objetivo: ObjectiveEnum;
-  genero: Gender;
+  genero: GenderEnum;
   altura: number;
   idade: number;
   peso: number;
-  alimentacao: Feeding;
-  restricao_alimentar: FoodRestriction;
-  tempo_preparo: PreparationTime;
-  foto: string;
-  nome: string;
-  id_client: number;
+  capacidade_fisica: FeedingEnum;
+  restricao_alimentar: FoodRestrictionEnum;
+  tempo_preparo: PreparationTimeEnum;
+  foto: AvatarsEnum;
+  id_cliente: string;
 };
 
 export type TSignInUser = {
@@ -59,4 +65,39 @@ export type TSignInUser = {
   profiles: {
     form: TForm;
   }[];
+};
+
+export type TSignUpUserResponse = {
+  token: string;
+  message: string;
+};
+
+export type TSignUpEspResponse = {
+  token: string;
+  message: string;
+};
+
+export interface ISignInUser {
+  email: string;
+  senha: string;
+}
+
+export type TUser = {
+  email: string;
+  id_cliente: string;
+  nome_completo: string;
+  nome_social: string;
+};
+
+export type TEsp = {
+  email: string;
+  id_cliente?: string;
+  nome_completo: string;
+  nome_social: string;
+  crn: string;
+}
+
+export type TSignInUserResponse = {
+  user: TUser;
+  form?: TForm;
 };

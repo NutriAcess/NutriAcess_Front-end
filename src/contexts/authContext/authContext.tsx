@@ -1,6 +1,14 @@
 import { createContext, useState } from "react";
-import { IAuthContext, IAuthContextProvider, TEsp, TUser } from "./authContext.types";
-import { getEsp, getUser, signIn, signUp } from "../../services/authService/authService";
+import {
+  getEsp,
+  getUser,
+} from "../../services/authService/authService";
+import {
+  IAuthContext,
+  IAuthContextProvider,
+  TEsp,
+  TUser,
+} from "./authContext.types";
 
 export const AuthContext = createContext({} as IAuthContext);
 
@@ -10,21 +18,23 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
   const [useresp, setEsp] = useState({} as TEsp);
 
   function signUpUser(userParam: TUser) {
-    signUp(userParam);
+    // signUp(userParam);
     const userResponse = getUser();
     setUser(userResponse);
     setIsLogged(true);
   }
 
-  function signInEsp(espParam: TEsp) {
-    signIn(espParam);
+  function signUpEsp(espParam: TEsp) {
+    // signIn(espParam);
     const espResponse = getEsp();
     setEsp(espResponse);
     setIsLogged(true);
   }
 
   return (
-    <AuthContext.Provider value={{ user, isLogged, signUpUser, useresp, signInEsp }}>
+    <AuthContext.Provider
+      value={{ user, isLogged, signUpUser, useresp, signUpEsp }}
+    >
       {children}
     </AuthContext.Provider>
   );

@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+import Button from "../../components/button/button";
+import { Input } from "../../components/input/input";
+import Logo from "../../components/logo/logo";
+import { Text } from "../../components/text/text";
 import {
   ButtonWrapper,
   Container,
@@ -7,22 +11,29 @@ import {
   Header,
   InputWrapper,
 } from "./signInUser.styles";
-import Logo from "../../components/logo/logo";
-import { Text } from "../../components/text/text";
-import { Input } from "../../components/input/input";
-import Button from "../../components/button/button";
+import { signInUser } from "../../services/authService/authService";
+import { useNavigate } from "react-router-dom";
 
 const SignInUser: React.FC = () => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleChangeEmail = (value: string) => {
-    setEmail(value);
-  };
+  async function handleSignUser() {
+    try {
+      const response = await signInUser({
+        email,
+        senha,
+      });
 
-  const handleSenhaChange = (value: string) => {
-    setSenha(value);
-  };
+      if (response.form) {
+        navigate("/profile-user");
+      } else {
+        navigate("/formulario");
+      }
+    } catch (error) {}
+  }
 
   return (
     <Container>
@@ -41,7 +52,7 @@ const SignInUser: React.FC = () => {
             value={email}
             type="email"
             placeholder="Digite seu E-mail"
-            onChange={handleChangeEmail}
+            onChange={(e) => setEmail(e)}
           />
         </InputWrapper>
         <InputWrapper>
@@ -50,12 +61,17 @@ const SignInUser: React.FC = () => {
             value={senha}
             placeholder="Digite sua senha"
             type="password"
-            onChange={handleSenhaChange}
+            onChange={(e) => setSenha(e)}
           />
         </InputWrapper>
 
         <ButtonWrapper>
-          <Button title="Entrar" variant="primario" xs />
+          <Button
+            title="Entrar"
+            variant="primario"
+            xs
+            onClick={handleSignUser}
+          />
         </ButtonWrapper>
 
         <Text height={21} weight={400} size="16" color="vinho">

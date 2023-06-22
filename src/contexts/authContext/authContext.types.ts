@@ -2,21 +2,24 @@ import { ReactNode } from "react";
 
 export type TUser = {
   email: string;
-  password: string;
-  name: string;
-  socialName: string;
+  senha: string;
+  nome_completo: string;
+  nome_social: string;
 };
 
 export type TEsp = {
   crn: string;
-  password: string;
+  email: string;
+  senha: string;
+  nome_completo: string;
+  nome_social: string;
 };
 
 export interface IAuthContext {
   user: TUser;
   useresp: TEsp;
   isLogged: boolean;
-  signInEsp: (useresp: TEsp) => void;
+  signUpEsp: (useresp: TEsp) => void;
   signUpUser: (user: TUser) => void;
 }
 

@@ -1,16 +1,36 @@
-import { TEsp, TUser } from "../../contexts/authContext/authContext.types";
+import { api } from "../../config/axios/axios";
+import { TUser } from "../../contexts/authContext/authContext.types";
+import {
+  ISignInUser,
+  TEsp,
+  TSignInUserResponse,
+  TSignUpEspResponse,
+  TSignUpUserResponse,
+} from "./authService.types";
 
-export function signUp(user: TUser): void {
-  localStorage.setItem("@user", JSON.stringify(user));
+export async function signUpUser(user: TUser): Promise<TSignUpUserResponse> {
+  const response = await api.post("/cliente/cadastrar", user);
+  return response.data;
+}
+
+export async function signUpEsp(useresp: TEsp): Promise<TSignUpEspResponse> {
+  const response = await api.post("/nutricionista/cadastrar", useresp);
+  return response.data;
+}
+
+export async function signInUser(
+  user: ISignInUser
+): Promise<TSignInUserResponse> {
+  const response = await api.post("/cliente/conectar", user);
+
+  api.defaults.headers.common.Authorization = `${response.data.token}`;
+
+  return response.data;
 }
 
 export function getUser() {
   const user = localStorage.getItem("@user") as string;
   return JSON.parse(user);
-}
-
-export function signIn(useresp: TEsp): void {
-  localStorage.setItem("@esp", JSON.stringify(useresp));
 }
 
 export function getEsp() {

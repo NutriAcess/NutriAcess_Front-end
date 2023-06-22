@@ -1,78 +1,146 @@
-import { useState } from "react"
-import Select from "react-select"
-import { Text } from "../../../../components/text/text"
-import InputCheck from "../InputCheck/InputCheck"
-import { Container, Section, SectionEat, TitleStap } from "./secondStap.styles"
-import { DivGender, SectionIam } from "../firstStap/firsStap.styles"
-import { StyledInput } from "../InputCheck/InputCheck.styles"
+import Select from "react-select";
+import { Text } from "../../../../components/text/text";
+import { Container, Section, SectionEat, TitleStap } from "./secondStap.styles";
+import { DivGender, SectionIam } from "../firstStap/firsStap.styles";
+import { StyledInput } from "../InputCheck/InputCheck.styles";
+import { useForm } from "../../../../hooks/useForm";
+import {
+  AvatarsEnum,
+  FoodRestrictionEnum,
+  PreparationTimeEnum,
+} from "../../../../services/authService/authService.types";
 
 export const SecondStap = () => {
-    const options = [
-        { value: "Glúten", label: "Glúten" },
-        { value: "Laticínios", label: "Laticínios" },
-        { value: "Amendoim", label: "Amendoim" },
-        { value: "Peixes", label: "Peixes" },
-        { value: "Ovos", label: "Ovos" },
-        { value: "Mariscos", label: "Mariscos" },
-    ]
+  const { form, setForm } = useForm();
 
-    const [food, setFood] = useState("");
-    const [eat, setEat] = useState("");
+  const options = [
+    { value: "Glúten", label: "Glúten" },
+    { value: "Laticínios", label: "Laticínios" },
+    { value: "Amendoim", label: "Amendoim" },
+    { value: "Peixes", label: "Peixes" },
+    { value: "Ovos", label: "Ovos" },
+    { value: "Mariscos", label: "Mariscos" },
+  ];
 
-    return (
-        <Container>
-            <TitleStap>
-                <Text weight={600} height={16} size="20" color="vinho">Etapa 2</Text>
-            </TitleStap>
+  function updateFoodRestrictionValue(
+    restricao_alimentar: FoodRestrictionEnum
+  ) {
+    setForm((prev) => ({
+      ...prev,
+      restricao_alimentar,
+    }));
+  }
 
-            <TitleStap>
-                <Text weight={600} height={21} size="20" color="vinho">Preferências</Text>
-            </TitleStap>
+  function updateAllergyValue(allergy: string) {
+    console.log(allergy);
+  }
 
-            <Section>
-                <DivGender>
-                    <Text weight={600} height={21} size="18" color="preto">Como funciona a sua alimentação no dia a dia?</Text>
-                </DivGender>
+  function updatePreparationTimeValue(tempo_preparo: PreparationTimeEnum) {
+    setForm((prev) => ({
+      ...prev,
+      tempo_preparo,
+    }));
+  }
 
-                <SectionIam>
-                    <StyledInput name="food" onChange={(e) => setFood(e.target.value)} value={food} type="radio" />
-                        Como qualquer coisa
-                </SectionIam>
+  return (
+    <Container>
+      <TitleStap>
+        <Text weight={600} height={16} size="20" color="vinho">
+          Etapa 2
+        </Text>
+      </TitleStap>
 
-                <SectionIam>                
-                    <StyledInput name="food" onChange={(e) => setFood(e.target.value)} value={food} type="radio" />
-                    Sou vegetariano(a)
-                </SectionIam>
+      <TitleStap>
+        <Text weight={600} height={21} size="20" color="vinho">
+          Preferências
+        </Text>
+      </TitleStap>
 
-                <SectionIam>                
-                    <StyledInput name="food" onChange={(e) => setFood(e.target.value)} value={food} type="radio" />
-                        Sou vegano(a)
-                </SectionIam>
+      <Section>
+        <DivGender>
+          <Text weight={600} height={21} size="18" color="preto">
+            Como funciona a sua alimentação no dia a dia?
+          </Text>
+        </DivGender>
 
-                
-            </Section>
+        <SectionIam>
+          <StyledInput
+            name="food"
+            onChange={() =>
+              updateFoodRestrictionValue(FoodRestrictionEnum.any_thing)
+            }
+            value={form.restricao_alimentar}
+            type="radio"
+          />
+          Qualquer coisa
+        </SectionIam>
 
-            <Section>
-                <Text weight={600} height={21} size="18" color="preto">Você tem alguma alergia?</Text>
-                <Select isMulti options={options} />
-            </Section>
+        <SectionIam>
+          <StyledInput
+            name="food"
+            onChange={() =>
+              updateFoodRestrictionValue(FoodRestrictionEnum.vegetarian)
+            }
+            value={form.restricao_alimentar}
+            type="radio"
+          />
+          Sou vegetariano(a)
+        </SectionIam>
 
-            <Section>
-                <SectionEat>
-                    <Text weight={600} height={21} size="18" color="preto">Você costuma ter tempo para preparar suas refeições?</Text>
-                    <div>
-                
-                        <SectionIam>                
-                            <StyledInput  name="timeat" onChange={(e) => setEat(e.target.value)} value={eat} type="radio" />
-                            Sim
-                        </SectionIam>
-                        <SectionIam>
-                            <StyledInput name="timeat" onChange={(e) => setEat(e.target.value)} value={eat} type="radio" />
-                                Não
-                        </SectionIam>
-                    </div>
-                </SectionEat>
-            </Section>
-        </Container>
-    )
-}
+        <SectionIam>
+          <StyledInput
+            name="food"
+            onChange={() =>
+              updateFoodRestrictionValue(FoodRestrictionEnum.vegan)
+            }
+            value={form.restricao_alimentar}
+            type="radio"
+          />
+          Sou vegano(a)
+        </SectionIam>
+      </Section>
+
+      <Section>
+        <Text weight={600} height={21} size="18" color="preto">
+          Você tem alguma alergia?
+        </Text>
+        <Select
+          options={options}
+          onChange={(e) => updateAllergyValue(e?.label as string)}
+        />
+      </Section>
+
+      <Section>
+        <SectionEat>
+          <Text weight={600} height={21} size="18" color="preto">
+            Você costuma ter tempo para preparar suas refeições?
+          </Text>
+          <div>
+            <SectionIam>
+              <StyledInput
+                name="timeat"
+                onChange={() =>
+                  updatePreparationTimeValue(PreparationTimeEnum.yes)
+                }
+                value={form.tempo_preparo}
+                type="radio"
+              />
+              Sim
+            </SectionIam>
+            <SectionIam>
+              <StyledInput
+                name="timeat"
+                onChange={() =>
+                  updatePreparationTimeValue(PreparationTimeEnum.not)
+                }
+                value={form.tempo_preparo}
+                type="radio"
+              />
+              Não
+            </SectionIam>
+          </div>
+        </SectionEat>
+      </Section>
+    </Container>
+  );
+};
