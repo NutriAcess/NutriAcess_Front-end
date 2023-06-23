@@ -8,11 +8,6 @@ export const Container = styled.header`
 
   align-items: center;
 
-  ${media.lessThan("medium")`
-   
-    display: none;
-  `}
-
   > img {
     width: 180px;
   }
