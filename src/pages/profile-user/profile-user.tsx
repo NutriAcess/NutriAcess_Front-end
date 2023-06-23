@@ -15,8 +15,8 @@ import { SchedulingCard } from "../profile-user/components/schedulignCard/schedu
 import { SchedulingPlan } from "./components/schedulignPlan/schedulingPlan";
 import {
   ButtonContent,
-  ButtonPhoto,
   ButtonDieta,
+  ButtonPhoto,
   ButtonPlan,
   ButtonWrapper,
   Container,
@@ -26,7 +26,6 @@ import {
   Info,
   InputPlan,
   InputWrapper,
-  PhotoUser,
   PlanWrapper,
   QrCode,
   Scheduling,
@@ -57,6 +56,8 @@ export const ProfileUser = () => {
   const [sex, setSex] = useState("");
   const [plan, setPlan] = useState("");
 
+  const [changePhoto, setChangePhoto] = useState("")
+
   return (
     <Container>
       <Header />
@@ -67,12 +68,10 @@ export const ProfileUser = () => {
           </Text>
           
           <UserWrapper>
-            <PhotoUser>
             <User
               src="https://github.com/Luisjunior119.png"
               alt="Foto do usuário"
             />
-            </PhotoUser>
             <ButtonPhoto>
             <IconPhoto onClick={() => setOpenPopupPhoto(true)}>
               <UserFocus size="40" color="white"/>

@@ -2,8 +2,6 @@ import styled from "styled-components";
 import media from "styled-media-query";
 
 export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
 `;
 
 export const PhotoUser = styled.div`
@@ -11,7 +9,6 @@ export const PhotoUser = styled.div`
 
 export const IconPhoto = styled.button`
   background-color: transparent;
-  align-self: end;
 `
 
 export const ButtonPhoto = styled.div`
