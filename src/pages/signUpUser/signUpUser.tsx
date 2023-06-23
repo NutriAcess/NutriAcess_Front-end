@@ -22,6 +22,7 @@ const SignUpUser: React.FC = () => {
   const [nome_completo, setNomeCompleto] = useState("");
   const [nome_social, setNomeSocial] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
+  const [telefone, setTelefone] = useState("");
 
   function validateFields() {
     if (
@@ -117,6 +118,16 @@ const SignUpUser: React.FC = () => {
             placeholder="Confirme sua senha"
             type="password"
             onChange={(value: string) => setPasswordConfirmation(value)}
+          />
+        </InputWrapper>
+
+        <InputWrapper>
+          <Input
+            label="Telefone:"
+            value={telefone}
+            placeholder="Telefone:"
+            type="telefone"
+            onChange={(value: string) => setTelefone(value)}
           />
         </InputWrapper>
 

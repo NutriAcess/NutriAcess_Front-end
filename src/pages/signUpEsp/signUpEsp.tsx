@@ -23,6 +23,7 @@ const SignInSpecialist: React.FC = () => {
   const [senha, setSenha] = useState("");
   const [nome_completo, setNomeCompleto] = useState("");
   const [nome_social, setNomeSocial] = useState("");
+  const [telefone, setTelefone] = useState("");
 
   function validateFields() {
     if (
@@ -121,6 +122,16 @@ const SignInSpecialist: React.FC = () => {
             placeholder="Digite seu CRN"
             type="number"
             onChange={(value: string) => setCRN(value)}
+          />
+        </InputWrapper>
+
+        <InputWrapper>
+          <Input
+            label="Telefone:"
+            value={telefone}
+            placeholder="Telefone:"
+            type="telefone"
+            onChange={(value: string) => setTelefone(value)}
           />
         </InputWrapper>
 
