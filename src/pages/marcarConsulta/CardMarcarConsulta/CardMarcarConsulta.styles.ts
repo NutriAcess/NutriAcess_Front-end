@@ -49,6 +49,7 @@ export const Image = styled.div`
     margin-bottom: 16px;
     img {
         width: 250px;
+        border-radius: 50%;
     }
     ${media.lessThan("small")`
     img {
@@ -80,7 +81,9 @@ export const Infos = styled.div`
 `;
 
 export const ButtonConfirm = styled.div`
-    width: 53%;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     margin-top: 20px;
 `;
 export const DivPlan = styled.div`

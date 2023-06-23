@@ -1,7 +1,9 @@
+import { InstagramLogo } from "@phosphor-icons/react";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import fotolaranja from "../../../assets/laranja.png";
 import fotomorango from "../../../assets/morango.png";
+import { TextSocial } from "../../agendamentos/cardcomponent/infocomponent/infocomponent.styles";
 import {
   ButtonConfirm,
   ButtonPlans,
@@ -17,8 +19,10 @@ import {
   TitlePlan,
 } from "./CardMarcarConsulta.styles";
 
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../../components/button/button";
+import { PopUpConsulta } from "../../../components/popupconsulta/popupconsulta";
 import { Text } from "../../../components/text/text";
 import CalendarBox from "../Calendar";
 
@@ -28,18 +32,16 @@ interface ICardMarcarConsulta {
     alt: string;
   };
   nutricionist: string;
+  socialmedia: string;
 }
 
 export const CardMarcarConsulta = ({
   image,
   nutricionist,
+  socialmedia,
 }: ICardMarcarConsulta) => {
   const navigate = useNavigate();
-
-  function handleConfirmConsulta() {
-    alert("Consulta confirmada com sucesso! Você será redirecionado(a) para o pagamento.")
-    navigate("/pagamento-nutri")
-  }
+  const [openPopup, setOpenPopup] = useState(false);
 
   return (
     <ContainerGLobal>
@@ -57,6 +59,12 @@ export const CardMarcarConsulta = ({
               <Text height={47} weight={700} color="branco" size="32">
                 {nutricionist}
               </Text>
+              <TextSocial>
+                <InstagramLogo size={24} color="#FFF" />
+                <Text weight={600} height={16} color="branco" size="16">
+                  {socialmedia}
+                </Text>
+              </TextSocial>
 
             </Infos>
 
@@ -64,8 +72,12 @@ export const CardMarcarConsulta = ({
               <Text height={57} weight={700} color="branco" size="24"> Agende aqui sua consulta!</Text>
               <CalendarBox />
 
-              <ButtonConfirm onClick={() => handleConfirmConsulta()} >
+              <ButtonConfirm onClick={() => setOpenPopup(true)} >
                 <Button variant="primario" title="Confirmar consulta" />
+                <PopUpConsulta
+                  open={openPopup}
+                  onClose={() => setOpenPopup(false)}
+                />
               </ButtonConfirm>
             </ContentCalender>
           </PhotoWithCalendar>

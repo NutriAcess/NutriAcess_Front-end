@@ -14,6 +14,7 @@ import {
 
 interface IInfoComponent {
   title: string;
+  slug: string;
   socialmedia: string;
   description: string;
   verify: {
@@ -28,6 +29,7 @@ interface IInfoComponent {
 
 const InfoComponent = ({
   title,
+  slug,
   socialmedia,
   description,
   image,
@@ -60,7 +62,7 @@ const InfoComponent = ({
         </DescriptionDoctor>
 
         <ButtonDoctor>
-          <Button title="Marcar consulta" variant="primario" onClick={() => navigate("/marcar-consulta")}/>
+          <Button title="Marcar consulta" variant="primario" onClick={() => navigate(`/marcar-consulta/${slug}`)}/>
         </ButtonDoctor>
       </InfoSection>
     </Container>
