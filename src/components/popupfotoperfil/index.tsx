@@ -18,6 +18,7 @@ export interface IPopUpImage {
 export const PopUpPhoto = ({ open, onClose }: ModalProps) => {
 
     if (!open) return null;
+
     return (
         <Container open={open}>
             <DivModalPhoto>
@@ -30,10 +31,10 @@ export const PopUpPhoto = ({ open, onClose }: ModalProps) => {
                     </DivX>
                 </Header>
                 <DivPhoto>
-                    <img src={AvatarMaca}></img>
-                    <img src={AvatarUva}></img>
-                    <img src={AvatarLaranja}></img>
-                    <img src={AvatarAbacaxi}></img>
+                    <img src={AvatarMaca}/>
+                    <img src={AvatarUva}/>
+                    <img src={AvatarLaranja}/>
+                    <img src={AvatarAbacaxi}/>
                 </DivPhoto>
             </DivModalPhoto>
         </Container>
