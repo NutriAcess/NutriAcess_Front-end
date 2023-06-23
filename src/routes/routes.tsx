@@ -32,7 +32,9 @@ export const AppRoutes = () => {
         <Route path="/sign-up-user" element={<SignUpUser />} />
         <Route path="/dashboard-nutri" element={<NutriDashboard />} />
         <Route path="/planos" element={<Planos />} />
-        <Route path="/marcar-consulta" element={<MarcarConsulta />} />
+        <Route path="/marcar-consulta" element={<MarcarConsulta />}>
+          <Route path=":nutri" element={<MarcarConsulta />} />
+        </Route>
         <Route path="/formulario" element={<Formulario />} />
       </Routes>
     </Router>
