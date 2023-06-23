@@ -3,17 +3,17 @@ import { useNavigate } from 'react-router-dom';
 import logopagamento from "../../assets/LogoPagamento.png";
 import pagamentoconcluido from "../../assets/pagamentoconcluido.png";
 import { Text } from '../text/text';
-import { Container, DivModalSignUp, DivText, DivX, Header, Pagamento, Question } from './popuppagamento.styles';
+import { Container, DivModalSignUp, DivText, DivX, Header, Pagamento, Question } from './popuppagamentplans.styles';
 
 interface ModalProps {
     open: boolean;
     onClose: () => void;
 }
-export interface IPopUpPagamento {
+export interface IPopUpPagamentoPlans {
     open: boolean;
 }
 
-export const PopUpPagamento = ({ open, onClose }: ModalProps) => {
+export const PopUpPagamentoPlans = ({ open, onClose }: ModalProps) => {
     const navigate = useNavigate();
 
     if (!open) return null;
@@ -25,7 +25,7 @@ export const PopUpPagamento = ({ open, onClose }: ModalProps) => {
                         <Question>
                             <img src={logopagamento}></img>
                         </Question>
-                        <DivX onClick={() => navigate("/")}>
+                        <DivX onClick={() => navigate("/agendamentos")}>
                             <X size={32} color="white"></X>
                         </DivX>
                     </Header>
@@ -33,8 +33,8 @@ export const PopUpPagamento = ({ open, onClose }: ModalProps) => {
                         <img src={pagamentoconcluido}></img>
                     </Pagamento>
                     <DivText>
-                        <Text color='branco' height={21} size="18" weight={700}>Agora sim você está pronto para ter uma Nutrição Saudável.</Text>
-                        <Text color='branco' height={21} size="16" weight={700}>Aproveite sua consulta!</Text>
+                        <Text color='branco' height={21} size="18" weight={700}>Pagamento confirmado com sucesso.</Text>
+                        <Text color='branco' height={21} size="16" weight={700}>Faça a escolha do seu nutricionista!</Text>
                     </DivText>
         </DivModalSignUp>
     </Container >

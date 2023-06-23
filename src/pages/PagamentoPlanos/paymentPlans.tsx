@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/button/button";
 import Header from "../../components/header/header";
+import { PopUpPagamentoPlans } from "../../components/popuppagamentoplans/popuppagamentoplans";
 import { ResumePag } from "../Pagamento/componentes/resumepag/resumepag";
 import { SideLeft } from "../Pagamento/componentes/sideLeft/sideLeft";
 import {
@@ -13,11 +15,7 @@ import { Container } from "./paymentPlans.styles";
 
 export const PaymentPlans = () => {
   const navigate = useNavigate();
-
-  function handleButton() {
-    alert("Pagamento confirmado com sucesso. Faça a escolha do seu nutricionista!")
-    navigate("/")
-  }
+  const [openPopupPagamentoPlans, setOpenPopupPagamentoPlans] = useState(false);
 
   return (
     <Container>
@@ -28,9 +26,13 @@ export const PaymentPlans = () => {
           <HeaderPayment>
           </HeaderPayment>
           <ResumePag />
-          <ButtonConfirm onClick={() => handleButton()}>
-            <Button title="Confirmar pagamento" variant="primario" xs />
+          <ButtonConfirm onClick={() => setOpenPopupPagamentoPlans(true)}>
+            <Button title="Confirmar pagamento" variant="primario" xs  />
           </ButtonConfirm>
+          <PopUpPagamentoPlans
+                open={openPopupPagamentoPlans} 
+                onClose={() => setOpenPopupPagamentoPlans(false)} 
+              />
         </SideRight>
       </Content>
     </Container>
