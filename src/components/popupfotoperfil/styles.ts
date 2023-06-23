@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import media from "styled-media-query";
+
 import { IPopUpImage } from ".";
 
 export const Container = styled.div<IPopUpImage>`
@@ -40,6 +42,15 @@ export const DivPhoto = styled.div`
             cursor: pointer;
         }
     }
+
+    ${media.lessThan("medium")`
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        width: 40%;
+      }
+  `}
 `
 
 export const Header = styled.div`
