@@ -1,7 +1,16 @@
 import styled from 'styled-components';
+import media from "styled-media-query";
+
 
 export const Container = styled.div`
     margin-top:70px;
+
+    span {
+      ${media.lessThan("medium")`
+      display: flex;
+      justify-content: center;
+  `}
+    }
 `;
 
 export const Title = styled.div`
@@ -29,4 +38,8 @@ export const SectionValuePlan = styled.div`
     display: flex;
     padding: 20px 0px;
     justify-content: space-between;
+
+    ${media.lessThan("medium")`
+      justify-content: space-around;
+  `}
 `;
