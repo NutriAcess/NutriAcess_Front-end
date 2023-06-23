@@ -67,8 +67,8 @@ const CardPlan = ({
       </Description>
       <Divider />
       <Topics>
-        {topics.map((item) => (
-          <Topico>
+      {topics.map((item, idx) => (
+          <Topico key={`key_${idx}`}>
             <Checked>
               {item.isChecked ? (
                 <Check color="green" weight="bold" size={24} />

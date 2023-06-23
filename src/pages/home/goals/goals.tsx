@@ -6,8 +6,8 @@ const Goals = () => {
   return (
     <Container>
       <SectionGoals>
-        {goalsData.map(({ description, image, title }) => (
-          <CardGoals description={description} image={image} title={title} />
+      {goalsData.map(({ description, image, title }, idx) => (
+          <CardGoals key={`key_${idx}`} description={description} image={image} title={title} />
         ))}
       </SectionGoals>
     </Container>

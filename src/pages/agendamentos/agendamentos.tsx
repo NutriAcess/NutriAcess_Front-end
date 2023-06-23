@@ -35,10 +35,12 @@ const Agendamentos = () => {
         </ContentButton>
       </Content>
 
-      {data.map((item) => {
+      {data.map((item, idx) => {
         return (
           <InfoComponent
+            key={`key_${idx}`}
             title={item.title}
+            slug={item.slug}
             verify={item.verify}
             socialmedia={item.socialmedia}
             description={item.description}

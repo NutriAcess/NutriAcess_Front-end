@@ -3,11 +3,11 @@ import CardFeedback from "../components/cardFeedback/cardFeedback";
 import { Container, FeedbackContainer, Title } from "./feedback.styles";
 
 import { ArrowCircleLeft, ArrowCircleRight } from "@phosphor-icons/react";
-import { mockFeedback } from "./mock-feedback";
+import { useState } from "react";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useState } from "react";
 import { Swiper as SwiperType } from "swiper/types";
+import { mockFeedback } from "./mock-feedback";
 
 const Feedback = () => {
   const [swiperInstance, setSwiperInstance] = useState<SwiperType>();
@@ -35,9 +35,9 @@ const Feedback = () => {
           slidesPerView={3}
           onSwiper={(swiper) => setSwiperInstance(swiper)}
         >
-          {mockFeedback.map((feedback) => {
+          {mockFeedback.map((feedback, idx) => {
             return (
-              <SwiperSlide>
+              <SwiperSlide key={`key_${idx}`}>
                 <CardFeedback
                   description={feedback.description}
                   image={feedback.image}
