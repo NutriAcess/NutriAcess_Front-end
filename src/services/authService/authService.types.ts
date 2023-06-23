@@ -81,6 +81,10 @@ export interface ISignInUser {
   email: string;
   senha: string;
 }
+export interface ISignInEps {
+  crn: string;
+  senha: string;
+}
 
 export type TUser = {
   email: string;
@@ -89,7 +93,7 @@ export type TUser = {
   nome_social: string;
 };
 
-export type TEsp = {
+export type TEsp1 = {
   email: string;
   id_cliente?: string;
   nome_completo: string;
@@ -100,4 +104,7 @@ export type TEsp = {
 export type TSignInUserResponse = {
   user: TUser;
   form?: TForm;
+};
+export type TSignInEspResponse = {
+  usereps: TEsp1;
 };

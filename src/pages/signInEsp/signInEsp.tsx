@@ -11,13 +11,26 @@ import {
   Form,
   InputWrapper,
 } from "./signInEsp.styles";
+import { signInEsp } from "../../services/authService/authService";
 
 const SignInSpecialist: React.FC = () => {
   const navigate = useNavigate();
 
   const [crn, setCrn] = useState("");
   const [senha, setSenha] = useState("");
-  
+
+  async function handleSignEsp() {
+    try {
+      await signInEsp({
+        crn,
+        senha,
+      });
+
+        navigate("/dashboard-nutri");
+     
+    } catch (error) {}
+  }
+
   return (
     <Container>
       <Logo />
@@ -46,7 +59,7 @@ const SignInSpecialist: React.FC = () => {
         </InputWrapper>
 
         <ButtonWrapper>
-          <Button title="Entrar" variant="primario" xs/>
+          <Button title="Entrar" variant="primario" xs onClick={handleSignEsp}/>
         </ButtonWrapper>
 
         <Text height={21} weight={400} size="16" color="vinho">
