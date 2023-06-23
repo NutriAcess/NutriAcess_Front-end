@@ -34,8 +34,8 @@ export const ContentInput = styled.div`
     gap: 20px;
 
     ${media.lessThan("medium")`
-        width: 100%;
         flex-direction: column;
+        width: 100%;
   `}
 `;
 
@@ -43,6 +43,10 @@ export const DivRadioPlan = styled.div`
     display: flex;
     justify-content: space-around;
     width: 80%;
+
+    ${media.lessThan("medium")`
+        flex-direction: column;
+  `}
 `;
 
 export const SectionPlan = styled.label`
