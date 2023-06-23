@@ -1,8 +1,10 @@
 import { api } from "../../config/axios/axios";
-import { TUser } from "../../contexts/authContext/authContext.types";
+import { TUser, TEsp } from "../../contexts/authContext/authContext.types";
 import {
+  ISignInEps,
   ISignInUser,
-  TEsp,
+  TEsp1,
+  TSignInEspResponse,
   TSignInUserResponse,
   TSignUpEspResponse,
   TSignUpUserResponse,
@@ -27,7 +29,15 @@ export async function signInUser(
 
   return response.data;
 }
+export async function signInEsp(
+  useresp: ISignInEps
+): Promise<TSignInEspResponse> {
+  const response = await api.post("/nutricionista/conectar", useresp);
 
+  api.defaults.headers.common.Authorization = `${response.data.token}`;
+
+  return response.data;
+}
 export function getUser() {
   const user = localStorage.getItem("@user") as string;
   return JSON.parse(user);
