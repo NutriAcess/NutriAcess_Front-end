@@ -14,18 +14,19 @@ export const HeaderPlans = styled.div`
     gap:60px;
 
     ${media.lessThan("medium")`
-   font-size: 10%;
-   width: 100%;
-   text-align: center;
-`}
+        font-size: 10%;
+        width: 100%;
+        text-align: center;
+    `}
 `;
 
 export const Imagem = styled.div`
     margin-top: -100px;
+    
 
     ${media.lessThan("medium")`
-        display: none;
-        margin-top: -170px ;
+    height: 250px;
+    margin-top: -90px ;
 `}
 `;
 
@@ -37,10 +38,11 @@ export const SectionMeet = styled.div`
     gap:100px;
 
     ${media.lessThan("medium")`
-   flex-direction: column;
-   flex-wrap: wrap;
-   font-size: 20px;
-  `}
+        flex-direction: column;
+        flex-wrap: wrap;
+        font-size: 20px;
+        gap: 30px;
+    `}
 `;
 
 export const SectionText = styled.div`
@@ -66,4 +68,8 @@ export const SectionPlans = styled.div`
     margin-top: 200px;
     align-items: center;
     justify-content: center;
+
+    ${media.lessThan("medium")`
+        margin-top: 70px;
+`}
 `;

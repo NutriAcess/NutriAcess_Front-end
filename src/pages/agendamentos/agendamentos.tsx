@@ -44,8 +44,7 @@ const Agendamentos = () => {
             verify={item.verify}
             socialmedia={item.socialmedia}
             description={item.description}
-            image={item.image}
-          />
+            image={item.image} specialty={""}          />
         );
       })}
 
