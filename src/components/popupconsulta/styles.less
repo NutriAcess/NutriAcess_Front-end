@@ -1,0 +1,30 @@
+@import './styles/functions.less';
+@import './styles/colors.less';
+@import './styles/variables.less';
+
+.hoursBox {
+	.flex('row', 'between', 'start', 'stretch');
+	.flexWrap();
+	width: 100%;
+
+	> button {
+		.flex('row', 'center', 'center', 'stretch');
+		padding: 10px 5px;
+		width: 30%;
+		color: @black-dark;
+		background-color: @white-light;
+		border: solid 1px @white-medium;
+		.borderRadius(10px);
+		.transition();
+
+		&:not(:nth-child(3)) {
+			margin-top: 5px;
+		}
+
+		&.active {
+			color: @white;
+			background-color: @Fblue-1;
+			border-color: darken(@Fblue-1, 10);
+		}
+	}
+}

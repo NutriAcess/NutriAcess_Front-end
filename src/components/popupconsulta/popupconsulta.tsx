@@ -23,7 +23,7 @@ export const PopUpConsulta = ({ onClose, slug, date }: ModalProps) => {
     }
 
     // Time for close item
-    setTimeout(() => onClose(), 10000);
+    setTimeout(() => onClose(), 15000);
 
     return <Container>
         <DivModalSignUp>
