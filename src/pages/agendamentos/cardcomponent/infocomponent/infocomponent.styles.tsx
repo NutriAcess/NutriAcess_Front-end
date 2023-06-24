@@ -93,3 +93,8 @@ height: 200px;
 `;
 
 
+export const DivEspecialidade = styled.div`
+  line-height: 2;
+`;
+
+

@@ -6,6 +6,7 @@ import {
   ButtonDoctor,
   Container,
   DescriptionDoctor,
+  DivEspecialidade,
   ImageDoctor,
   InfoSection,
   StyledImage,
@@ -17,6 +18,7 @@ interface IInfoComponent {
   slug: string;
   socialmedia: string;
   description: string;
+  specialty: string;
   verify: {
     url: string;
     alt: string;
@@ -29,6 +31,7 @@ interface IInfoComponent {
 
 const InfoComponent = ({
   title,
+  specialty,
   slug,
   socialmedia,
   description,
@@ -54,6 +57,12 @@ const InfoComponent = ({
             {socialmedia}
           </Text>
         </TextSocial>
+
+      <DivEspecialidade>
+        <Text weight={700} height={16} color="preto" size="16">
+          {specialty}
+        </Text>
+      </DivEspecialidade>
 
         <DescriptionDoctor>
           <Text weight={400} height={16} color="preto" size="16">
