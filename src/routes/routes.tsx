@@ -21,7 +21,9 @@ export const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/pagamento-planos" element={<PaymentPlans />} />
-        <Route path="/pagamento-nutri" element={<Pagamento />} />
+        <Route path="/pagamento-nutri" element={<Pagamento />}>
+          <Route path=":nutri/:hash" element={<Pagamento />} />
+        </Route>
         <Route path="/sign-up-esp" element={<SignUpEsp />} />
         <Route path="/profile-user" element={<ProfileUser />} />
         <Route path="/fale-conosco" element={<Fale_conosco />} />
