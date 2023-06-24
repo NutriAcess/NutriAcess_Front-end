@@ -51,7 +51,7 @@ export const DivNumber = styled.div`
 
   ${media.lessThan("medium")`
     height: 30px;
-    width: 30px;
+    width: 28px;
   `}
 `;
 
