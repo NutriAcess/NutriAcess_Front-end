@@ -41,6 +41,7 @@ const Agendamentos = () => {
             key={`key_${idx}`}
             title={item.title}
             slug={item.slug}
+            specialty={item.specialty}
             verify={item.verify}
             socialmedia={item.socialmedia}
             description={item.description}
