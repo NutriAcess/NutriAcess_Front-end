@@ -19,7 +19,7 @@ import {
   TitlePlan,
 } from "./CardMarcarConsulta.styles";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../../components/button/button";
 import { PopUpConsulta } from "../../../components/popupconsulta/popupconsulta";
@@ -33,15 +33,30 @@ interface ICardMarcarConsulta {
   };
   nutricionist: string;
   socialmedia: string;
+  slug: string;
 }
 
 export const CardMarcarConsulta = ({
   image,
   nutricionist,
   socialmedia,
+  slug,
 }: ICardMarcarConsulta) => {
   const navigate = useNavigate();
   const [openPopup, setOpenPopup] = useState(false);
+  const [dateSel, setDateSel] = useState<any>(null);
+
+  useEffect(() => {}, [openPopup])
+
+  // Set Initial Date
+  useEffect(() => {
+    let currentDate = new Date();
+    setDateSel({
+			year: currentDate.getFullYear(),
+			month: currentDate.getMonth()+1,
+			day: currentDate.getDate()
+		})
+  }, [])
 
   return (
     <ContainerGLobal>
@@ -70,14 +85,17 @@ export const CardMarcarConsulta = ({
 
             <ContentCalender>
               <Text height={57} weight={700} color="branco" size="24"> Agende aqui sua consulta!</Text>
-              <CalendarBox />
+              <CalendarBox setDate={setDateSel} />
 
               <ButtonConfirm onClick={() => setOpenPopup(true)} >
                 <Button variant="primario" title="Confirmar consulta" />
-                <PopUpConsulta
-                  open={openPopup}
-                  onClose={() => setOpenPopup(false)}
-                />
+                {
+                  openPopup && <PopUpConsulta
+                    slug={slug}
+                    date={dateSel}
+                    onClose={() => setOpenPopup(false)}
+                  />
+                }
               </ButtonConfirm>
             </ContentCalender>
           </PhotoWithCalendar>

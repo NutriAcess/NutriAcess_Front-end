@@ -28,6 +28,7 @@ export const MarcarConsulta = () => {
           }}
           nutricionist={nutri.title}
           socialmedia={nutri.socialmedia}
+          slug={nutri.slug}
         /> : <></>
       }
     </Container>
