@@ -6,7 +6,9 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
+  margin-top: 24px;
+
+  
 `;
 
 export const Form = styled.div`
@@ -17,9 +19,19 @@ export const Form = styled.div`
   flex-direction: column;
   gap: 24px;
 
+  span {
+    margin-bottom: 16px;
+  }
+
+  button span {
+    margin-bottom: 0px;
+  }
+
   ${media.lessThan("medium")`
     padding: 0 32px;
   `}
+
+  
 `;
 
 export const InputWrapper = styled.div`
