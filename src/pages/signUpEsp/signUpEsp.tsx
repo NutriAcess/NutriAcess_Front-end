@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Select from "react-select";
 import _ from "validator";
 import Button from "../../components/button/button";
 import { Input } from "../../components/input/input";
@@ -8,15 +9,25 @@ import { Text } from "../../components/text/text";
 
 import { TEsp } from "../../contexts/authContext/authContext.types";
 import { signUpEsp } from "../../services/authService/authService";
+import { SpecialtyNutriEnum } from "../../services/authService/authService.types";
 import {
   ButtonWrapper,
   Container,
   Form,
-  InputWrapper,
+  InputWrapper
 } from "./signUpEsp.styles";
 
 const SignInSpecialist: React.FC = () => {
   const navigate = useNavigate();
+
+  const options = [
+    { value: "sport", label: "Nutrição Esportiva" },
+    { value: "functional", label: "Nutrição Funcional" },
+    { value: "esthetics", label: "Nutrição Estética" },
+    { value: "integrative", label: "Nutrição Integrativa" },
+    { value: "maternalChild", label: "Nutrição Materno-Infantil" },
+    { value: "family", label: "Nutrição Familiar" },
+  ];
 
   const [crn, setCRN] = useState("");
   const [email, setEmail] = useState("");
@@ -24,6 +35,7 @@ const SignInSpecialist: React.FC = () => {
   const [nome_completo, setNomeCompleto] = useState("");
   const [nome_social, setNomeSocial] = useState("");
   const [telefone, setTelefone] = useState("");
+  const [especialidade, setEspecialidade] = useState("");
 
   function validateFields() {
     if (
@@ -31,7 +43,8 @@ const SignInSpecialist: React.FC = () => {
       _.isEmpty(email) ||
       _.isEmpty(senha) ||
       _.isEmpty(nome_social) ||
-      _.isEmpty(crn)
+      _.isEmpty(crn) ||
+      _.isEmpty(especialidade)
     ) {
       return false;
     }
@@ -53,6 +66,8 @@ const SignInSpecialist: React.FC = () => {
         nome_completo,
         nome_social,
         crn,
+        telefone,
+        especialidade
       };
 
         try {
@@ -129,11 +144,19 @@ const SignInSpecialist: React.FC = () => {
           <Input
             label="Telefone:"
             value={telefone}
-            placeholder="Telefone:"
+            placeholder="Telefone"
             type="telefone"
             onChange={(value: string) => setTelefone(value)}
           />
         </InputWrapper>
+
+        <Text weight={600} height={22} size="20" color="vinho">
+          Especialidade
+        </Text>
+        <Select
+          options={options}
+          onChange={(e) => setEspecialidade(e?.value as SpecialtyNutriEnum)}
+        />
 
         <ButtonWrapper>
           <Button 

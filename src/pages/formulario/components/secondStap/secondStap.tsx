@@ -1,14 +1,13 @@
 import Select from "react-select";
 import { Text } from "../../../../components/text/text";
-import { Container, Section, SectionEat, TitleStap } from "./secondStap.styles";
-import { DivGender, SectionIam } from "../firstStap/firsStap.styles";
-import { StyledInput } from "../InputCheck/InputCheck.styles";
 import { useForm } from "../../../../hooks/useForm";
 import {
-  AvatarsEnum,
   FoodRestrictionEnum,
-  PreparationTimeEnum,
+  PreparationTimeEnum
 } from "../../../../services/authService/authService.types";
+import { StyledInput } from "../InputCheck/InputCheck.styles";
+import { DivGender, SectionIam } from "../firstStap/firsStap.styles";
+import { Container, Section, SectionEat, TitleStap } from "./secondStap.styles";
 
 export const SecondStap = () => {
   const { form, setForm } = useForm();
@@ -32,7 +31,10 @@ export const SecondStap = () => {
   }
 
   function updateAllergyValue(allergy: string) {
-    console.log(allergy);
+      setForm((prev) => ({
+        ...prev,
+        alergia: allergy,
+      }));
   }
 
   function updatePreparationTimeValue(tempo_preparo: PreparationTimeEnum) {

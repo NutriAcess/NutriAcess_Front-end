@@ -40,3 +40,15 @@ export const ButtonWrapper = styled.div`
     width: 100%;
   `}
 `;
+
+export const RedirectSignIn = styled.div`
+  button {
+    text-decoration: none;
+    background-color: transparent;
+    color: ${({theme}) => theme.Colors.vinho};
+
+    &:hover {
+      color: ${({theme}) => theme.Colors.laranja_destaque};
+    }
+  }
+`;

@@ -16,6 +16,7 @@ export const Form = styled.div`
   justify-content: center;
   flex-direction: column;
   gap: 24px;
+  margin-bottom: 24px;
 
   span {
     margin-bottom: 16px;
@@ -57,3 +58,14 @@ export const DivLogo = styled.div`
 export const DivCadastrar = styled.div`
     margin-bottom: 20px;
 `
+export const RedirectSignIn = styled.div`
+  button {
+    text-decoration: none;
+    background-color: transparent;
+    color: ${({theme}) => theme.Colors.vinho};
+
+    &:hover {
+      color: ${({theme}) => theme.Colors.laranja_destaque};
+    }
+  }
+`;

@@ -108,3 +108,12 @@ export type TSignInUserResponse = {
 export type TSignInEspResponse = {
   usereps: TEsp1;
 };
+
+export enum SpecialtyNutriEnum {
+  sport = "Nutrição Esportiva",
+  functional = "Nutrição Funcional",
+  esthetics = "Nutrição Estética",
+  integrative  = "Nutrição Integrativa",
+  maternalChild  = "Nutrição Materno-Infantil",
+  family = "Nutrição Familiar"
+}

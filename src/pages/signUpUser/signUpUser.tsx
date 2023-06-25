@@ -12,6 +12,7 @@ import {
   Container,
   Form,
   InputWrapper,
+  RedirectSignIn,
 } from "./signUpUser.styles";
 
 const SignUpUser: React.FC = () => {
@@ -30,7 +31,8 @@ const SignUpUser: React.FC = () => {
       _.isEmpty(email) ||
       _.isEmpty(senha) ||
       _.isEmpty(nome_social) ||
-      _.isEmpty(passwordConfirmation)
+      _.isEmpty(passwordConfirmation) ||
+      _.isEmpty(telefone)
     ) {
       return false;
     }
@@ -51,6 +53,7 @@ const SignUpUser: React.FC = () => {
         senha,
         nome_completo,
         nome_social,
+        telefone
       };
 
       try {
@@ -140,9 +143,11 @@ const SignUpUser: React.FC = () => {
           />
         </ButtonWrapper>
 
+      <RedirectSignIn>
         <Text height={21} weight={400} size="16" color="vinho">
-          Já é cadastrado? Faça login!
+          Já é cadastrado? Faça <button onClick={() => navigate("/sign-in-user")}>login!</button>
         </Text>
+      </RedirectSignIn>
       </Form>
     </Container>
   );
