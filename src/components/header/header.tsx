@@ -1,21 +1,20 @@
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import Button from "../button/button";
 import Logo from "../logo/logo";
 import { ButtonContent } from "./header.styles";
-import { useNavigate } from "react-router-dom";
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
-import { PopUp } from "../popupcadastro/popup";
 import { PopUpLogin } from "../popuplogin/popuplogin";
 
 function Header() {
   const [openPopupRegister, setOpenPopupRegister] = useState(false);
   const [openPopupLogin, setOpenPopupLogin] = useState(false);
-  const { isLogged } = useAuth();
+  const { logoutUser, isLogged } = useAuth();
   const navigate = useNavigate();
 
   return (
@@ -45,28 +44,29 @@ function Header() {
               <Nav.Link href="#">Fale Conosco</Nav.Link>
             </div>
           </Nav>
-          {!isLogged && (
-            <ButtonContent>
-              <Button
-                title="Login"
-                variant="primario"
-                onClick={() => setOpenPopupLogin(true)}
-              />
-              <PopUpLogin
-                open={openPopupLogin} 
-                onClose={() => setOpenPopupLogin(false)} 
-              />
-              <Button
-                title="Cadastre-se"
-                variant="secundario"
-                onClick={() => setOpenPopupRegister(true)}
-              />
-              <PopUp
-                open={openPopupRegister} 
-                onClose={() => setOpenPopupRegister(false)} 
-              />
-            </ButtonContent>
-          )}
+          {
+            !isLogged ? (
+              <ButtonContent>
+                <Button
+                  title="Login"
+                  variant="primario"
+                  onClick={() => setOpenPopupLogin(true)}
+                />
+                <PopUpLogin
+                  open={openPopupLogin} 
+                  onClose={() => setOpenPopupLogin(false)} 
+                />
+                <Button
+                  title="Cadastre-se"
+                  variant="secundario"
+                  onClick={() => navigate("/sign-up-user")}
+                />
+              </ButtonContent>
+            ) : <>
+              <button onClick={() => navigate("/profile-user")}>Perfil</button>
+              <button onClick={() => logoutUser()}>Sair</button>
+            </>
+          }
         </Navbar.Collapse>
       </Container>
     </Navbar>

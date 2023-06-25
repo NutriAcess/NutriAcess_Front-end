@@ -1,13 +1,12 @@
 import { api } from "../../config/axios/axios";
-import { TUser, TEsp } from "../../contexts/authContext/authContext.types";
+import { TEsp, TUser } from "../../contexts/authContext/authContext.types";
 import {
   ISignInEps,
   ISignInUser,
-  TEsp1,
   TSignInEspResponse,
   TSignInUserResponse,
   TSignUpEspResponse,
-  TSignUpUserResponse,
+  TSignUpUserResponse
 } from "./authService.types";
 
 export async function signUpUser(user: TUser): Promise<TSignUpUserResponse> {
@@ -21,20 +20,22 @@ export async function signUpEsp(useresp: TEsp): Promise<TSignUpEspResponse> {
 }
 
 export async function signInUser(
-  user: ISignInUser
+  user: ISignInUser,
+  loginUser: any
 ): Promise<TSignInUserResponse> {
   const response = await api.post("/cliente/conectar", user);
-
   api.defaults.headers.common.Authorization = `${response.data.token}`;
+  loginUser(response.data.user.data, response.data.token);
 
   return response.data;
 }
 export async function signInEsp(
-  useresp: ISignInEps
+  useresp: ISignInEps,
+  loginEsp: any
 ): Promise<TSignInEspResponse> {
   const response = await api.post("/nutricionista/conectar", useresp);
-
   api.defaults.headers.common.Authorization = `${response.data.token}`;
+  loginEsp(response.data.user.data, response.data.token);
 
   return response.data;
 }

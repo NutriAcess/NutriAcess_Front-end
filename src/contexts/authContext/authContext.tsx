@@ -1,4 +1,6 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import funcs from '../../config/funcs';
 import {
   getEsp,
   getUser,
@@ -13,9 +15,64 @@ import {
 export const AuthContext = createContext({} as IAuthContext);
 
 export function AuthContextProvider({ children }: IAuthContextProvider) {
+  const [ready, setReady] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
+  const [token, setToken] = useState<string>('');
   const [user, setUser] = useState({} as TUser);
   const [useresp, setEsp] = useState({} as TEsp);
+  const navigate = useNavigate();
+
+  function loginUser(user: any, token: string) {
+    // Guarda dados no cookie do navegador
+    delete user.senha;
+    localStorage.setItem("@user", funcs.stringToBase64(JSON.stringify(user)));
+    localStorage.setItem("@token", funcs.stringToBase64(JSON.stringify(token)));
+
+    // Seta os dados no contexto
+    setUser(user);
+    setToken(token);
+    setIsLogged(true);
+  }
+
+  function logoutUser(user: any, token: string) {
+    // Guarda dados no cookie do navegador
+    localStorage.removeItem("@user");
+    localStorage.removeItem("@token");
+
+    // Seta os dados no contexto
+    setUser({ email: '', senha: '', nome_completo: '', nome_social: '', telefone: '' });
+    setToken('');
+    setIsLogged(false);
+
+    // Colocar aqui navigate para home
+    navigate("./")
+  }
+
+  function loginEsp(useresp: any, token: string) {
+    // Guarda dados no cookie do navegador
+    delete useresp.senha;
+    localStorage.setItem("@useresp", funcs.stringToBase64(JSON.stringify(useresp)));
+    localStorage.setItem("@token", funcs.stringToBase64(JSON.stringify(token)));
+
+    // Seta os dados no contexto
+    setUser(useresp);
+    setToken(token);
+    setIsLogged(true);
+  }
+
+  function logoutEsp(useresp: any, token: string) {
+    // Guarda dados no cookie do navegador
+    localStorage.removeItem("@useresp");
+    localStorage.removeItem("@token");
+
+    // Seta os dados no contexto
+    setEsp({ email: '', senha: '', nome_completo: '', nome_social: '', telefone: '', crn: '',especialidade: ''});
+    setToken('');
+    setIsLogged(false);
+
+    // Colocar aqui navigate para home
+    navigate("./")
+  }
 
   function signUpUser(userParam: TUser) {
     // signUp(userParam);
@@ -31,11 +88,32 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
     setIsLogged(true);
   }
 
+  function checkData () {
+    if (!token) {
+      let user  = localStorage.getItem("@user");
+      let token = localStorage.getItem("@token");
+
+      if (user && token) {
+        setUser(JSON.parse(funcs.base64ToString(user)))
+        setToken(funcs.base64ToString(token))
+        setIsLogged(true)
+        setReady(true)
+      } else {
+        // Colocar aqui navigate para home
+        setReady(true)
+      }
+    }
+  }
+
+  useEffect(() => {
+    !ready && checkData()
+  }, [ready])
+
   return (
     <AuthContext.Provider
-      value={{ user, isLogged, signUpUser, useresp, signUpEsp }}
+      value={{ user, token, isLogged, signUpUser, useresp, signUpEsp, loginUser, logoutUser, loginEsp }}
     >
-      {children}
+      {ready ? children : <></>}
     </AuthContext.Provider>
   );
 }

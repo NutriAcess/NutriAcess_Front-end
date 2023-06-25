@@ -5,16 +5,18 @@ import Button from "../../components/button/button";
 import { Input } from "../../components/input/input";
 import Logo from "../../components/logo/logo";
 import { Text } from "../../components/text/text";
+import { useAuth } from "../../hooks/useAuth";
+import { signInEsp } from "../../services/authService/authService";
 import {
   ButtonWrapper,
   Container,
   Form,
   InputWrapper,
 } from "./signInEsp.styles";
-import { signInEsp } from "../../services/authService/authService";
 
 const SignInSpecialist: React.FC = () => {
   const navigate = useNavigate();
+  const { loginEsp } = useAuth();
 
   const [crn, setCrn] = useState("");
   const [senha, setSenha] = useState("");
@@ -24,7 +26,7 @@ const SignInSpecialist: React.FC = () => {
       await signInEsp({
         crn,
         senha,
-      });
+      }, loginEsp);
 
         navigate("/dashboard-nutri");
      

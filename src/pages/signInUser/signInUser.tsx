@@ -1,21 +1,24 @@
 import React, { useState } from "react";
+import { useAuth } from "../../hooks/useAuth";
 
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/button/button";
 import { Input } from "../../components/input/input";
 import Logo from "../../components/logo/logo";
 import { Text } from "../../components/text/text";
+import { signInUser } from "../../services/authService/authService";
 import {
   ButtonWrapper,
   Container,
   Form,
   Header,
   InputWrapper,
+  RedirectSignIn,
 } from "./signInUser.styles";
-import { signInUser } from "../../services/authService/authService";
-import { useNavigate } from "react-router-dom";
 
 const SignInUser: React.FC = () => {
   const navigate = useNavigate();
+  const { loginUser } = useAuth();
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -23,9 +26,8 @@ const SignInUser: React.FC = () => {
   async function handleSignUser() {
     try {
       const response = await signInUser({
-        email,
-        senha,
-      });
+        email, senha
+      }, loginUser);
 
       if (response.form) {
         navigate("/profile-user");
@@ -74,9 +76,11 @@ const SignInUser: React.FC = () => {
           />
         </ButtonWrapper>
 
+        <RedirectSignIn>
         <Text height={21} weight={400} size="16" color="vinho">
-          Não tem cadastro? Faça agora mesmo!
+          Não tem cadastro? <button onClick={() => navigate("/sign-up-user")}>Cadastre-se!</button>
         </Text>
+        </RedirectSignIn>
       </Form>
     </Container>
   );

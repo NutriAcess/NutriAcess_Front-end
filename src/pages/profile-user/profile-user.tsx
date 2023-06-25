@@ -2,7 +2,8 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
 import { UserFocus } from "@phosphor-icons/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import QRCODE from "../../assets/QRCODE.png";
 import Button from "../../components/button/button";
 import Header from "../../components/header/header";
@@ -41,8 +42,10 @@ import {
 } from "./profile-user.styles";
 
 export const ProfileUser = () => {
-  const { user } = useAuth();
+  const { user, isLogged } = useAuth();
+  const navigate = useNavigate();
 
+  const [ready, setReady] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [openPopupPhoto, setOpenPopupPhoto] = useState(false);
 
@@ -58,8 +61,12 @@ export const ProfileUser = () => {
 
   const [changePhoto, setChangePhoto] = useState("")
 
-  return (
-    <Container>
+  useEffect (() => {
+    if (!isLogged) navigate("/sign-in-user")
+    else setReady(true)
+  }, [])
+
+  return ready ? <Container>
       <Header />
       <Cover>
         <UserDetails>
@@ -69,7 +76,7 @@ export const ProfileUser = () => {
           
           <UserWrapper>
             <User
-              src="https://github.com/Luisjunior119.png"
+              src="https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png"
               alt="Foto do usuário"
             />
             <ButtonPhoto>
@@ -213,6 +220,5 @@ export const ProfileUser = () => {
           </SectionDiet>
         </PlanWrapper>
       </Modal>
-    </Container>
-  );
+    </Container> : <></>
 };
