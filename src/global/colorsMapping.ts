@@ -10,6 +10,8 @@ export type TColors =
   | "branco"
   | "preto"
   | "cinza"
+  | "verde"
+  | "vermelho"
   | "cinza_escuro";
 
 export const colorsMapping = (color: TColors) => {
@@ -20,6 +22,8 @@ export const colorsMapping = (color: TColors) => {
     laranja_medio: theme.Colors.laranja_medio,
     laranja_escuro: theme.Colors.laranja_escuro,
     branco: theme.Colors.branco,
+    verde: theme.Colors.verde,
+    vermelho: theme.Colors.vermelho,
     preto: theme.Colors.preto,
     laranja_destaque: theme.Colors.laranja_destaque,
     cinza: theme.Colors.cinza,

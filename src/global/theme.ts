@@ -1,5 +1,4 @@
-import { Check } from "@phosphor-icons/react";
-import { X } from "@phosphor-icons/react";
+import { Check, X } from "@phosphor-icons/react";
 
 export const theme = {
   Colors: {
@@ -14,6 +13,8 @@ export const theme = {
     preto: "#000000",
     cinza: "#F1F1F1",
     cinza_escuro: "#828799",
+    verde: "#34E924",
+    vermelho: "#e01919",
   },
 
   Font: {
