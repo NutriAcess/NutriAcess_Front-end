@@ -166,7 +166,9 @@ export const PlanWrapper = styled.div`
     justify-content: space-between;
     gap: 30px;
     align-items: flex-end;
+
     margin-top: 20px;
+
 
     ${media.lessThan("medium")`
       display: flex;
@@ -209,4 +211,7 @@ export const QrCode = styled.div`
 `;
 
 export const ButtonDieta = styled.a`
+
+    align-items: center;
 `;
+
