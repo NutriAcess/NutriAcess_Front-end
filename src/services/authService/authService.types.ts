@@ -117,3 +117,9 @@ export enum SpecialtyNutriEnum {
   maternalChild  = "Nutrição Materno-Infantil",
   family = "Nutrição Familiar"
 }
+
+export enum PlanEnum {
+  plus1 = "plus1",
+  familia = "familia",
+  plus2 = "plus2"
+}
