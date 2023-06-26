@@ -64,9 +64,6 @@ const SignInSpecialist: React.FC = () => {
           <Button title="Entrar" variant="primario" xs onClick={handleSignEsp}/>
         </ButtonWrapper>
 
-        <Text height={21} weight={400} size="16" color="vinho">
-          Não tem cadastro? Faça agora mesmo!
-        </Text>
       </Form>
     </Container>
   );
