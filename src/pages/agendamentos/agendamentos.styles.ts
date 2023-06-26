@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import media from "styled-media-query";
 
+
 export const Container = styled.div``;
 
 export const Content = styled.div`
@@ -32,3 +33,7 @@ export const ContentButton = styled.div`
 `;
 
 
+export  const StyledText = styled.div`
+text-align: center;
+
+`;

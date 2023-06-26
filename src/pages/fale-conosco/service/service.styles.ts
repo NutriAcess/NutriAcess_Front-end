@@ -27,6 +27,8 @@ export const DivGeneral = styled.div`
   ${media.lessThan("medium")`
     flex-direction: column;
     align-items: stretch;
+    justify-content: center;
+    align-items: center;
   `}
 `;
 
@@ -40,7 +42,7 @@ export const DivNumber = styled.div`
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
 
   ${media.lessThan("medium")`
-    width: 100%;
+    width: 80%;
     margin-bottom: 20px;
   `}
 `;
