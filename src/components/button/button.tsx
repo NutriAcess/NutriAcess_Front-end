@@ -4,7 +4,7 @@ interface IButton {
   title: string;
   onClick?: () => void;
   icon?: React.ReactNode;
-  variant: "primario" | "secundario" | "terciario";
+  variant: "primario" | "secundario" | "terciario" | "quartenario" | "quinto";
   disable ?: boolean;
 }
 

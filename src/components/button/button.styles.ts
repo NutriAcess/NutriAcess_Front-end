@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 interface IContainer {
   xs?: boolean;
-  variant: "primario" | "secundario" | "terciario";
+  variant: "primario" | "secundario" | "terciario" | "quartenario" | "quinto" ;
   icon?: React.ReactNode;
 }
 
@@ -15,7 +15,11 @@ export const Container = styled.button<IContainer>`
   padding: 12px 24px;
   border-radius: 15px;
   background-color: ${({ theme, variant }) =>
-    variant === "primario" ? theme.Colors.vinho : "transparent"};
+    variant === "primario" ? theme.Colors.vinho
+    : variant === "secundario" ? "transparent" 
+    : variant === "terciario" ? "transparent" 
+    : variant === "quartenario" ? theme.Colors.verde 
+    : theme.Colors.vermelho };
   border: 2px solid
     ${({ theme, variant }) =>
       variant === "secundario"
@@ -87,7 +91,9 @@ export const TitleButton = styled.span<IContainer>`
       ? theme.Colors.branco
       : variant === "secundario"
       ? theme.Colors.vinho
-      : theme.Colors.laranja_destaque};
+      : variant === "terciario"
+      ? theme.Colors.laranja_destaque
+      : theme.Colors.branco};
 
   ${({ icon }) =>
     icon &&
