@@ -3,29 +3,42 @@ import { useState } from "react";
 import { useTheme } from "styled-components";
 import Button from "../../../../components/button/button";
 import { Text } from "../../../../components/text/text";
-import { Container, PatientInfo } from "./schedulingCard.styles";
+import { Container, LinkButton, PatientInfo } from "./schedulingCard.styles";
 
-export const SchedulingCard = () => {
+// interface ICardScheduling {
+//   date: any;
+//   nutricionist: string;
+//   slug: string;
+// }
+
+interface IPatientInfo {
+  data : string;
+  nome : string;
+}
+
+export const SchedulingCard = ({nome, data}: IPatientInfo) => {
   const theme = useTheme();
+  const [hours, setHours] = useState<string>('08:00');
   const [isHover, setIsHover] = useState(false);
+
+  // function encodeData () {
+  //   let data = {...date, time: hours};
+  //   return funcs.stringToBase64(JSON.stringify(data));
+  // }
 
   return (
     <Container>
       <PatientInfo>
         <div>
           <Text color="preto" height={26} size="22" weight={500}>
-            Data e hora: 31/10/2024 - 10:34 hrs
+            {data}
+            {/* {(date.day<10 ? "0" : "") + date.day} de {funcs.getMonthName(date.month)} de {date.year} */}
           </Text>
         </div>
         <div>
           <Text color="preto" height={26} size="22" weight={500}>
-            Paciente: Jonh Doe
-          </Text>
-        </div>
-
-        <div>
-          <Text color="preto" height={26} size="22" weight={500}>
-            Descrição: Lorem ipsum...
+            {nome}
+            {/* {nutricionist} */}
           </Text>
         </div>
       </PatientInfo>
@@ -33,6 +46,7 @@ export const SchedulingCard = () => {
         onMouseEnter={() => setIsHover(true)}
         onMouseLeave={() => setIsHover(false)}
       >
+        <LinkButton href="https://meet.google.com/sdc-bsvq-dzf" target="_blank">
         <Button
           icon={
             <VideoCamera weight="regular" size={24} color={isHover ? theme.Colors.laranja_destaque : theme.Colors.branco} />
@@ -40,6 +54,7 @@ export const SchedulingCard = () => {
           title="Entrar na chamada"
           variant="primario"
         />
+        </LinkButton>
       </div>
     </Container>
   );
