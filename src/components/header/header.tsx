@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import Button from "../button/button";
 import Logo from "../logo/logo";
-import { ButtonContent } from "./header.styles";
+import { ButtonContent, ButtonProfile } from "./header.styles";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
@@ -63,8 +63,13 @@ function Header() {
                 />
               </ButtonContent>
             ) : <>
-              <button onClick={() => navigate("/profile-user")}>Perfil</button>
+            <div>
+            <ButtonProfile onClick={() => navigate("/profile-user")}>
+              <img src="https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png" alt="" />
               <button onClick={() => logoutUser()}>Sair</button>
+              </ButtonProfile>
+
+              </div>
             </>
           }
         </Navbar.Collapse>
