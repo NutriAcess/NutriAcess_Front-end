@@ -94,13 +94,15 @@ export const TitlePlan= styled.div`
 
     flex-direction: column;
 
+    margin-bottom: 24px;
+
 `;
 
 export const ButtonContent = styled.div`
   display: flex;
 
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 
   gap: 8px;
   margin-bottom: 8px;
@@ -116,6 +118,16 @@ export const ButtonContent = styled.div`
 
 export const ButtonWrapper = styled.div`
   display: flex;
+  gap: 10px;
+  width: 30%;
+
+  ${media.lessThan("medium")`
+    width: 100%;
+  `}
+`;
+
+export const ButtonAnmnese = styled.a`
+  display: flex;
 
   width: 20%;
 
@@ -128,6 +140,7 @@ export const Form = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-bottom: 24px;
 `;
 
 export const InputWrapper = styled.div`

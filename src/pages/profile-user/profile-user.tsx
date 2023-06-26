@@ -3,7 +3,7 @@ import "react-date-range/dist/theme/default.css";
 
 import { UserFocus } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import QRCODE from "../../assets/QRCODE.png";
 import Button from "../../components/button/button";
 import Header from "../../components/header/header";
@@ -12,9 +12,12 @@ import { Modal } from "../../components/modal/modal";
 import { PopUpPhoto } from "../../components/popupfotoperfil";
 import { Text } from "../../components/text/text";
 import { useAuth } from "../../hooks/useAuth";
-import { SchedulingCard } from "../profile-user/components/schedulignCard/schedulingCard";
+import { SchedulingCard } from "./components/schedulignCard/schedulingCard";
+import { SchedulingCardCanceled } from "./components/schedulignCardCanceled/schedulingCardCanceled";
+import { SchedulingCardCompleted } from "./components/schedulignCardCompleted/schedulingCardCompleted";
 import { SchedulingPlan } from "./components/schedulignPlan/schedulingPlan";
 import {
+  ButtonAnmnese,
   ButtonContent,
   ButtonDieta,
   ButtonPhoto,
@@ -59,6 +62,10 @@ export const ProfileUser = () => {
   const [sex, setSex] = useState("");
   const [plan, setPlan] = useState("");
 
+  const params = useParams();
+  const nutriInfos: any = params.nutri;
+  const [nutri, setNutri] = useState<any>(null);
+
   const [changePhoto, setChangePhoto] = useState("")
 
   useEffect (() => {
@@ -66,12 +73,19 @@ export const ProfileUser = () => {
     else setReady(true)
   }, [])
 
+  // useEffect(() => {
+  //   if (nutri===null) {
+  //     let nutriData = data.find((el: any) => el.slug===nutriInfos);
+  //     setNutri(nutriData);
+  //   }
+  // }, [nutri])
+
   return ready ? <Container>
       <Header />
       <Cover>
         <UserDetails>
           <Text color="branco" height={42} size="36" weight={500}>
-            Dashboard - olá {user.nome_social}
+            Dashboard - Olá {user.nome_social}!
           </Text>
           
           <UserWrapper>
@@ -112,9 +126,16 @@ export const ProfileUser = () => {
       </Scheduling>
 
       <SchedulingCardsWrapper>
-        <SchedulingCard />
-        <SchedulingCard />
-        <SchedulingCard />
+      {/* {
+        nutri!==null ? <SchedulingCard
+          nutricionist={nutri.title}
+          date={nutri.date}
+          slug={nutri.slug}
+        /> : <></>
+      } */}
+        <SchedulingCard data="Data e hora: 05/07/2023 - 13h" nome="Nutricionista: Camilla Gabriella"/>
+        <SchedulingCardCompleted data="Data e hora: 31/10/2023 - 10h" nome="Nutricionista: Camilla Gabriella"/>
+        <SchedulingCardCanceled data="Data e hora: 01/12/2020 - 9h" nome="Nutricionista: Larissa Alves"/>
       </SchedulingCardsWrapper>
 
       <TitlePlan>
@@ -178,6 +199,14 @@ export const ProfileUser = () => {
           </InputWrapper>
         </Form>
         <ButtonContent>
+          <ButtonAnmnese href="https://docs.google.com/forms/d/e/1FAIpQLSdwIepwNmgJOPqpRURn263Q3MPTTGYAiOhAlD-PCb0kOfahMQ/viewform" target="_blank">
+          <Button
+              xs
+              title="Ficha de Anmnese"
+              variant="primario"
+              onClick={() => setShowModal(false)}
+            />
+          </ButtonAnmnese>
           <ButtonWrapper>
             <Button
               xs
@@ -185,8 +214,6 @@ export const ProfileUser = () => {
               variant="secundario"
               onClick={() => setShowModal(false)}
             />
-          </ButtonWrapper>
-          <ButtonWrapper>
             <Button title="Salvar" variant="primario" xs />
           </ButtonWrapper>
         </ButtonContent>
