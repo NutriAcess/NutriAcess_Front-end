@@ -1,5 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import funcs from '../../config/funcs';
 import {
   getEsp,
@@ -20,7 +19,6 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
   const [token, setToken] = useState<string>('');
   const [user, setUser] = useState({} as TUser);
   const [useresp, setEsp] = useState({} as TEsp);
-  const navigate = useNavigate();
 
   function loginUser(user: any, token: string) {
     // Guarda dados no cookie do navegador
@@ -44,8 +42,7 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
     setToken('');
     setIsLogged(false);
 
-    // Colocar aqui navigate para home
-    navigate("./")
+    window.location.href = "/"
   }
 
   function loginEsp(useresp: any, token: string) {
@@ -70,8 +67,7 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
     setToken('');
     setIsLogged(false);
 
-    // Colocar aqui navigate para home
-    navigate("./")
+    window.location.href = "/"
   }
 
   function signUpUser(userParam: TUser) {
