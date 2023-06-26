@@ -8,7 +8,7 @@ import Header from "../../components/header/header";
 import { Input } from "../../components/input/input";
 import { Modal } from "../../components/modal/modal";
 import { Text } from "../../components/text/text";
-import { SchedulingCard } from "./components/schedulignCard/schedulingCard";
+import { SchedulingCard } from "../profile-user/components/schedulignCard/schedulingCard";
 import { mockRanges } from "./mock-ranges";
 import {
   ButtonContent,
@@ -88,10 +88,10 @@ export const NutriDashboard = () => {
       </Scheduling>
 
       <SchedulingCardsWrapper>
-        <SchedulingCard />
-        <SchedulingCard />
-        <SchedulingCard />
-        <SchedulingCard />
+        <SchedulingCard data="Data e hora: 05/07/2023 - 13h" nome="Paciente: Renata Alves"/>
+        <SchedulingCard data="Data e hora: 05/07/2023 - 13h" nome="Paciente: Gabriel Augusto"/>
+        <SchedulingCard data="Data e hora: 05/07/2023 - 13h" nome="Paciente: Adriana Santos"/>
+        <SchedulingCard data="Data e hora: 05/07/2023 - 13h" nome="Paciente: Claudia Lopes"/>
       </SchedulingCardsWrapper>
 
       <Modal
