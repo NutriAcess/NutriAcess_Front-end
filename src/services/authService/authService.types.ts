@@ -27,6 +27,15 @@ export enum FoodRestrictionEnum {
   vegan = "Sou vegano(a)",
 }
 
+export enum ALERGIA {
+  GLUTEN = "gluten",
+  LATICINIOS = "laticinios",
+  AMENDOIM = "amendoim",
+  PEIXES = "peixes",
+  OVOS = "ovos",
+  MARISCOS = "mariscos",
+}
+
 export enum PreparationTimeEnum {
   yes = "Sim",
   not = "Não",
