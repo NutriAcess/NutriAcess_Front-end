@@ -1,30 +1,30 @@
 export const mocksSchedulingPlan = [
     {
-        name : "Marcos",
-        age: "30 anos",
+        name : "Ailton",
+        age: "52 anos",
         sex: "Masculino",
         height: "1,70",
-        weight: "70kg",
+        weight: "80kg",
     },
     {
-        name : "Aline",
-        age: "18 anos",
+        name : "Dalva",
+        age: "51 anos",
         sex: "Feminino",
         height: "1,60",
-        weight: "45kg",
+        weight: "60kg",
+    }, 
+    {
+        name : "William",
+        age: "21 anos",
+        sex: "Masculino",
+        height: "1,73",
+        weight: "72kg",
     },
     {
-        name : "Marcos",
-        age: "30 anos",
-        sex: "Masculino",
-        height: "1,70",
-        weight: "70kg",
-    },
-    {
-        name : "Marcos",
-        age: "30 anos",
-        sex: "Masculino",
-        height: "1,70",
-        weight: "70kg",
+        name : "Claudia",
+        age: "19 anos",
+        sex: "Feminino",
+        height: "1,63",
+        weight: "65kg",
     }
 ]
