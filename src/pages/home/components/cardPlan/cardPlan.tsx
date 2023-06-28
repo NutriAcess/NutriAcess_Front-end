@@ -8,7 +8,6 @@ import {
   Container,
   Description,
   Divbutton,
-  Divider,
   Header,
   Price,
   Topico,
@@ -65,7 +64,6 @@ const CardPlan = ({
           {description}
         </Text>
       </Description>
-      <Divider />
       <Topics>
       {topics.map((item, idx) => (
           <Topico key={`key_${idx}`}>

@@ -7,14 +7,14 @@ import funcs from '../../config/funcs';
 import { PopUpPagamento } from "../../components/popuppagamento/popuppagamento";
 import { data } from "../agendamentos/data";
 import { InfoNutri } from "./componentes/infonutri";
-import { SideLeft, SideLeftProps } from './componentes/sideLeft/sideLeft';
+import { ResumePag } from './componentes/resumepag/resumepag';
+import { SideLeft } from './componentes/sideLeft/sideLeft';
 import {
   ButtonConfirm,
   Container,
   Content,
   SideRight
 } from "./pagamento.styles";
-import { ResumePag } from './componentes/resumepag/resumepag';
 
 const Formasdepagamento = () => {
   const navigate = useNavigate();
@@ -22,6 +22,7 @@ const Formasdepagamento = () => {
 
   const params = useParams();
   const nutriInfos: any = params.nutri;
+  console.log("ola",params)
   const hashInfos: any = params.hash;
   const [nutri, setNutri] = useState<any>(null);
   const [dates, setDates] = useState<any>(null);
@@ -30,7 +31,9 @@ const Formasdepagamento = () => {
   useEffect(() => {
     if (nutri === null) {
       let nutriData = data.find((el: any) => el.slug === nutriInfos);
+      console.log(data)
       let infos = funcs.base64ToString(hashInfos);
+      
       let dateData = JSON.parse(infos);
 
       setNutri(nutriData);
@@ -42,6 +45,27 @@ const Formasdepagamento = () => {
     // Implemente a validação dos campos aqui
     return true;
   }
+
+  // async function handleRegisterUser() {
+  //   const isValidated = validateFields();
+
+  //   if (isValidated===null) {
+  //     const user: TPayment = {
+  //       plan,
+  //       nometitular,
+  //       ncartao,
+  //       validade,
+  //       cods
+  //     };
+      
+  //     try {
+  //       await confirmPayment(user);
+  //       navigate("/sign-in-user");
+  //     } catch (error) {
+  //       console.log("Não foi possível efetuar o pagamento. Tente novamente!");
+  //     }
+  //   }
+  // }
 
 
   return (

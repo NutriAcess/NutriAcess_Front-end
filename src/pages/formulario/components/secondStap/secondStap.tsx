@@ -13,13 +13,13 @@ export const SecondStap = () => {
   const { form, setForm } = useForm();
 
   const options = [
-    { value: "Glúten", label: "Glúten" },
-    { value: "Laticínios", label: "Laticínios" },
-    { value: "Amendoim", label: "Amendoim" },
-    { value: "Peixes", label: "Peixes" },
-    { value: "Ovos", label: "Ovos" },
-    { value: "Mariscos", label: "Mariscos" },
-    { value: "Nenhuma", label: "Nenhuma" },
+    { value: "gluten", label: "Glúten" },
+    { value: "laticinios", label: "Laticínios" },
+    { value: "amendoim", label: "Amendoim" },
+    { value: "peixes", label: "Peixes" },
+    { value: "ovos", label: "Ovos" },
+    { value: "mariscos", label: "Mariscos" },
+    { value: "nenhum", label: "Nenhuma" },
   ];
 
   function updateFoodRestrictionValue(
@@ -109,7 +109,7 @@ export const SecondStap = () => {
         </Text>
         <Select
           options={options}
-          onChange={(e) => updateAllergyValue(e?.label as string)}
+          onChange={(e) => updateAllergyValue(e?.value as string)}
         />
       </Section>
 

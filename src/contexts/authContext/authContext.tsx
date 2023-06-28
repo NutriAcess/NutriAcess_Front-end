@@ -24,7 +24,7 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
     // Guarda dados no cookie do navegador
     delete user.senha;
     localStorage.setItem("@user", funcs.stringToBase64(JSON.stringify(user)));
-    localStorage.setItem("@token", funcs.stringToBase64(JSON.stringify(token)));
+    localStorage.setItem("@token", funcs.stringToBase64(token));
 
     // Seta os dados no contexto
     setUser(user);
@@ -49,7 +49,7 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
     // Guarda dados no cookie do navegador
     delete useresp.senha;
     localStorage.setItem("@useresp", funcs.stringToBase64(JSON.stringify(useresp)));
-    localStorage.setItem("@token", funcs.stringToBase64(JSON.stringify(token)));
+    localStorage.setItem("@token", funcs.stringToBase64(token));
 
     // Seta os dados no contexto
     setUser(useresp);

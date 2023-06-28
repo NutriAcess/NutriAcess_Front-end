@@ -46,6 +46,7 @@ export const Description = styled.div`
 `;
 
 export const Topics = styled.li`
+  margin-left: -64px;
   list-style-type: none;
 `;
 
@@ -71,14 +72,4 @@ export const Divbutton = styled.div`
   margin-top: 34px;
 
   padding: 0 24px;
-`;
-
-export const Divider = styled.div`
-  display: flex;
-
-  width: 100%;
-  height: 1px;
-  background-color: ${({ theme }) => theme.Colors.cinza};
-
-  margin-bottom: 16px;
 `;

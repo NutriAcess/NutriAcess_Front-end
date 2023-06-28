@@ -5,6 +5,7 @@ import { InputWrapper, Option, OptionsContainer, StyledInput } from "./input.sty
 interface InputProps {
   label: string;
   value: string;
+  className?: string;
   placeholder?: string;
   type?: string;
   options?: string[];
@@ -15,6 +16,7 @@ interface InputProps {
 export const Input: React.FC<InputProps> = ({
   label,
   value,
+  className,
   placeholder,
   type = "text",
   onChange,
@@ -42,6 +44,7 @@ export const Input: React.FC<InputProps> = ({
         {label}
       </Text>
       <StyledInput
+        className={className ? className : ''}
         type={type}
         value={value}
         placeholder={placeholder}

@@ -34,6 +34,10 @@ export const Container = styled.button<IContainer>`
       width: 100%;
     `}
 
+  &.noClick {
+    cursor: default !important;
+  }
+
   &:hover {
     ${({ theme, variant }) =>
       variant === "primario" &&

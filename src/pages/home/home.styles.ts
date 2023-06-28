@@ -59,6 +59,7 @@ export const DivButton = styled.div`
 export const Partners = styled.div`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   

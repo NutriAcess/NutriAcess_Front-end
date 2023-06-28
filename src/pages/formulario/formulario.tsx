@@ -36,14 +36,12 @@ export const Formulario = () => {
 
   async function handleSubmitForm() {
     await submitForm(form, token);
+    navigate("/profile-user")
   }
 
   async function handleSubmit() {
-    if (step !== 2) {
-      setStep(step + 1);
-    } else {
-      await handleSubmitForm();
-    }
+    if (step !== 2) setStep(step + 1);
+    else await handleSubmitForm();
   }
 
   useEffect(() => {

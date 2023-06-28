@@ -20,7 +20,7 @@ export type TEsp = {
 };
 
 export type TPayment = {
-  //plan: string;
+  plan: string;
   nometitular: string;
   ncartao: number;
   validade: number;

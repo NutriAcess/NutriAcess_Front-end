@@ -29,7 +29,7 @@ export const SchedulingCardCanceled = ({data, nome} : IPatientInfo) => {
           icon={
             <X weight="regular" size={24} color="#FFF" />
           }
-          title="Consulta realizada"
+          title="Consulta cancelada"
           variant="quinto"
         />
     </Container>

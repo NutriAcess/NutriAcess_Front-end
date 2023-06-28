@@ -53,6 +53,7 @@ export const SchedulingCard = ({nome, data}: IPatientInfo) => {
           }
           title="Entrar na chamada"
           variant="primario"
+          onClick={() => {}}
         />
         </LinkButton>
       </div>

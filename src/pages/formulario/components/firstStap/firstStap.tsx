@@ -172,6 +172,7 @@ export const FirstStap = () => {
         <Section>
           <Input
             type="number"
+            placeholder="Altura em cm"
             label="Sua altura:"
             onChange={(e) => updateHeightValue(e)}
             value={String(form.altura) || ""}
@@ -179,12 +180,14 @@ export const FirstStap = () => {
           <Input
             type="number"
             label="Sua idade:"
+            placeholder="Idades em anos"
             onChange={(e) => updateAgeValue(e)}
             value={String(form.idade) || ""}
           />
           <Input
             type="number"
             label="Seu peso:"
+            placeholder="Peso em kg"
             onChange={(e) => updateWeightValue(e)}
             value={String(form.peso) || ""}
           />

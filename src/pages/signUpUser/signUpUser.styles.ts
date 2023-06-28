@@ -26,10 +26,10 @@ export const Form = styled.div`
     margin-bottom: 0px;
   }
 
-
   ${media.lessThan("medium")`
     padding: 0 16px;
   `}
+
 `;
 
 export const InputWrapper = styled.div`
@@ -38,6 +38,13 @@ export const InputWrapper = styled.div`
   ${media.lessThan("medium")`
     width: 100%;
   `}
+
+  > small {
+    display: block;
+    margin-top: 2px;
+    font-size: 11px;
+    color: ${({theme}) => theme.Colors.vermelho};
+  }
 `;
 
 export const ButtonWrapper = styled.div`

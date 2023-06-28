@@ -13,8 +13,11 @@ export const StyledInput = styled.input`
   font-size: 16px;
   border-radius: 8px;
   border: ${({ theme }) => theme.Colors.vinho} solid 2px;
-
   margin-top: 8px;
+
+  &.error {
+    border-color: ${({theme}) => theme.Colors.vermelho};
+  }
 
   ${media.lessThan("medium")`
     padding: 7px;

@@ -10,7 +10,7 @@ interface IButton {
 
 const Button = ({ title, variant, icon, xs, onClick }: IButton) => {
   return (
-    <Container variant={variant} xs={xs} onClick={onClick}>
+    <Container variant={variant} xs={xs} onClick={onClick} className={!onClick ? 'noClick' : ''}>
       <TitleButton variant={variant} icon={icon}>
         {title}
       </TitleButton>
