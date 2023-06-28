@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import growth from "../../assets/Growth.svg";
 import prati from "../../assets/Pratí.svg";
 import smartfit from "../../assets/Smart-fit.svg";
+import ellasBrasil from "../../assets/logoellasbrasil.svg";
+import studiowoz from "../../assets/logostudiowoz.svg";
 import Button from "../../components/button/button";
 import Footer from "../../components/footer/footer";
 import Header from "../../components/header/header";
@@ -17,6 +19,7 @@ import {
   DivText,
   ImageWrapper,
   LogoPartners,
+  LogoPartners1,
   Partners,
 } from "./home.styles";
 import Operation from "./operation/operation";
@@ -63,6 +66,12 @@ const Home = () => {
         <LogoPartners>
           <img src={prati} alt="Logo da Prati" />
         </LogoPartners>
+        <LogoPartners1>
+          <img src={studiowoz} alt="Logo da Prati" />
+        </LogoPartners1>
+        <LogoPartners1>
+          <img src={ellasBrasil} alt="Logo da Prati" />
+        </LogoPartners1>
       </Partners>
 
       <Feedback />

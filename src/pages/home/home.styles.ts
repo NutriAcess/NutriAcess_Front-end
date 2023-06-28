@@ -59,15 +59,22 @@ export const DivButton = styled.div`
 export const Partners = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+  
   background-color: ${({ theme }) => theme.Colors.cinza};
 `;
 
 export const LogoPartners = styled.div`
-  margin: 12px 24px;
+  
 
   ${media.lessThan("small")`
     margin: 0; 
   `}
 `;
+
+export const LogoPartners1 = styled.div`
+    img {
+      width: 100px;
+    }
+`

@@ -19,6 +19,7 @@ export const SecondStap = () => {
     { value: "Peixes", label: "Peixes" },
     { value: "Ovos", label: "Ovos" },
     { value: "Mariscos", label: "Mariscos" },
+    { value: "Nenhuma", label: "Nenhuma" },
   ];
 
   function updateFoodRestrictionValue(
