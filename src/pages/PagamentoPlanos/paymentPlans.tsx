@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/button/button";
 import Header from "../../components/header/header";
@@ -16,23 +16,23 @@ import { Container } from "./paymentPlans.styles";
 export const PaymentPlans = () => {
   const navigate = useNavigate();
   const [openPopupPagamentoPlans, setOpenPopupPagamentoPlans] = useState(false);
+  const [valorPlano, setValorPlano] = useState("");
 
   return (
     <Container>
       <Header />
       <Content>
-        <SideLeft />
+        <SideLeft setValorPlano={setValorPlano} valorPlano={valorPlano} />
         <SideRight>
-          <HeaderPayment>
-          </HeaderPayment>
-          <ResumePag />
+          <HeaderPayment></HeaderPayment>
+          <ResumePag valorPlano={valorPlano} />
           <ButtonConfirm onClick={() => setOpenPopupPagamentoPlans(true)}>
-            <Button title="Confirmar pagamento" variant="primario" xs  />
+            <Button title="Confirmar pagamento" variant="primario" xs />
           </ButtonConfirm>
           <PopUpPagamentoPlans
-                open={openPopupPagamentoPlans} 
-                onClose={() => setOpenPopupPagamentoPlans(false)} 
-              />
+            open={openPopupPagamentoPlans}
+            onClose={() => setOpenPopupPagamentoPlans(false)}
+          />
         </SideRight>
       </Content>
     </Container>

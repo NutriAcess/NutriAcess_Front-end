@@ -7,15 +7,14 @@ import funcs from '../../config/funcs';
 import { PopUpPagamento } from "../../components/popuppagamento/popuppagamento";
 import { data } from "../agendamentos/data";
 import { InfoNutri } from "./componentes/infonutri";
-import { ResumePag } from './componentes/resumepag/resumepag';
-import { SideLeft } from './componentes/sideLeft/sideLeft';
+import { SideLeft, SideLeftProps } from './componentes/sideLeft/sideLeft';
 import {
   ButtonConfirm,
   Container,
   Content,
   SideRight
 } from "./pagamento.styles";
-
+import { ResumePag } from './componentes/resumepag/resumepag';
 
 const Formasdepagamento = () => {
   const navigate = useNavigate();
@@ -26,27 +25,36 @@ const Formasdepagamento = () => {
   const hashInfos: any = params.hash;
   const [nutri, setNutri] = useState<any>(null);
   const [dates, setDates] = useState<any>(null);
+  const [valorPlano, setValorPlano] = useState('');
 
   useEffect(() => {
     if (nutri === null) {
       let nutriData = data.find((el: any) => el.slug === nutriInfos);
-      let infos     = funcs.base64ToString(hashInfos);
-      let dateData  = JSON.parse(infos);
+      let infos = funcs.base64ToString(hashInfos);
+      let dateData = JSON.parse(infos);
 
       setNutri(nutriData);
       setDates(dateData);
     }
-  }, [nutri])
+  }, [nutri]);
+
+  function validateFields() {
+    // Implemente a validação dos campos aqui
+    return true;
+  }
+
 
   return (
     <Container>
       <Header />
       <Content>
-        <SideLeft />
+      <SideLeft setValorPlano={setValorPlano} valorPlano={valorPlano} />
+
+
 
         <SideRight>
-          {
-            nutri!==null ? <InfoNutri
+          {nutri !== null ? (
+            <InfoNutri
               image={{
                 url: nutri.image.url,
                 alt: nutri.image.alt,
@@ -54,11 +62,21 @@ const Formasdepagamento = () => {
               nutricionist={nutri.title}
               specialty={nutri.specialty}
               dates={dates}
-            /> : <></>
-          }
-          <ResumePag />
+            />
+          ) : (
+            <></>
+          )}
+
+          <ResumePag valorPlano={valorPlano} />
+
           <ButtonConfirm>
-            <Button title='Confirmar pagamento' variant='primario' xs onClick={() => setOpenPopupPagamento(true)} />
+            <Button
+              title="Confirmar pagamento"
+              variant="primario"
+              xs
+              onClick={() => setOpenPopupPagamento(true)}
+              disable={!validateFields()}
+            />
           </ButtonConfirm>
           <PopUpPagamento
             open={openPopupPagamento}
