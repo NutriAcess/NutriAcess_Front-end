@@ -46,6 +46,18 @@ import {
   UserWrapper
 } from "./profile-user.styles";
 
+import avatarUva from "../../assets/avatarUva.png";
+import avatarMaca from "../../assets/avatarMaca.png";
+import avatarLaranja from "../../assets/avatarLaranja.png";
+import avatarAbacaxi from "../../assets/avatarAbacaxi.png";
+
+const fotos: any = {
+  avatarUva,
+  avatarMaca,
+  avatarLaranja,
+  avatarAbacaxi
+}
+
 export const ProfileUser = () => {
   const { user, isLogged, token } = useAuth();
   const navigate = useNavigate();
@@ -55,9 +67,6 @@ export const ProfileUser = () => {
   const [openPopupPhoto, setOpenPopupPhoto] = useState(false);
 
   const [profile, setProfile] = useState<any>({});
-  const [name, setName] = useState(user.nome_completo);
-  const [email, setEmail] = useState(user.email);
-  const [nome_social, setNome_social] = useState(user.nome_social);
   const [plan, setPlan] = useState("");
 
   const params = useParams();
@@ -80,11 +89,13 @@ export const ProfileUser = () => {
     if (!isLogged) navigate("/sign-in-user")
     else setReady(true)
 
-    api.get(`/cliente/${user.id_cliente}`, {
+    api.get(`/cliente/formulario/${user.id_cliente}`, {
       headers: { Authorization: token }
     }).then(async (resp: any) => {
-      console.log(resp.data.cliente)
-      setProfile(resp.data.cliente)
+      let client  = resp.data.clienteAndForm.cliente
+      let profile = resp.data.clienteAndForm.form
+      console.log(resp.data.clienteAndForm)
+      setProfile({...client, ...profile})
     }).catch((error: any) => {
       console.log(error)
     })
@@ -103,7 +114,7 @@ export const ProfileUser = () => {
 
         <UserWrapper>
           <User
-            src="https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png"
+            src={fotos[profile.foto]}
             alt="Foto do usuário"
           />
           <ButtonPhoto>
@@ -169,7 +180,7 @@ export const ProfileUser = () => {
         </InputWrapper>
         <InputWrapper>
           <Input label="Email" onChange={(e) => onChange("email", e)} value={profile.email} />
-          
+
           <div className="sc-bmzYkS lptelR">
             <span className="sc-cPiKLX hPztJU">Telefone:</span>
 
