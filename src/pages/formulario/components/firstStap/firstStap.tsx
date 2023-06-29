@@ -180,7 +180,7 @@ export const FirstStap = () => {
           <Input
             type="number"
             label="Sua idade:"
-            placeholder="Idades em anos"
+            placeholder="Idade em anos"
             onChange={(e) => updateAgeValue(e)}
             value={String(form.idade) || ""}
           />
