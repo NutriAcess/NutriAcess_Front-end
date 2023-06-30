@@ -18,7 +18,7 @@ export enum GenderEnum {
 export enum FeedingEnum {
   sedentary = "Sedentarismo",
   moderate = "Atividade fisica moderada",
-  intensive = "Atividade fisica intensiva",
+  intensive = "Atividade fisica intensa",
 }
 
 export enum FoodRestrictionEnum {
