@@ -95,7 +95,6 @@ export const ProfileUser = () => {
     }).then(async (resp: any) => {
       let client  = resp.data.clienteAndForm.cliente
       let profile = resp.data.clienteAndForm.form
-      console.log(resp.data.clienteAndForm)
       setProfile({...client, ...profile})
     }).catch((error: any) => {
       console.log(error)

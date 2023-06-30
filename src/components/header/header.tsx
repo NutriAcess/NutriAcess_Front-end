@@ -11,10 +11,22 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { PopUpLogin } from "../popuplogin/popuplogin";
 
+import avatarUva from "../../assets/avatarUva.png";
+import avatarMaca from "../../assets/avatarMaca.png";
+import avatarLaranja from "../../assets/avatarLaranja.png";
+import avatarAbacaxi from "../../assets/avatarAbacaxi.png";
+
+const fotos: any = {
+  avatarUva,
+  avatarMaca,
+  avatarLaranja,
+  avatarAbacaxi
+}
+
 function Header() {
   const [openPopupRegister, setOpenPopupRegister] = useState(false);
   const [openPopupLogin, setOpenPopupLogin] = useState(false);
-  const { logoutUser, isLogged } = useAuth();
+  const { profile, logoutUser, isLogged } = useAuth();
   const navigate = useNavigate();
 
   return (
@@ -75,7 +87,7 @@ function Header() {
             ) : <>
             <div>
             <ButtonProfile onClick={() => navigate("/profile-user")}>
-              <img src="https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png" alt="" />
+              <img src={fotos[profile.foto]} alt="" />
               <button onClick={() => logoutUser()}>Sair</button>
               </ButtonProfile>
 

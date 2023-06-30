@@ -29,6 +29,7 @@ export type TPayment = {
 
 export interface IAuthContext {
   user: TUser;
+  profile: any;
   useresp: TEsp;
   token: string;
   isLogged: boolean;
