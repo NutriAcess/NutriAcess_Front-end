@@ -8,6 +8,8 @@ import Logo from "../../components/logo/logo";
 import { Text } from "../../components/text/text";
 import { TUser } from "../../contexts/authContext/authContext.types";
 import { signUpUser } from "../../services/authService/authService";
+import './styles.css';
+
 import {
   ButtonWrapper,
   Container,
@@ -62,7 +64,7 @@ const SignUpUser: React.FC = () => {
         nome_social,
         telefone
       };
-      
+
       try {
         await signUpUser(user);
         navigate("/sign-in-user");
@@ -148,11 +150,11 @@ const SignUpUser: React.FC = () => {
         </InputWrapper>
 
         <InputWrapper>
-          <div className="sc-cWSHoV jGiQvb">
-            <span className="sc-cPiKLX hPztJU">Telefone:</span>
+          <div className="sc-cWSHoV eaUxtj">
+            <span className="sc-cPiKLX fvwJdb">Telefone:</span>
 
             <InputMask
-              className={"sc-eBMEME gOuQRv" + (errors && errors.telefone ? ' error' : '')}
+              className={"sc-eBMEME cfnsRj" + (errors && errors.telefone ? ' error' : '')}
               mask={'(99) 99999-9999'}
               type="telefone"
               value={telefone}
