@@ -15,6 +15,7 @@ import {
   Content,
   SideRight
 } from "./pagamento.styles";
+import { useAuth } from "../../hooks/useAuth";
 
 const Formasdepagamento = () => {
   const navigate = useNavigate();
@@ -27,6 +28,14 @@ const Formasdepagamento = () => {
   const [nutri, setNutri] = useState<any>(null);
   const [dates, setDates] = useState<any>(null);
   const [valorPlano, setValorPlano] = useState('');
+  const [ready, setReady] = useState(false);
+  const { user, isLogged, token } = useAuth();
+
+  useEffect(() => {
+    if (!isLogged) navigate("/sign-in-user")
+    else setReady(true)
+  },[])
+
 
   useEffect(() => {
     if (nutri === null) {
@@ -68,7 +77,7 @@ const Formasdepagamento = () => {
   // }
 
 
-  return (
+  return ready ?
     <Container>
       <Header />
       <Content>
@@ -108,8 +117,7 @@ const Formasdepagamento = () => {
           />
         </SideRight>
       </Content>
-    </Container>
-  );
+    </Container> : <></>
 };
 
 export default Formasdepagamento;
