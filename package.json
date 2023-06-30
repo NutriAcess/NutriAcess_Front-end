@@ -35,7 +35,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-server": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && react-scripts build && rm -rf ../html/* && cp ./build/* ../html && cp ./.htacess ../html/.htacess",
+    "build-server": "export NODE_OPTIONS=\"--max-old-space-size=8192\" && react-scripts build && rm -rf ../html/* && cp -r ./build/* ../html && cp ./.htaccess ../html/.htaccess",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
