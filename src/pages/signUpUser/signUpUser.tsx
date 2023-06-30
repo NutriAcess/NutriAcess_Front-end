@@ -148,11 +148,11 @@ const SignUpUser: React.FC = () => {
         </InputWrapper>
 
         <InputWrapper>
-          <div className="sc-bmzYkS lptelR">
+          <div className="sc-cWSHoV jGiQvb">
             <span className="sc-cPiKLX hPztJU">Telefone:</span>
 
             <InputMask
-              className={"sc-iHGNWf lcYYkN" + (errors && errors.telefone ? ' error' : '')}
+              className={"sc-eBMEME gOuQRv" + (errors && errors.telefone ? ' error' : '')}
               mask={'(99) 99999-9999'}
               type="telefone"
               value={telefone}
