@@ -20,6 +20,7 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
   const [token, setToken] = useState<string>('');
   const [user, setUser] = useState({} as TUser);
   const [profile, setProfile] = useState<any>(null);
+  const [plan, setPlan] = useState<any>(null);
   const [useresp, setEsp] = useState({} as TEsp);
 
   async function loginUser(user: any, token: string) {
@@ -44,6 +45,7 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
       let profile = resp.data.clienteAndForm.form
       localStorage.setItem("@profile", funcs.stringToBase64(JSON.stringify(profile)));
       setProfile({...profile})
+      setPlan({...plan})
     }).catch((error: any) => {
       console.log(error)
     })
