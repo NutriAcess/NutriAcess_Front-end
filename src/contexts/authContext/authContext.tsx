@@ -20,7 +20,6 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
   const [token, setToken] = useState<string>('');
   const [user, setUser] = useState({} as TUser);
   const [profile, setProfile] = useState<any>(null);
-  const [plan, setPlan] = useState<any>(null);
   const [useresp, setEsp] = useState({} as TEsp);
 
   async function loginUser(user: any, token: string) {
@@ -42,10 +41,11 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
     api.get(`/cliente/formulario/${user_id}`, {
       headers: { Authorization: token }
     }).then(async (resp: any) => {
-      let profile = resp.data.clienteAndForm.form
-      localStorage.setItem("@profile", funcs.stringToBase64(JSON.stringify(profile)));
-      setProfile({...profile})
-      setPlan({...plan})
+      let profileData = resp.data.clienteAndForm.form
+      if (profileData!==undefined && profileData!=="undefined" && profileData!==null) {
+        localStorage.setItem("@profile", funcs.stringToBase64(JSON.stringify(profileData)));
+        setProfile({...profile})
+      }
     }).catch((error: any) => {
       console.log(error)
     })
@@ -55,6 +55,7 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
     // Guarda dados no cookie do navegador
     localStorage.removeItem("@user");
     localStorage.removeItem("@token");
+    localStorage.removeItem("@profile");
 
     // Seta os dados no contexto
     setUser({ email: '', senha: '', nome_completo: '', nome_social: '', telefone: '' });
@@ -112,8 +113,8 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
         setUser(JSON.parse(funcs.base64ToString(user)))
         setToken(funcs.base64ToString(token))
 
-        let profile = localStorage.getItem("@profile");
-        if (profile) setProfile(JSON.parse(funcs.base64ToString(profile)));
+        let profileData = localStorage.getItem("@profile");
+        if (profileData && profileData!==null) setProfile(JSON.parse(funcs.base64ToString(profileData)));
 
         setIsLogged(true)
         setReady(true)

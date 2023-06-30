@@ -101,8 +101,7 @@ export const ProfileUser = () => {
     })
   }, [])
 
-  useEffect(() => {
-  }, [profile])
+  useEffect(() => {}, [profile])
 
   return ready ? <Container>
     <Header />
@@ -114,7 +113,7 @@ export const ProfileUser = () => {
 
         <UserWrapper>
           <User
-            src={fotos[profile.foto]}
+            src={ profile.foto ? fotos[profile.foto] : "https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png" }
             alt="Foto do usuário"
           />
           <ButtonPhoto>

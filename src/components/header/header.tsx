@@ -29,6 +29,8 @@ function Header() {
   const { profile, logoutUser, isLogged } = useAuth();
   const navigate = useNavigate();
 
+  // console.log(profile)
+
   return (
     <Navbar collapseOnSelect expand="lg">
       <Container>
@@ -87,7 +89,7 @@ function Header() {
             ) : <>
             <div>
             <ButtonProfile onClick={() => navigate("/profile-user")}>
-              <img src={fotos[profile.foto]} alt="" />
+              {profile!==null ? <img src={fotos[profile.foto]} alt="" /> : <img src="https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png" alt="" />}
               <button onClick={() => logoutUser()}>Sair</button>
               </ButtonProfile>
 

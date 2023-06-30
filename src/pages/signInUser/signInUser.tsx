@@ -18,18 +18,18 @@ import {
 
 const SignInUser: React.FC = () => {
   const navigate = useNavigate();
-  const { loginUser } = useAuth();
+  const { profile, loginUser } = useAuth();
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
   async function handleSignUser() {
     try {
-      const response = await signInUser({
+      await signInUser({
         email, senha
       }, loginUser);
 
-      if (response.form) {
+      if (!profile) {
         navigate("/profile-user");
       } else {
         navigate("/formulario");
