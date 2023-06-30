@@ -1,5 +1,6 @@
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
+import './styles.css';
 
 import { UserFocus } from "@phosphor-icons/react";
 import { ChangeEvent, useEffect, useState } from "react";
@@ -181,11 +182,11 @@ export const ProfileUser = () => {
         <InputWrapper>
           <Input label="Email" onChange={(e) => onChange("email", e)} value={profile.email} />
 
-          <div className="sc-bmzYkS lptelR">
-            <span className="sc-cPiKLX hPztJU">Telefone:</span>
+          <div className="sc-bmzYkS eaUxtj">
+            <span className="sc-cPiKLX fvwJdb">Telefone:</span>
 
             <InputMask
-              className="sc-iHGNWf lcYYkN"
+              className="sc-iHGNWf cfnsRj"
               mask={'(99) 99999-9999'}
               type="telefone"
               name="telefone"
