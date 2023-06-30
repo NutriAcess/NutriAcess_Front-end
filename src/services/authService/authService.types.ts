@@ -5,8 +5,8 @@ export interface IGetUser {
 
 export enum ObjectiveEnum {
   lost_weight = "Perder peso",
-  maintain_my_current = "Manter meu peso atual",
-  gain_muscular_mass = "Ganhar massa muscular",
+  maintain_my_current = "Manter peso",
+  gain_muscular_mass = "Ganhar massa",
 }
 
 export enum GenderEnum {
@@ -17,14 +17,14 @@ export enum GenderEnum {
 
 export enum FeedingEnum {
   sedentary = "Sedentarismo",
-  moderate = "Atividade física moderada",
-  intensive = "Atividade física intensiva",
+  moderate = "Atividade fisica moderada",
+  intensive = "Atividade fisica intensiva",
 }
 
 export enum FoodRestrictionEnum {
   any_thing = "Qualquer coisa",
-  vegetarian = "Sou vegetariano(a)",
-  vegan = "Sou vegano(a)",
+  vegetarian = "Vegetariano",
+  vegan = "Vegano",
 }
 
 export enum ALERGIA {
