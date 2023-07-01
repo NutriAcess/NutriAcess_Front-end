@@ -13,14 +13,45 @@ import {
   Number,
   Title,
 } from "./assessment.styles";
+import { submitForm } from "../../../services/formService/formService";
+import { AVALIACAO, FaleConosco } from "../../../services/authService/authService.types";
+import { submitFormFale } from "../../../services/FaleService/FaleService";
 
 const Assessment = () => {
-  const [name, setName] = useState("");
+  const [nome_usuario, setNomeUsuario] = useState("");
   const [email, setEmail] = useState("");
-  const [description, setDescription] = useState("");
-  const novoArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const [mensagem, setMensagem] = useState("");
   const [showInfoEvaluation, setShowInfoEvaluation] = useState(false);
+  const [selectedNumber, setSelectedNumber] = useState<number | null>(null);
+  const avaliacoes = [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
+  const handleFormSubmit = async () => {
+    console.log(selectedNumber);
+    if (selectedNumber === null) {
+      console.error("Por favor, selecione um número na avaliação.");
+      return;
+    }
+  
+    const formFale: FaleConosco = {
+      avaliacao: selectedNumber.toString() as AVALIACAO,
+      nome_usuario,
+      email,
+      mensagem,
+    };
+  
+    try {
+      const response = await submitFormFale(formFale);
+      console.log(response);
+  
+      // Limpe os campos do formulário
+      setNomeUsuario("");
+      setEmail("");
+      setMensagem("");
+    } catch (error) {
+      console.error("Erro ao enviar o formulário:", error);
+    }
+  };
+  
   return (
     <Container>
       <Title>
@@ -32,14 +63,12 @@ const Assessment = () => {
         </Text>
       </Title>
       <Feedback onClick={() => setShowInfoEvaluation(!showInfoEvaluation)}>
-        {novoArray.map((num) => (
-          <DivNumber>
-            <Number >
-              {num}
-            </Number>
-          </DivNumber>
-        ))}
-      </Feedback>
+      {avaliacoes.map((num) => (
+        <DivNumber>
+          <Number onClick={() => setSelectedNumber(parseInt(num))}>{num}</Number>
+        </DivNumber>
+      ))}
+    </Feedback>
       {showInfoEvaluation && (
         <>
           <Title>
@@ -53,8 +82,8 @@ const Assessment = () => {
               <Input
                 label="Nome"
                 placeholder="Digite seu nome..."
-                value={name}
-                onChange={(e) => setName(e)}
+                value={nome_usuario}
+                onChange={(e) => setNomeUsuario(e)}
               />
             </DivInput>
 
@@ -71,14 +100,14 @@ const Assessment = () => {
               <Input
                 label="Mensagem"
                 placeholder="Digite sua mensagem..."
-                value={description}
-                onChange={(e) => setDescription(e)}
+                value={mensagem}
+                onChange={(e) => setMensagem(e)}
                 height="100"
               />
             </DivInput>
 
             <ButtonDiv>
-              <Button variant="primario" title="Enviar" xs />
+              <Button onClick={handleFormSubmit}variant="primario" title="Enviar" xs />
             </ButtonDiv>
           </ContainerInput>
         </>
