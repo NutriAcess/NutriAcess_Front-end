@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/button/button";
 import Header from "../../components/header/header";
@@ -12,13 +12,22 @@ import {
   SideRight,
 } from "../Pagamento/pagamento.styles";
 import { Container } from "./paymentPlans.styles";
+import { useAuth } from "../../hooks/useAuth";
+
 
 export const PaymentPlans = () => {
   const navigate = useNavigate();
   const [openPopupPagamentoPlans, setOpenPopupPagamentoPlans] = useState(false);
   const [valorPlano, setValorPlano] = useState("");
+  const [ready, setReady] = useState(false);
+  const { user, isLogged, token } = useAuth();
 
-  return (
+  useEffect(() => {
+    if (!isLogged) navigate("/sign-in-user")
+    else setReady(true)
+  },[])
+
+  return ready ? 
     <Container>
       <Header />
       <Content>
@@ -35,6 +44,5 @@ export const PaymentPlans = () => {
           />
         </SideRight>
       </Content>
-    </Container>
-  );
+    </Container> : <></>
 };

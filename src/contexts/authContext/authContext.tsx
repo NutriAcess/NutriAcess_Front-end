@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import funcs from '../../config/funcs';
+import { api } from "../../config/axios/axios";
 import {
   getEsp,
   getUser,
@@ -18,13 +19,17 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
   const [isLogged, setIsLogged] = useState(false);
   const [token, setToken] = useState<string>('');
   const [user, setUser] = useState({} as TUser);
+  const [profile, setProfile] = useState<any>(null);
   const [useresp, setEsp] = useState({} as TEsp);
 
-  function loginUser(user: any, token: string) {
+  async function loginUser(user: any, token: string) {
     // Guarda dados no cookie do navegador
     delete user.senha;
     localStorage.setItem("@user", funcs.stringToBase64(JSON.stringify(user)));
     localStorage.setItem("@token", funcs.stringToBase64(token));
+
+    // Seta O perfil do usuário
+    await getPerfil(user.id_cliente, token)
 
     // Seta os dados no contexto
     setUser(user);
@@ -32,10 +37,25 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
     setIsLogged(true);
   }
 
+  function getPerfil (user_id: any, token: string) {
+    api.get(`/cliente/formulario/${user_id}`, {
+      headers: { Authorization: token }
+    }).then(async (resp: any) => {
+      let profileData = resp.data.clienteAndForm.form
+      if (profileData!==undefined && profileData!=="undefined" && profileData!==null) {
+        localStorage.setItem("@profile", funcs.stringToBase64(JSON.stringify(profileData)));
+        setProfile({...profile})
+      }
+    }).catch((error: any) => {
+      console.log(error)
+    })
+  }
+
   function logoutUser(user: any, token: string) {
     // Guarda dados no cookie do navegador
     localStorage.removeItem("@user");
     localStorage.removeItem("@token");
+    localStorage.removeItem("@profile");
 
     // Seta os dados no contexto
     setUser({ email: '', senha: '', nome_completo: '', nome_social: '', telefone: '' });
@@ -92,6 +112,10 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
       if (user && token) {
         setUser(JSON.parse(funcs.base64ToString(user)))
         setToken(funcs.base64ToString(token))
+
+        let profileData = localStorage.getItem("@profile");
+        if (profileData && profileData!==null) setProfile(JSON.parse(funcs.base64ToString(profileData)));
+
         setIsLogged(true)
         setReady(true)
       } else {
@@ -107,7 +131,7 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
 
   return (
     <AuthContext.Provider
-      value={{ user, token, isLogged, signUpUser, useresp, signUpEsp, loginUser, logoutUser, loginEsp }}
+      value={{ user, profile, token, isLogged, signUpUser, useresp, signUpEsp, loginUser, logoutUser, loginEsp }}
     >
       {ready ? children : <></>}
     </AuthContext.Provider>

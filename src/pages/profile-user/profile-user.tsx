@@ -95,15 +95,13 @@ export const ProfileUser = () => {
     }).then(async (resp: any) => {
       let client  = resp.data.clienteAndForm.cliente
       let profile = resp.data.clienteAndForm.form
-      console.log(resp.data.clienteAndForm)
       setProfile({...client, ...profile})
     }).catch((error: any) => {
       console.log(error)
     })
   }, [])
 
-  useEffect(() => {
-  }, [profile])
+  useEffect(() => {}, [profile])
 
   return ready ? <Container>
     <Header />
@@ -115,7 +113,7 @@ export const ProfileUser = () => {
 
         <UserWrapper>
           <User
-            src={fotos[profile.foto]}
+            src={ profile.foto ? fotos[profile.foto] : "https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png" }
             alt="Foto do usuário"
           />
           <ButtonPhoto>

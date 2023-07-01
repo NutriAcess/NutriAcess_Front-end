@@ -18,7 +18,7 @@ import {
 
 const SignInUser: React.FC = () => {
   const navigate = useNavigate();
-  const { loginUser } = useAuth();
+  const { profile, loginUser } = useAuth();
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -29,7 +29,7 @@ const SignInUser: React.FC = () => {
         email, senha
       }, loginUser);
 
-      if (response.form) {
+      if (response.form && !profile) {
         navigate("/profile-user");
       } else {
         navigate("/formulario");
