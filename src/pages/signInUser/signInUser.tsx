@@ -25,11 +25,11 @@ const SignInUser: React.FC = () => {
 
   async function handleSignUser() {
     try {
-      await signInUser({
+      const response = await signInUser({
         email, senha
       }, loginUser);
 
-      if (!profile) {
+      if (response.form && !profile) {
         navigate("/profile-user");
       } else {
         navigate("/formulario");

@@ -7,6 +7,7 @@ export const Container = styled.header`
   justify-content: space-between;
 
   align-items: center;
+  cursor: pointer;
 
   > img {
     width: 180px;

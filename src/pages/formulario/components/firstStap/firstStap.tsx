@@ -25,7 +25,7 @@ export const FirstStap = () => {
   const options = [
     { value: "Sedentarismo", label: "Sedentarismo" },
     { value: "Atividade fisica moderada", label: "Atividade física moderada" },
-    { value: "Atividade fisica intensiva", label: "Atividade física intensiva" },
+    { value: "Atividade fisica intensa", label: "Atividade física intensiva" },
   ];
 
   function updateDesireValue(objetivo: ObjectiveEnum) {
