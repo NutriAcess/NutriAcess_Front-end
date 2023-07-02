@@ -60,14 +60,14 @@ const fotos: any = {
 }
 
 export const ProfileUser = () => {
-  const { user, isLogged, token } = useAuth();
+  const { user, isLogged, profile } = useAuth();
   const navigate = useNavigate();
 
   const [ready, setReady] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [openPopupPhoto, setOpenPopupPhoto] = useState(false);
 
-  const [profile, setProfile] = useState<any>({});
+  const [profileData, setProfileData] = useState<any>({});
   const [plan, setPlan] = useState("");
 
   const params = useParams();
@@ -77,13 +77,13 @@ export const ProfileUser = () => {
   const [changePhoto, setChangePhoto] = useState("")
 
   function onChange(name: string, value: string) {
-    setProfile({...profile, [name]: value})
+    setProfileData({...profile, [name]: value})
   }
 
   function onChangeTelefone(event: ChangeEvent<HTMLInputElement>) {
     const {name, value} = event.target;
 
-    setProfile({...profile, [name]: value})
+    setProfileData({...profile, [name]: value})
   }
 
   // useEffect(() => {
@@ -103,33 +103,14 @@ export const ProfileUser = () => {
   //     console.log(error)
   //   })
   // }, [])
+
   useEffect(() => {
+    setProfileData(profile)
     if (!isLogged) navigate("/sign-in-user");
     else setReady(true);
-  
-    api
-      .get(`/cliente/formulario/${user.id_cliente}`, {
-        headers: { Authorization: token }
-      })
-      .then(async (resp: any) => {
-        let client = resp.data.clienteAndForm.cliente;
-        let profile = resp.data.clienteAndForm.formulario;
-        console.log("profile/client",resp.data);
-        console.log("profile", profile);
-        console.log("client", client);
-        
-        
-  
-        setProfile({ ...client, ...profile });
-      })
-      .catch((error: any) => {
-        console.log(error);
-      });
   }, []);
-  
 
-  useEffect(() => {}, [profile])
- 
+  useEffect(() => {}, [profileData])
 
   return ready ? <Container>
     <Header />
@@ -141,7 +122,7 @@ export const ProfileUser = () => {
 
         <UserWrapper>
           <User
-            src={ profile.foto ? fotos[profile.foto] : "https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png" }
+            src={ profileData && profileData.foto ? fotos[profileData.foto] : "https://digimedia.web.ua.pt/wp-content/uploads/2017/05/default-user-image.png" }
             alt="Foto do usuário"
           />
           <ButtonPhoto>
@@ -202,11 +183,11 @@ export const ProfileUser = () => {
     >
       <Form>
         <InputWrapper>
-          <Input label="Nome completo" onChange={(e) => onChange("nome_completo", e)} value={profile.nome_completo} />
-          <Input label="Nome social" onChange={(e) => onChange("nome_social", e)} value={profile.nome_social} />
+          <Input label="Nome completo" onChange={(e) => onChange("nome_completo", e)} value={profileData ? profileData.nome_completo : ''} />
+          <Input label="Nome social" onChange={(e) => onChange("nome_social", e)} value={profileData ? profileData.nome_social : ''} />
         </InputWrapper>
         <InputWrapper>
-          <Input label="Email" onChange={(e) => onChange("email", e)} value={profile.email} />
+          <Input label="Email" onChange={(e) => onChange("email", e)} value={profileData ? profileData.email : ''} />
 
           <div className="sc-bmzYkS eaUxtj">
             <span className="sc-cPiKLX fvwJdb">Telefone:</span>
@@ -216,28 +197,28 @@ export const ProfileUser = () => {
               mask={'(99) 99999-9999'}
               type="telefone"
               name="telefone"
-              value={profile.telefone}
+              value={profileData ? profileData.telefone : ''}
               onChange={onChangeTelefone}
               placeholder="(11) 99999-9999"
             />
           </div>
         </InputWrapper>
         <InputWrapper>
-          <Input label="Idade" onChange={(e) => onChange("idade", e)} value={profile.idade} />
-          <Input label="Altura" onChange={(e) => onChange("altura", e)} value={profile.altura} />
-          <Input label="Gênero" onChange={(e) => onChange("genero", e)} value={profile.genero} />
+          <Input label="Idade" onChange={(e) => onChange("idade", e)} value={profileData ? profileData.idade : ''} />
+          <Input label="Altura" onChange={(e) => onChange("altura", e)} value={profileData ? profileData.altura : ''} />
+          <Input label="Gênero" onChange={(e) => onChange("genero", e)} value={profileData ? profileData.genero : ''} />
         </InputWrapper>
         <InputWrapper>
-          <Input label="Objetivo" onChange={(e) => onChange("objetivo", e)} value={profile.objetivo} />
-          <Input label="Nível de atividade física" onChange={(e) => onChange("capacidade_fisica", e)} value={profile.capacidade_fisica} />
+          <Input label="Objetivo" onChange={(e) => onChange("objetivo", e)} value={profileData ? profileData.objetivo : ''} />
+          <Input label="Nível de atividade física" onChange={(e) => onChange("capacidade_fisica", e)} value={profileData ? profileData.capacidade_fisica : ''} />
         </InputWrapper>
         <InputWrapper>
-          <Input label="Tem tempo para refeição" onChange={(e) => onChange("tempo_preparo", e)} value={profile.tempo_preparo} />
-          <Input label="Peso" onChange={(e) => onChange("peso", e)} value={profile.peso} />
+          <Input label="Tem tempo para refeição" onChange={(e) => onChange("tempo_preparo", e)} value={profileData ? profileData.tempo_preparo : ''} />
+          <Input label="Peso" onChange={(e) => onChange("peso", e)} value={profileData ? profileData.peso : ''} />
         </InputWrapper>
         <InputWrapper>
-          <Input label="Restrição alimentar" onChange={(e) => onChange("peso", e)} value={profile.restricao_alimentar} />
-          <Input label="Alergia" onChange={(e) => onChange("alergia", e)} value={profile.alergia} />
+          <Input label="Restrição alimentar" onChange={(e) => onChange("peso", e)} value={profileData ? profileData.restricao_alimentar : ''} />
+          <Input label="Alergia" onChange={(e) => onChange("alergia", e)} value={profileData ? profileData.alergia : ''} />
         </InputWrapper>
       </Form>
 
@@ -267,7 +248,7 @@ export const ProfileUser = () => {
             <Input
               label="Plano Contratado"
               onChange={(e) => onChange("plano", e)}
-              value={profile.plano}
+              value={profileData ? profileData.plano : ''}
             />
           </InputPlan>
           <ButtonPlan>

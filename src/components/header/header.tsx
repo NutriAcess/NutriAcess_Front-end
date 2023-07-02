@@ -29,8 +29,6 @@ function Header() {
   const { profile, logoutUser, isLogged } = useAuth();
   const navigate = useNavigate();
 
-  // console.log(profile)
-
   return (
     <Navbar collapseOnSelect expand="lg">
       <Container>

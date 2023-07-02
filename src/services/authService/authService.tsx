@@ -26,8 +26,7 @@ export async function signInUser(
   const response = await api.post("/cliente/conectar", user);
   api.defaults.headers.common.Authorization = `${response.data.token}`;
   loginUser(response.data.user.data, response.data.token);
-
-  return response.data;
+  return response.data.user;
 }
 
 export async function signInEsp(

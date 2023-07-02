@@ -127,7 +127,7 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
 
   useEffect(() => {
     !ready && checkData()
-  }, [ready])
+  }, [ready, profile])
 
   return (
     <AuthContext.Provider
