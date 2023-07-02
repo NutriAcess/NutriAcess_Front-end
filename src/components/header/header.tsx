@@ -1,20 +1,18 @@
-import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
-import Button from "../button/button";
-import Logo from "../logo/logo";
-import { ButtonContent, ButtonProfile, Link } from "./header.styles";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { PopUpLogin } from "../popuplogin/popuplogin";
-
-import avatarUva from "../../assets/avatarUva.png";
-import avatarMaca from "../../assets/avatarMaca.png";
-import avatarLaranja from "../../assets/avatarLaranja.png";
+import { useNavigate } from "react-router-dom";
 import avatarAbacaxi from "../../assets/avatarAbacaxi.png";
+import avatarLaranja from "../../assets/avatarLaranja.png";
+import avatarMaca from "../../assets/avatarMaca.png";
+import avatarUva from "../../assets/avatarUva.png";
+import { useAuth } from "../../hooks/useAuth";
+import Button from "../button/button";
+import Logo from "../logo/logo";
+import { PopUpLogin } from "../popuplogin/popuplogin";
+import { ButtonContent, ButtonProfile, Link } from "./header.styles";
 
 const fotos: any = {
   avatarUva,
@@ -28,6 +26,8 @@ function Header() {
   const [openPopupLogin, setOpenPopupLogin] = useState(false);
   const { profile, logoutUser, isLogged } = useAuth();
   const navigate = useNavigate();
+
+  // console.log("header", profile)
 
   return (
     <Navbar collapseOnSelect expand="lg">

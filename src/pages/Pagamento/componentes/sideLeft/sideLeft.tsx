@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import _ from 'lodash';
+import { useState } from 'react';
 import { Input } from '../../../../components/input/input';
+import { StyledInput } from '../../../../components/input/input.styles';
 import { Text } from '../../../../components/text/text';
 import { PlanEnum } from '../../../../services/authService/authService.types';
 import {
@@ -9,10 +11,7 @@ import {
   DivTypePlan,
   Inputstyle,
   SectionPlan,
-  // StyledInput
 } from './sideLeft.styles';
-import _ from 'lodash';
-import { StyledInput } from '../../../../components/input/input.styles';
 
 interface SideLeftProps {
   setValorPlano: (valorPlano: number | any) => void;

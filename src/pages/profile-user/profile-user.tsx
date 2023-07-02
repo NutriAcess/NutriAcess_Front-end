@@ -13,7 +13,6 @@ import { Input } from "../../components/input/input";
 import { Modal } from "../../components/modal/modal";
 import { PopUpPhoto } from "../../components/popupfotoperfil";
 import { Text } from "../../components/text/text";
-import { api } from "../../config/axios/axios";
 import { useAuth } from "../../hooks/useAuth";
 import { SchedulingCard } from "./components/schedulignCard/schedulingCard";
 import { SchedulingCardCanceled } from "./components/schedulignCardCanceled/schedulingCardCanceled";
@@ -47,10 +46,10 @@ import {
   UserWrapper
 } from "./profile-user.styles";
 
-import avatarUva from "../../assets/avatarUva.png";
-import avatarMaca from "../../assets/avatarMaca.png";
-import avatarLaranja from "../../assets/avatarLaranja.png";
 import avatarAbacaxi from "../../assets/avatarAbacaxi.png";
+import avatarLaranja from "../../assets/avatarLaranja.png";
+import avatarMaca from "../../assets/avatarMaca.png";
+import avatarUva from "../../assets/avatarUva.png";
 
 const fotos: any = {
   avatarUva,
