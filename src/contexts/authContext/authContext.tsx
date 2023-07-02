@@ -47,7 +47,11 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
       headers: { Authorization: token }
     }).then(async (resp: any) => {
       let profileData = resp.data.clienteAndForm.form
-      if (profileData!==undefined && profileData!=="undefined" && profileData!==null) setPerfil(profile)
+      if (profileData!==undefined && profileData!=="undefined" && profileData!==null) {
+        localStorage.setItem("@profile", funcs.stringToBase64(JSON.stringify(profileData)));
+        setProfile(profileData)
+        console.log(profileData)
+      }
     }).catch((error: any) => {
       console.log(error)
     })

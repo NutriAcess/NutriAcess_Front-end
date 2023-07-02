@@ -76,20 +76,23 @@ export const ProfileUser = () => {
   const [changePhoto, setChangePhoto] = useState("")
 
   function onChange(name: string, value: string) {
-    setProfileData({...profile, [name]: value})
+    setProfileData({...profileData, [name]: value})
   }
 
   function onChangeTelefone(event: ChangeEvent<HTMLInputElement>) {
     const {name, value} = event.target;
 
-    setProfileData({...profile, [name]: value})
+    setProfileData({...profileData, [name]: value})
   }
 
   useEffect(() => {
-    setProfileData({...user, ...profile})
     if (!isLogged) navigate("/sign-in-user");
     else setReady(true);
   }, []);
+
+  useEffect(() => {
+    setProfileData({...user, ...profile})
+  }, [profile])
 
   useEffect(() => {}, [profileData])
 
