@@ -61,6 +61,7 @@ export type TForm = {
   tempo_preparo: PreparationTimeEnum;
   foto: AvatarsEnum;
   id_cliente: string;
+  plano: PlanEnum;
 };
 export enum AVALIACAO {
   um = '1',

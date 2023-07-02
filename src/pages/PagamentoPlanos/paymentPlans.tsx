@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../components/button/button";
 import Header from "../../components/header/header";
@@ -14,20 +14,19 @@ import {
 import { Container } from "./paymentPlans.styles";
 import { useAuth } from "../../hooks/useAuth";
 
-
 export const PaymentPlans = () => {
   const navigate = useNavigate();
   const [openPopupPagamentoPlans, setOpenPopupPagamentoPlans] = useState(false);
-  const [valorPlano, setValorPlano] = useState("");
+  const [valorPlano, setValorPlano] = useState(0); // Alterado para número
   const [ready, setReady] = useState(false);
   const { user, isLogged, token } = useAuth();
 
   useEffect(() => {
-    if (!isLogged) navigate("/sign-in-user")
-    else setReady(true)
-  },[])
+    if (!isLogged) navigate("/sign-in-user");
+    else setReady(true);
+  }, []);
 
-  return ready ? 
+  return ready ? (
     <Container>
       <Header />
       <Content>
@@ -44,5 +43,8 @@ export const PaymentPlans = () => {
           />
         </SideRight>
       </Content>
-    </Container> : <></>
+    </Container>
+  ) : (
+    <></>
+  );
 };

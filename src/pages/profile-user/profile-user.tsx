@@ -86,29 +86,57 @@ export const ProfileUser = () => {
     setProfile({...profile, [name]: value})
   }
 
-  useEffect(() => {
-    if (!isLogged) navigate("/sign-in-user")
-    else setReady(true)
+  // useEffect(() => {
+  //   if (!isLogged) navigate("/sign-in-user")
+  //   else setReady(true)
 
-    api.get(`/cliente/formulario/${user.id_cliente}`, {
-      headers: { Authorization: token }
-    }).then(async (resp: any) => {
-      let client  = resp.data.clienteAndForm.cliente
-      let profile = resp.data.clienteAndForm.form
-      setProfile({...client, ...profile})
-    }).catch((error: any) => {
-      console.log(error)
-    })
-  }, [])
+  //   api.get(`/cliente/formulario/${user.id_cliente}`, {
+  //     headers: { Authorization: token }
+  //   }).then(async (resp: any) => {
+  //     let client  = resp.data.clienteAndForm.cliente
+  //     let profile = resp.data.clienteAndForm.form
+  //     console.log(profile);
+  //     console.log(resp.data);
+
+  //     setProfile({...client, ...profile})
+  //   }).catch((error: any) => {
+  //     console.log(error)
+  //   })
+  // }, [])
+  useEffect(() => {
+    if (!isLogged) navigate("/sign-in-user");
+    else setReady(true);
+  
+    api
+      .get(`/cliente/formulario/${user.id_cliente}`, {
+        headers: { Authorization: token }
+      })
+      .then(async (resp: any) => {
+        let client = resp.data.clienteAndForm.cliente;
+        let profile = resp.data.clienteAndForm.formulario;
+        console.log("profile/client",resp.data);
+        console.log("profile", profile);
+        console.log("client", client);
+        
+        
+  
+        setProfile({ ...client, ...profile });
+      })
+      .catch((error: any) => {
+        console.log(error);
+      });
+  }, []);
+  
 
   useEffect(() => {}, [profile])
+ 
 
   return ready ? <Container>
     <Header />
     <Cover>
       <UserDetails>
         <Text color="branco" height={42} size="36" weight={500}>
-          Olá {user.nome_social}!
+          Olá, {user.nome_social}!
         </Text>
 
         <UserWrapper>
@@ -238,8 +266,8 @@ export const ProfileUser = () => {
           <InputPlan>
             <Input
               label="Plano Contratado"
-              onChange={(e) => setPlan(e)}
-              value={plan}
+              onChange={(e) => onChange("plano", e)}
+              value={profile.plano}
             />
           </InputPlan>
           <ButtonPlan>

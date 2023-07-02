@@ -27,10 +27,11 @@ const Formasdepagamento = () => {
   const hashInfos: any = params.hash;
   const [nutri, setNutri] = useState<any>(null);
   const [dates, setDates] = useState<any>(null);
-  const [valorPlano, setValorPlano] = useState('');
+  const [valorPlano, setValorPlano] = useState<string>(''); // Removi a declaração duplicada aqui
+
   const [ready, setReady] = useState(false);
   const { user, isLogged, token } = useAuth();
-
+  
   useEffect(() => {
     if (!isLogged) navigate("/sign-in-user")
     else setReady(true)
@@ -51,7 +52,6 @@ const Formasdepagamento = () => {
   }, [nutri]);
 
   function validateFields() {
-    // Implemente a validação dos campos aqui
     return true;
   }
 
@@ -81,7 +81,7 @@ const Formasdepagamento = () => {
     <Container>
       <Header />
       <Content>
-      <SideLeft setValorPlano={setValorPlano} valorPlano={valorPlano} />
+      <SideLeft setValorPlano={setValorPlano} valorPlano={parseFloat(valorPlano)}  />
 
 
 
@@ -100,8 +100,7 @@ const Formasdepagamento = () => {
             <></>
           )}
 
-          <ResumePag valorPlano={valorPlano} />
-
+<ResumePag valorPlano={parseFloat(valorPlano)} /> 
           <ButtonConfirm>
             <Button
               title="Confirmar pagamento"
