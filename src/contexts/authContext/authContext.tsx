@@ -50,7 +50,6 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
       if (profileData!==undefined && profileData!=="undefined" && profileData!==null) {
         localStorage.setItem("@profile", funcs.stringToBase64(JSON.stringify(profileData)));
         setProfile(profileData)
-        console.log(profileData)
       }
     }).catch((error: any) => {
       console.log(error)
