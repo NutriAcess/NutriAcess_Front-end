@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
-import funcs from '../../config/funcs';
 import { api } from "../../config/axios/axios";
+import funcs from '../../config/funcs';
 import {
   getEsp,
   getUser,
@@ -46,7 +46,7 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
     api.get(`/cliente/formulario/${user_id}`, {
       headers: { Authorization: token }
     }).then(async (resp: any) => {
-      let profileData = resp.data.clienteAndForm.form
+      let profileData = resp.data.clienteAndForm.formulario
       if (profileData!==undefined && profileData!=="undefined" && profileData!==null) {
         localStorage.setItem("@profile", funcs.stringToBase64(JSON.stringify(profileData)));
         setProfile(profileData)

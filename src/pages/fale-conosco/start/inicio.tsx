@@ -1,5 +1,5 @@
-import { Text } from "../../../components/text/text";
 import img_inicio from "../../../assets/img_inicio.svg";
+import { Text } from "../../../components/text/text";
 import {
   Container,
   DivImage,
