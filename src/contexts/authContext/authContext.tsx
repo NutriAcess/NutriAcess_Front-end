@@ -37,6 +37,11 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
     setIsLogged(true);
   }
 
+  function setPerfil (data: any) {
+    localStorage.setItem("@profile", funcs.stringToBase64(JSON.stringify(data)));
+    setProfile(data)
+  }
+
   function getPerfil (user_id: any, token: string) {
     api.get(`/cliente/formulario/${user_id}`, {
       headers: { Authorization: token }
@@ -131,7 +136,7 @@ export function AuthContextProvider({ children }: IAuthContextProvider) {
 
   return (
     <AuthContext.Provider
-      value={{ user, profile, token, isLogged, signUpUser, useresp, signUpEsp, loginUser, logoutUser, loginEsp }}
+      value={{ user, profile, token, isLogged, signUpUser, useresp, signUpEsp, loginUser, logoutUser, loginEsp, setPerfil }}
     >
       {ready ? children : <></>}
     </AuthContext.Provider>

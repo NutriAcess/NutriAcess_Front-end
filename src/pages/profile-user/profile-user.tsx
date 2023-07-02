@@ -86,26 +86,8 @@ export const ProfileUser = () => {
     setProfileData({...profile, [name]: value})
   }
 
-  // useEffect(() => {
-  //   if (!isLogged) navigate("/sign-in-user")
-  //   else setReady(true)
-
-  //   api.get(`/cliente/formulario/${user.id_cliente}`, {
-  //     headers: { Authorization: token }
-  //   }).then(async (resp: any) => {
-  //     let client  = resp.data.clienteAndForm.cliente
-  //     let profile = resp.data.clienteAndForm.form
-  //     console.log(profile);
-  //     console.log(resp.data);
-
-  //     setProfile({...client, ...profile})
-  //   }).catch((error: any) => {
-  //     console.log(error)
-  //   })
-  // }, [])
-
   useEffect(() => {
-    setProfileData(profile)
+    setProfileData({...user, ...profile})
     if (!isLogged) navigate("/sign-in-user");
     else setReady(true);
   }, []);

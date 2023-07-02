@@ -38,6 +38,7 @@ export interface IAuthContext {
   loginUser: (user: any, token: string) => void;
   loginEsp: (user: any, token: string) => void;
   logoutUser: Function;
+  setPerfil: Function;
 }
 
 export interface IAuthContextProvider {
