@@ -6,7 +6,7 @@ import { UserFocus } from "@phosphor-icons/react";
 import { ChangeEvent, useEffect, useState } from "react";
 import InputMask from 'react-input-mask';
 import { useNavigate, useParams } from "react-router-dom";
-import QRCODE from "../../assets/QRCODE.png";
+import QRCODE from "../../assets/qrcodeconsulta.svg";
 import Button from "../../components/button/button";
 import Header from "../../components/header/header";
 import { Input } from "../../components/input/input";
