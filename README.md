@@ -33,15 +33,16 @@
  
  <h3>Back-end</h3>
  <ul>
-    <li><img  width="24px" src="https://cdn.discordapp.com/attachments/773372240686350356/1054552190854901780/java.png" />  Java</li>
+    <li><img  width="24px" src="https://i.imgur.com/5HiFsW7.png" />  Typescript</li>
     <li><img  width="24px" src="https://cdn.discordapp.com/attachments/773372240686350356/1054552558745694228/mysql.png" />  MySQL</li>
     <li><img  width="24px" src="https://i.imgur.com/vvwVa87.png"/> Node</li>
  </ul>
 </div>
 
-<a href="" target="_blank">
-<img  width="24px" src="https://cdn.discordapp.com/attachments/773372240686350356/1054550330467164261/science.png" /> Visualizar o web site
-</a>
+## 🍎 Visite o site
+
+Acesse o site da NutriAcess clicando [aqui](http://nutriacess.com.br/).
+
 
 ## Instalação
 
